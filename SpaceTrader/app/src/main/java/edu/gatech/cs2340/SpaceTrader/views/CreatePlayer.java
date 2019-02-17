@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import edu.gatech.cs2340.SpaceTrader.R;
 
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
 import edu.gatech.cs2340.SpaceTrader.viewmodels.EditPlayerViewModel;
@@ -39,7 +40,7 @@ public class CreatePlayer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_student);
+        setContentView(R.layout.activity_create_player);
 
         /*
          * Disables actionbar back button
@@ -52,9 +53,9 @@ public class CreatePlayer extends AppCompatActivity {
         /*
          * Grab the dialog widgets so we can get info for later
          */
-        nameField = findViewById(R.id.student_name_input);
+        nameField = findViewById(R.id.player_name_input);
         difficultySpinner = findViewById(R.id.difficulty_spinner);
-        idField = findViewById(R.id.student_id_field);
+        idField = findViewById(R.id.player_id_field);
         Button button = findViewById(R.id.add_button);
 
         /*
