@@ -21,7 +21,7 @@
         android:id="@+id/player_id_field" />
 
     <TextView
-        android:text="Difficulty"
+        android:text="@string/difficulty_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/difficulty_header"
@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="@string/player_name_default"
         android:ems="10"
         android:id="@+id/player_name_input"
         android:layout_marginTop="32dp"
@@ -43,7 +43,7 @@
         android:layout_alignParentLeft="true"/>
 
     <TextView
-        android:text="Name:"
+        android:text="@string/name_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/name_header"
