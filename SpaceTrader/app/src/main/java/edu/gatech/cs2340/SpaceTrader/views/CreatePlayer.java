@@ -1,6 +1,6 @@
 package edu.gatech.cs2340.SpaceTrader.views;
 
-import android.arch.lifecycle.ViewModelProvider;
+import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -77,7 +77,7 @@ public class CreatePlayer extends AppCompatActivity {
         nameField.setText(player.getName());
         idField.setText(String.format("Player ID: %d", player.getId()));
 
-        viewModel = ViewModelProvider.get(EditPlayerViewModel.class);
+        viewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
     }
 
     /**

@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:padding="20dp"
 
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+    app:layout_behavior="android.support.design.widget.AppBarLayout.ScrollingViewBehavior"
     tools:context="edu.gatech.cs2340.SpaceTrader.views.CreatePlayer"
     tools:showIn="@layout/activity_create_player">
 
