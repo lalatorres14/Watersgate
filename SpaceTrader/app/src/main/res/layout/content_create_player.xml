@@ -104,7 +104,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/pilot_header"
-        android:text="+" />
+        android:text="+"
+        android:onClick="onPilotUpPressed"/>
 
     <Button
         android:id="@+id/pilot_button_down"
@@ -112,7 +113,8 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/pilot_button_up"
         android:layout_alignTop="@+id/pilot_button_up"
-        android:text="-" />
+        android:text="-"
+        android:onClick="onPilotDownPressed"/>
 
     <TextView
         android:id="@+id/fighter_header"
@@ -146,7 +148,8 @@
         android:layout_marginStart="196dp"
         android:layout_marginLeft="196dp"
         android:layout_marginTop="0dp"
-        android:text="+" />
+        android:text="+"
+        android:onClick="onFighterUpPressed"/>
 
     <Button
         android:id="@+id/fighter_button_down"
@@ -154,7 +157,8 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/fighter_button_up"
         android:layout_alignTop="@+id/fighter_button_up"
-        android:text="-" />
+        android:text="-"
+        android:onClick="onFighterDownPressed"/>
 
     <TextView
         android:id="@+id/trader_header"
@@ -183,7 +187,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/trader_header"
-        android:text="+" />
+        android:text="+"
+        android:onClick="onTraderUpPressed"/>
 
     <Button
         android:id="@+id/trader_button_down"
@@ -191,7 +196,8 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/trader_button_up"
         android:layout_alignTop="@+id/trader_button_up"
-        android:text="-" />
+        android:text="-"
+        android:onClick="onTraderDownPressed"/>
 
     <TextView
         android:id="@+id/engineer_header"
@@ -225,7 +231,8 @@
         android:layout_marginStart="192dp"
         android:layout_marginLeft="192dp"
         android:layout_marginTop="0dp"
-        android:text="+" />
+        android:text="+"
+        android:onClick="onEngineerUpPressed"/>
 
     <Button
         android:id="@+id/engineer_button_down"
@@ -233,7 +240,8 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/engineer_button_up"
         android:layout_alignTop="@+id/engineer_button_up"
-        android:text="-" />
+        android:text="-"
+        android:onClick="onEngineerDownPressed"/>
 
     <TextView
         android:id="@+id/remaining_header"

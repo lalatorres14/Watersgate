@@ -95,5 +95,61 @@ public class CreatePlayer extends AppCompatActivity {
     public void onCancelPressed(View view) {
         onBackPressed();
     }
+
+    public void onPilotUpPressed(View view) {
+        if (player.getSkillPoints() > 0) {
+            player.setPilotSkill(player.getPilotSkill() + 1);
+            player.setSkillPoints(player.getSkillPoints() - 1);
+        }
+    }
+
+    public void onPilotDownPressed(View view) {
+        if (player.getPilotSkill() > 0) {
+            player.setPilotSkill(player.getPilotSkill() - 1);
+            player.setSkillPoints(player.getSkillPoints() + 1);
+        }
+    }
+
+    public void onFighterUpPressed(View view) {
+        if (player.getSkillPoints() > 0) {
+            player.setFighterSkill(player.getFighterSkill() + 1);
+            player.setSkillPoints(player.getSkillPoints() - 1);
+        }
+    }
+
+    public void onFighterDownPressed(View view) {
+        if (player.getFighterSkill() > 0) {
+            player.setFighterSkill(player.getFighterSkill() - 1);
+            player.setSkillPoints(player.getSkillPoints() + 1);
+        }
+    }
+
+    public void onTraderUpPressed(View view) {
+        if (player.getSkillPoints() > 0) {
+            player.setTraderSkill(player.getTraderSkill() + 1);
+            player.setSkillPoints(player.getSkillPoints() - 1);
+        }
+    }
+
+    public void onTraderDownPressed(View view) {
+        if (player.getTraderSkill() > 0) {
+            player.setTraderSkill(player.getTraderSkill() - 1);
+            player.setSkillPoints(player.getSkillPoints() + 1);
+        }
+    }
+
+    public void onEngineerUpPressed(View view) {
+        if (player.getSkillPoints() > 0) {
+            player.setEngineerSkill(player.getEngineerSkill() + 1);
+            player.setSkillPoints(player.getSkillPoints() - 1);
+        }
+    }
+
+    public void onEngineerDownPressed(View view) {
+        if (player.getEngineerSkill() > 0) {
+            player.setEngineerSkill(player.getEngineerSkill() - 1);
+            player.setSkillPoints(player.getSkillPoints() + 1);
+        }
+    }
 }
 
