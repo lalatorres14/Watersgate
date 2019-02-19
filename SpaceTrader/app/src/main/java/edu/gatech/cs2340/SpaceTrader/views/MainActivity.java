@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
         setContentView(R.layout.activity_main);
         final Button button = (Button)findViewById(R.id.ready_player_one);
         button.setOnClickListener(new View.OnClickListener() {
@@ -30,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, CreatePlayer.class);
         startActivity(intent);
         //startActivity(new Intent(MainActivity.this, CreatePlayer.class));
+=======
+        setContentView(R.layout.activity_create_player);
+>>>>>>> refs/remotes/origin/master
     }
 
 }

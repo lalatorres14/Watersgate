@@ -4,4 +4,10 @@
     <string name="name_header">Name:</string>
     <string name="difficulty_header">Difficulty:</string>
     <string name="player_name_default">Name</string>
+    <string name="skill1">Pilot:</string>
+    <string name="skill2">Fighter:</string>
+    <string name="skill3">Trader:</string>
+    <string name="skill4">Engineer:</string>
+    <string name="remaining">Points Remaining:</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
 </resources>
