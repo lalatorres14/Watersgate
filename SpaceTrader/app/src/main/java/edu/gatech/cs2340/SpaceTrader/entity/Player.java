@@ -80,13 +80,13 @@ public class Player implements Serializable {
         return difficulty;
     }
 
-    public int getSkillPoints() {return skillPoints; }
+    public int getSkillPoints() { return skillPoints; }
 
     public int getPilotSkill() { return  pilotSkill; }
 
     public int getFighterSkill() { return  fighterSkill; }
 
-    public int getTraderSkillSkill() { return  traderSkill; }
+    public int getTraderSkill() { return  traderSkill; }
 
     public int getEngineerSkill() { return  engineerSkill; }
 

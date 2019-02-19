@@ -89,14 +89,30 @@
         android:layout_marginTop="384dp"
         android:text="@string/skill1" />
 
-    <EditText
+    <TextView
         android:id="@+id/pilot_points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/pilot_header"
         android:layout_toRightOf="@+id/pilot_header"
         android:ems="2"
-        android:inputType="number" />
+        android:inputType="number"
+        android:text="@{player.getPilotSkill()}"/>
+
+    <Button
+        android:id="@+id/pilot_button_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pilot_header"
+        android:text="+" />
+
+    <Button
+        android:id="@+id/pilot_button_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/pilot_button_up"
+        android:layout_alignTop="@+id/pilot_button_up"
+        android:text="-" />
 
     <TextView
         android:id="@+id/fighter_header"
@@ -111,6 +127,36 @@
         android:text="@string/skill2" />
 
     <TextView
+        android:id="@+id/fighter_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/fighter_header"
+        android:layout_toLeftOf="@+id/fighter_header"
+        android:ems="2"
+        android:inputType="number"
+        android:text="@{player.getFighterSkill()}"/>
+
+    <Button
+        android:id="@+id/fighter_button_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fighter_header"
+        android:layout_alignStart="@+id/pilot_button_up"
+        android:layout_alignLeft="@+id/pilot_button_up"
+        android:layout_marginStart="196dp"
+        android:layout_marginLeft="196dp"
+        android:layout_marginTop="0dp"
+        android:text="+" />
+
+    <Button
+        android:id="@+id/fighter_button_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/fighter_button_up"
+        android:layout_alignTop="@+id/fighter_button_up"
+        android:text="-" />
+
+    <TextView
         android:id="@+id/trader_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -121,6 +167,31 @@
         android:layout_marginLeft="64dp"
         android:layout_marginTop="512dp"
         android:text="@string/skill3" />
+
+    <TextView
+        android:id="@+id/trader_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/trader_header"
+        android:layout_toRightOf="@+id/trader_header"
+        android:ems="2"
+        android:inputType="number"
+        android:text="@{player.getTraderSkill()}"/>
+
+    <Button
+        android:id="@+id/trader_button_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/trader_header"
+        android:text="+" />
+
+    <Button
+        android:id="@+id/trader_button_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/trader_button_up"
+        android:layout_alignTop="@+id/trader_button_up"
+        android:text="-" />
 
     <TextView
         android:id="@+id/engineer_header"
@@ -135,6 +206,36 @@
         android:text="@string/skill4" />
 
     <TextView
+        android:id="@+id/engineer_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/engineer_header"
+        android:layout_toLeftOf="@+id/engineer_header"
+        android:ems="2"
+        android:inputType="number"
+        android:text="@{player.getEngineerSkill()}"/>
+
+    <Button
+        android:id="@+id/engineer_button_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/engineer_header"
+        android:layout_alignStart="@+id/trader_button_up"
+        android:layout_alignLeft="@+id/trader_button_up"
+        android:layout_marginStart="192dp"
+        android:layout_marginLeft="192dp"
+        android:layout_marginTop="0dp"
+        android:text="+" />
+
+    <Button
+        android:id="@+id/engineer_button_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/engineer_button_up"
+        android:layout_alignTop="@+id/engineer_button_up"
+        android:text="-" />
+
+    <TextView
         android:id="@+id/remaining_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -145,6 +246,16 @@
         android:layout_marginLeft="128dp"
         android:layout_marginTop="288dp"
         android:text="@string/remaining" />
+
+    <TextView
+        android:id="@+id/remaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/remaining_header"
+        android:layout_toRightOf="@+id/remaining_header"
+        android:ems="2"
+        android:inputType="number"
+        android:text="@{player.getSkillPoints()}"/>
 
 
 </RelativeLayout>
