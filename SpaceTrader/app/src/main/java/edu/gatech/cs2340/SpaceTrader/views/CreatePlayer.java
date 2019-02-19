@@ -50,32 +50,21 @@ public class CreatePlayer extends AppCompatActivity {
             getSupportActionBar().setHomeButtonEnabled(false);
         }
 
-        /*
-         * Grab the dialog widgets so we can get info for later
-         */
         nameField = findViewById(R.id.player_name_input);
         difficultySpinner = findViewById(R.id.difficulty_spinner);
-        idField = findViewById(R.id.player_id_field);
+        //idField = findViewById(R.id.player_id_field);
         Button button = findViewById(R.id.add_button);
 
-        /*
-          Set up the adapter to display the allowable majors in the spinner
-         */
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Player.legalDifficulty);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         difficultySpinner.setAdapter(adapter);
 
-        /*
-           If a student has been passed in, this was an edit, if not, this is a new add
-         */
-
-        //Adding a new student
         player = new Player("Bob", "Normal");
         button.setText("Add");
         setTitle("Creating Player");
 
         nameField.setText(player.getName());
-        idField.setText(String.format("Player ID: %d", player.getId()));
+        //idField.setText(String.format("Player ID: %d", player.getId()));
 
         viewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
     }
@@ -92,8 +81,6 @@ public class CreatePlayer extends AppCompatActivity {
         player.setDifficulty((String) difficultySpinner.getSelectedItem());
 
         Log.d("Edit", "Got new player data: " + player);
-
-        //do the right thing depending on whether this is a new student or an edit
 
         viewModel.addPlayer(player);
 
