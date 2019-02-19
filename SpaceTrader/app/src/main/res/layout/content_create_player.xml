@@ -97,7 +97,7 @@
         android:layout_toRightOf="@+id/pilot_header"
         android:ems="2"
         android:inputType="number"
-        android:text="@{player.getPilotSkill()}"/>
+        android:text="0"/>
 
     <Button
         android:id="@+id/pilot_button_up"
@@ -136,7 +136,7 @@
         android:layout_toLeftOf="@+id/fighter_header"
         android:ems="2"
         android:inputType="number"
-        android:text="@{player.getFighterSkill()}"/>
+        android:text="0"/>
 
     <Button
         android:id="@+id/fighter_button_up"
@@ -180,7 +180,7 @@
         android:layout_toRightOf="@+id/trader_header"
         android:ems="2"
         android:inputType="number"
-        android:text="@{player.getTraderSkill()}"/>
+        android:text="0"/>
 
     <Button
         android:id="@+id/trader_button_up"
@@ -219,7 +219,7 @@
         android:layout_toLeftOf="@+id/engineer_header"
         android:ems="2"
         android:inputType="number"
-        android:text="@{player.getEngineerSkill()}"/>
+        android:text="0"/>
 
     <Button
         android:id="@+id/engineer_button_up"
@@ -263,7 +263,7 @@
         android:layout_toRightOf="@+id/remaining_header"
         android:ems="2"
         android:inputType="number"
-        android:text="@{player.getSkillPoints()}"/>
+        android:text="0"/>
 
 
 </RelativeLayout>

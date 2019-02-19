@@ -52,7 +52,6 @@ public class CreatePlayer extends AppCompatActivity {
 
         nameField = findViewById(R.id.player_name_input);
         difficultySpinner = findViewById(R.id.difficulty_spinner);
-        //idField = findViewById(R.id.player_id_field);
         Button button = findViewById(R.id.add_button);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Player.legalDifficulty);
@@ -64,7 +63,6 @@ public class CreatePlayer extends AppCompatActivity {
         setTitle("Creating Player");
 
         nameField.setText(player.getName());
-        //idField.setText(String.format("Player ID: %d", player.getId()));
 
         viewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
     }
@@ -100,6 +98,10 @@ public class CreatePlayer extends AppCompatActivity {
         if (player.getSkillPoints() > 0) {
             player.setPilotSkill(player.getPilotSkill() + 1);
             player.setSkillPoints(player.getSkillPoints() - 1);
+            idField = findViewById(R.id.pilot_points);
+            idField.setText(String.valueOf(player.getPilotSkill()));
+            idField = findViewById(R.id.remaining_header);
+            idField.setText(String.valueOf(player.getSkillPoints()));
         }
     }
 
@@ -107,6 +109,10 @@ public class CreatePlayer extends AppCompatActivity {
         if (player.getPilotSkill() > 0) {
             player.setPilotSkill(player.getPilotSkill() - 1);
             player.setSkillPoints(player.getSkillPoints() + 1);
+            idField = findViewById(R.id.pilot_points);
+            idField.setText(String.valueOf(player.getPilotSkill()));
+            idField = findViewById(R.id.remaining_header);
+            idField.setText(String.valueOf(player.getSkillPoints()));
         }
     }
 
@@ -114,6 +120,10 @@ public class CreatePlayer extends AppCompatActivity {
         if (player.getSkillPoints() > 0) {
             player.setFighterSkill(player.getFighterSkill() + 1);
             player.setSkillPoints(player.getSkillPoints() - 1);
+            idField = findViewById(R.id.fighter_points);
+            idField.setText(String.valueOf(player.getFighterSkill()));
+            idField = findViewById(R.id.remaining_header);
+            idField.setText(String.valueOf(player.getSkillPoints()));
         }
     }
 
@@ -121,6 +131,10 @@ public class CreatePlayer extends AppCompatActivity {
         if (player.getFighterSkill() > 0) {
             player.setFighterSkill(player.getFighterSkill() - 1);
             player.setSkillPoints(player.getSkillPoints() + 1);
+            idField = findViewById(R.id.fighter_points);
+            idField.setText(String.valueOf(player.getFighterSkill()));
+            idField = findViewById(R.id.remaining_header);
+            idField.setText(String.valueOf(player.getSkillPoints()));
         }
     }
 
@@ -128,6 +142,10 @@ public class CreatePlayer extends AppCompatActivity {
         if (player.getSkillPoints() > 0) {
             player.setTraderSkill(player.getTraderSkill() + 1);
             player.setSkillPoints(player.getSkillPoints() - 1);
+            idField = findViewById(R.id.trader_points);
+            idField.setText(String.valueOf(player.getTraderSkill()));
+            idField = findViewById(R.id.remaining_header);
+            idField.setText(String.valueOf(player.getSkillPoints()));
         }
     }
 
@@ -135,6 +153,10 @@ public class CreatePlayer extends AppCompatActivity {
         if (player.getTraderSkill() > 0) {
             player.setTraderSkill(player.getTraderSkill() - 1);
             player.setSkillPoints(player.getSkillPoints() + 1);
+            idField = findViewById(R.id.fighter_points);
+            idField.setText(String.valueOf(player.getTraderSkill()));
+            idField = findViewById(R.id.remaining_header);
+            idField.setText(String.valueOf(player.getSkillPoints()));
         }
     }
 
@@ -142,6 +164,10 @@ public class CreatePlayer extends AppCompatActivity {
         if (player.getSkillPoints() > 0) {
             player.setEngineerSkill(player.getEngineerSkill() + 1);
             player.setSkillPoints(player.getSkillPoints() - 1);
+            idField = findViewById(R.id.fighter_points);
+            idField.setText(String.valueOf(player.getEngineerSkill()));
+            idField = findViewById(R.id.remaining_header);
+            idField.setText(String.valueOf(player.getSkillPoints()));
         }
     }
 
@@ -149,6 +175,10 @@ public class CreatePlayer extends AppCompatActivity {
         if (player.getEngineerSkill() > 0) {
             player.setEngineerSkill(player.getEngineerSkill() - 1);
             player.setSkillPoints(player.getSkillPoints() + 1);
+            idField = findViewById(R.id.fighter_points);
+            idField.setText(String.valueOf(player.getEngineerSkill()));
+            idField = findViewById(R.id.remaining_header);
+            idField.setText(String.valueOf(player.getSkillPoints()));
         }
     }
 }
