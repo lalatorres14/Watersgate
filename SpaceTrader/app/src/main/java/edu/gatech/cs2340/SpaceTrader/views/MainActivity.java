@@ -12,13 +12,13 @@ import edu.gatech.cs2340.SpaceTrader.R;
 
 public class MainActivity extends AppCompatActivity {
     //public static final int ADD_COURSE_REQUEST_ID = 1;
-
+    private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        final Button button = (Button)findViewById(R.id.ready_player_one);
+        button = findViewById(R.id.ready_player_one);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, CreatePlayer.class);
         startActivity(intent);
         //startActivity(new Intent(MainActivity.this, CreatePlayer.class));
-        setContentView(R.layout.activity_create_player);
-
+        //setContentView(R.layout.activity_create_player);
     }
 
 }
