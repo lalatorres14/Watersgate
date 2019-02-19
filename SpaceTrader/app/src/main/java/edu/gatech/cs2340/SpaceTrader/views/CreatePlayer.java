@@ -182,4 +182,3 @@ public class CreatePlayer extends AppCompatActivity {
         }
     }
 }
-
