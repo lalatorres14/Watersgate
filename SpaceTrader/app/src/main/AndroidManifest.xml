@@ -21,7 +21,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".views.MainActivity" />
         </activity>
-
+        <activity android:name="edu.gatech.cs2340.SpaceTrader.views.PlayerConfirmation" android:parentActivityName=".views.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.CreatePlayer" />
+        </activity>
     </application>
 
 </manifest>

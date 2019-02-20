@@ -1,6 +1,7 @@
 package edu.gatech.cs2340.SpaceTrader.views;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -10,13 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 import edu.gatech.cs2340.SpaceTrader.R;
 
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
 import edu.gatech.cs2340.SpaceTrader.viewmodels.EditPlayerViewModel;
 
 /**
- * This class acts as the code behind for editing a student or creating a new student
+ * This class acts as the code behind for editing a player or creating a new player
  */
 public class CreatePlayer extends AppCompatActivity {
 
@@ -87,15 +89,29 @@ public class CreatePlayer extends AppCompatActivity {
      */
     public void onAddPressed(View view) {
         Log.d("Edit", "Add/Update Student Pressed");
+        if((player.getEngineerSkill() + player.getFighterSkill() + player.getPilotSkill() +
+                player.getTraderSkill()) == 16 && (player.getSkillPoints() == 0) ) {
 
-        player.setName(nameField.getText().toString());
-        player.setDifficulty((String) difficultySpinner.getSelectedItem());
+            player.setName(nameField.getText().toString());
+            player.setDifficulty((String) difficultySpinner.getSelectedItem());
 
-        Log.d("Edit", "Got new player data: " + player);
 
-        viewModel.addPlayer(player);
+            Log.d("Edit", "Got new player data: " + player);
 
-        finish();
+            //create player
+            viewModel.addPlayer(player);
+
+            Intent intent = new Intent(this, PlayerConfirmation.class);
+            startActivity(intent);
+
+            finish();
+
+        } else {
+            CharSequence text = "Invalid Player Creation";
+            Toast toast = Toast.makeText(CreatePlayer.this, text, Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        //finish();
     }
 
     /**
