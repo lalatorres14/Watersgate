@@ -63,6 +63,18 @@ public class CreatePlayer extends AppCompatActivity {
         button.setText("Add");
         setTitle("Creating Player");
 
+        //Initializing display values for skills
+        idField = findViewById(R.id.pilot_points);
+        idField.setText(String.valueOf(player.getPilotSkill()));
+        idField = findViewById(R.id.fighter_points);
+        idField.setText(String.valueOf(player.getFighterSkill()));
+        idField = findViewById(R.id.trader_points);
+        idField.setText(String.valueOf(player.getTraderSkill()));
+        idField = findViewById(R.id.engineer_points);
+        idField.setText(String.valueOf(player.getEngineerSkill()));
+        idField = findViewById(R.id.remaining);
+        idField.setText(String.valueOf(player.getSkillPoints()));
+
         nameField.setText(player.getName());
 
         viewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
@@ -101,7 +113,7 @@ public class CreatePlayer extends AppCompatActivity {
             player.setSkillPoints(player.getSkillPoints() - 1);
             idField = findViewById(R.id.pilot_points);
             idField.setText(String.valueOf(player.getPilotSkill()));
-            idField = findViewById(R.id.remaining_header);
+            idField = findViewById(R.id.remaining);
             idField.setText(String.valueOf(player.getSkillPoints()));
         }
     }
@@ -112,7 +124,7 @@ public class CreatePlayer extends AppCompatActivity {
             player.setSkillPoints(player.getSkillPoints() + 1);
             idField = findViewById(R.id.pilot_points);
             idField.setText(String.valueOf(player.getPilotSkill()));
-            idField = findViewById(R.id.remaining_header);
+            idField = findViewById(R.id.remaining);
             idField.setText(String.valueOf(player.getSkillPoints()));
         }
     }
@@ -123,7 +135,7 @@ public class CreatePlayer extends AppCompatActivity {
             player.setSkillPoints(player.getSkillPoints() - 1);
             idField = findViewById(R.id.fighter_points);
             idField.setText(String.valueOf(player.getFighterSkill()));
-            idField = findViewById(R.id.remaining_header);
+            idField = findViewById(R.id.remaining);
             idField.setText(String.valueOf(player.getSkillPoints()));
         }
     }
@@ -134,7 +146,7 @@ public class CreatePlayer extends AppCompatActivity {
             player.setSkillPoints(player.getSkillPoints() + 1);
             idField = findViewById(R.id.fighter_points);
             idField.setText(String.valueOf(player.getFighterSkill()));
-            idField = findViewById(R.id.remaining_header);
+            idField = findViewById(R.id.remaining);
             idField.setText(String.valueOf(player.getSkillPoints()));
         }
     }
@@ -145,7 +157,7 @@ public class CreatePlayer extends AppCompatActivity {
             player.setSkillPoints(player.getSkillPoints() - 1);
             idField = findViewById(R.id.trader_points);
             idField.setText(String.valueOf(player.getTraderSkill()));
-            idField = findViewById(R.id.remaining_header);
+            idField = findViewById(R.id.remaining);
             idField.setText(String.valueOf(player.getSkillPoints()));
         }
     }
@@ -154,9 +166,9 @@ public class CreatePlayer extends AppCompatActivity {
         if (player.getTraderSkill() > 0) {
             player.setTraderSkill(player.getTraderSkill() - 1);
             player.setSkillPoints(player.getSkillPoints() + 1);
-            idField = findViewById(R.id.fighter_points);
+            idField = findViewById(R.id.trader_points);
             idField.setText(String.valueOf(player.getTraderSkill()));
-            idField = findViewById(R.id.remaining_header);
+            idField = findViewById(R.id.remaining);
             idField.setText(String.valueOf(player.getSkillPoints()));
         }
     }
@@ -165,9 +177,9 @@ public class CreatePlayer extends AppCompatActivity {
         if (player.getSkillPoints() > 0) {
             player.setEngineerSkill(player.getEngineerSkill() + 1);
             player.setSkillPoints(player.getSkillPoints() - 1);
-            idField = findViewById(R.id.fighter_points);
+            idField = findViewById(R.id.engineer_points);
             idField.setText(String.valueOf(player.getEngineerSkill()));
-            idField = findViewById(R.id.remaining_header);
+            idField = findViewById(R.id.remaining);
             idField.setText(String.valueOf(player.getSkillPoints()));
         }
     }
@@ -176,9 +188,9 @@ public class CreatePlayer extends AppCompatActivity {
         if (player.getEngineerSkill() > 0) {
             player.setEngineerSkill(player.getEngineerSkill() - 1);
             player.setSkillPoints(player.getSkillPoints() + 1);
-            idField = findViewById(R.id.fighter_points);
+            idField = findViewById(R.id.engineer_points);
             idField.setText(String.valueOf(player.getEngineerSkill()));
-            idField = findViewById(R.id.remaining_header);
+            idField = findViewById(R.id.remaining);
             idField.setText(String.valueOf(player.getSkillPoints()));
         }
     }

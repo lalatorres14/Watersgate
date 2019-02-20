@@ -64,6 +64,10 @@ public class Player implements Serializable {
         name = nam;
         difficulty = diff;
         skillPoints = 16;
+        pilotSkill = 0;
+        fighterSkill = 0;
+        traderSkill = 0;
+        engineerSkill = 0;
     }
 
     //Getters and setters are required for accessing the fields from the database
