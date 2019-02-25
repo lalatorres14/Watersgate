@@ -37,6 +37,12 @@ public class Player implements Serializable {
     /** this player's total possible skill points */
     private int skillPoints;
 
+    /** placeholder until ship class is created */
+    private String ship;
+
+    /** this player's current credits */
+    private int credits;
+
     /**
      * Lookup a difficulty based on its code.  Returns the position of that
      * level in the array.
@@ -64,6 +70,12 @@ public class Player implements Serializable {
         name = nam;
         difficulty = diff;
         skillPoints = 16;
+        pilotSkill = 0;
+        fighterSkill = 0;
+        traderSkill = 0;
+        engineerSkill = 0;
+        ship = "GNAT";
+        credits = 1000;
     }
 
     //Getters and setters are required for accessing the fields from the database
@@ -80,15 +92,19 @@ public class Player implements Serializable {
         return difficulty;
     }
 
-    public int getSkillPoints() {return skillPoints; }
+    public int getSkillPoints() { return skillPoints; }
 
     public int getPilotSkill() { return  pilotSkill; }
 
     public int getFighterSkill() { return  fighterSkill; }
 
-    public int getTraderSkillSkill() { return  traderSkill; }
+    public int getTraderSkill() { return  traderSkill; }
 
     public int getEngineerSkill() { return  engineerSkill; }
+
+    public String getShip() {return ship; }
+
+    public int getCredits() {return credits; }
 
 
     public void setName(String nam) { name = nam; }
@@ -104,6 +120,10 @@ public class Player implements Serializable {
     public void setTraderSkill(int tS) {traderSkill = tS; }
 
     public void setEngineerSkill(int eS) {engineerSkill = eS;}
+
+    public void setShip(String shipName) {ship = shipName; }
+
+    public void setCredits(int c) {credits = c; }
 
     //Need a way to set the id from the database
     public void setId(int id) {

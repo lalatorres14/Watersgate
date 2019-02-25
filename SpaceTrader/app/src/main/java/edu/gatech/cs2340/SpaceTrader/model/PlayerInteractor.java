@@ -26,5 +26,5 @@ public class PlayerInteractor extends Interactor {
         Log.d("APP", "Interactor: updating player: " + p);
     }
 
-
+    public Player getPlayer (int i) { return getRepository().getPlayer(i); }
 }

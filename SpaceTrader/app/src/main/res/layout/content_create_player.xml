@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_create_player"
+    android:id="@+id/content_edit_student"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
@@ -12,15 +12,7 @@
     tools:showIn="@layout/activity_create_player">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:id="@+id/player_id_field" />
-
-    <TextView
-        android:text="Difficulty"
+        android:text="@string/difficulty_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/difficulty_header"
@@ -29,27 +21,27 @@
         android:layout_alignParentLeft="true"
         android:layout_marginTop="38dp" />
 
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="@string/player_name_default"
         android:ems="10"
         android:id="@+id/player_name_input"
         android:layout_marginTop="32dp"
         android:layout_below="@id/name_header"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"/>
+        android:layout_alignParentLeft="true" />
 
     <TextView
-        android:text="Name:"
+        android:text="@string/name_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/name_header"
-        android:layout_below="@+id/player_id_field"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="11dp" />
+        android:layout_marginTop="32dp" />
 
     <Spinner
         android:layout_width="match_parent"
@@ -69,8 +61,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
         android:onClick="onAddPressed" />
 
     <Button
@@ -81,9 +73,227 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
         android:id="@+id/cancel_button"
         android:onClick="onCancelPressed" />
+
+    <TextView
+        android:id="@+id/pilot_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="34dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="344dp"
+        android:text="@string/skill1" />
+
+    <TextView
+        android:id="@+id/pilot_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/pilot_header"
+        android:layout_toRightOf="@+id/pilot_header"
+        android:ems="2"
+        android:inputType="number"
+        />
+
+
+    <ImageButton
+        android:id="@+id/pilot_button_up"
+        android:layout_below="@+id/pilot_header"
+        android:onClick="onPilotUpPressed"
+        android:background="@android:color/background_light"
+        android:src="@drawable/inc_arrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"/>
+
+    <ImageButton
+        android:id="@+id/pilot_button_down"
+        android:layout_toRightOf="@+id/pilot_button_up"
+        android:layout_alignTop="@+id/pilot_button_up"
+        android:onClick="onPilotDownPressed"
+        android:background="@android:color/background_light"
+        android:src="@drawable/dec_arrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"/>
+
+
+    <TextView
+        android:id="@+id/fighter_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="129dp"
+        android:layout_marginLeft="129dp"
+        android:layout_marginTop="344dp"
+        android:layout_toEndOf="@+id/pilot_points"
+        android:layout_toRightOf="@+id/pilot_points"
+        android:text="@string/skill2" />
+
+    <TextView
+        android:id="@+id/fighter_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/fighter_header"
+        android:layout_toRightOf="@+id/fighter_header"
+        android:ems="2"
+        android:inputType="number"
+        />
+
+
+    <ImageButton
+        android:id="@+id/fighter_button_up"
+        android:layout_below="@+id/fighter_header"
+        android:layout_alignStart="@+id/pilot_button_up"
+        android:layout_alignLeft="@+id/pilot_button_up"
+        android:layout_marginStart="196dp"
+        android:layout_marginLeft="196dp"
+        android:layout_marginTop="0dp"
+        android:onClick="onFighterUpPressed"
+        android:background="@android:color/background_light"
+        android:src="@drawable/inc_arrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"/>
+
+    <ImageButton
+        android:id="@+id/fighter_button_down"
+        android:layout_toRightOf="@+id/fighter_button_up"
+        android:layout_alignTop="@+id/fighter_button_up"
+        android:onClick="onFighterDownPressed"
+        android:background="@android:color/background_light"
+        android:src="@drawable/dec_arrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/trader_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="442dp"
+        android:text="@string/skill3" />
+
+    <TextView
+        android:id="@+id/trader_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/trader_header"
+        android:layout_toRightOf="@+id/trader_header"
+        android:ems="2"
+        android:inputType="number"
+        />
+
+
+    <ImageButton
+        android:id="@+id/trader_button_up"
+        android:layout_below="@+id/trader_header"
+        android:onClick="onTraderUpPressed"
+        android:background="@android:color/background_light"
+        android:src="@drawable/inc_arrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"/>
+
+    <ImageButton
+        android:id="@+id/trader_button_down"
+        android:layout_toRightOf="@+id/trader_button_up"
+        android:layout_alignTop="@+id/trader_button_up"
+        android:onClick="onTraderDownPressed"
+        android:background="@android:color/background_light"
+        android:src="@drawable/dec_arrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/engineer_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="115dp"
+        android:layout_marginLeft="115dp"
+        android:layout_marginTop="442dp"
+        android:layout_toEndOf="@+id/trader_points"
+        android:layout_toRightOf="@+id/trader_points"
+        android:text="@string/skill4" />
+
+    <TextView
+        android:id="@+id/engineer_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/engineer_header"
+        android:layout_toRightOf="@+id/engineer_header"
+        android:ems="2"
+        android:inputType="number"
+        />
+
+
+    <ImageButton
+        android:id="@+id/engineer_button_up"
+        android:layout_below="@+id/engineer_header"
+        android:layout_alignStart="@+id/trader_button_up"
+        android:layout_alignLeft="@+id/trader_button_up"
+        android:layout_marginStart="196dp"
+        android:layout_marginLeft="196dp"
+        android:layout_marginTop="0dp"
+        android:onClick="onEngineerUpPressed"
+        android:background="@android:color/background_light"
+        android:src="@drawable/inc_arrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"/>
+
+    <ImageButton
+        android:id="@+id/engineer_button_down"
+        android:layout_toRightOf="@+id/engineer_button_up"
+        android:layout_alignTop="@+id/engineer_button_up"
+        android:onClick="onEngineerDownPressed"
+        android:background="@android:color/background_light"
+        android:src="@drawable/dec_arrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/remaining_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="118dp"
+        android:layout_marginLeft="118dp"
+        android:layout_marginTop="298dp"
+        android:text="@string/remaining" />
+
+    <TextView
+        android:id="@+id/remaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/remaining_header"
+        android:layout_toRightOf="@+id/remaining_header"
+        android:ems="2"
+        android:inputType="number"
+        />
+
 
 </RelativeLayout>

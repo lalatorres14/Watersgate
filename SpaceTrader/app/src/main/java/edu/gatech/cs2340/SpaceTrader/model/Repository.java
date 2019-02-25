@@ -43,7 +43,7 @@ class Repository {
      */
     public void addPlayer(Player player) {
         player.setId(Repository.getNextUniqueID());
-        allPlayers.add(player);
+        allPlayers.add(0, player);
     }
 
     /**
@@ -59,6 +59,10 @@ class Repository {
             }
         }
         Log.d("APP", "Player not found with id = " + p.getId());
+    }
+
+    public Player getPlayer(int i){
+        return allPlayers.get(i);
     }
 }
 
