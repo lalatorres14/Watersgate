@@ -1,8 +1,11 @@
 package edu.gatech.cs2340.SpaceTrader.views;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import edu.gatech.cs2340.SpaceTrader.R;
@@ -10,11 +13,18 @@ import edu.gatech.cs2340.SpaceTrader.viewmodels.EditPlayerViewModel;
 
 public class PlayerConfirmation extends AppCompatActivity {
     private EditPlayerViewModel viewModel;
-
+    private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_confirm);
+        button = findViewById(R.id.game_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                beginGamePressed();
+            }
+        });
 
         viewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
 
@@ -48,5 +58,12 @@ public class PlayerConfirmation extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             getSupportActionBar().setHomeButtonEnabled(false);
         }
+    }
+    public void beginGamePressed(){
+        
+        Intent intent = new Intent(PlayerConfirmation.this, GameStart.class);
+        startActivity(intent);
+        //startActivity(new Intent(MainActivity.this, CreatePlayer.class));
+        //setContentView(R.layout.activity_create_player);
     }
 }
