@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class SolarSystem {
 
     /** The list of planets populating this Solar system*/
-    private ArrayList<Planet> planetList;
+    private ArrayList<Planet> planetList = new ArrayList<Planet>();
     Random rand = new Random();
     HashMap<Integer, Integer> coordinates = new HashMap<>();
 
@@ -27,7 +27,7 @@ public class SolarSystem {
     public SolarSystem(){
         Random rand = new Random();
         planetTotal = rand.nextInt(5);
-        for(int i = 0; i < planetTotal; i++) {
+        for(int i = 0; i <= planetTotal; i++) {
             planetList.add(new Planet());
         }
         coordinates.put(coordinateX,coordinateY);
