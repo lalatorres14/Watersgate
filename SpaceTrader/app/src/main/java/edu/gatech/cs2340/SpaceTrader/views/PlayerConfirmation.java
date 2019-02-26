@@ -66,11 +66,20 @@ public class PlayerConfirmation extends AppCompatActivity {
     public void beginGamePressed(){
         for (int i = 0; i < 10; i++) {
             systemslist.add(new SolarSystem());
-            Log.i(this.systemslist.toString(),systemslist.get(i).toString());
+            //Log.i(this.systemslist.toString(),systemslist.get(i).toString());
+            largeLog(this.systemslist.toString(),systemslist.get(i).toString());
         }
         Intent intent = new Intent(PlayerConfirmation.this, GameStart.class);
         startActivity(intent);
         //startActivity(new Intent(MainActivity.this, CreatePlayer.class));
         //setContentView(R.layout.activity_create_player);
+    }
+    public static void largeLog(String tag, String content) {
+        if (content.length() > 4000) {
+            Log.i(tag, content.substring(0, 4000));
+            largeLog(tag, content.substring(4000));
+        } else {
+            Log.i(tag, content);
+        }
     }
 }
