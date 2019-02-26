@@ -64,6 +64,7 @@ public class PlayerConfirmation extends AppCompatActivity {
         }
     }
     public void beginGamePressed(){
+        systemslist = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             systemslist.add(new SolarSystem());
             //Log.i(this.systemslist.toString(),systemslist.get(i).toString());
