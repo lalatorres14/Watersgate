@@ -4,16 +4,20 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
+import java.util.ArrayList;
 import edu.gatech.cs2340.SpaceTrader.R;
 import edu.gatech.cs2340.SpaceTrader.viewmodels.EditPlayerViewModel;
+import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
+
 
 public class PlayerConfirmation extends AppCompatActivity {
     private EditPlayerViewModel viewModel;
     private Button button;
+    private ArrayList<SolarSystem> systemslist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +64,10 @@ public class PlayerConfirmation extends AppCompatActivity {
         }
     }
     public void beginGamePressed(){
-        
+        for (int i = 0; i < 10; i++) {
+            systemslist.add(new SolarSystem());
+            Log.i(this.systemslist.toString(),systemslist.get(i).toString());
+        }
         Intent intent = new Intent(PlayerConfirmation.this, GameStart.class);
         startActivity(intent);
         //startActivity(new Intent(MainActivity.this, CreatePlayer.class));
