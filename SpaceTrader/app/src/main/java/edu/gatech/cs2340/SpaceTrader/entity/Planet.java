@@ -1,28 +1,62 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 import java.util.Random;
+import java.util.ArrayList;
 /** This class represents a single Planet*/
 public class Planet {
     private String name;
-    private int techLevel;
-    private int resources;
+    ArrayList<String> techLevel = new ArrayList<String>();
+    ArrayList<String> resources = new ArrayList<String>();
+    private String tLevel;
+    private String res;
     private Market market;
 
     public Planet(){
         Random rand = new Random();
         setName("default");
-        setResources(rand.nextInt(13));
-        setTechLevel(rand.nextInt(8));
+        initResources(resources);
+        initTechLevel(techLevel);
+        setResources(resources.get(rand.nextInt(13)));
+        setTechLevel(techLevel.get(rand.nextInt(8)));
         setMarket(new Market());
+    }
+
+    public ArrayList<String> initTechLevel (ArrayList<String> tech) {
+        tech.add("Pre-Agriculture");
+        tech.add("Agriculture");
+        tech.add("Medieval");
+        tech.add("Renaissance");
+        tech.add("Early Industrial");
+        tech.add("Industrial");
+        tech.add("Post-Industrial");
+        tech.add("Hi-Tech");
+        return tech;
+    }
+
+    public ArrayList<String> initResources (ArrayList<String> res) {
+        res.add("NOSPECIALRESOURCES ");
+        res.add("MINERALRICH");
+        res.add("MINERALPOOR");
+        res.add("DESERT");
+        res.add("LOTSOFWATER");
+        res.add("RICHSOIL");
+        res.add("POORSOIL");
+        res.add("RICHFAUNA");
+        res.add("LIFELESS");
+        res.add("WEIRDMUSHROOMS");
+        res.add("LOTSOFHERBS");
+        res.add("ARTISTIC");
+        res.add("WARLIKE");
+        return res;
     }
 
     public void setName(String name){
         this.name = name;
     }
-    public void setTechLevel(int techLevel){
-        this.techLevel = techLevel;
+    public void setTechLevel(String techLevel){
+        this.tLevel = techLevel;
     }
-    public void setResources(int resources){
-        this.resources = resources;
+    public void setResources(String resources){
+        this.res = resources;
     }
     public void setMarket(Market market){
         this.market = market;
@@ -31,13 +65,14 @@ public class Planet {
     public String getName(){
         return name;
     }
-    public int getTechLevel(){
-        return techLevel;
+    public String getTechLevel(){
+        return tLevel;
     }
-    public int getResources(){
-        return resources;
+    public String getResources(){
+        return res;
     }
     public Market getMarket() {
         return market;
     }
+
 }

@@ -1,15 +1,21 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.HashMap;
 
 /** This class represents a single SolarSystem*/
 public class SolarSystem {
 
     /** The list of planets populating this Solar system*/
     private ArrayList<Planet> planetList;
+    Random rand = new Random();
+    HashMap<Integer, Integer> coordinates = new HashMap<>();
 
     /**The coordinates for the location of this solar system*/
-    private int coordinates;
+    int coordinateX = rand.nextInt(20);
+    int coordinateY = rand.nextInt(20);
+    //private int coordinates;
 
     /** Total number of planets in the SolarSystem*/
     private int planetTotal;
@@ -18,11 +24,11 @@ public class SolarSystem {
     /**
      * Constructor to create a SolarSystem
      * @param planetList the list of planets that will be in this solar system
-     * @param coordinates the location of this solar system in space
      */
-    public SolarSystem(ArrayList<Planet> planetList, int coordinates){
+    public SolarSystem(ArrayList<Planet> planetList){
         this.planetList = planetList;
-        this.coordinates = coordinates;
+        coordinates.put(coordinateX,coordinateY);
+        //this.coordinates = coordinates;
         this.planetTotal = planetList.size();
     }
 
@@ -33,9 +39,9 @@ public class SolarSystem {
         return planetList;
     }
 
-    public int getCoordinates() {
+    /*public int getCoordinates() {
         return coordinates;
-    }
+    }*/
 
     public int getPlanetTotal() {
         return planetTotal;
@@ -45,9 +51,9 @@ public class SolarSystem {
         this.planetList = planetList;
     }
 
-    public void setCoordinates(int coordinates) {
+    /*public void setCoordinates(int coordinates) {
         this.coordinates = coordinates;
-    }
+    }*/
 
     public void setPlanetTotal(int planetTotal) {
         this.planetTotal = planetTotal;
@@ -55,6 +61,6 @@ public class SolarSystem {
 
     @Override
     public String toString() {
-        return String.format("Coordinates: %d, Number of Planets: %d", coordinates, planetTotal);
+        return String.format("Coordinates: (%d,%d), Number of Planets: %d", coordinateX,coordinateY, planetTotal);
     }
 }
