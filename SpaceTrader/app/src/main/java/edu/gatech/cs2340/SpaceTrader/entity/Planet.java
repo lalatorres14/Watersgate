@@ -10,6 +10,35 @@ import edu.gatech.cs2340.SpaceTrader.R;
 public class Planet {
     private String name;
     ArrayList<String> techLevel = new ArrayList<String>();
+    ArrayList<String> planetNames = new ArrayList<String>() {
+        {
+            add("Tatooine");
+            add("Hoth");
+            add("Bespin");
+            add("Alderaan");
+            add("Coruscant");
+            add("Kashyyyk ");
+            add("Kessel");
+            add("Jakku");
+            add("Corellia");
+            add("Illum");
+            add("Crait");
+            add("Dathomir");
+            add("Ahch-To");
+            add("Endor");
+            add("Yavin");
+            add("Mustafar");
+            add("Kamino");
+            add("Endor");
+            add("Utapau");
+            add("Naboo");
+            add("Mygeeto");
+            add("Mortis");
+            add("Polis Massa");
+            add("Korriban");
+            add("Geonosis");
+        }
+    };
     ArrayList<String> resources = new ArrayList<String>();
     private String tLevel;
     private String res;
@@ -17,9 +46,7 @@ public class Planet {
 
     public Planet(){
         Random rand = new Random();
-        Resources res = Resources.getSystem();
-        String[] planetNames = res.getStringArray(R.array.planetNames);
-        setName(planetNames[rand.nextInt(planetNames.length)]);
+        setName(planetNames.get(rand.nextInt(planetNames.size())));
         initResources(resources);
         initTechLevel(techLevel);
         setResources(resources.get(rand.nextInt(13)));
