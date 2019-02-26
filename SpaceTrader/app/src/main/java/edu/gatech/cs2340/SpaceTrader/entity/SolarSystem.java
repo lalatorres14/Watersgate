@@ -1,5 +1,5 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
-
+import java.util.Random;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.HashMap;
@@ -23,13 +23,16 @@ public class SolarSystem {
 
     /**
      * Constructor to create a SolarSystem
-     * @param planetList the list of planets that will be in this solar system
      */
-    public SolarSystem(ArrayList<Planet> planetList){
-        this.planetList = planetList;
+
+    public SolarSystem(){
+        Random rand = new Random();
+        planetTotal = rand.nextInt(5);
+        for(int i = 0; i < planetTotal; i++) {
+            planetList.add(new Planet());
+        }
         coordinates.put(coordinateX,coordinateY);
-        //this.coordinates = coordinates;
-        this.planetTotal = planetList.size();
+
     }
 
 

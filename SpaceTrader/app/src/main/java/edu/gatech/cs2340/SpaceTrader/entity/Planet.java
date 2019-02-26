@@ -1,6 +1,11 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
+import android.content.res.Resources;
 import java.util.Random;
+
 import java.util.ArrayList;
+
+import edu.gatech.cs2340.SpaceTrader.R;
+
 /** This class represents a single Planet*/
 public class Planet {
     private String name;
@@ -12,7 +17,9 @@ public class Planet {
 
     public Planet(){
         Random rand = new Random();
-        setName("default");
+        Resources res = Resources.getSystem();
+        String[] planetNames = res.getStringArray(R.array.planetNames);
+        setName(planetNames[rand.nextInt(planetNames.length)]);
         initResources(resources);
         initTechLevel(techLevel);
         setResources(resources.get(rand.nextInt(13)));
