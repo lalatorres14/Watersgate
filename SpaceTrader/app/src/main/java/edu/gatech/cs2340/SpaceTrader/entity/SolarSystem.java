@@ -1,7 +1,6 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 import java.util.Random;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.HashMap;
 
 /** This class represents a single SolarSystem*/
@@ -64,6 +63,10 @@ public class SolarSystem {
 
     @Override
     public String toString() {
-        return String.format("Coordinates: (%d,%d), Number of Planets: %d", coordinateX,coordinateY, planetTotal);
+        String planetsToString = "";
+        for (Planet planet : planetList) {
+            planetsToString += "\t" + planet.toString();
+        }
+        return String.format("Coordinates: (%d,%d)\nNumber of Planets: %d\nPlanets: " + planetsToString, coordinateX,coordinateY, planetTotal);
     }
 }

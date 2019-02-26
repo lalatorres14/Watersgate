@@ -81,5 +81,9 @@ public class Planet {
     public Market getMarket() {
         return market;
     }
+    @Override
+    public String toString() {
+        return String.format("Name: " + getName() + "\nTech Level: " + getTechLevel() + "\nResources: " + getResources());
+    }
 
 }
