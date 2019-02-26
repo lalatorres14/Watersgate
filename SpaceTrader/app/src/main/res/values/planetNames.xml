@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="planetNames">
+        <item name="Acamar">a</item>
+        <item name="Adahn">b</item>
+        <item name="Aldea">c</item>
+        <item name="Andevian">d</item>
+        <item name="Antedi">e</item>
+        <item name="Balosnee">f</item>
+        <item name="Baratas">g</item>
+        <item name="Brax">h</item>
+        <item name="Bretel">i</item>
+        <item name="Calondia">j</item>
+        <item name="Campor">k</item>
+        <item name="Capelle">l</item>
+        <item name="Carzon">m</item>
+        <item name="Castor">n</item>
+        <item name="Cestus">o</item>
+        <item name="Cheron">p</item>
+        <item name="Courteney">q</item>
+        <item name="Daled">r</item>
+        <item name="Damast">s</item>
+        <item name="Davlos">t</item>
+        <item name="Deneb">u</item>
+        <item name="Deneva">v</item>
+        <item name="Devidia">w</item>
+        <item name="Draylon">x</item>
+        <item name="Drema">y</item>
+        <item name="Endor">z</item>
+        <item name="Esmee">aa</item>
+        <item name="Exo">ab</item>
+    </string-array>
+</resources>

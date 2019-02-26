@@ -1,20 +1,34 @@
 package edu.gatech.cs2340.SpaceTrader.views;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
-
+import java.util.ArrayList;
 import edu.gatech.cs2340.SpaceTrader.R;
 import edu.gatech.cs2340.SpaceTrader.viewmodels.EditPlayerViewModel;
+import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
+
 
 public class PlayerConfirmation extends AppCompatActivity {
     private EditPlayerViewModel viewModel;
-
+    private Button button;
+    private ArrayList<SolarSystem> systemslist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_confirm);
+        button = findViewById(R.id.game_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                beginGamePressed();
+            }
+        });
 
         viewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
 
@@ -47,6 +61,26 @@ public class PlayerConfirmation extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
             getSupportActionBar().setHomeButtonEnabled(false);
+        }
+    }
+    public void beginGamePressed(){
+        systemslist = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            systemslist.add(new SolarSystem());
+            //Log.i(this.systemslist.toString(),systemslist.get(i).toString());
+            largeLog(this.systemslist.toString(),systemslist.get(i).toString());
+        }
+        Intent intent = new Intent(PlayerConfirmation.this, GameStart.class);
+        startActivity(intent);
+        //startActivity(new Intent(MainActivity.this, CreatePlayer.class));
+        //setContentView(R.layout.activity_create_player);
+    }
+    public static void largeLog(String tag, String content) {
+        if (content.length() > 4000) {
+            Log.d(tag, content.substring(0, 4000));
+            largeLog(tag, content.substring(4000));
+        } else {
+            Log.d(tag, content);
         }
     }
 }
