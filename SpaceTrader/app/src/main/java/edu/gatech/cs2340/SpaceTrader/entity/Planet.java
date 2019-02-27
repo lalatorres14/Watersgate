@@ -3,6 +3,7 @@ import android.content.res.Resources;
 import java.util.Random;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import edu.gatech.cs2340.SpaceTrader.R;
 
@@ -10,6 +11,7 @@ import edu.gatech.cs2340.SpaceTrader.R;
 public class Planet {
     private String name;
     ArrayList<String> techLevel = new ArrayList<String>();
+    HashMap<Integer, String> pNames = new HashMap<>();
     ArrayList<String> planetNames = new ArrayList<String>() {
         {
             add("Tatooine");
@@ -46,7 +48,10 @@ public class Planet {
 
     public Planet(){
         Random rand = new Random();
-        setName(planetNames.get(rand.nextInt(planetNames.size())));
+        for(int i = 0; i < planetNames.size(); i++) {
+            pNames.put(i, planetNames.get(i));
+        }
+        setName(pNames.get(rand.nextInt(planetNames.size())));
         initResources(resources);
         initTechLevel(techLevel);
         setResources(resources.get(rand.nextInt(13)));
