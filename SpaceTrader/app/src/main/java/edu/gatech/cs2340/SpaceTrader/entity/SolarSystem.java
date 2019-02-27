@@ -27,11 +27,10 @@ public class SolarSystem {
     public SolarSystem(){
         Random rand = new Random();
         planetTotal = rand.nextInt(5);
-        for(int i = 0; i <= planetTotal; i++) {
+        for(int i = 0; i < planetTotal; i++) {
             planetList.add(new Planet());
         }
         coordinates.put(coordinateX,coordinateY);
-
     }
 
 
