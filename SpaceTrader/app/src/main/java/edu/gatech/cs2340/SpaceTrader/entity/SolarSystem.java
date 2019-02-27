@@ -65,7 +65,7 @@ public class SolarSystem {
     public String toString() {
         String planetsToString = "";
         for (Planet planet : planetList) {
-            planetsToString += "\t" + planet.toString();
+            planetsToString += "\n" + planet.toString();
         }
         return String.format("Coordinates: (%d,%d)\nNumber of Planets: %d\nPlanets: " + planetsToString, coordinateX,coordinateY, planetTotal);
     }
