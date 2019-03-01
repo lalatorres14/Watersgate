@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import java.util.ArrayList;
 import edu.gatech.cs2340.SpaceTrader.R;
+import edu.gatech.cs2340.SpaceTrader.entity.Good;
+import edu.gatech.cs2340.SpaceTrader.entity.GoodType;
+import edu.gatech.cs2340.SpaceTrader.entity.Planet;
 import edu.gatech.cs2340.SpaceTrader.viewmodels.EditPlayerViewModel;
 import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
 
@@ -70,6 +73,11 @@ public class PlayerConfirmation extends AppCompatActivity {
             //Log.i(this.systemslist.toString(),systemslist.get(i).toString());
             largeLog("Solar System",systemslist.get(i).toString());
         }
+
+        //for testing the Good classes
+        Good sampleGood = new Good(GoodType.FURS);
+        Planet p = systemslist.get(0).getPlanetList().get(0);
+        Log.i("Test","GoodType: " + sampleGood.getGoodType() + "Good price: " + sampleGood.calculatePrice(p));
         Intent intent = new Intent(PlayerConfirmation.this, GameStart.class);
         startActivity(intent);
         //startActivity(new Intent(MainActivity.this, CreatePlayer.class));

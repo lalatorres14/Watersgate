@@ -90,7 +90,7 @@ public class Planet {
         initTechLevel(techLevel);
         setResources(resources.get(rand.nextInt(13)));
         setTechLevel(techLevel.get(rand.nextInt(8)));
-        setMarket(new Market());
+        setMarket(new Market(this));
     }
 
     public ArrayList<String> initTechLevel (ArrayList<String> tech) {
@@ -128,6 +128,7 @@ public class Planet {
     public void setTechLevel(String techLevel){
         this.tLevel = techLevel;
     }
+
     public void setResources(String resources){
         this.res = resources;
     }
@@ -141,6 +142,7 @@ public class Planet {
     public String getTechLevel(){
         return tLevel;
     }
+    public int getTechLevelInt() {return techLevel.indexOf(tLevel); }
     public String getResources(){
         return res;
     }
