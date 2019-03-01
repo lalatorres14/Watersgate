@@ -68,7 +68,7 @@ public class PlayerConfirmation extends AppCompatActivity {
         for (int i = 0; i < 10; i++) {
             systemslist.add(new SolarSystem());
             //Log.i(this.systemslist.toString(),systemslist.get(i).toString());
-            largeLog(this.systemslist.toString(),systemslist.get(i).toString());
+            largeLog("Solar System",systemslist.get(i).toString());
         }
         Intent intent = new Intent(PlayerConfirmation.this, GameStart.class);
         startActivity(intent);
