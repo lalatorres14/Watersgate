@@ -52,4 +52,13 @@ public enum GoodType {
 
         return price;
     }
+
+    public int getMtlp(){return mtlp; }
+    public int getMtlu(){return mtlu; }
+    public int getTtp(){return ttp; }
+    public int getBasePrice(){return basePrice; }
+    public int getIpl(){return ipl; }
+    public int getVar(){return var; } //shouldn't need this one probably lol
+    public String getCr() {return cr;}
+    public String getEr() {return er; }
 }
