@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 import edu.gatech.cs2340.SpaceTrader.R;
 
-/** This class represents a single Planet*/
+/** This class represents a single PlanetScreen*/
 public class Planet {
     private String name;
     ArrayList<String> techLevel = new ArrayList<String>();

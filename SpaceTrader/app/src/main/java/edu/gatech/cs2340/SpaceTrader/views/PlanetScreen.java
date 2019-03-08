@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import edu.gatech.cs2340.SpaceTrader.R;
 
-public class Planet extends AppCompatActivity {
+public class PlanetScreen extends AppCompatActivity {
 
     //private Button button;
     @Override
@@ -19,7 +19,7 @@ public class Planet extends AppCompatActivity {
 
     }
 //    public void onStartPressed(){
-//        Intent intent = new Intent(Planet.this, CreatePlayer.class);
+//        Intent intent = new Intent(PlanetScreen.this, CreatePlayer.class);
 //        startActivity(intent);
 //        //startActivity(new Intent(MainActivity.this, CreatePlayer.class));
 //        //setContentView(R.layout.activity_create_player);
