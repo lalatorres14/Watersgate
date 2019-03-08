@@ -41,14 +41,13 @@ public class Cargo {
      * Add many of the same goods to the cargo at once.
      *
      * @param good   The good to be added
-     * @param quantity The quantity of the good to be added
      */
-    public void addGood(GoodType good, int quantity) {
+    public void addGood(GoodType good) {
         boolean isNew = !cargo.keySet().contains(good);
         if(isNew) {
-            cargo.put(good, quantity);
+            cargo.put(good, 0);
         } else {
-            cargo.put(good, cargo.get(good) + quantity);
+            cargo.put(good, cargo.get(good) + 1);
         }
     }
 
@@ -59,7 +58,7 @@ public class Cargo {
      * @param good The item to be removed
      * @return whether or not the item was successfully removed
      */
-    public boolean removeItem(GoodType good) {
+    public boolean removeGood(GoodType good) {
         if(cargo.keySet().contains(good)) {
             if(cargo.get(good) == 1) {
                 cargo.remove(good);
@@ -72,22 +71,9 @@ public class Cargo {
         }
     }
 
-
-    /**
-     * @return Whether or not the cargo has space for more items
-     */
-    public boolean hasSpace() {
-        return TotalQuantity() < maxCapacity;
+    public int getMaxCapacity() {
+        return maxCapacity;
     }
-
-    /**
-     * @param good The good being checked
-     * @return Whether or not the cargo has a good
-     */
-    public boolean hasGood(GoodType good) {
-        return getQuantityOfGood(good) != 0;
-    }
-
 
 
 }

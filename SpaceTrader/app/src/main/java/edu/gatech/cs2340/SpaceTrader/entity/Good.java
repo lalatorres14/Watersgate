@@ -17,4 +17,12 @@ public class Good {
         return type.calculatePrice(p.getTechLevelInt(), p.getResources());
     }
 
+    public boolean canBuy(int techLevel){
+        return techLevel > type.getMtlp();
+    }
+
+    public boolean canSell(int techLevel){
+        return techLevel > type.getMtlu();
+    }
+
 }

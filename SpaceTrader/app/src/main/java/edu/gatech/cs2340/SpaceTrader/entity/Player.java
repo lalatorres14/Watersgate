@@ -38,7 +38,7 @@ public class Player implements Serializable {
     private int skillPoints;
 
     /** placeholder until ship class is created */
-    private String ship;
+    private Ship ship;
 
     /** this player's current credits */
     private int credits;
@@ -74,7 +74,7 @@ public class Player implements Serializable {
         fighterSkill = 0;
         traderSkill = 0;
         engineerSkill = 0;
-        ship = "GNAT";
+        ship = new Ship(ShipType.GNAT);
         credits = 1000;
     }
 
@@ -102,10 +102,9 @@ public class Player implements Serializable {
 
     public int getEngineerSkill() { return  engineerSkill; }
 
-    public String getShip() {return ship; }
+    public Ship getShip() {return ship; }
 
     public int getCredits() {return credits; }
-
 
     public void setName(String nam) { name = nam; }
 
@@ -121,7 +120,7 @@ public class Player implements Serializable {
 
     public void setEngineerSkill(int eS) {engineerSkill = eS;}
 
-    public void setShip(String shipName) {ship = shipName; }
+    public void setShip(ShipType shipName) {ship = new Ship(shipName); }
 
     public void setCredits(int c) {credits = c; }
 

@@ -53,13 +53,6 @@ public enum GoodType {
         return price;
     }
 
-    public boolean canBuy(int techLevel){
-        return techLevel > mtlp;
-    }
-
-    public boolean canSell(int techLevel){
-        return techLevel > mtlu;
-    }
 
     public int getMtlp(){return mtlp; }
     public int getMtlu(){return mtlu; }
