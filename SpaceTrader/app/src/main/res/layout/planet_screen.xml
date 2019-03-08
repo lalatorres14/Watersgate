@@ -5,13 +5,13 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="edu.gatech.cs2340.SpaceTrader.views.GameStart">
+        tools:context="edu.gatech.cs2340.SpaceTrader.views.PlanetScreen">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="227dp"
         android:layout_height="54dp"
-        android:text="Game Start Screen"
+        android:text="Planet Screen"
         android:textColor="@color/design_default_color_primary"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
