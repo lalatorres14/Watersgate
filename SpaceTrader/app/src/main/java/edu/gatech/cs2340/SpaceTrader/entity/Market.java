@@ -6,8 +6,12 @@ public class Market {
     public Market(Planet p){
         this.p = p;
     }
-    public void buyItem(){}
-    public void sellItem(){}
+    public void buyItem(){
+
+    }
+    public void sellItem(){
+
+    }
 
     public int calculateSalePrice(Good good, int quantity){
         GoodType g = good.getGoodType();

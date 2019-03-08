@@ -49,7 +49,9 @@ public enum GoodType {
 
         if(condition.equals(cr)) { price = price / 2; }
         if(condition.equals(er)) { price = price * 2; }
-
+        if(price == 0) {
+            price = 1;
+        }
         return price;
     }
 
@@ -57,8 +59,9 @@ public enum GoodType {
         return techLevel > mtlp;
     }
 
-    public boolean canSell(int techLevel){
-        return techLevel > mtlu;
+    public boolean canSell(int techLevel, Player p){
+        return (techLevel > mtlu) ;
+        //&& p.canSell());
     }
 
     public int getMtlp(){return mtlp; }
