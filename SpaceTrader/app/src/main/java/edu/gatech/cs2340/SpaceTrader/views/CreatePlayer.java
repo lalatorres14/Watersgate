@@ -132,6 +132,10 @@ public class CreatePlayer extends AppCompatActivity {
             idField = findViewById(R.id.remaining);
             idField.setText(String.valueOf(player.getSkillPoints()));
         }
+        else {
+            Toast toast = Toast.makeText(CreatePlayer.this, "No points left", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 
     public void onPilotDownPressed(View view) {
@@ -142,6 +146,10 @@ public class CreatePlayer extends AppCompatActivity {
             idField.setText(String.valueOf(player.getPilotSkill()));
             idField = findViewById(R.id.remaining);
             idField.setText(String.valueOf(player.getSkillPoints()));
+        }
+        else {
+            Toast toast = Toast.makeText(CreatePlayer.this, "Can't go below 0", Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
 
@@ -154,6 +162,10 @@ public class CreatePlayer extends AppCompatActivity {
             idField = findViewById(R.id.remaining);
             idField.setText(String.valueOf(player.getSkillPoints()));
         }
+        else {
+            Toast toast = Toast.makeText(CreatePlayer.this, "No points left", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 
     public void onFighterDownPressed(View view) {
@@ -164,6 +176,10 @@ public class CreatePlayer extends AppCompatActivity {
             idField.setText(String.valueOf(player.getFighterSkill()));
             idField = findViewById(R.id.remaining);
             idField.setText(String.valueOf(player.getSkillPoints()));
+        }
+        else {
+            Toast toast = Toast.makeText(CreatePlayer.this, "Can't go below 0", Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
 
@@ -176,6 +192,10 @@ public class CreatePlayer extends AppCompatActivity {
             idField = findViewById(R.id.remaining);
             idField.setText(String.valueOf(player.getSkillPoints()));
         }
+        else {
+            Toast toast = Toast.makeText(CreatePlayer.this, "No points left", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 
     public void onTraderDownPressed(View view) {
@@ -186,6 +206,10 @@ public class CreatePlayer extends AppCompatActivity {
             idField.setText(String.valueOf(player.getTraderSkill()));
             idField = findViewById(R.id.remaining);
             idField.setText(String.valueOf(player.getSkillPoints()));
+        }
+        else {
+            Toast toast = Toast.makeText(CreatePlayer.this, "Can't go below 0", Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
 
@@ -198,6 +222,10 @@ public class CreatePlayer extends AppCompatActivity {
             idField = findViewById(R.id.remaining);
             idField.setText(String.valueOf(player.getSkillPoints()));
         }
+        else {
+            Toast toast = Toast.makeText(CreatePlayer.this, "No points left", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 
     public void onEngineerDownPressed(View view) {
@@ -208,6 +236,10 @@ public class CreatePlayer extends AppCompatActivity {
             idField.setText(String.valueOf(player.getEngineerSkill()));
             idField = findViewById(R.id.remaining);
             idField.setText(String.valueOf(player.getSkillPoints()));
+        }
+        else {
+            Toast toast = Toast.makeText(CreatePlayer.this, "Can't go below 0", Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
 }
