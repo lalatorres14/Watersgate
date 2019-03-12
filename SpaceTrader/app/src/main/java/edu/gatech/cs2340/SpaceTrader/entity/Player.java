@@ -43,22 +43,6 @@ public class Player implements Serializable {
     /** this player's current credits */
     private int credits;
 
-    /**
-     * Lookup a difficulty based on its code.  Returns the position of that
-     * level in the array.
-     *
-     * @param code the major to find
-     *
-     * @return the index of the array that corresponds to the submitted major
-     */
-    public static int findPosition(String code) {
-        int i = 0;
-        while (i < legalDifficulty.size()) {
-            if (code.equals(legalDifficulty.get(i))) return i;
-            ++i;
-        }
-        return 0;
-    }
 
     /**
      * Constructor required for making the new object
