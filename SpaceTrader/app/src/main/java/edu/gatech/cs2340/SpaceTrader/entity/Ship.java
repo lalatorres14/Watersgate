@@ -44,4 +44,6 @@ public class Ship {
         cargo.removeGood(good, quantity);
     }
 
+    @Override public String toString(){return ship.toString(); }
+
 }

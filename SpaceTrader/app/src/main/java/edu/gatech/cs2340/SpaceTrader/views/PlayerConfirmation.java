@@ -10,8 +10,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import java.util.ArrayList;
 import edu.gatech.cs2340.SpaceTrader.R;
+import edu.gatech.cs2340.SpaceTrader.entity.Game;
 import edu.gatech.cs2340.SpaceTrader.entity.Good;
 import edu.gatech.cs2340.SpaceTrader.entity.GoodType;
+import edu.gatech.cs2340.SpaceTrader.entity.Planet;
 import edu.gatech.cs2340.SpaceTrader.viewmodels.EditPlayerViewModel;
 import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
 
@@ -44,7 +46,7 @@ public class PlayerConfirmation extends AppCompatActivity {
         creditsTextView.setText("Credits: " + viewModel.getPlayer(0).getCredits());
 
         final TextView shipTextView = findViewById(R.id.shipText);
-        shipTextView.setText("Ship name: " + viewModel.getPlayer(0).getShip());
+        shipTextView.setText("Ship name: " + viewModel.getPlayer(0).getShip().toString());
 
         final TextView pilotTextView = findViewById(R.id.pilotSkillText);
         pilotTextView.setText("Pilot Skill: " + viewModel.getPlayer(0).getPilotSkill());
@@ -66,17 +68,21 @@ public class PlayerConfirmation extends AppCompatActivity {
         }
     }
     public void beginGamePressed(){
-        systemslist = new ArrayList<>();
+
+        Game.getInstance().generateUniverse();
+
+//        systemslist = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            systemslist.add(new SolarSystem());
+            //systemslist.add(new SolarSystem());
             //Log.i(this.systemslist.toString(),systemslist.get(i).toString());
-            largeLog("Solar System",systemslist.get(i).toString());
+            largeLog("Solar System",Game.getInstance().getUniverse().get(i).toString());
         }
 
         //for testing the Good classes
         Good sampleGood = new Good(GoodType.FURS);
-        edu.gatech.cs2340.SpaceTrader.entity.Planet p = systemslist.get(0).getPlanetList().get(0);
-        Log.i("Test","GoodType: " + sampleGood.getGoodType() + "Good price: " + sampleGood.calculatePrice(p));
+        Planet p = Game.getInstance().getUniverse().get(0).getPlanetList().get(0);
+        Log.i("Test","GoodType: " + sampleGood.getGoodType() + " Good price: " + sampleGood.calculatePrice(p));
+
         Intent intent = new Intent(PlayerConfirmation.this, PlanetScreen.class);
         startActivity(intent);
         //startActivity(new Intent(MainActivity.this, CreatePlayer.class));

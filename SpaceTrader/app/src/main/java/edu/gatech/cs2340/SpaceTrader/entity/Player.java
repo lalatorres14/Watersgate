@@ -20,7 +20,7 @@ public class Player implements Serializable {
     private String name;
 
     /** this player's difficulty mode*/
-    private String difficulty;
+    private Difficulty diff;
 
     /** this player's piloting skill level */
     private int pilotSkill;
@@ -43,22 +43,6 @@ public class Player implements Serializable {
     /** this player's current credits */
     private int credits;
 
-    /**
-     * Lookup a difficulty based on its code.  Returns the position of that
-     * level in the array.
-     *
-     * @param code the major to find
-     *
-     * @return the index of the array that corresponds to the submitted major
-     */
-    public static int findPosition(String code) {
-        int i = 0;
-        while (i < legalDifficulty.size()) {
-            if (code.equals(legalDifficulty.get(i))) return i;
-            ++i;
-        }
-        return 0;
-    }
 
     /**
      * Constructor required for making the new object
@@ -66,9 +50,9 @@ public class Player implements Serializable {
      * @param nam     name of the player
      * @param diff    difficulty of game
      */
-    public Player(String nam, String diff) {
+    public Player(String nam, Difficulty diff) {
         name = nam;
-        difficulty = diff;
+        this.diff = diff;
         skillPoints = 16;
         pilotSkill = 0;
         fighterSkill = 0;
@@ -88,8 +72,8 @@ public class Player implements Serializable {
         return name;
     }
 
-    public String getDifficulty() {
-        return difficulty;
+    public Difficulty getDifficulty() {
+        return diff;
     }
 
     public int getSkillPoints() { return skillPoints; }
@@ -108,7 +92,7 @@ public class Player implements Serializable {
 
     public void setName(String nam) { name = nam; }
 
-    public void setDifficulty(String diff) {difficulty = diff; }
+    public void setDifficulty(Difficulty diff) {this.diff = diff; }
 
     public void setSkillPoints(int skills) {skillPoints = skills; }
 
@@ -131,6 +115,6 @@ public class Player implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("Pilot: %s, Difficulty: %s, id: %d, Skill Points: %d", name, difficulty, id, skillPoints);
+        return String.format("Pilot: %s, Difficulty: %s, id: %d, Skill Points: %d", name, diff, id, skillPoints);
     }
 }
