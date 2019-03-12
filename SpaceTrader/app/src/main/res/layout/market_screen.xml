@@ -33,12 +33,11 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="Buy Mode"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.128" />
+        app:layout_constraintTop_toBottomOf="@+id/marketHeader" />
 
     <Button
         android:id="@+id/sellMode"
@@ -46,17 +45,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:text="Sell Mode"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/buyMode"
+        app:layout_constraintTop_toTopOf="@+id/buyMode"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.754"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127" />
+        app:layout_constraintHorizontal_bias="0.781"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/completeTransaction"
@@ -64,27 +60,29 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="Complete Transaction"
+        app:layout_constraintTop_toBottomOf="@id/scrollView2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="395dp"
-        android:layout_height="444dp"
+        android:layout_height="474dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_weight="1"
+        android:padding="8dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/completeTransaction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689"
-
-        >
+        app:layout_constraintTop_toBottomOf="@+id/sellMode">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -93,6 +91,7 @@
             android:measureWithLargestChild="true">
 
             <TableRow
+                android:id="@+id/materialRow1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_horizontal">
@@ -136,6 +135,7 @@
             </TableRow>
 
             <TableRow
+                android:id="@+id/materialRow2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_horizontal">
@@ -175,6 +175,7 @@
 
 
         </TableLayout>
+
     </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
