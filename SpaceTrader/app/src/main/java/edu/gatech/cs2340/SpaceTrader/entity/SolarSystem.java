@@ -26,7 +26,7 @@ public class SolarSystem {
 
     public SolarSystem(){
         Random rand = new Random();
-        planetTotal = rand.nextInt(5);
+        planetTotal = rand.nextInt(5) + 1;
         for(int i = 0; i < planetTotal; i++) {
             planetList.add(new Planet());
         }
