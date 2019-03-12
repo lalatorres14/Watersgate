@@ -46,7 +46,7 @@ public class PlayerConfirmation extends AppCompatActivity {
         creditsTextView.setText("Credits: " + viewModel.getPlayer(0).getCredits());
 
         final TextView shipTextView = findViewById(R.id.shipText);
-        shipTextView.setText("Ship name: " + viewModel.getPlayer(0).getShip());
+        shipTextView.setText("Ship name: " + viewModel.getPlayer(0).getShip().toString());
 
         final TextView pilotTextView = findViewById(R.id.pilotSkillText);
         pilotTextView.setText("Pilot Skill: " + viewModel.getPlayer(0).getPilotSkill());

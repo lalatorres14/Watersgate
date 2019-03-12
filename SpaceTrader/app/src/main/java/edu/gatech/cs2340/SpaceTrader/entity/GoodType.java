@@ -53,6 +53,8 @@ public enum GoodType {
             price = 1;
         }
         Game.getInstance().getPlayer().getDifficulty().adjustPrice(price);
+        //Trader skill points adjustment
+        price += ((Game.getInstance().getPlayer().getTraderSkill() / 100) * price);
         return price;
     }
 
