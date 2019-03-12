@@ -79,9 +79,9 @@ public class PlayerConfirmation extends AppCompatActivity {
         }
 
         //for testing the Good classes
-//        Good sampleGood = new Good(GoodType.FURS);
-//        Planet p = systemslist.get(0).getPlanetList().get(0);
-//        Log.i("Test","GoodType: " + sampleGood.getGoodType() + "Good price: " + sampleGood.calculatePrice(p));
+        Good sampleGood = new Good(GoodType.FURS);
+        Planet p = Game.getInstance().getUniverse().get(0).getPlanetList().get(0);
+        Log.i("Test","GoodType: " + sampleGood.getGoodType() + " Good price: " + sampleGood.calculatePrice(p));
 
         Intent intent = new Intent(PlayerConfirmation.this, PlanetScreen.class);
         startActivity(intent);

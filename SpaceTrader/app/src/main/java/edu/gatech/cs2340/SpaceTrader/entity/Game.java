@@ -3,6 +3,9 @@ package edu.gatech.cs2340.SpaceTrader.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A singleton class to keep track of the player and universe
+ */
 public final class Game {
 
     Player player;

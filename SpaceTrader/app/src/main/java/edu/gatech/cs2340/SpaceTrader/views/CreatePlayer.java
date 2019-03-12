@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import edu.gatech.cs2340.SpaceTrader.R;
 
+import edu.gatech.cs2340.SpaceTrader.entity.Difficulty;
+import edu.gatech.cs2340.SpaceTrader.entity.Game;
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
 import edu.gatech.cs2340.SpaceTrader.viewmodels.EditPlayerViewModel;
 
@@ -61,7 +63,7 @@ public class CreatePlayer extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         difficultySpinner.setAdapter(adapter);
 
-        player = new Player("Bob", "Normal");
+        player = new Player("Bob", Difficulty.NORMAL);
         button.setText("Add");
         setTitle("Creating Player");
 
@@ -93,13 +95,31 @@ public class CreatePlayer extends AppCompatActivity {
                 player.getTraderSkill()) == 16 && (player.getSkillPoints() == 0) ) {
 
             player.setName(nameField.getText().toString());
-            player.setDifficulty((String) difficultySpinner.getSelectedItem());
+
+            if(difficultySpinner.getSelectedItemPosition() == 0) {
+                player.setDifficulty(Difficulty.BEGINNER);
+                player.setCredits(Difficulty.BEGINNER.getStarterCredits());
+            } if(difficultySpinner.getSelectedItemPosition() == 1) {
+                player.setDifficulty(Difficulty.EASY);
+                player.setCredits(Difficulty.EASY.getStarterCredits());
+            } if(difficultySpinner.getSelectedItemPosition() == 2) {
+                player.setDifficulty(Difficulty.NORMAL);
+                player.setCredits(Difficulty.NORMAL.getStarterCredits());
+            } if(difficultySpinner.getSelectedItemPosition() == 3) {
+                player.setDifficulty(Difficulty.HARD);
+                player.setCredits(Difficulty.HARD.getStarterCredits());
+            } if(difficultySpinner.getSelectedItemPosition() == 4) {
+                player.setDifficulty(Difficulty.IMPOSSIBLE);
+                player.setCredits(Difficulty.IMPOSSIBLE.getStarterCredits());
+            }
+
 
 
             Log.d("Edit", "Got new player data: " + player);
 
             //create player
             viewModel.addPlayer(player);
+            Game.getInstance().setPlayer(player);
 
             Intent intent = new Intent(this, PlayerConfirmation.class);
             startActivity(intent);

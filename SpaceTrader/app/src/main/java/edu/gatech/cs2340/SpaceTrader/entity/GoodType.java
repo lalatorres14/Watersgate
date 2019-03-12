@@ -52,6 +52,7 @@ public enum GoodType {
         if(price == 0) {
             price = 1;
         }
+        Game.getInstance().getPlayer().getDifficulty().adjustPrice(price);
         return price;
     }
 
