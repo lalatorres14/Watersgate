@@ -340,6 +340,11 @@ public class InMarket extends AppCompatActivity {
             material10Row2.setVisibility(View.VISIBLE);
         }
     }
+
+    /**
+     * Gets user inputs, and does the transactions
+     * @param view the button
+     */
     public void onCompleteTransactionPressed(View view){
         //Gets all the user-inputted values
         numWater = Integer.parseInt(quantity1Input.getText().toString());
@@ -387,7 +392,50 @@ public class InMarket extends AppCompatActivity {
             }
         //sellMode
         } else if (buying == -1) {
-
+            //Checks each quantity individually to give detailed feedback to user
+            if (player.getShip().getGoodQuantity(WATER) < numWater) {
+                Toast toast = Toast.makeText(InMarket.this, "Not enough water", Toast.LENGTH_SHORT);
+                toast.show();
+            } else if (player.getShip().getGoodQuantity(FURS) < numFur) {
+                Toast toast = Toast.makeText(InMarket.this, "Not enough furs", Toast.LENGTH_SHORT);
+                toast.show();
+            } else if (player.getShip().getGoodQuantity(FOOD) < numFood) {
+                Toast toast = Toast.makeText(InMarket.this, "Not enough food", Toast.LENGTH_SHORT);
+                toast.show();
+            } else if (player.getShip().getGoodQuantity(ORE) < numOre) {
+                Toast toast = Toast.makeText(InMarket.this, "Not enough ore", Toast.LENGTH_SHORT);
+                toast.show();
+            } else if (player.getShip().getGoodQuantity(GAMES) < numGames) {
+                Toast toast = Toast.makeText(InMarket.this, "Not enough games", Toast.LENGTH_SHORT);
+                toast.show();
+            } else if (player.getShip().getGoodQuantity(FIREARMS) < numFirearms) {
+                Toast toast = Toast.makeText(InMarket.this, "Not enough firearms", Toast.LENGTH_SHORT);
+                toast.show();
+            } else if (player.getShip().getGoodQuantity(MEDICINE) < numMedicine) {
+                Toast toast = Toast.makeText(InMarket.this, "Not enough medicine", Toast.LENGTH_SHORT);
+                toast.show();
+            } else if (player.getShip().getGoodQuantity(MACHINES) < numMachines) {
+                Toast toast = Toast.makeText(InMarket.this, "Not enough machines", Toast.LENGTH_SHORT);
+                toast.show();
+            } else if (player.getShip().getGoodQuantity(NARCOTICS) < numNarcotics) {
+                Toast toast = Toast.makeText(InMarket.this, "Not enough narcotics", Toast.LENGTH_SHORT);
+                toast.show();
+            } else if (player.getShip().getGoodQuantity(ROBOTS) < numRobots) {
+                Toast toast = Toast.makeText(InMarket.this, "Not enough robots", Toast.LENGTH_SHORT);
+                toast.show();
+            } else {
+                market.sellItem(WATER, numWater, material1UnitPrice); market.sellItem(FURS, numFur, material2UnitPrice);
+                market.sellItem(FOOD, numFood, material3UnitPrice); market.sellItem(ORE, numOre, material4UnitPrice);
+                market.sellItem(GAMES, numGames, material5UnitPrice); market.sellItem(FIREARMS, numFirearms, material6UnitPrice);
+                market.sellItem(MEDICINE, numMedicine, material7UnitPrice); market.sellItem(MACHINES, numMachines, material8UnitPrice);
+                market.sellItem(NARCOTICS, numNarcotics, material9UnitPrice); market.sellItem(ROBOTS, numRobots, material10UnitPrice);
+                playerCredits.setText(String.valueOf(player.getCredits()));
+                holdSpaceView.setText(String.valueOf(player.getShip().getSpace()));
+                Toast toast = Toast.makeText(InMarket.this, "Transaction Complete", Toast.LENGTH_SHORT);
+                toast.show();
+                resetInputs();
+                updateHoldQuantity();
+            }
         //This can't happen, but if it does...
         } else {
             Toast toast = Toast.makeText(InMarket.this, "What? How?", Toast.LENGTH_SHORT);

@@ -13,20 +13,15 @@ public class Market {
     public String buyItem(GoodType good, int quantity, int unitPrice){
         player.getShip().buyGood(good, quantity);
         player.setCredits(player.getCredits() - (quantity * unitPrice));
-        String success = "Successfully purchased!";
-        return success;
+        return "Successfully purchased!";
     }
-    public String sellItem(GoodType good, int quantity){
-        if(!player.getShip().hasGood(good)) {
-            String sellText; // if player can't sell good
-            sellText = "Don't have good in cargo";
-            return sellText;
-        } else {
+    public String sellItem(GoodType good, int quantity, int unitPrice){
+        //There were problems with selling something with 0 quantity, so I tested this and it worked by just not processing them
+        if (quantity != 0) {
             player.getShip().sellGood(good, quantity);
-            player.setCredits(player.getCredits() + item.calculatePrice(p));
-            String success = "Successfully sold!";
-            return success;
+            player.setCredits(player.getCredits() + (quantity * unitPrice));
         }
+        return "Successfully sold!";
     }
     //Not using this because it is more convenient to use this method on Goodtype instead of Good (for Owen's InMarket at 3 am purposes anyway)
     public int calculateSalePriceOld(Good good, int quantity){
