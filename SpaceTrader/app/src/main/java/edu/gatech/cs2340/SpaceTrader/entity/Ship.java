@@ -27,12 +27,21 @@ public class Ship {
         return cargo.getQuantityOfGood(good) != 0;
     }
 
-    public void buyGood(GoodType good) {
-        cargo.addGood(good);
+    /**
+     * @param good The good being checked
+     * @return get quantity of the particular good
+     */
+    public int getGoodQuantity(GoodType good){
+        return cargo.getQuantityOfGood(good);
     }
 
-    public void sellGood(GoodType good) {
-        cargo.removeGood(good);
+
+    public void buyGood(GoodType good, int quantity) {
+        cargo.addGood(good, quantity);
+    }
+
+    public void sellGood(GoodType good, int quantity) {
+        cargo.removeGood(good, quantity);
     }
 
     @Override public String toString(){return ship.toString(); }
