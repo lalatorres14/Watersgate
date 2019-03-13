@@ -2,6 +2,9 @@ package edu.gatech.cs2340.SpaceTrader.views;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -68,6 +71,17 @@ public class InMarket extends AppCompatActivity {
     protected int material8UnitPrice;
     protected int material9UnitPrice;
     protected int material10UnitPrice;
+    //all the different totalPrice holders
+    protected TextView total1View;
+    protected TextView total2View;
+    protected TextView total3View;
+    protected TextView total4View;
+    protected TextView total5View;
+    protected TextView total6View;
+    protected TextView total7View;
+    protected TextView total8View;
+    protected TextView total9View;
+    protected TextView total10View;
     //all the different inputs
     protected EditText quantity1Input;
     protected EditText quantity2Input;
@@ -213,6 +227,17 @@ public class InMarket extends AppCompatActivity {
         quantity8Input = findViewById(R.id.quantity8);
         quantity9Input = findViewById(R.id.quantity9);
         quantity10Input = findViewById(R.id.quantity10);
+        //Assigning the TextViews associated with the EditTexts
+        total1View = findViewById(R.id.item1TotalAmount);
+        total2View = findViewById(R.id.item2TotalAmount);
+        total3View = findViewById(R.id.item3TotalAmount);
+        total4View = findViewById(R.id.item4TotalAmount);
+        total5View = findViewById(R.id.item5TotalAmount);
+        total6View = findViewById(R.id.item6TotalAmount);
+        total7View = findViewById(R.id.item7TotalAmount);
+        total8View = findViewById(R.id.item8TotalAmount);
+        total9View = findViewById(R.id.item9TotalAmount);
+        total10View = findViewById(R.id.item10TotalAmount);
 
         //Hiding all goods until buyMode or sellMode
         setInvisible();
@@ -220,6 +245,178 @@ public class InMarket extends AppCompatActivity {
         resetInputs();
         //setting the amounts in hold properly
         updateHoldQuantity();
+
+        //Setting up the TextListeners
+        quantity1Input.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //n/a
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //n/a
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (TextUtils.isEmpty(quantity1Input.getText())) {
+                    quantity1Input.setText("0");
+                }
+                total1View.setText(String.valueOf(Integer.parseInt(quantity1Input.getText().toString()) * material1UnitPrice));
+            }
+        });
+        quantity2Input.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //n/a
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //n/a
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (TextUtils.isEmpty(quantity2Input.getText())) {
+                    quantity2Input.setText("0");
+                }
+                total2View.setText(String.valueOf(Integer.parseInt(quantity2Input.getText().toString()) * material2UnitPrice));
+            }
+        });
+        quantity3Input.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //n/a
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //n/a
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (TextUtils.isEmpty(quantity3Input.getText())) {
+                    quantity3Input.setText("0");
+                }
+                total3View.setText(String.valueOf(Integer.parseInt(quantity3Input.getText().toString()) * material3UnitPrice));
+            }
+        });
+        quantity4Input.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //n/a
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //n/a
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (TextUtils.isEmpty(quantity4Input.getText())) {
+                    quantity4Input.setText("0");
+                }
+                total4View.setText(String.valueOf(Integer.parseInt(quantity4Input.getText().toString()) * material4UnitPrice));
+            }
+        });
+        quantity5Input.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //n/a
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //n/a
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (TextUtils.isEmpty(quantity5Input.getText())) {
+                    quantity5Input.setText("0");
+                }
+                total5View.setText(String.valueOf(Integer.parseInt(quantity5Input.getText().toString()) * material5UnitPrice));
+            }
+        });
+        quantity6Input.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //n/a
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //n/a
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (TextUtils.isEmpty(quantity6Input.getText())) {
+                    quantity6Input.setText("0");
+                }
+                total6View.setText(String.valueOf(Integer.parseInt(quantity6Input.getText().toString()) * material6UnitPrice));
+            }
+        });
+        quantity7Input.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //n/a
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //n/a
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (TextUtils.isEmpty(quantity7Input.getText())) {
+                    quantity7Input.setText("0");
+                }
+                total7View.setText(String.valueOf(Integer.parseInt(quantity7Input.getText().toString()) * material7UnitPrice));
+            }
+        });
+        quantity8Input.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //n/a
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //n/a
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (TextUtils.isEmpty(quantity8Input.getText())) {
+                    quantity8Input.setText("0");
+                }
+                total8View.setText(String.valueOf(Integer.parseInt(quantity8Input.getText().toString()) * material8UnitPrice));
+            }
+        });
+        quantity9Input.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //n/a
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //n/a
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (TextUtils.isEmpty(quantity9Input.getText())) {
+                    quantity9Input.setText("0");
+                }
+                total9View.setText(String.valueOf(Integer.parseInt(quantity9Input.getText().toString()) * material9UnitPrice));
+            }
+        });
+        quantity10Input.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //n/a
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //n/a
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (TextUtils.isEmpty(quantity10Input.getText())) {
+                    quantity10Input.setText("0");
+                }
+                total10View.setText(String.valueOf(Integer.parseInt(quantity10Input.getText().toString()) * material10UnitPrice));
+            }
+        });
     }
 
     /**
