@@ -12,6 +12,9 @@ public class Ship {
         this.cargo = new Cargo(s.getcargoSize());
     }
 
+    public int getSpace(){
+        return cargo.getMaxCapacity() - cargo.TotalQuantity();
+    }
     /**
      * @return Whether or not the cargo has space for more items
      */
