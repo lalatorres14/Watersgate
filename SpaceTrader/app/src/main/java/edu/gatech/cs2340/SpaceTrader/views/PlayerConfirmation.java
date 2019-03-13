@@ -40,7 +40,7 @@ public class PlayerConfirmation extends AppCompatActivity {
         nameTextView.setText("Player name: " + viewModel.getPlayer(0).getName());
 
         final TextView diffTextView = findViewById(R.id.difficultyText);
-        diffTextView.setText("Difficulty: " + viewModel.getPlayer(0).getDifficulty());
+        diffTextView.setText("Difficulty: " + viewModel.getPlayer(0).getDifficulty().toString());
 
         final TextView creditsTextView = findViewById(R.id.creditsText);
         creditsTextView.setText("Credits: " + viewModel.getPlayer(0).getCredits());
