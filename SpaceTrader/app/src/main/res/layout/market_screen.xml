@@ -36,7 +36,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/marketHeader"
         app:layout_constraintVertical_bias="0.317"
-        android:onClick="onBuyModePressed"/>
+        android:onClick="onBuyModePressed"
+        android:background="@drawable/button_bg"
+        />
 
     <Button
         android:id="@+id/sellMode"
@@ -50,7 +52,8 @@
         app:layout_constraintStart_toEndOf="@id/holdSpace"
         app:layout_constraintTop_toTopOf="@+id/buyMode"
         app:layout_constraintVertical_bias="0.0"
-        android:onClick="onSellModePressed"/>
+        android:onClick="onSellModePressed"
+        android:background="@drawable/button_bg"/>
 
     <TextView
         android:id="@+id/holdSpaceHeader"

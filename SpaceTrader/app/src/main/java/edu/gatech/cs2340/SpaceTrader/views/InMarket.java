@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -477,6 +478,11 @@ public class InMarket extends AppCompatActivity {
             material10Row1.setVisibility(View.VISIBLE);
             material10Row2.setVisibility(View.VISIBLE);
         }
+
+        view.setSelected(true);
+        Log.i("button","buymodepressed!");
+        sellMode.setSelected(false);
+
     }
 
     /**
@@ -536,6 +542,10 @@ public class InMarket extends AppCompatActivity {
             material10Row1.setVisibility(View.VISIBLE);
             material10Row2.setVisibility(View.VISIBLE);
         }
+
+        view.setSelected(true);
+        Log.i("button","sell mode pressed!");
+        buyMode.setSelected(false);
     }
 
     /**
