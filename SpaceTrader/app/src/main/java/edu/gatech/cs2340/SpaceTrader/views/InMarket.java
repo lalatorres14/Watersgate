@@ -79,34 +79,48 @@ public class InMarket extends AppCompatActivity {
     protected EditText quantity8Input;
     protected EditText quantity9Input;
     protected EditText quantity10Input;
+    //input values
+    int numWater, numFur, numFood, numOre, numGames, numFirearms, numMedicine, numMachines, numNarcotics, numRobots;
     //other
     protected TextView unitPriceView;
     protected TextView holdQuantityView;
     protected TextView holdSpaceView;
+    protected TextView playerCredits;
     protected Good good;
     protected Market market;
-    public int buying; //0 = neither, 1 = buy, -1 = sell. It's an int rather than a boolean so that there can be a "null" state, where you are neither in buy or sell mode.
+    private int buying; //0 = neither, 1 = buy, -1 = sell. It's an int rather than a boolean so that there can be a "null" state, where you are neither in buy or sell mode.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.market_screen);
+
         //linking variables to actual buttons
         buyMode = findViewById(R.id.buyMode);
         sellMode = findViewById(R.id.sellMode);
         completeTransaction = findViewById(R.id.completeTransaction);
+
         //storing planet and player info
         current = Game.getInstance().getUniverse().get(0).getPlanetList().get(0);
         market = current.getMarket();
         player = Game.getInstance().getPlayer();
         buying = 0;
+
         //printing planet name
         final TextView nameTextView = findViewById(R.id.marketHeader);
         nameTextView.setText(current.getName() + "'s Bazaar");
         holdSpaceView = findViewById(R.id.holdSpace);
         holdSpaceView.setText(String.valueOf(player.getShip().getSpace()));
 
-        //initializing values in each row
+        //Printing credits
+        playerCredits = findViewById(R.id.currentMoney);
+        playerCredits.setText(String.valueOf(player.getCredits()));
+
+        //initializing number of each good
+        numWater = 0; numFur = 0; numFood = 0; numOre = 0; numGames = 0;
+        numFirearms = 0; numMedicine = 0; numMachines = 0; numNarcotics = 0; numRobots = 0;
+
+        //saving each row for visibility purposes and calculating the unitPrices of each material
         //material*Row1 children (materialName, "Total:", totalAmount, unitAmount)
         //material*Row2 children ("In Hold:", holdTotal, "Quantity:", quantity)
         material1Row1 = findViewById(R.id.material1Row1);
@@ -115,8 +129,6 @@ public class InMarket extends AppCompatActivity {
         material1UnitPrice = good.calculatePrice(current);
         unitPriceView.setText(String.valueOf(material1UnitPrice));
         material1Row2 = findViewById(R.id.material1Row2);
-        holdQuantityView = findViewById(R.id.holdQuantity1);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(good.getGoodType())));
         spaceRow1 = findViewById(R.id.spaceRow1);
 
         material2Row1 = findViewById(R.id.material2Row1);
@@ -125,8 +137,6 @@ public class InMarket extends AppCompatActivity {
         material2UnitPrice = good.calculatePrice(current);
         unitPriceView.setText(String.valueOf(material2UnitPrice));
         material2Row2 = findViewById(R.id.material2Row2);
-        holdQuantityView = findViewById(R.id.holdQuantity2);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(good.getGoodType())));
         spaceRow2 = findViewById(R.id.spaceRow2);
 
         material3Row1 = findViewById(R.id.material3Row1);
@@ -135,8 +145,6 @@ public class InMarket extends AppCompatActivity {
         material3UnitPrice = good.calculatePrice(current);
         unitPriceView.setText(String.valueOf(material3UnitPrice));
         material3Row2 = findViewById(R.id.material3Row2);
-        holdQuantityView = findViewById(R.id.holdQuantity3);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(good.getGoodType())));
         spaceRow3 = findViewById(R.id.spaceRow3);
 
         material4Row1 = findViewById(R.id.material4Row1);
@@ -145,8 +153,6 @@ public class InMarket extends AppCompatActivity {
         material4UnitPrice = good.calculatePrice(current);
         unitPriceView.setText(String.valueOf(material4UnitPrice));
         material4Row2 = findViewById(R.id.material4Row2);
-        holdQuantityView = findViewById(R.id.holdQuantity4);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(good.getGoodType())));
         spaceRow4 = findViewById(R.id.spaceRow4);
 
         material5Row1 = findViewById(R.id.material5Row1);
@@ -155,8 +161,6 @@ public class InMarket extends AppCompatActivity {
         material5UnitPrice = good.calculatePrice(current);
         unitPriceView.setText(String.valueOf(material5UnitPrice));
         material5Row2 = findViewById(R.id.material5Row2);
-        holdQuantityView = findViewById(R.id.holdQuantity5);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(good.getGoodType())));
         spaceRow5 = findViewById(R.id.spaceRow5);
 
         material6Row1 = findViewById(R.id.material6Row1);
@@ -165,8 +169,6 @@ public class InMarket extends AppCompatActivity {
         material6UnitPrice = good.calculatePrice(current);
         unitPriceView.setText(String.valueOf(material6UnitPrice));
         material6Row2 = findViewById(R.id.material6Row2);
-        holdQuantityView = findViewById(R.id.holdQuantity6);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(good.getGoodType())));
         spaceRow6 = findViewById(R.id.spaceRow6);
 
         material7Row1 = findViewById(R.id.material7Row1);
@@ -175,8 +177,6 @@ public class InMarket extends AppCompatActivity {
         material7UnitPrice = good.calculatePrice(current);
         unitPriceView.setText(String.valueOf(material7UnitPrice));
         material7Row2 = findViewById(R.id.material7Row2);
-        holdQuantityView = findViewById(R.id.holdQuantity7);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(good.getGoodType())));
         spaceRow7 = findViewById(R.id.spaceRow7);
 
         material8Row1 = findViewById(R.id.material8Row1);
@@ -185,8 +185,6 @@ public class InMarket extends AppCompatActivity {
         material8UnitPrice = good.calculatePrice(current);
         unitPriceView.setText(String.valueOf(material8UnitPrice));
         material8Row2 = findViewById(R.id.material8Row2);
-        holdQuantityView = findViewById(R.id.holdQuantity8);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(good.getGoodType())));
         spaceRow8 = findViewById(R.id.spaceRow8);
 
         material9Row1 = findViewById(R.id.material9Row1);
@@ -195,8 +193,6 @@ public class InMarket extends AppCompatActivity {
         material9UnitPrice = good.calculatePrice(current);
         unitPriceView.setText(String.valueOf(material9UnitPrice));
         material9Row2 = findViewById(R.id.material9Row2);
-        holdQuantityView = findViewById(R.id.holdQuantity9);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(good.getGoodType())));
         spaceRow9 = findViewById(R.id.spaceRow9);
 
         material10Row1 = findViewById(R.id.material10Row1);
@@ -205,8 +201,6 @@ public class InMarket extends AppCompatActivity {
         material10UnitPrice = good.calculatePrice(current);
         unitPriceView.setText(String.valueOf(material10UnitPrice));
         material10Row2 = findViewById(R.id.material10Row2);
-        holdQuantityView = findViewById(R.id.holdQuantity10);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(good.getGoodType())));
 
         //Assigning each EditText
         quantity1Input = findViewById(R.id.quantity1);
@@ -222,7 +216,10 @@ public class InMarket extends AppCompatActivity {
 
         //Hiding all goods until buyMode or sellMode
         setInvisible();
+        //setting all input values to 0
         resetInputs();
+        //setting the amounts in hold properly
+        updateHoldQuantity();
     }
 
     /**
@@ -344,13 +341,54 @@ public class InMarket extends AppCompatActivity {
         }
     }
     public void onCompleteTransactionPressed(View view){
+        //Gets all the user-inputted values
+        numWater = Integer.parseInt(quantity1Input.getText().toString());
+        numFur = Integer.parseInt(quantity2Input.getText().toString());
+        numFood = Integer.parseInt(quantity3Input.getText().toString());
+        numOre = Integer.parseInt(quantity4Input.getText().toString());
+        numGames = Integer.parseInt(quantity5Input.getText().toString());
+        numFirearms = Integer.parseInt(quantity6Input.getText().toString());
+        numMedicine = Integer.parseInt(quantity7Input.getText().toString());
+        numMachines = Integer.parseInt(quantity8Input.getText().toString());
+        numNarcotics = Integer.parseInt(quantity9Input.getText().toString());
+        numRobots = Integer.parseInt(quantity10Input.getText().toString());
+        //Checks to see if a Mode was selected
         if (buying == 0) {
             Toast toast = Toast.makeText(InMarket.this, "Buying or Selling?", Toast.LENGTH_SHORT);
             toast.show();
+        //buyMode
         } else if (buying == 1) {
-            //market.buyItem(WATER,);
+            //Checks if the player can afford
+            if ((material1UnitPrice * numWater) + (material2UnitPrice * numFur) +
+                    (material3UnitPrice * numFood) + (material4UnitPrice * numOre) +
+                    (material5UnitPrice * numGames) + (material6UnitPrice * numFirearms) +
+                    (material7UnitPrice * numMedicine) + (material8UnitPrice * numMachines) +
+                    (material9UnitPrice * numNarcotics) + (material10UnitPrice * numRobots) > player.getCredits()) {
+                Toast toast = Toast.makeText(InMarket.this, "Cannot Afford", Toast.LENGTH_SHORT);
+                toast.show();
+            //Checks if player has space
+            } else if (numWater + numFur + numFood + numOre + numGames + numFirearms +
+                    numMedicine + numMachines + numNarcotics + numRobots > player.getShip().getSpace()) {
+                Toast toast = Toast.makeText(InMarket.this, "Not enough Space", Toast.LENGTH_SHORT);
+                toast.show();
+            //Buys Items, reprints amount in hold, and reprints player's money
+            } else {
+                market.buyItem(WATER, numWater, material1UnitPrice); market.buyItem(FURS, numFur, material2UnitPrice);
+                market.buyItem(FOOD, numFood, material3UnitPrice); market.buyItem(ORE, numOre, material4UnitPrice);
+                market.buyItem(GAMES, numGames, material5UnitPrice); market.buyItem(FIREARMS, numFirearms, material6UnitPrice);
+                market.buyItem(MEDICINE, numMedicine, material7UnitPrice); market.buyItem(MACHINES, numMachines, material8UnitPrice);
+                market.buyItem(NARCOTICS, numNarcotics, material9UnitPrice); market.buyItem(ROBOTS, numRobots, material10UnitPrice);
+                playerCredits.setText(String.valueOf(player.getCredits()));
+                holdSpaceView.setText(String.valueOf(player.getShip().getSpace()));
+                Toast toast = Toast.makeText(InMarket.this, "Transaction Complete", Toast.LENGTH_SHORT);
+                toast.show();
+                resetInputs();
+                updateHoldQuantity();
+            }
+        //sellMode
         } else if (buying == -1) {
 
+        //This can't happen, but if it does...
         } else {
             Toast toast = Toast.makeText(InMarket.this, "What? How?", Toast.LENGTH_SHORT);
             toast.show();
@@ -407,5 +445,31 @@ public class InMarket extends AppCompatActivity {
         quantity8Input.setText("0");
         quantity9Input.setText("0");
         quantity10Input.setText("0");
+    }
+
+    /**
+     * updates the amount of each item in the player's ship in the display of the market
+     */
+    public void updateHoldQuantity(){
+        holdQuantityView = findViewById(R.id.holdQuantity1);
+        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(WATER)));
+        holdQuantityView = findViewById(R.id.holdQuantity2);
+        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(FURS)));
+        holdQuantityView = findViewById(R.id.holdQuantity3);
+        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(FOOD)));
+        holdQuantityView = findViewById(R.id.holdQuantity4);
+        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(ORE)));
+        holdQuantityView = findViewById(R.id.holdQuantity5);
+        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(GAMES)));
+        holdQuantityView = findViewById(R.id.holdQuantity6);
+        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(FIREARMS)));
+        holdQuantityView = findViewById(R.id.holdQuantity7);
+        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(MEDICINE)));
+        holdQuantityView = findViewById(R.id.holdQuantity8);
+        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(MACHINES)));
+        holdQuantityView = findViewById(R.id.holdQuantity9);
+        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(NARCOTICS)));
+        holdQuantityView = findViewById(R.id.holdQuantity10);
+        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(ROBOTS)));
     }
 }
