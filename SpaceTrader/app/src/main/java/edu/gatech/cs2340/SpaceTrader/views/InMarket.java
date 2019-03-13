@@ -4,15 +4,20 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import edu.gatech.cs2340.SpaceTrader.R;
 import edu.gatech.cs2340.SpaceTrader.entity.Game;
 import edu.gatech.cs2340.SpaceTrader.entity.Good;
 import edu.gatech.cs2340.SpaceTrader.entity.GoodType;
+import edu.gatech.cs2340.SpaceTrader.entity.Market;
 import edu.gatech.cs2340.SpaceTrader.entity.Planet;
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
+
+import static edu.gatech.cs2340.SpaceTrader.entity.GoodType.*;
 
 public class InMarket extends AppCompatActivity {
     //Game-based variables (as opposed to UI-based)
@@ -63,11 +68,24 @@ public class InMarket extends AppCompatActivity {
     protected int material8UnitPrice;
     protected int material9UnitPrice;
     protected int material10UnitPrice;
+    //all the different inputs
+    protected EditText quantity1Input;
+    protected EditText quantity2Input;
+    protected EditText quantity3Input;
+    protected EditText quantity4Input;
+    protected EditText quantity5Input;
+    protected EditText quantity6Input;
+    protected EditText quantity7Input;
+    protected EditText quantity8Input;
+    protected EditText quantity9Input;
+    protected EditText quantity10Input;
     //other
     protected TextView unitPriceView;
     protected TextView holdQuantityView;
     protected TextView holdSpaceView;
     protected Good good;
+    protected Market market;
+    public int buying; //0 = neither, 1 = buy, -1 = sell. It's an int rather than a boolean so that there can be a "null" state, where you are neither in buy or sell mode.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +97,9 @@ public class InMarket extends AppCompatActivity {
         completeTransaction = findViewById(R.id.completeTransaction);
         //storing planet and player info
         current = Game.getInstance().getUniverse().get(0).getPlanetList().get(0);
+        market = current.getMarket();
         player = Game.getInstance().getPlayer();
+        buying = 0;
         //printing planet name
         final TextView nameTextView = findViewById(R.id.marketHeader);
         nameTextView.setText(current.getName() + "'s Bazaar");
@@ -91,7 +111,7 @@ public class InMarket extends AppCompatActivity {
         //material*Row2 children ("In Hold:", holdTotal, "Quantity:", quantity)
         material1Row1 = findViewById(R.id.material1Row1);
         unitPriceView = findViewById(R.id.item1Unit);
-        good = new Good(GoodType.WATER);
+        good = new Good(WATER);
         material1UnitPrice = good.calculatePrice(current);
         unitPriceView.setText(String.valueOf(material1UnitPrice));
         material1Row2 = findViewById(R.id.material1Row2);
@@ -188,7 +208,21 @@ public class InMarket extends AppCompatActivity {
         holdQuantityView = findViewById(R.id.holdQuantity10);
         holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(good.getGoodType())));
 
+        //Assigning each EditText
+        quantity1Input = findViewById(R.id.quantity1);
+        quantity2Input = findViewById(R.id.quantity2);
+        quantity3Input = findViewById(R.id.quantity3);
+        quantity4Input = findViewById(R.id.quantity4);
+        quantity5Input = findViewById(R.id.quantity5);
+        quantity6Input = findViewById(R.id.quantity6);
+        quantity7Input = findViewById(R.id.quantity7);
+        quantity8Input = findViewById(R.id.quantity8);
+        quantity9Input = findViewById(R.id.quantity9);
+        quantity10Input = findViewById(R.id.quantity10);
+
+        //Hiding all goods until buyMode or sellMode
         setInvisible();
+        resetInputs();
     }
 
     /**
@@ -198,7 +232,9 @@ public class InMarket extends AppCompatActivity {
      */
     public void onBuyModePressed(View view){
         setInvisible();
-        if (new Good(GoodType.WATER).canBuy(current.getTechLevelInt())) {
+        resetInputs();
+        buying = 1;
+        if (new Good(WATER).canBuy(current.getTechLevelInt())) {
             material1Row1.setVisibility(View.VISIBLE);
             material1Row2.setVisibility(View.VISIBLE);
             spaceRow1.setVisibility(View.VISIBLE);
@@ -255,7 +291,9 @@ public class InMarket extends AppCompatActivity {
      */
     public void onSellModePressed(View view){
         setInvisible();
-        if (new Good(GoodType.WATER).canSell(current.getTechLevelInt())) {
+        resetInputs();
+        buying = -1;
+        if (new Good(WATER).canSell(current.getTechLevelInt())) {
             material1Row1.setVisibility(View.VISIBLE);
             material1Row2.setVisibility(View.VISIBLE);
             spaceRow1.setVisibility(View.VISIBLE);
@@ -306,7 +344,17 @@ public class InMarket extends AppCompatActivity {
         }
     }
     public void onCompleteTransactionPressed(View view){
+        if (buying == 0) {
+            Toast toast = Toast.makeText(InMarket.this, "Buying or Selling?", Toast.LENGTH_SHORT);
+            toast.show();
+        } else if (buying == 1) {
+            //market.buyItem(WATER,);
+        } else if (buying == -1) {
 
+        } else {
+            Toast toast = Toast.makeText(InMarket.this, "What? How?", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 
     /**
@@ -343,5 +391,21 @@ public class InMarket extends AppCompatActivity {
         spaceRow9.setVisibility(View.GONE);
         material10Row1.setVisibility(View.GONE);
         material10Row2.setVisibility(View.GONE);
+    }
+
+    /**
+     * resets all player inputs to 0, used in same places as setInvisible()
+     */
+    public void resetInputs(){
+        quantity1Input.setText("0");
+        quantity2Input.setText("0");
+        quantity3Input.setText("0");
+        quantity4Input.setText("0");
+        quantity5Input.setText("0");
+        quantity6Input.setText("0");
+        quantity7Input.setText("0");
+        quantity8Input.setText("0");
+        quantity9Input.setText("0");
+        quantity10Input.setText("0");
     }
 }
