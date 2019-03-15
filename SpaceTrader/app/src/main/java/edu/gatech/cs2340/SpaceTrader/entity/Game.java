@@ -10,6 +10,8 @@ public final class Game {
 
     Player player;
     List<SolarSystem> universe;
+    Planet currentPlanet;
+    SolarSystem currentSS;
 
     /*
     a list of things we might also want to keep track of here:
@@ -31,6 +33,14 @@ public final class Game {
     public void setUniverse(List<SolarSystem> u){
         universe = u;
     }
+
+    public void setCurrentPlanet(Planet p) {currentPlanet = p; }
+
+    public void setCurrentSS(SolarSystem s) {currentSS = s; }
+
+    public Planet getCurrentPlanet() {return currentPlanet; }
+
+    public SolarSystem getCurrentSS() {return currentSS; }
 
     public Player getPlayer(){return player; }
     public List<SolarSystem> getUniverse(){ return universe; }

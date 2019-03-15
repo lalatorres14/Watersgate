@@ -71,17 +71,14 @@ public class PlayerConfirmation extends AppCompatActivity {
 
         Game.getInstance().generateUniverse();
 
-//        systemslist = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            //systemslist.add(new SolarSystem());
-            //Log.i(this.systemslist.toString(),systemslist.get(i).toString());
             largeLog("Solar System",Game.getInstance().getUniverse().get(i).toString());
         }
 
-        //for testing the Good classes
-        Good sampleGood = new Good(GoodType.FURS);
-        Planet p = Game.getInstance().getUniverse().get(0).getPlanetList().get(0);
-        Log.i("Test","GoodType: " + sampleGood.getGoodType() + " Good price: " + sampleGood.calculatePrice(p));
+
+        //do actual traveling here, i'm just setting it to the first ss/planet for now
+        Game.getInstance().setCurrentSS(Game.getInstance().getUniverse().get(0));
+        Game.getInstance().setCurrentPlanet(Game.getInstance().getUniverse().get(0).getPlanetList().get(0));
 
         Intent intent = new Intent(PlayerConfirmation.this, UniverseMap.class);
         startActivity(intent);
