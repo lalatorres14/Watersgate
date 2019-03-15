@@ -83,10 +83,8 @@ public class PlayerConfirmation extends AppCompatActivity {
         Planet p = Game.getInstance().getUniverse().get(0).getPlanetList().get(0);
         Log.i("Test","GoodType: " + sampleGood.getGoodType() + " Good price: " + sampleGood.calculatePrice(p));
 
-        Intent intent = new Intent(PlayerConfirmation.this, PlanetScreen.class);
+        Intent intent = new Intent(PlayerConfirmation.this, UniverseMap.class);
         startActivity(intent);
-        //startActivity(new Intent(MainActivity.this, CreatePlayer.class));
-        //setContentView(R.layout.activity_create_player);
     }
     public static void largeLog(String tag, String content) {
         if (content.length() > 4000) {
