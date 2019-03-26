@@ -8,10 +8,10 @@ import java.util.List;
  */
 public final class Game {
 
-    Player player;
-    List<SolarSystem> universe;
-    Planet currentPlanet;
-    SolarSystem currentSS;
+    private Player player;
+    private List<SolarSystem> universe;
+    private Planet currentPlanet;
+    private SolarSystem currentSS;
 
     /*
     a list of things we might also want to keep track of here:

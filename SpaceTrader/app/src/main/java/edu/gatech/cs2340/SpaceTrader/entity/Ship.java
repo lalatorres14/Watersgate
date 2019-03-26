@@ -5,8 +5,8 @@ package edu.gatech.cs2340.SpaceTrader.entity;
  *
  */
 public class Ship {
-    ShipType ship;
-    Cargo cargo;
+    private ShipType ship;
+    private Cargo cargo;
     public Ship(ShipType s) {
         this.ship = s;
         this.cargo = new Cargo(s.getcargoSize());
