@@ -19,6 +19,7 @@ public class SolarSystem {
     /** Total number of planets in the SolarSystem*/
     private int planetTotal;
 
+    private String name;
 
     /**
      * Constructor to create a SolarSystem
@@ -31,6 +32,8 @@ public class SolarSystem {
             planetList.add(new Planet());
         }
         coordinates.put(coordinateX,coordinateY);
+
+        name = String.format("#%s%s",coordinateX,coordinateY);
     }
 
 
@@ -68,4 +71,6 @@ public class SolarSystem {
         }
         return String.format("Coordinates: (%d,%d)\nNumber of Planets: %d\nPlanets: " + planetsToString, coordinateX,coordinateY, planetTotal);
     }
+
+    public String getName(){return name;}
 }

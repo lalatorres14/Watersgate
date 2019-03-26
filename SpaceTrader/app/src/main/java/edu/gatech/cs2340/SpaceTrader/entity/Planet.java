@@ -4,6 +4,7 @@ import java.util.Random;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 import edu.gatech.cs2340.SpaceTrader.R;
 
@@ -12,6 +13,10 @@ public class Planet {
     private String name;
     ArrayList<String> techLevel = new ArrayList<String>();
     HashMap<Integer, String> pNames = new HashMap<>();
+    Random rand = new Random();
+    HashMap<Integer, Integer> coordinates = new HashMap<>();
+    int coordinateX = rand.nextInt(20);
+    int coordinateY = rand.nextInt(20);
     ArrayList<String> planetNames = new ArrayList<String>() {
         {
             add("Ahch-To");
@@ -76,8 +81,8 @@ public class Planet {
         }
     };
     ArrayList<String> resources = new ArrayList<String>();
-    private String tLevel;
-    private String res;
+    private TechLevel tLevel;
+    private Resource res;
     private Market market;
 
     public Planet(){
@@ -86,52 +91,20 @@ public class Planet {
             pNames.put(i, planetNames.get(i));
         }
         setName(pNames.get(rand.nextInt(planetNames.size())));
-        initResources(resources);
-        initTechLevel(techLevel);
-        setResources(resources.get(rand.nextInt(13)));
-        setTechLevel(techLevel.get(rand.nextInt(8)));
+        res = Resource.getRandomResource();
+        tLevel = TechLevel.getRandomTechLevel();
         setMarket(new Market(this));
-    }
-
-    public ArrayList<String> initTechLevel (ArrayList<String> tech) {
-        tech.add("Pre-Agriculture");
-        tech.add("Agriculture");
-        tech.add("Medieval");
-        tech.add("Renaissance");
-        tech.add("Early Industrial");
-        tech.add("Industrial");
-        tech.add("Post-Industrial");
-        tech.add("Hi-Tech");
-        return tech;
-    }
-
-    public ArrayList<String> initResources (ArrayList<String> res) {
-        res.add("NOSPECIALRESOURCES ");
-        res.add("MINERALRICH");
-        res.add("MINERALPOOR");
-        res.add("DESERT");
-        res.add("LOTSOFWATER");
-        res.add("RICHSOIL");
-        res.add("POORSOIL");
-        res.add("RICHFAUNA");
-        res.add("LIFELESS");
-        res.add("WEIRDMUSHROOMS");
-        res.add("LOTSOFHERBS");
-        res.add("ARTISTIC");
-        res.add("WARLIKE");
-        return res;
+        coordinates.put(coordinateX,coordinateY);
     }
 
     public void setName(String name){
         this.name = name;
     }
-    public void setTechLevel(String techLevel){
+    public void setTechLevel(TechLevel techLevel){
         this.tLevel = techLevel;
     }
 
-    public void setResources(String resources){
-        this.res = resources;
-    }
+    public void setResources(Resource resources){ this.res = resources; }
     public void setMarket(Market market){
         this.market = market;
     }
@@ -139,11 +112,11 @@ public class Planet {
     public String getName(){
         return name;
     }
-    public String getTechLevel(){
+    public TechLevel getTechLevel(){
         return tLevel;
     }
-    public int getTechLevelInt() {return techLevel.indexOf(tLevel); }
-    public String getResources(){
+    public int getTechLevelInt() {return tLevel.getTechLevelInt(); }
+    public Resource getResources(){
         return res;
     }
     public Market getMarket() {

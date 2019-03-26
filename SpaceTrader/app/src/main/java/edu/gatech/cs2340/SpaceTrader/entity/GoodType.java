@@ -3,20 +3,21 @@ package edu.gatech.cs2340.SpaceTrader.entity;
 import java.util.Random;
 
 public enum GoodType {
-    WATER (0,0,2,30,3,4,"LOTSOFWATER","DESERT"),
-    FURS (0,0,0,250,10,10,"RICHFAUNA","LIFELESS"),
-    FOOD (1,0,1,100,5,5,"RICHSOIL","POORSOIL"),
-    ORE (2,2,3,350,20,10,"MINERALRICH","MINERALPOOR"),
-    GAMES (3,1,6,250,-10,5,"ARTISTIC",""),
-    FIREARMS (3,1,5,1250,-75,100,"WARLIKE",""),
-    MEDICINE (4,1,6,650,-20,10,"LOTSOFHERBS",""),
+    WATER (0,0,2,30,3,4,"Lots of Water","DESERT"),
+    FURS (0,0,0,250,10,10,"Rich Fauna","LIFELESS"),
+    FOOD (1,0,1,100,5,5,"Rich Soil","POORSOIL"),
+    ORE (2,2,3,350,20,10,"Mineral Rich","MINERALPOOR"),
+    GAMES (3,1,6,250,-10,5,"Artistic",""),
+    FIREARMS (3,1,5,1250,-75,100,"Warlike",""),
+    MEDICINE (4,1,6,650,-20,10,"Lots of Herbs",""),
     MACHINES (4,3,5,900,-30,5,"",""),
-    NARCOTICS (5,0,5,3500,-125,150,"WEIRDMUSHROOMS",""),
+    NARCOTICS (5,0,5,3500,-125,150,"Weird Mushrooms",""),
     ROBOTS (6,4,7,5000,-150,100,"","")
     ;
 
     private int mtlp, mtlu, ttp, basePrice, ipl, var;
-    private String cr, er;
+    private String cr;
+    private String er;
     private Random rand = new Random();
     /**
      *
@@ -42,13 +43,13 @@ public enum GoodType {
         this.er = er;
     }
 
-    public int calculatePrice(int techLevel, String condition){
+    public int calculatePrice(int techLevel, Resource condition){
         //calculate random amount that is +/- var
         int variance = rand.nextInt(var * 2) - var;
         int price = basePrice + (ipl * (techLevel - mtlp)) + variance;
 
-        if(condition.equals(cr)) { price = price / 2; }
-        if(condition.equals(er)) { price = price * 2; }
+        if(condition.toString().equals(cr)) { price = price / 2; }
+        if(condition.toString().equals(er)) { price = price * 2; }
         if(price == 0) {
             price = 1;
         }

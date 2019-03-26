@@ -40,7 +40,7 @@ public class PlayerConfirmation extends AppCompatActivity {
         nameTextView.setText("Player name: " + viewModel.getPlayer(0).getName());
 
         final TextView diffTextView = findViewById(R.id.difficultyText);
-        diffTextView.setText("Difficulty: " + viewModel.getPlayer(0).getDifficulty());
+        diffTextView.setText("Difficulty: " + viewModel.getPlayer(0).getDifficulty().toString());
 
         final TextView creditsTextView = findViewById(R.id.creditsText);
         creditsTextView.setText("Credits: " + viewModel.getPlayer(0).getCredits());
@@ -71,22 +71,17 @@ public class PlayerConfirmation extends AppCompatActivity {
 
         Game.getInstance().generateUniverse();
 
-//        systemslist = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            //systemslist.add(new SolarSystem());
-            //Log.i(this.systemslist.toString(),systemslist.get(i).toString());
             largeLog("Solar System",Game.getInstance().getUniverse().get(i).toString());
         }
 
-        //for testing the Good classes
-        Good sampleGood = new Good(GoodType.FURS);
-        Planet p = Game.getInstance().getUniverse().get(0).getPlanetList().get(0);
-        Log.i("Test","GoodType: " + sampleGood.getGoodType() + " Good price: " + sampleGood.calculatePrice(p));
 
-        Intent intent = new Intent(PlayerConfirmation.this, PlanetScreen.class);
+        //do actual traveling here, i'm just setting it to the first ss/planet for now
+        Game.getInstance().setCurrentSS(Game.getInstance().getUniverse().get(0));
+        Game.getInstance().setCurrentPlanet(Game.getInstance().getUniverse().get(0).getPlanetList().get(0));
+
+        Intent intent = new Intent(PlayerConfirmation.this, UniverseMap.class);
         startActivity(intent);
-        //startActivity(new Intent(MainActivity.this, CreatePlayer.class));
-        //setContentView(R.layout.activity_create_player);
     }
     public static void largeLog(String tag, String content) {
         if (content.length() > 4000) {

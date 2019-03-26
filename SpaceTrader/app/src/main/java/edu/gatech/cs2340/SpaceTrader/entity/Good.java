@@ -18,11 +18,11 @@ public class Good {
     }
 
     public boolean canBuy(int techLevel){
-        return techLevel > type.getMtlp();
+        return techLevel >= type.getMtlp();
     }
 
     public boolean canSell(int techLevel){
-        return techLevel > type.getMtlu();
+        return techLevel >= type.getMtlu();
     }
 
 }
