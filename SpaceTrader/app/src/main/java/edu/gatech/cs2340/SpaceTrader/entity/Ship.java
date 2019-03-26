@@ -48,5 +48,14 @@ public class Ship {
     }
 
     @Override public String toString(){return ship.toString(); }
+    public int getFuel(){
+        return ship.getTankSize();
+    }
+    public void setFuel(int x) {
+        ship.setTankSize(x);
+    }
+    public int getMaxFuel(){
+        return ship.getMaxTankSize();
+    }
 
 }
