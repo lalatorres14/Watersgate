@@ -11,7 +11,8 @@ public enum ShipType {
     HORNET (20,8000,16,16),
     GRASSHOPPER (30,9000,15,15),
     TERMITE (60,15000,13,13),
-    WASP (35,17000,14,14)
+    WASP (35,17000,14,14),
+    NONE (0,0,0,0)
     ;
 
 
