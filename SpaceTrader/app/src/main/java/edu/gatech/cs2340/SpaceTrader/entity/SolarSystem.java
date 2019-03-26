@@ -59,6 +59,8 @@ public class SolarSystem {
         this.coordinates = coordinates;
     }*/
 
+    public HashMap<Integer, Integer> getCoordinates() {return coordinates;}
+
     public void setPlanetTotal(int planetTotal) {
         this.planetTotal = planetTotal;
     }

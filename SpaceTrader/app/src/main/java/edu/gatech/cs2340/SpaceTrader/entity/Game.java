@@ -1,6 +1,7 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -12,6 +13,8 @@ public final class Game {
     List<SolarSystem> universe;
     Planet currentPlanet;
     SolarSystem currentSS;
+    static HashMap<Integer, Integer> solarCoordinates;
+
 
     /*
     a list of things we might also want to keep track of here:
@@ -38,6 +41,8 @@ public final class Game {
 
     public void setCurrentSS(SolarSystem s) {currentSS = s; }
 
+    public static HashMap<Integer, Integer> getSolarCoordinates(){return solarCoordinates;}
+
     public Planet getCurrentPlanet() {return currentPlanet; }
 
     public SolarSystem getCurrentSS() {return currentSS; }
@@ -50,5 +55,6 @@ public final class Game {
         for (int i = 0; i < 10; i++) {
             universe.add(new SolarSystem());
         }
+        solarCoordinates = universe.get(0).getCoordinates();
     }
 }
