@@ -5,8 +5,8 @@ package edu.gatech.cs2340.SpaceTrader.entity;
  *
  */
 public class Ship {
-    ShipType ship;
-    Cargo cargo;
+    private ShipType ship;
+    private Cargo cargo;
     public Ship(ShipType s) {
         this.ship = s;
         this.cargo = new Cargo(s.getcargoSize());
@@ -48,5 +48,14 @@ public class Ship {
     }
 
     @Override public String toString(){return ship.toString(); }
+    public int getFuel(){
+        return ship.getTankSize();
+    }
+    public void setFuel(int x) {
+        ship.setTankSize(x);
+    }
+    public int getMaxFuel(){
+        return ship.getMaxTankSize();
+    }
 
 }

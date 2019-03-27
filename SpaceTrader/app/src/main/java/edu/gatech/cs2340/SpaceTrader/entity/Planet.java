@@ -4,6 +4,7 @@ import java.util.Random;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 import edu.gatech.cs2340.SpaceTrader.R;
 
@@ -12,6 +13,10 @@ public class Planet {
     private String name;
     ArrayList<String> techLevel = new ArrayList<String>();
     HashMap<Integer, String> pNames = new HashMap<>();
+    Random rand = new Random();
+    HashMap<Integer, Integer> coordinates = new HashMap<>();
+    int coordinateX = rand.nextInt(20);
+    int coordinateY = rand.nextInt(20);
     ArrayList<String> planetNames = new ArrayList<String>() {
         {
             add("Ahch-To");
@@ -89,6 +94,7 @@ public class Planet {
         res = Resource.getRandomResource();
         tLevel = TechLevel.getRandomTechLevel();
         setMarket(new Market(this));
+        coordinates.put(coordinateX,coordinateY);
     }
 
     public void setName(String name){

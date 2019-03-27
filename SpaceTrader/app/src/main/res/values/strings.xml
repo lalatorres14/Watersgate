@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">SpaceTrader</string>
+    <string name="action_settings">Settings</string>
+    <string name="name_header">Name:</string>
+    <string name="difficulty_header">Difficulty:</string>
+    <string name="player_name_default">Name</string>
+    <string name="skill1">Pilot: </string>
+    <string name="skill2">Fighter: </string>
+    <string name="skill3">Trader: </string>
+    <string name="skill4">Engineer: </string>
+    <string name="remaining">Points Remaining: </string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="player_name_blank">Player Name: blank</string>
+    <string name="creditsText_blank">Credits: 1001</string>
+    <string name="shipText_blank">Spaceship: None</string>
+    <string name="pilotSkillText_blank">Pilot Skill: 17</string>
+    <string name="fighterSkillText_blank">Fighter Skill: 17</string>
+    <string name="traderSkillText_blank">Trader Skill: 17</string>
+    <string name="engineerSkillText_blank">Engineer Skill: 17</string>
+    <string name="difficultyText_blank">Difficulty: Unset</string>
+</resources>
