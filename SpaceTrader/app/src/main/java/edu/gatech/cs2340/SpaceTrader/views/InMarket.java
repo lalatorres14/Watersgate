@@ -116,7 +116,7 @@ public class InMarket extends AppCompatActivity {
         completeTransaction = findViewById(R.id.completeTransaction);
 
         //storing planet and player info
-        current = Game.getInstance().getUniverse().get(0).getPlanetList().get(0);
+        current = Game.getInstance().getCurrentPlanet();
         market = current.getMarket();
         player = Game.getInstance().getPlayer();
         buying = 0;

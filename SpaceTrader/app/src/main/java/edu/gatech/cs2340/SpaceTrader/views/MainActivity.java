@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
     public void onStartPressed(){
         Intent intent = new Intent(MainActivity.this, CreatePlayer.class);
         startActivity(intent);
-        //startActivity(new Intent(MainActivity.this, CreatePlayer.class));
-        //setContentView(R.layout.activity_create_player);
     }
 
 }

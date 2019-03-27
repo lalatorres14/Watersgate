@@ -6,47 +6,65 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import edu.gatech.cs2340.SpaceTrader.R;
 import edu.gatech.cs2340.SpaceTrader.entity.Game;
 import edu.gatech.cs2340.SpaceTrader.entity.Planet;
+import edu.gatech.cs2340.SpaceTrader.entity.Player;
 
 public class PlanetScreen extends AppCompatActivity {
     //public static final int ADD_COURSE_REQUEST_ID = 1;
-    private Button button;
+    private Button toMarketButton;
+    private Button refuelButton;
+    Player player;
+    Planet current;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.planet_screen);
-        button = findViewById(R.id.toMarket);
-        button.setOnClickListener(new View.OnClickListener() {
+        toMarketButton = findViewById(R.id.toMarket);
+        toMarketButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onStartPressed();
+                toMarket();
             }
         });
-        Planet p = Game.getInstance().getUniverse().get(0).getPlanetList().get(0);
+        refuelButton = findViewById(R.id.refuel);
+        refuelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                refuel();
+            }
+        });
+        current = Game.getInstance().getCurrentPlanet();
+        player = Game.getInstance().getPlayer();
         final TextView nameTextView = findViewById(R.id.planetText);
-        //so this is bad!! once travel is a thing, doing so needs to somehow set this text here and
-        // set a general 'current planet' variable
-        nameTextView.setText(p.getName());
+        nameTextView.setText(current.getName());
 
         final TextView solarSystemTextView = findViewById(R.id.solarSystemText);
-        solarSystemTextView.setText(String.format("Solar System %s",Game.getInstance().getUniverse().get(0).getName()));
+        solarSystemTextView.setText(String.format("Solar System %s",Game.getInstance().getCurrentSS().getName()));
 
         final TextView rssTextView = findViewById(R.id.rssText);
-        rssTextView.setText(String.format("Resources: %s",p.getResources().toString()));
+        rssTextView.setText(String.format("Resources: %s",current.getResources().toString()));
 
         final TextView techLevelTextView = findViewById(R.id.techLevelText);
-        techLevelTextView.setText(String.format("Tech Level: %s",p.getTechLevel()));
+        techLevelTextView.setText(String.format("Tech Level: %s",current.getTechLevel()));
 
     }
-    public void onStartPressed(){
+    public void toMarket() {
         Intent intent = new Intent(PlanetScreen.this, InMarket.class);
         startActivity(intent);
-        //startActivity(new Intent(MainActivity.this, CreatePlayer.class));
-        //setContentView(R.layout.activity_create_player);
     }
-
+    public void refuel() {
+        if (player.getDifficulty().adjustPrice(player.getShip().getMaxFuel() - player.getShip().getFuel()) > player.getCredits()) {
+            Toast toast = Toast.makeText(PlanetScreen.this, "Cannot afford to refuel", Toast.LENGTH_SHORT);
+            toast.show();
+        } else {
+            player.refuel();
+            Toast toast = Toast.makeText(PlanetScreen.this, "Spent " + Integer.toString(player.getDifficulty().adjustPrice(player.getShip().getMaxFuel() - player.getShip().getFuel())) + "$", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
 }

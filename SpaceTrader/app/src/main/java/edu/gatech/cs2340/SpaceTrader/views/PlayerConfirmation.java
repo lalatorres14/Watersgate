@@ -75,10 +75,8 @@ public class PlayerConfirmation extends AppCompatActivity {
             largeLog("Solar System",Game.getInstance().getUniverse().get(i).toString());
         }
 
-
-        //do actual traveling here, i'm just setting it to the first ss/planet for now
         Game.getInstance().setCurrentSS(Game.getInstance().getUniverse().get(0));
-        Game.getInstance().setCurrentPlanet(Game.getInstance().getUniverse().get(0).getPlanetList().get(0));
+        Game.getInstance().setCurrentPlanet(Game.getInstance().getCurrentSS().getPlanetList().get(0));
 
         Intent intent = new Intent(PlayerConfirmation.this, UniverseMap.class);
         startActivity(intent);

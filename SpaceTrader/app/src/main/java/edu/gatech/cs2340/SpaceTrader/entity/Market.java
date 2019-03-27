@@ -23,14 +23,4 @@ public class Market {
         }
         return "Successfully sold!";
     }
-    //Not using this because it is more convenient to use this method on Goodtype instead of Good (for Owen's InMarket at 3 am purposes anyway)
-    public int calculateSalePriceOld(Good good, int quantity){
-        GoodType g = good.getGoodType();
-        return g.calculatePrice(p.getTechLevelInt(), p.getResources()) * quantity;
-    }
-
-    public int calculateSalePrice(GoodType good, int quantity){
-        return good.calculatePrice(p.getTechLevelInt(), p.getResources()) * quantity;
-    }
-
 }

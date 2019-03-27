@@ -87,7 +87,10 @@ public class Player implements Serializable {
     }
     public boolean canSystemTravel(SolarSystem destination) { return (systemDistance(destination) <= ship.getFuel()); }
 
-    public void refuel(){ ship.setFuel(ship.getMaxFuel()); }
+    public void refuel() {
+        setCredits(getCredits() - getDifficulty().adjustPrice(getShip().getMaxFuel() - getShip().getFuel()));
+        getShip().setFuel(getShip().getMaxFuel());
+    }
 
     //Getters and setters are required for accessing the fields from the database
 
