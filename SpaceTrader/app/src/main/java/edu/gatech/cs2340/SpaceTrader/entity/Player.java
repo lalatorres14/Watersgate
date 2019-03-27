@@ -63,43 +63,29 @@ public class Player implements Serializable {
     }
 
     //Travel methods, helper methods, and refuel method
-    public void planetTravel(Planet current, Planet destination) {
-        if (canPlanetTravel(current, destination)) {
+    public void planetTravel(Planet destination) {
+        if (canPlanetTravel(destination)) {
             Game.getInstance().setCurrentPlanet(destination);
-            ship.setFuel(ship.getFuel() - planetDistance(current, destination));
+            ship.setFuel(ship.getFuel() - planetDistance(destination));
         }
     }
-    public int planetDistance(Planet current, Planet destination) {
-        return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX, 2)
-                + Math.pow(current.coordinateY - destination.coordinateY, 2))));
+    public int planetDistance(Planet destination) {
+        Planet current = Game.getInstance().getCurrentPlanet();
+        return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX, 2) + Math.pow(current.coordinateY - destination.coordinateY, 2))));
     }
-    /**
-     * @param current the current Planet
-     * @param destination the destination Planet
-     * @return if the destination is within travel distance from the current planet
-     */
-    public boolean canPlanetTravel(Planet current, Planet destination) {
-        return (planetDistance(current, destination) <= ship.getFuel());
-    }
+    public boolean canPlanetTravel(Planet destination) { return (planetDistance(destination) <= ship.getFuel()); }
 
-    public void systemTravel(SolarSystem current, SolarSystem destination) {
-        if (canSystemTravel(current, destination)) {
+    public void systemTravel(SolarSystem destination) {
+        if (canSystemTravel(destination)) {
             Game.getInstance().setCurrentSS(destination);
-            ship.setFuel(ship.getFuel() - systemDistance(current, destination));
+            ship.setFuel(ship.getFuel() - systemDistance(destination));
         }
     }
-    public int systemDistance(SolarSystem current, SolarSystem destination) {
-        return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX, 2)
-                + Math.pow(current.coordinateY - destination.coordinateY, 2))));
+    public int systemDistance(SolarSystem destination) {
+        SolarSystem current = Game.getInstance().getCurrentSS();
+        return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX, 2) + Math.pow(current.coordinateY - destination.coordinateY, 2))));
     }
-    /**
-     * @param current the current SolarSystem
-     * @param destination the destination SolarSystem
-     * @return if the destination is within travel distance from the current SolarSystem
-     */
-    public boolean canSystemTravel(SolarSystem current, SolarSystem destination) {
-        return (systemDistance(current, destination) <= ship.getFuel());
-    }
+    public boolean canSystemTravel(SolarSystem destination) { return (systemDistance(destination) <= ship.getFuel()); }
 
     public void refuel(){ ship.setFuel(ship.getMaxFuel()); }
 
