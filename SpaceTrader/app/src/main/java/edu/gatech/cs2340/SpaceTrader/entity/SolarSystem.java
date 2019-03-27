@@ -43,21 +43,13 @@ public class SolarSystem {
         return planetList;
     }
 
-    /*public int getCoordinates() {
-        return coordinates;
-    }*/
+    public int getCoordinateX() { return coordinateX; }
 
-    public int getPlanetTotal() {
-        return planetTotal;
-    }
+    public int getCoordinateY() { return coordinateY; }
 
-    public void setPlanetList(ArrayList<Planet> planetList) {
-        this.planetList = planetList;
-    }
+    public int getPlanetTotal() { return planetTotal; }
 
-    /*public void setCoordinates(int coordinates) {
-        this.coordinates = coordinates;
-    }*/
+    public void setPlanetList(ArrayList<Planet> planetList) { this.planetList = planetList; }
 
     public void setPlanetTotal(int planetTotal) {
         this.planetTotal = planetTotal;
@@ -72,5 +64,5 @@ public class SolarSystem {
         return String.format("Coordinates: (%d,%d)\nNumber of Planets: %d\nPlanets: " + planetsToString, coordinateX,coordinateY, planetTotal);
     }
 
-    public String getName(){return name;}
+    public String getName() { return name; }
 }

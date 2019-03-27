@@ -122,6 +122,9 @@ public class Planet {
     public Market getMarket() {
         return market;
     }
+    public int getCoordinateX() { return coordinateX; }
+    public int getCoordinateY() { return coordinateY; }
+
     @Override
     public String toString() {
         return String.format("Name: " + getName() + "\nTech Level: " + getTechLevel() + "\nResources: " + getResources());

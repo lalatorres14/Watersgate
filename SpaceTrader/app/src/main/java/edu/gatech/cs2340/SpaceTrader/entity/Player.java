@@ -62,6 +62,47 @@ public class Player implements Serializable {
         credits = 1000;
     }
 
+    //Travel methods, helper methods, and refuel method
+    public void planetTravel(Planet current, Planet destination) {
+        if (canPlanetTravel(current, destination)) {
+            Game.getInstance().setCurrentPlanet(destination);
+            ship.setFuel(ship.getFuel() - planetDistance(current, destination));
+        }
+    }
+    public int planetDistance(Planet current, Planet destination) {
+        return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX, 2)
+                + Math.pow(current.coordinateY - destination.coordinateY, 2))));
+    }
+    /**
+     * @param current the current Planet
+     * @param destination the destination Planet
+     * @return if the destination is within travel distance from the current planet
+     */
+    public boolean canPlanetTravel(Planet current, Planet destination) {
+        return (planetDistance(current, destination) <= ship.getFuel());
+    }
+
+    public void systemTravel(SolarSystem current, SolarSystem destination) {
+        if (canSystemTravel(current, destination)) {
+            Game.getInstance().setCurrentSS(destination);
+            ship.setFuel(ship.getFuel() - systemDistance(current, destination));
+        }
+    }
+    public int systemDistance(SolarSystem current, SolarSystem destination) {
+        return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX, 2)
+                + Math.pow(current.coordinateY - destination.coordinateY, 2))));
+    }
+    /**
+     * @param current the current SolarSystem
+     * @param destination the destination SolarSystem
+     * @return if the destination is within travel distance from the current SolarSystem
+     */
+    public boolean canSystemTravel(SolarSystem current, SolarSystem destination) {
+        return (systemDistance(current, destination) <= ship.getFuel());
+    }
+
+    public void refuel(){ ship.setFuel(ship.getMaxFuel()); }
+
     //Getters and setters are required for accessing the fields from the database
 
     public int getId() {
@@ -86,13 +127,6 @@ public class Player implements Serializable {
 
     public int getEngineerSkill() { return  engineerSkill; }
 
-    public void fuelExpenditure(int distance) {
-        ship.setFuel(ship.getFuel() - distance);
-    }
-
-    public void refuel(){
-        ship.setFuel(ship.getMaxFuel());
-    }
     public Ship getShip() {return ship; }
 
     public int getCredits() {return credits; }
