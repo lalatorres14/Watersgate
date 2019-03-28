@@ -1,4 +1,6 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +12,8 @@ public class SolarSystem {
     private ArrayList<Planet> planetList = new ArrayList<Planet>();
     Random rand = new Random();
     HashMap<Integer, Integer> coordinates = new HashMap<>();
-
+    String[] names = {"Alpha", "Beta", "Gamma", "Delta", "Zeta", "Theta", "Iota", "Nu", "Omicron", "Omega"};
+    static int nameNumber = 0;
     /**The coordinates for the location of this solar system*/
     int coordinateX = rand.nextInt(20);
     int coordinateY = rand.nextInt(20);
@@ -33,7 +36,8 @@ public class SolarSystem {
         }
         coordinates.put(coordinateX,coordinateY);
 
-        name = String.format("#%s%s",coordinateX,coordinateY);
+        name = names[nameNumber];
+        nameNumber++;
     }
 
 
@@ -72,6 +76,7 @@ public class SolarSystem {
         }
         return String.format("Coordinates: (%d,%d)\nNumber of Planets: %d\nPlanets: " + planetsToString, coordinateX,coordinateY, planetTotal);
     }
+
 
     public String getName(){return name;}
 }
