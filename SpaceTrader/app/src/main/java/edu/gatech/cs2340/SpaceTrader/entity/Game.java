@@ -54,6 +54,6 @@ public final class Game {
         for (int i = 0; i < 10; i++) {
             universe.add(new SolarSystem());
         }
-        solarCoordinates = universe.get(9).getCoordinates();
+        solarCoordinates = universe.get(0).getCoordinates();
     }
 }

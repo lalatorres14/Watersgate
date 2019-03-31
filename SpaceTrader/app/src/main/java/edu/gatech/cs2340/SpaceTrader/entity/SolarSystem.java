@@ -12,6 +12,7 @@ public class SolarSystem {
     private ArrayList<Planet> planetList = new ArrayList<Planet>();
     Random rand = new Random();
     HashMap<Integer, Integer> coordinates = new HashMap<>();
+    HashMap<Integer, Integer> planetCoordinates = new HashMap<>();
     String[] names = {"Alpha", "Beta", "Gamma", "Delta", "Zeta", "Theta", "Iota", "Nu", "Omicron", "Omega"};
     static int nameNumber = 0;
     /**The coordinates for the location of this solar system*/
@@ -34,8 +35,8 @@ public class SolarSystem {
         for(int i = 0; i < planetTotal; i++) {
             planetList.add(new Planet());
         }
+        planetCoordinates = planetList.get(0).getCoordinates();
         coordinates.put(coordinateX,coordinateY);
-
         name = names[nameNumber];
         nameNumber++;
     }
@@ -63,6 +64,8 @@ public class SolarSystem {
         this.coordinates = coordinates;
     }*/
     public HashMap<Integer, Integer> getCoordinates() {return coordinates;}
+
+    public HashMap<Integer, Integer> getPlanetCoordinates() {return planetCoordinates;}
 
     public void setPlanetTotal(int planetTotal) {
         this.planetTotal = planetTotal;

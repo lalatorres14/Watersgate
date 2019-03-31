@@ -39,7 +39,8 @@ public class UniverseMap extends AppCompatActivity {
             ((RadioButton) radioGroup.getChildAt(i)).setText(name);
         }
         //goes through solar coordinates and makes a data point for each entry
-        /*for (int i = 0; i < 20; i++){
+        /*HashMap<Integer, Integer> solarCoordinates = Game.getInstance().getSolarCoordinates();
+        for (int i = 0; i < 20; i++){
             if (solarCoordinates.get(i) != null){
                 int y = solarCoordinates.get(i);
                 data[j] = new DataPoint(i+1, y);

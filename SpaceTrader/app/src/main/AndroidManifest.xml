@@ -26,11 +26,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".views.PlayerConfirmation" />
         </activity>
-        <activity android:name="edu.gatech.cs2340.SpaceTrader.views.PlanetScreen" android:parentActivityName=".views.PlayerConfirmation">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".views.PlanetScreen" />
-        </activity>
         <activity android:name="edu.gatech.cs2340.SpaceTrader.views.InMarket" android:parentActivityName=".views.PlanetScreen">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -42,6 +37,11 @@
                 android:value=".views.InMarket" />
         </activity>
         <activity android:name="edu.gatech.cs2340.SpaceTrader.views.SolarSystemMap" android:parentActivityName=".views.UniverseMap">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.InMarket" />
+        </activity>
+        <activity android:name="edu.gatech.cs2340.SpaceTrader.views.PlanetScreen" android:parentActivityName=".views.SolarSystemMap">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".views.InMarket" />
