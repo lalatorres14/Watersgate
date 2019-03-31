@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import edu.gatech.cs2340.SpaceTrader.R;
 import edu.gatech.cs2340.SpaceTrader.entity.Game;
 import edu.gatech.cs2340.SpaceTrader.entity.Planet;
+import edu.gatech.cs2340.SpaceTrader.entity.Player;
 
 public class SolarSystemMap extends AppCompatActivity {
     private Button button;
@@ -33,15 +34,16 @@ public class SolarSystemMap extends AppCompatActivity {
                 LinearLayout.LayoutParams.FILL_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
-
         // adding Radio Group
         layout.addView(radioGroup, p);
         final ArrayList<Planet> planetList = Game.getInstance().getCurrentSS().getPlanetList();
 
+        //dynamically creates radio buttons for this specific solar system
         for(int i =0; i<planetList.size();i++)
         {
             RadioButton radioButtonView = new RadioButton(this);
-            radioButtonView.setText(planetList.get(i).getName());
+            int distance = Game.getInstance().getPlayer().planetDistance(planetList.get(i));
+            radioButtonView.setText(planetList.get(i).getName() + " - " + distance +" parsecs");
             radioGroup.addView(radioButtonView, p);
             //((ViewGroup)layout.getParent()).removeView(layout);
         }
@@ -61,6 +63,7 @@ public class SolarSystemMap extends AppCompatActivity {
             }
         });
 
+        //checks to see what planet was selected and sets it as the destination
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -81,6 +84,7 @@ public class SolarSystemMap extends AppCompatActivity {
 
     }
 
+    //travel button
     public void onStartPressed(){
         //travel here
         Intent intent = new Intent(SolarSystemMap.this, PlanetScreen.class);

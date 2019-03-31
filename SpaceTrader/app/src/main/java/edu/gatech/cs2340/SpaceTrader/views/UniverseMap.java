@@ -36,7 +36,8 @@ public class UniverseMap extends AppCompatActivity {
         RadioButton checkedRadioButton = (RadioButton)radioGroup.findViewById(radioGroup.getCheckedRadioButtonId());
         for (int i = 0; i < radioGroup.getChildCount(); i++) {
             String name = Game.getUniverse().get(i).getName();
-            ((RadioButton) radioGroup.getChildAt(i)).setText(name);
+            int distance = Game.getInstance().getPlayer().systemDistance(Game.getUniverse().get(i));
+            ((RadioButton) radioGroup.getChildAt(i)).setText(name + " - " + distance + " parsecs");
         }
         //goes through solar coordinates and makes a data point for each entry
         /*HashMap<Integer, Integer> solarCoordinates = Game.getInstance().getSolarCoordinates();
@@ -62,6 +63,7 @@ public class UniverseMap extends AppCompatActivity {
             }
         });
 
+        //check to see which solar system was selected and sets that as the destination
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -102,6 +104,8 @@ public class UniverseMap extends AppCompatActivity {
             solarSystemTextView.append(String.format("Solar System %s \n", Game.getInstance().getUniverse().get(i).getName()));
         }*/
     }
+
+    //Travel button
     public void onStartPressed(){
         //travel here
         Intent intent = new Intent(UniverseMap.this, SolarSystemMap.class);
