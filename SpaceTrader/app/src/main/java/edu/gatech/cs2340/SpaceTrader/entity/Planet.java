@@ -108,7 +108,7 @@ public class Planet {
     public void setMarket(Market market){
         this.market = market;
     }
-
+    public HashMap<Integer, Integer> getCoordinates() {return coordinates;}
     public String getName(){
         return name;
     }

@@ -116,6 +116,17 @@ public class Player implements Serializable {
 
     public int getEngineerSkill() { return  engineerSkill; }
 
+    public void fuelExpenditure(int distance) {
+        ship.setFuel(ship.getFuel() - distance);
+    }
+    public String refuel(int cost){
+        if (getCredits() < cost) {
+            return "cannot purchase fuel";
+        }
+        int fuelToAdd = ship.getMaxFuel() - ship.getFuel();
+        ship.setFuel(ship.getFuel() + fuelToAdd);
+        return "Successfully refuelled ship";
+    }
     public Ship getShip() {return ship; }
 
     public int getCredits() {return credits; }

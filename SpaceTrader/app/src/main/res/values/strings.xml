@@ -18,4 +18,5 @@
     <string name="traderSkillText_blank">Trader Skill: 17</string>
     <string name="engineerSkillText_blank">Engineer Skill: 17</string>
     <string name="difficultyText_blank">Difficulty: Unset</string>
+
 </resources>
