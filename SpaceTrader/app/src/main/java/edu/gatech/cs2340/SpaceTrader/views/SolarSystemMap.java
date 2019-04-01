@@ -17,11 +17,13 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import edu.gatech.cs2340.SpaceTrader.R;
 import edu.gatech.cs2340.SpaceTrader.entity.Game;
 import edu.gatech.cs2340.SpaceTrader.entity.Planet;
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
+import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
 
 public class SolarSystemMap extends AppCompatActivity {
     private Button button;
@@ -103,8 +105,19 @@ public class SolarSystemMap extends AppCompatActivity {
     public void onStartPressed(){
         //travel here
         if (player.canPlanetTravel(Game.getInstance().getCurrentSS().getPlanetList().get(planetIndex))) {
-            Intent intent = new Intent(SolarSystemMap.this, PlanetScreen.class);
-            startActivity(intent);
+
+            Random random = new Random();
+            //this 3 is arbitrary, we should decide how often to get random events
+            if(random.nextInt(3) == 0){
+                //go to random event screen and tell game to go to planet screen next
+                Game.getInstance().setNextScreen(PlanetScreen.class);
+                Intent intent = new Intent(SolarSystemMap.this, RandomEventView.class);
+                startActivity(intent);
+            } else { //travel normally
+                Intent intent = new Intent(SolarSystemMap.this, PlanetScreen.class);
+                startActivity(intent);
+            }
+
             player.planetTravel(Game.getInstance().getCurrentSS().getPlanetList().get(planetIndex));
         } else {
             Toast toast = Toast.makeText(SolarSystemMap.this, "Not enough fuel", Toast.LENGTH_SHORT);

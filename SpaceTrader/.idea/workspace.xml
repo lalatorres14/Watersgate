@@ -11,6 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fc2df6a-cb5f-4bf1-ad3d-4b89218d57d4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/RandomEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/RandomEventType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/RandomEventView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/random_event_screen.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Ship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/SolarSystemMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/SolarSystemMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/UniverseMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/UniverseMap.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
@@ -97,30 +108,30 @@
     <session id="669990946">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="522" />
+          <entry key="java" value="3057" />
           <entry key="txt" value="54" />
-          <entry key="xml" value="76" />
+          <entry key="xml" value="195" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="522" />
+          <entry key="JAVA" value="3057" />
           <entry key="PLAIN_TEXT" value="54" />
-          <entry key="XML" value="76" />
+          <entry key="XML" value="195" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="5" />
-          <entry key="xml" value="1" />
+          <entry key="java" value="24" />
+          <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="5" />
-          <entry key="XML" value="1" />
+          <entry key="JAVA" value="24" />
+          <entry key="XML" value="5" />
         </counts>
       </usages-collector>
     </session>
@@ -128,30 +139,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/universe_map.xml">
-          <provider selected="true" editor-type-id="android-designer2" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="146" column="22" selection-start-line="146" selection-start-column="22" selection-end-line="146" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Player.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/RandomEventType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="80" column="55" selection-start-line="80" selection-start-column="55" selection-end-line="80" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/market_screen.xml">
-          <provider selected="true" editor-type-id="android-designer2" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="-10859">
-              <caret line="113" column="15" selection-start-line="113" selection-start-column="15" selection-end-line="113" selection-end-column="15" />
+            <state relative-caret-position="150">
+              <caret line="10" column="37" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -159,8 +150,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/SolarSystemMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="60" column="60" selection-start-line="60" selection-start-column="60" selection-end-line="60" selection-end-column="60" />
+            <state relative-caret-position="154">
+              <caret line="108" column="41" selection-start-line="108" selection-start-column="41" selection-end-line="108" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -168,66 +159,95 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/UniverseMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="113" column="13" lean-forward="true" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
+            <state relative-caret-position="189">
+              <caret line="107" column="31" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1991#2141#0" expanded="true" />
-                <element signature="e#2140#2141#0" expanded="true" />
-                <element signature="e#2279#3847#0" expanded="true" />
-                <element signature="e#3846#3847#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/35d62ec5e01456ab8d88b33cc66c3b70/jars/classes.jar!/android/support/v4/app/FragmentActivity.class">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/RandomEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1142">
-              <caret line="94" column="13" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
+            <state relative-caret-position="240">
+              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/SolarSystem.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/RandomEventView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5">
-              <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+            <state relative-caret-position="402">
+              <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1228#1468#0" expanded="true" />
+                <element signature="e#1467#1468#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/ShipType.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+            <state relative-caret-position="-30">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Ship.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/TechLevel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="256">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="25" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/solarsystem_map.xml">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/planet_screen.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="334">
+              <caret line="100" column="53" selection-start-line="88" selection-start-column="4" selection-end-line="100" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/random_event_screen.xml">
           <provider selected="true" editor-type-id="android-designer2" />
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="56" column="53" selection-start-line="56" selection-start-column="53" selection-end-line="56" selection-end-column="53" />
+            <state relative-caret-position="154">
+              <caret line="42" column="36" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/PlanetScreen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="32" column="11" selection-start-line="26" selection-start-column="8" selection-end-line="32" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="layoutResourceFile" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -246,15 +266,23 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Planet.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Game.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/PlanetScreen.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Player.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/solarsystem_map.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/SolarSystemMap.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/universe_map.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/SolarSystem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/PlanetScreen.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/RandomEventSystem.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/RandomEventType.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Ship.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/REPolice.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/RandomEventType.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/random_event_screen.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/RandomEventView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Game.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/UniverseMap.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/SolarSystemMap.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/RandomEvent.java" />
       </list>
     </option>
   </component>
@@ -436,6 +464,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2167382" />
@@ -445,14 +474,14 @@
       <window_info id="Image Layers" order="5" />
       <window_info id="Designer" order="6" />
       <window_info id="Capture Tool" order="7" />
-      <window_info anchor="bottom" id="Run" order="0" visible="true" weight="0.32738853" />
+      <window_info anchor="bottom" id="Run" order="0" weight="0.32738853" />
       <window_info anchor="bottom" id="Logcat" order="1" weight="0.34649682" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.329718" />
       <window_info anchor="bottom" id="Debug" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" weight="0.329718" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.32866243" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.329718" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.2687898" />
+      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.34394905" />
       <window_info anchor="bottom" id="Android Profiler" order="8" weight="0.329718" />
       <window_info anchor="bottom" id="Find" order="9" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
@@ -518,13 +547,6 @@
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Difficulty.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/model/Interactor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -558,14 +580,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/view/View.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/planet_screen.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="86" column="53" selection-start-line="74" selection-start-column="4" selection-end-line="86" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Market.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -595,14 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-56">
-          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Cargo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -610,24 +616,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/TechLevel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-149">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Good.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/GoodType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
@@ -645,38 +637,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/PlanetScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/CreatePlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3611">
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/PlayerConfirmation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="27" column="57" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/SolarSystemMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="60" column="60" selection-start-line="60" selection-start-column="60" selection-end-line="60" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -711,10 +675,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/35d62ec5e01456ab8d88b33cc66c3b70/jars/classes.jar!/android/support/v4/app/FragmentActivity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="842">
+          <caret line="94" column="13" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/GoodType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/RandomEventSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/PlayerConfirmation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="20" column="57" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="50" column="62" selection-start-line="50" selection-start-column="62" selection-end-line="50" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Ship.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="630">
+          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Difficulty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -727,29 +734,95 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/SolarSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        <state relative-caret-position="-527">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/TechLevel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/REPolice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/RandomEventType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/planet_screen.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="100" column="53" selection-start-line="88" selection-start-column="4" selection-end-line="100" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/random_event_screen.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="42" column="36" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/PlanetScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="32" column="11" selection-start-line="26" selection-start-column="8" selection-end-line="32" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/RandomEventView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1228#1468#0" expanded="true" />
+            <element signature="e#1467#1468#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/UniverseMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="113" column="13" lean-forward="true" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
+        <state relative-caret-position="189">
+          <caret line="107" column="31" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1991#2141#0" expanded="true" />
-            <element signature="e#2140#2141#0" expanded="true" />
-            <element signature="e#2279#3847#0" expanded="true" />
-            <element signature="e#3846#3847#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/35d62ec5e01456ab8d88b33cc66c3b70/jars/classes.jar!/android/support/v4/app/FragmentActivity.class">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/views/SolarSystemMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1142">
-          <caret line="94" column="13" selection-start-line="94" selection-start-column="13" selection-end-line="94" selection-end-column="13" />
+        <state relative-caret-position="154">
+          <caret line="108" column="41" selection-start-line="108" selection-start-column="41" selection-end-line="108" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/gatech/cs2340/SpaceTrader/entity/RandomEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
         </state>
       </provider>
     </entry>

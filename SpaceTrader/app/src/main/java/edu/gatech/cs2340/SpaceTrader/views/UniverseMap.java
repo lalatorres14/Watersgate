@@ -15,6 +15,7 @@ import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.PointsGraphSeries;
 
 import java.util.HashMap;
+import java.util.Random;
 
 import edu.gatech.cs2340.SpaceTrader.R;
 import edu.gatech.cs2340.SpaceTrader.entity.Game;
@@ -103,8 +104,17 @@ public class UniverseMap extends AppCompatActivity {
     public void onStartPressed(){
         //travel here
         if (player.canSystemTravel(Game.getUniverse().get(solarIndex))) {
-            Intent intent = new Intent(UniverseMap.this, SolarSystemMap.class);
-            startActivity(intent);
+            Random random = new Random();
+            if(random.nextInt(3) == 0){
+                //go to random event screen and tell game to go to solar system screen next
+                Game.getInstance().setNextScreen(SolarSystemMap.class);
+                Intent intent = new Intent(UniverseMap.this, RandomEventView.class);
+                startActivity(intent);
+            } else { //travel normally
+                Intent intent = new Intent(UniverseMap.this, SolarSystemMap.class);
+                startActivity(intent);
+            }
+
             player.systemTravel(Game.getUniverse().get(solarIndex));
         } else {
             Toast toast = Toast.makeText(UniverseMap.this, "Not enough fuel", Toast.LENGTH_SHORT);
