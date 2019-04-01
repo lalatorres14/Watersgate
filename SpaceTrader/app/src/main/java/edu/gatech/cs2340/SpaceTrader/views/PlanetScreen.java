@@ -67,4 +67,11 @@ public class PlanetScreen extends AppCompatActivity {
             toast.show();
         }
     }
+
+    //override triangle back button behaviour to not undo travel
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(PlanetScreen.this, SolarSystemMap.class);
+        startActivity(intent);
+    }
 }

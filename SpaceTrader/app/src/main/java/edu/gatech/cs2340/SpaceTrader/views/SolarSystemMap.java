@@ -111,4 +111,11 @@ public class SolarSystemMap extends AppCompatActivity {
             toast.show();
         }
     }
+
+    //override triangle back button behaviour to not undo travel
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(SolarSystemMap.this, UniverseMap.class);
+        startActivity(intent);
+    }
 }
