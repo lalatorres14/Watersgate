@@ -31,7 +31,16 @@ public class UniverseMap extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         setContentView(R.layout.universe_map);
+
+        final TextView locationText = findViewById(R.id.locationText);
+        locationText.setText("Current Location: " + Game.getInstance().getCurrentSS().getName() +
+                ", " + Game.getInstance().getCurrentPlanet().getName());
+
+        final TextView fuelText = findViewById(R.id.fuelText);
+        fuelText.setText("Current Fuel: " + Game.getInstance().getPlayer().getShip().getFuel());
+
         GraphView uniGraph = (GraphView) findViewById(R.id.universe_graph);
         DataPoint[] data = new DataPoint[9];
         int j = 0;
@@ -42,6 +51,10 @@ public class UniverseMap extends AppCompatActivity {
             String name = Game.getUniverse().get(i).getName();
             int distance = Game.getInstance().getPlayer().systemDistance(Game.getUniverse().get(i));
             ((RadioButton) radioGroup.getChildAt(i)).setText(name + " - " + distance + " parsecs");
+            //makes this button grayed out and unclickable if too far away
+            if(!player.canSystemTravel(Game.getUniverse().get(i))) {
+                radioGroup.getChildAt(i).setEnabled(false);
+            }
         }
 
         button = findViewById(R.id.toSSMap);
