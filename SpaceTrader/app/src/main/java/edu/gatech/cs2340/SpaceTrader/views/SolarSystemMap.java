@@ -31,6 +31,12 @@ public class SolarSystemMap extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.solarsystem_map);
 
+        final TextView locationText = findViewById(R.id.locationText);
+        locationText.setText("Current Location: " + Game.getInstance().getCurrentSS().getName() +
+                ", " + Game.getInstance().getCurrentPlanet().getName());
+
+        final TextView fuelText = findViewById(R.id.fuelText);
+        fuelText.setText("Current Fuel: " + Game.getInstance().getPlayer().getShip().getFuel());
 
         LinearLayout layout = (LinearLayout) findViewById(R.id.layout);
         RadioGroup radioGroup = new RadioGroup(this);
@@ -52,7 +58,9 @@ public class SolarSystemMap extends AppCompatActivity {
             if (i == 0) {
                 radioButtonView.setChecked(true);
             }
-            //((ViewGroup)layout.getParent()).removeView(layout);
+            if(!player.canPlanetTravel(planetList.get(i))) {
+                radioGroup.getChildAt(i).setEnabled(false);
+            }
         }
 
 
