@@ -49,8 +49,12 @@ public class SolarSystemMap extends AppCompatActivity {
             int distance = Game.getInstance().getPlayer().planetDistance(planetList.get(i));
             radioButtonView.setText(planetList.get(i).getName() + " - " + distance +" parsecs");
             radioGroup.addView(radioButtonView, p);
+            if (i == 0) {
+                radioButtonView.setChecked(true);
+            }
             //((ViewGroup)layout.getParent()).removeView(layout);
         }
+
 
 
         GraphView SSGraph = (GraphView) findViewById(R.id.solarSystem_graph);
