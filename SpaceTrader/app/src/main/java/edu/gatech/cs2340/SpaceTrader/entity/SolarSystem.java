@@ -38,7 +38,7 @@ public class SolarSystem {
         planetCoordinates = planetList.get(0).getCoordinates();
         coordinates.put(coordinateX,coordinateY);
         name = names[nameNumber];
-        nameNumber++;
+        nameNumber = (nameNumber + 1) % 10;
     }
 
 
