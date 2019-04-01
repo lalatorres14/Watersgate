@@ -62,8 +62,8 @@ public class PlanetScreen extends AppCompatActivity {
             Toast toast = Toast.makeText(PlanetScreen.this, "Cannot afford to refuel", Toast.LENGTH_SHORT);
             toast.show();
         } else {
-            player.refuel();
             Toast toast = Toast.makeText(PlanetScreen.this, "Spent " + Integer.toString(player.getDifficulty().adjustPrice(player.getShip().getMaxFuel() - player.getShip().getFuel())) + "$", Toast.LENGTH_SHORT);
+            player.refuel();
             toast.show();
         }
     }

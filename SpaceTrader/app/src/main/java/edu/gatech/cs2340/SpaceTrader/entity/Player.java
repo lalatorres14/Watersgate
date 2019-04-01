@@ -1,5 +1,7 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 
+import android.util.Log;
+
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
@@ -65,8 +67,9 @@ public class Player implements Serializable {
     //Travel methods, helper methods, and refuel method
     public void planetTravel(Planet destination) {
         if (canPlanetTravel(destination)) {
-            Game.getInstance().setCurrentPlanet(destination);
             ship.setFuel(ship.getFuel() - planetDistance(destination));
+            Game.getInstance().setCurrentPlanet(destination);
+            Log.i("Travel", "Successfully traveled to " + destination.getName());
         }
     }
     public int planetDistance(Planet destination) {
@@ -77,8 +80,10 @@ public class Player implements Serializable {
 
     public void systemTravel(SolarSystem destination) {
         if (canSystemTravel(destination)) {
-            Game.getInstance().setCurrentSS(destination);
             ship.setFuel(ship.getFuel() - systemDistance(destination));
+            Game.getInstance().setCurrentSS(destination);
+            Game.getInstance().setCurrentPlanet(destination.getPlanetList().get(0));
+            Log.i("Travel", "Successfully traveled to " + destination.getName());
         }
     }
     public int systemDistance(SolarSystem destination) {
