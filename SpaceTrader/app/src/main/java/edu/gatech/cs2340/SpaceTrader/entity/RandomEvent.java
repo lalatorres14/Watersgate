@@ -14,6 +14,12 @@ public class RandomEvent {
                 if(Game.getInstance().getPlayer().getShip().getCargo().getQuantityOfGood(GoodType.NARCOTICS) != 0){
                     //pay a fine
                     int fine = Game.getInstance().getPlayer().getDifficulty().adjustPrice(200);
+                    //making sure the fine doesn't make the player's funds negative
+                    if (Game.getInstance().getPlayer().getCredits() < fine) {
+                        fine = Game.getInstance().getPlayer().getCredits();
+                    } 
+                    Game.getInstance().getPlayer().setCredits(Game.getInstance().getPlayer().getCredits() - fine);
+
                     //lose narcotics stash
                     Game.getInstance().getPlayer().getShip().getCargo().removeGood(GoodType.NARCOTICS,
                             Game.getInstance().getPlayer().getShip().getCargo().getQuantityOfGood(GoodType.NARCOTICS));
