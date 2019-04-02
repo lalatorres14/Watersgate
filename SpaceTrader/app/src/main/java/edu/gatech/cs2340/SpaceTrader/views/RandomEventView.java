@@ -16,8 +16,6 @@ import edu.gatech.cs2340.SpaceTrader.entity.RandomEventType;
 
 public class RandomEventView extends AppCompatActivity {
 
-    private Button continueBtn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +31,7 @@ public class RandomEventView extends AppCompatActivity {
         final TextView msgText = findViewById(R.id.randomEventText);
         msgText.setText(message);
 
-        continueBtn = findViewById(R.id.continueBtn);
+        Button continueBtn = findViewById(R.id.continueBtn);
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

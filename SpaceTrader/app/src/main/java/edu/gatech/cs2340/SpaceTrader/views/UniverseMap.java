@@ -25,7 +25,6 @@ import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
 
 public class UniverseMap extends AppCompatActivity {
     private static Player player = Game.getInstance().getPlayer();
-    private Button button;
     private CharSequence checkedText;
     int solarIndex;
     //private SolarSystem destination = Game.getUniverse().get(0);
@@ -58,7 +57,7 @@ public class UniverseMap extends AppCompatActivity {
             }
         }
 
-        button = findViewById(R.id.toSSMap);
+        Button button = findViewById(R.id.toSSMap);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

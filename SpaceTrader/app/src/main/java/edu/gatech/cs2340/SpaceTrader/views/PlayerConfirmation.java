@@ -19,14 +19,12 @@ import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
 
 
 public class PlayerConfirmation extends AppCompatActivity {
-    private EditPlayerViewModel viewModel;
-    private Button button;
     private ArrayList<SolarSystem> systemslist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_confirm);
-        button = findViewById(R.id.game_button);
+        Button button = findViewById(R.id.game_button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,7 +32,7 @@ public class PlayerConfirmation extends AppCompatActivity {
             }
         });
 
-        viewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
+        EditPlayerViewModel viewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
 
         final TextView nameTextView = findViewById(R.id.nameText);
         nameTextView.setText("Player name: " + viewModel.getPlayer(0).getName());

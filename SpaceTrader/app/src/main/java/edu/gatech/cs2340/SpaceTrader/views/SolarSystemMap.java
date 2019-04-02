@@ -26,7 +26,6 @@ import edu.gatech.cs2340.SpaceTrader.entity.Player;
 import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
 
 public class SolarSystemMap extends AppCompatActivity {
-    private Button button;
     private static Player player = Game.getInstance().getPlayer();
     int planetIndex;
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +72,7 @@ public class SolarSystemMap extends AppCompatActivity {
         final TextView solarSystemTextView = findViewById(R.id.solarSystemText);
         solarSystemTextView.setText(String.format("Solar System %s", Game.getInstance().getCurrentSS().getName()));
 
-        button = findViewById(R.id.toPlanet);
+        Button button = findViewById(R.id.toPlanet);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
