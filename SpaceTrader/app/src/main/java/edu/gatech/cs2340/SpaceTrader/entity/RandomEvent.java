@@ -2,6 +2,7 @@ package edu.gatech.cs2340.SpaceTrader.entity;
 
 public class RandomEvent {
 
+    private static Player player = Game.getInstance().getPlayer();
 
     public static String doRandomEvent(RandomEventType type){
         String message = "";
@@ -11,7 +12,7 @@ public class RandomEvent {
                 // Game.getInstance().getPlayer().getShip().getCargo().addGood(GoodType.NARCOTICS, 1);
 
                 //check for narcotics
-                if(Game.getInstance().getPlayer().getShip().getCargo().getQuantityOfGood(GoodType.NARCOTICS) != 0){
+                if(player.getShip().getCargo().getQuantityOfGood(GoodType.NARCOTICS) != 0){
                     //pay a fine
                     int fine = Game.getInstance().getPlayer().getDifficulty().adjustPrice(200);
                     //making sure the fine doesn't make the player's funds negative
