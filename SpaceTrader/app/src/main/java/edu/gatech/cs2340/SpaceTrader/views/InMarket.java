@@ -480,7 +480,7 @@ public class InMarket extends AppCompatActivity {
         }
 
         view.setSelected(true);
-        Log.i("button","buymodepressed!");
+        Log.i("button","Buy Mode Pressed!");
         sellMode.setSelected(false);
 
     }
