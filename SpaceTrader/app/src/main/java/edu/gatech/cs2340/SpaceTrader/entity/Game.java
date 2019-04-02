@@ -1,5 +1,6 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 
+import android.content.Context;
 import android.widget.RadioButton;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public final class Game {
     Planet currentPlanet;
     static SolarSystem currentSS;
     static HashMap<Integer, Integer> solarCoordinates;
+    private Class nextScreen;
 
     /*
     a list of things we might also want to keep track of here:
@@ -49,6 +51,8 @@ public final class Game {
     public static HashMap<Integer, Integer> getSolarCoordinates(){return solarCoordinates;}
     public Player getPlayer(){return player; }
     public static List<SolarSystem> getUniverse(){ return universe; }
+    public void setNextScreen(Class c){nextScreen = c;}
+    public Class getNextScreen() {return nextScreen;}
 
     public void generateUniverse(){
         universe = new ArrayList<>();

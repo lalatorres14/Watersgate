@@ -46,6 +46,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".views.InMarket" />
         </activity>
+        <activity android:name="edu.gatech.cs2340.SpaceTrader.views.RandomEventView" android:parentActivityName=".views.SolarSystemMap">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".views.InMarket" />
+        </activity>
     </application>
 
 </manifest>

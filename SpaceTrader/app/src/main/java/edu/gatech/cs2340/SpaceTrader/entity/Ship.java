@@ -58,4 +58,6 @@ public class Ship {
         return ship.getMaxTankSize();
     }
 
+    public Cargo getCargo() { return cargo;}
+
 }
