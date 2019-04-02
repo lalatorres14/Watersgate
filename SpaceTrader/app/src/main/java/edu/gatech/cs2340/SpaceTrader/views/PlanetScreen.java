@@ -17,7 +17,7 @@ public class PlanetScreen extends AppCompatActivity {
     //public static final int ADD_COURSE_REQUEST_ID = 1;
     private Button toMarketButton;
     private Button refuelButton;
-    Player player;
+    private static Player player = Game.getInstance().getPlayer();
     Planet current;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,6 @@ public class PlanetScreen extends AppCompatActivity {
             }
         });
         current = Game.getInstance().getCurrentPlanet();
-        player = Game.getInstance().getPlayer();
         final TextView nameTextView = findViewById(R.id.planetText);
         nameTextView.setText(current.getName());
 

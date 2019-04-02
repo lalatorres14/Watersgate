@@ -2,13 +2,9 @@ package edu.gatech.cs2340.SpaceTrader.entity;
 
 public class Market {
 
-    private Planet p;
-    private Good item;
-    Player player;
-    public Market(Planet p){
-        player = Game.getInstance().getPlayer();
-        this.p = p;
-    }
+    private static Player player = Game.getInstance().getPlayer();
+
+    public Market(){}
 
     public String buyItem(GoodType good, int quantity, int unitPrice){
         player.getShip().buyGood(good, quantity);

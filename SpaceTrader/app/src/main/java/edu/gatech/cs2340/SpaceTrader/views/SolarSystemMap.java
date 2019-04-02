@@ -27,7 +27,7 @@ import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
 
 public class SolarSystemMap extends AppCompatActivity {
     private Button button;
-    Player player = Game.getInstance().getPlayer();
+    private static Player player = Game.getInstance().getPlayer();
     int planetIndex;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
