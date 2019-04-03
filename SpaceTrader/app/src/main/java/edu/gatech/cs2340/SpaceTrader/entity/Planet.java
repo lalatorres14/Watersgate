@@ -1,12 +1,8 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
-import android.content.res.Resources;
-import java.util.Random;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
-
-import edu.gatech.cs2340.SpaceTrader.R;
 
 /** This class represents a single PlanetScreen*/
 public class Planet {
@@ -17,6 +13,7 @@ public class Planet {
     HashMap<Integer, Integer> coordinates = new HashMap<>();
     int coordinateX = rand.nextInt(20);
     int coordinateY = rand.nextInt(20);
+    int planetId;
     ArrayList<String> planetNames = new ArrayList<String>() {
         {
             add("Ahch-To");
@@ -90,7 +87,8 @@ public class Planet {
         for(int i = 0; i < planetNames.size(); i++) {
             pNames.put(i, planetNames.get(i));
         }
-        setName(pNames.get(rand.nextInt(planetNames.size())));
+        planetId = rand.nextInt(planetNames.size());
+        setName(pNames.get(planetId));
         res = Resource.getRandomResource();
         tLevel = TechLevel.getRandomTechLevel();
         setMarket(new Market(this));
@@ -122,6 +120,7 @@ public class Planet {
     public Market getMarket() {
         return market;
     }
+    public int getPlanetId() { return planetId;}
     public int getCoordinateX() { return coordinateX; }
     public int getCoordinateY() { return coordinateY; }
 

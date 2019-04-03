@@ -1,8 +1,5 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 
-import android.content.Context;
-import android.widget.RadioButton;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

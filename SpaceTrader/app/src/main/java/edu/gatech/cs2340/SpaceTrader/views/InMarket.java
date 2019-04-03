@@ -95,7 +95,16 @@ public class InMarket extends AppCompatActivity {
     protected EditText quantity9Input;
     protected EditText quantity10Input;
     //input values
-    int numWater, numFur, numFood, numOre, numGames, numFirearms, numMedicine, numMachines, numNarcotics, numRobots;
+    int numWater;
+    int numFur;
+    int numFood;
+    int numOre;
+    int numGames;
+    int numFirearms;
+    int numMedicine;
+    int numMachines;
+    int numNarcotics;
+    int numRobots;
     //other
     protected TextView unitPriceView;
     protected TextView holdQuantityView;
@@ -571,16 +580,16 @@ public class InMarket extends AppCompatActivity {
         //buyMode
         } else if (buying == 1) {
             //Checks if the player can afford
-            if ((material1UnitPrice * numWater) + (material2UnitPrice * numFur) +
+            if (((material1UnitPrice * numWater) + (material2UnitPrice * numFur) +
                     (material3UnitPrice * numFood) + (material4UnitPrice * numOre) +
                     (material5UnitPrice * numGames) + (material6UnitPrice * numFirearms) +
                     (material7UnitPrice * numMedicine) + (material8UnitPrice * numMachines) +
-                    (material9UnitPrice * numNarcotics) + (material10UnitPrice * numRobots) > player.getCredits()) {
+                    (material9UnitPrice * numNarcotics) + (material10UnitPrice * numRobots)) > player.getCredits()) {
                 Toast toast = Toast.makeText(InMarket.this, "Cannot Afford", Toast.LENGTH_SHORT);
                 toast.show();
             //Checks if player has space
-            } else if (numWater + numFur + numFood + numOre + numGames + numFirearms +
-                    numMedicine + numMachines + numNarcotics + numRobots > player.getShip().getSpace()) {
+            } else if ((numWater + numFur + numFood + numOre + numGames + numFirearms +
+                    numMedicine + numMachines + numNarcotics + numRobots) > player.getShip().getSpace()) {
                 Toast toast = Toast.makeText(InMarket.this, "Not enough Space", Toast.LENGTH_SHORT);
                 toast.show();
             //Buys Items, reprints amount in hold, and reprints player's money

@@ -2,8 +2,6 @@ package edu.gatech.cs2340.SpaceTrader.model;
 
 import android.util.Log;
 
-import java.util.List;
-
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
 
 /**

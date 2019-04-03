@@ -12,20 +12,15 @@ import android.widget.Toast;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
-import com.jjoe64.graphview.series.PointsGraphSeries;
 
-import java.util.HashMap;
 import java.util.Random;
 
 import edu.gatech.cs2340.SpaceTrader.R;
 import edu.gatech.cs2340.SpaceTrader.entity.Game;
-import edu.gatech.cs2340.SpaceTrader.entity.Planet;
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
-import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
 
 public class UniverseMap extends AppCompatActivity {
     Player player = Game.getInstance().getPlayer();
-    private Button button;
     private CharSequence checkedText;
     int solarIndex;
     //private SolarSystem destination = Game.getUniverse().get(0);
@@ -58,7 +53,7 @@ public class UniverseMap extends AppCompatActivity {
             }
         }
 
-        button = findViewById(R.id.toSSMap);
+        Button button = findViewById(R.id.toSSMap);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

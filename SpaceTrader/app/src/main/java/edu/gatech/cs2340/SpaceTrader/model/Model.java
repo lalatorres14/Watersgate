@@ -12,7 +12,7 @@ import java.util.Map;
  * It is a Singleton so that it can be accessed from anywhere in the application
  */
 
-public class Model {
+public final class Model {
 
     /** the data repository */
     private Repository myRepository;

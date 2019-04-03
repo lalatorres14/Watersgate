@@ -1,10 +1,13 @@
 package edu.gatech.cs2340.SpaceTrader.views;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,9 +17,6 @@ import edu.gatech.cs2340.SpaceTrader.entity.Planet;
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
 
 public class PlanetScreen extends AppCompatActivity {
-    //public static final int ADD_COURSE_REQUEST_ID = 1;
-    private Button toMarketButton;
-    private Button refuelButton;
     Player player;
     Planet current;
     @Override
@@ -24,14 +24,16 @@ public class PlanetScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.planet_screen);
-        toMarketButton = findViewById(R.id.toMarket);
+
+        //public static final int ADD_COURSE_REQUEST_ID = 1;
+        Button toMarketButton = findViewById(R.id.toMarket);
         toMarketButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 toMarket();
             }
         });
-        refuelButton = findViewById(R.id.refuel);
+        Button refuelButton = findViewById(R.id.refuel);
         refuelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +44,14 @@ public class PlanetScreen extends AppCompatActivity {
         player = Game.getInstance().getPlayer();
         final TextView nameTextView = findViewById(R.id.planetText);
         nameTextView.setText(current.getName());
+
+        ImageView imageView = (ImageView)findViewById(R.id.imageView);
+        String planetId = "p" + Integer.toString(current.getPlanetId());
+        Resources res = getResources();
+        int resourceId = res.getIdentifier(
+                planetId, "drawable", getPackageName() );
+        imageView.setImageResource(resourceId);
+
 
         final TextView solarSystemTextView = findViewById(R.id.solarSystemText);
         solarSystemTextView.setText(String.format("Solar System %s",Game.getInstance().getCurrentSS().getName()));

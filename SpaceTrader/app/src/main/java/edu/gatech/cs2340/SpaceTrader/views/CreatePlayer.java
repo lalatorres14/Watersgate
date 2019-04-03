@@ -91,8 +91,8 @@ public class CreatePlayer extends AppCompatActivity {
      */
     public void onAddPressed(View view) {
         Log.d("Edit", "Add/Update Student Pressed");
-        if((player.getEngineerSkill() + player.getFighterSkill() + player.getPilotSkill() +
-                player.getTraderSkill()) == 16 && (player.getSkillPoints() == 0) ) {
+        if(((player.getEngineerSkill() + player.getFighterSkill() + player.getPilotSkill() +
+                player.getTraderSkill()) == 16) && (player.getSkillPoints() == 0)) {
 
             player.setName(nameField.getText().toString());
 

@@ -15,7 +15,12 @@ public enum GoodType {
     ROBOTS (6,4,7,5000,-150,100,"","")
     ;
 
-    private int mtlp, mtlu, ttp, basePrice, ipl, var;
+    private int mtlp;
+    private int mtlu;
+    private int ttp;
+    private int basePrice;
+    private int ipl;
+    private int var;
     private String cr;
     private String er;
     private Random rand = new Random();

@@ -3,9 +3,7 @@ package edu.gatech.cs2340.SpaceTrader.views;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -23,10 +21,8 @@ import edu.gatech.cs2340.SpaceTrader.R;
 import edu.gatech.cs2340.SpaceTrader.entity.Game;
 import edu.gatech.cs2340.SpaceTrader.entity.Planet;
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
-import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
 
 public class SolarSystemMap extends AppCompatActivity {
-    private Button button;
     Player player = Game.getInstance().getPlayer();
     int planetIndex;
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +36,7 @@ public class SolarSystemMap extends AppCompatActivity {
         final TextView fuelText = findViewById(R.id.fuelText);
         fuelText.setText("Current Fuel: " + Game.getInstance().getPlayer().getShip().getFuel());
 
-        LinearLayout layout = (LinearLayout) findViewById(R.id.layout);
+        LinearLayout layout = findViewById(R.id.layout);
         RadioGroup radioGroup = new RadioGroup(this);
         LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.FILL_PARENT,
@@ -67,13 +63,13 @@ public class SolarSystemMap extends AppCompatActivity {
 
 
 
-        GraphView SSGraph = (GraphView) findViewById(R.id.solarSystem_graph);
+        GraphView SSGraph = findViewById(R.id.solarSystem_graph);
         DataPoint[] data = new DataPoint[Game.getInstance().getCurrentSS().getPlanetList().size()];
 
         final TextView solarSystemTextView = findViewById(R.id.solarSystemText);
         solarSystemTextView.setText(String.format("Solar System %s", Game.getInstance().getCurrentSS().getName()));
 
-        button = findViewById(R.id.toPlanet);
+        Button button = findViewById(R.id.toPlanet);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,7 +82,7 @@ public class SolarSystemMap extends AppCompatActivity {
         {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // This will get the radiobutton that has changed in its check state
-                RadioButton checkedRadioButton = (RadioButton) group.findViewById(checkedId);
+                RadioButton checkedRadioButton = group.findViewById(checkedId);
                 boolean isChecked = checkedRadioButton.isChecked();
                 planetIndex = 0;
                 if (isChecked) {
