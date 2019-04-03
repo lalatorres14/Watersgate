@@ -17,14 +17,14 @@ import edu.gatech.cs2340.SpaceTrader.entity.Planet;
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
 
 public class PlanetScreen extends AppCompatActivity {
-    Player player;
+    Player player;    
+    private static Player player = Game.getInstance().getPlayer();
     Planet current;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.planet_screen);
-
         //public static final int ADD_COURSE_REQUEST_ID = 1;
         Button toMarketButton = findViewById(R.id.toMarket);
         toMarketButton.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +41,6 @@ public class PlanetScreen extends AppCompatActivity {
             }
         });
         current = Game.getInstance().getCurrentPlanet();
-        player = Game.getInstance().getPlayer();
         final TextView nameTextView = findViewById(R.id.planetText);
         nameTextView.setText(current.getName());
 

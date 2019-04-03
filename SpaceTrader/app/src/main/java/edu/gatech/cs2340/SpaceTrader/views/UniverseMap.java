@@ -21,6 +21,7 @@ import edu.gatech.cs2340.SpaceTrader.entity.Player;
 
 public class UniverseMap extends AppCompatActivity {
     Player player = Game.getInstance().getPlayer();
+    private static Player player = Game.getInstance().getPlayer();
     private CharSequence checkedText;
     int solarIndex;
     //private SolarSystem destination = Game.getUniverse().get(0);

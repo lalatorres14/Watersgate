@@ -91,7 +91,7 @@ public class Planet {
         setName(pNames.get(planetId));
         res = Resource.getRandomResource();
         tLevel = TechLevel.getRandomTechLevel();
-        setMarket(new Market(this));
+        setMarket(new Market());
         coordinates.put(coordinateX,coordinateY);
     }
 

@@ -26,7 +26,7 @@ import static edu.gatech.cs2340.SpaceTrader.entity.GoodType.*;
 public class InMarket extends AppCompatActivity {
     //Game-based variables (as opposed to UI-based)
     Planet current;
-    Player player;
+    private static Player player = Game.getInstance().getPlayer();
     //all the buttons for the market
     protected Button buyMode;
     protected Button sellMode;
@@ -127,7 +127,6 @@ public class InMarket extends AppCompatActivity {
         //storing planet and player info
         current = Game.getInstance().getCurrentPlanet();
         market = current.getMarket();
-        player = Game.getInstance().getPlayer();
         buying = 0;
 
         //printing planet name

@@ -37,7 +37,7 @@ public class CreatePlayer extends AppCompatActivity {
     /* ***********************
        Data for Player being edited.
      */
-    private Player player;
+    static private Player player;
 
 
 
