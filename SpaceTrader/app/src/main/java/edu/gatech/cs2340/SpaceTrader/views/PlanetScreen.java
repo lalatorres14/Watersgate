@@ -17,7 +17,6 @@ import edu.gatech.cs2340.SpaceTrader.entity.Planet;
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
 
 public class PlanetScreen extends AppCompatActivity {
-    Player player;    
     private static Player player = Game.getInstance().getPlayer();
     Planet current;
     @Override

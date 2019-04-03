@@ -4,7 +4,6 @@ public class Market {
 
 
     private Good item;
-    Player player;
     public Market(Planet p){
         player = Game.getInstance().getPlayer();
         Planet p1 = p;
