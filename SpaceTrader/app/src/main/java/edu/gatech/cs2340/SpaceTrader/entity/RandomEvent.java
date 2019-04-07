@@ -8,6 +8,7 @@ public class RandomEvent {
 
     public static String doRandomEvent(RandomEventType type){
         String message = "";
+        int money;
         Random rand = new Random();
         switch (type) {
             case POLICE:
@@ -51,11 +52,11 @@ public class RandomEvent {
                 //0 = no fuel lost, 1 = 25% lost, 2 = 50%, 3 = 75%
                 int fuelLost = damage * player.getShip().getFuel() / 4;
                 player.getShip().setFuel(player.getShip().getFuel() - fuelLost);
-                message += "losing " + String.valueOf(fuelLost) + " fuel";
+                message += "losing " + String.valueOf(fuelLost) + " fuel.";
                 break;
             case PIRATES:
                 //Fight pirates, either win and take their money, fend off, or lose and lose money
-                int money = player.getCredits() * 2 / 10;
+                money = player.getCredits() * 2 / 10;
                 message += "You were boarded by pirates! ";
                 if (player.getFighterSkill() >= 12) {
                     player.setCredits(player.getCredits() + money);
@@ -69,6 +70,40 @@ public class RandomEvent {
                     message += "They managed to defeat you, and stole "
                             + String.valueOf(money) + " credits!";
                 }
+                break;
+            case DEALER:
+                //Meet a narcotics dealer offering a sweet price, or tyring to scam you.
+                boolean scam = rand.nextBoolean();
+                Market dealer = new Market();
+                money = player.getCredits() * 1 / 10;
+                message += "You meet a shady figure who offers you some narcotics. ";
+                if (scam) {
+                    if (player.getTraderSkill() >= 12) {
+                        message += "You notice the scam. However, he doesn't notice your hand " +
+                                "in his pocket, leaving you " + String.valueOf(money) +
+                                " credits richer.";
+                        player.setCredits(player.getCredits() + money);
+                    } else if(player.getTraderSkill() >= 6) {
+                        message += "His merchandise isn't the most appealing, so you send him" +
+                                "out without buying anything.";
+                    } else {
+                        message += "You eagerly purchase, amazed at the opportunity. " +
+                                "Unfortunately, the scam left you " +String.valueOf(money) +
+                                " credits poorer.";
+                    }
+                } else {
+                    //only purchase if space
+                    if (player.getShip().hasSpace()) {
+                        if (money > 1000) { money = 1000; } //Reign in price in late game
+                        message += "Only " + String.valueOf(money) + " credits? With such a great " +
+                                "deal, how could you refuse!";
+                        dealer.buyItem(GoodType.NARCOTICS, 1, money);
+                    } else {
+                        message += "Oh how you wish you had space for these premium goods!" +
+                                " Unfortunately, your ship's cargo is full";
+                    }
+                }
+                break;
         }
         return message;
     }

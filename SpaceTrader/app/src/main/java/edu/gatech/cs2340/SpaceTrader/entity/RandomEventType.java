@@ -5,7 +5,8 @@ import java.util.Random;
 public enum RandomEventType {
     POLICE,
     LEAK,
-    PIRATES
+    PIRATES,
+    DEALER
     ;
 
     public static RandomEventType getRandomEventType() {
