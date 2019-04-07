@@ -13,7 +13,7 @@ import edu.gatech.cs2340.SpaceTrader.model.PlayerInteractor;
  * View model supporting adding and updating an individual student
  */
 public class EditPlayerViewModel extends AndroidViewModel {
-    private PlayerInteractor interactor;
+    private final PlayerInteractor interactor;
 
     public EditPlayerViewModel(@NonNull Application application) {
         super(application);

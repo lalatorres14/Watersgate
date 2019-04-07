@@ -20,9 +20,9 @@ import edu.gatech.cs2340.SpaceTrader.entity.Game;
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
 
 public class UniverseMap extends AppCompatActivity {
-    private static Player player = Game.getInstance().getPlayer();
+    private static final Player player = Game.getInstance().getPlayer();
     private CharSequence checkedText;
-    int solarIndex;
+    private int solarIndex;
     //private SolarSystem destination = Game.getUniverse().get(0);
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +42,8 @@ public class UniverseMap extends AppCompatActivity {
         int j = 0;
         //HashMap<Integer, Integer> solarCoordinates = Game.getSolarCoordinates();
         RadioGroup radioGroup = (RadioGroup)findViewById(R.id.group);
-        RadioButton checkedRadioButton = (RadioButton)radioGroup.findViewById(radioGroup.getCheckedRadioButtonId());
+        RadioButton checkedRadioButton = (RadioButton)radioGroup.findViewById(
+                radioGroup.getCheckedRadioButtonId());
         for (int i = 0; i < radioGroup.getChildCount(); i++) {
             String name = Game.getUniverse().get(i).getName();
             int distance = Game.getInstance().getPlayer().systemDistance(Game.getUniverse().get(i));
@@ -96,7 +97,7 @@ public class UniverseMap extends AppCompatActivity {
         });
     }
     //Travel button
-    public void onStartPressed(){
+    private void onStartPressed(){
         //travel here
         if (player.canSystemTravel(Game.getUniverse().get(solarIndex))) {
             Random random = new Random();

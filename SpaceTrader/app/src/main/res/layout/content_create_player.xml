@@ -98,7 +98,7 @@
         android:layout_toRightOf="@+id/pilot_header"
         android:ems="2"
         android:inputType="number"
-        />
+        android:layout_toEndOf="@+id/pilot_header" />
 
 
     <ImageButton
@@ -110,7 +110,8 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:scaleType="fitXY"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:contentDescription="TODO" />
 
     <ImageButton
         android:id="@+id/pilot_button_down"

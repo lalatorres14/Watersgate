@@ -62,21 +62,22 @@ public class PlayerConfirmation extends AppCompatActivity {
             getSupportActionBar().setHomeButtonEnabled(false);
         }
     }
-    public void beginGamePressed(){
+    private void beginGamePressed(){
 
         Game.getInstance().generateUniverse();
 
         for (int i = 0; i < 10; i++) {
-            largeLog("Solar System",Game.getInstance().getUniverse().get(i).toString());
+            largeLog("Solar System", Game.getUniverse().get(i).toString());
         }
 
-        Game.getInstance().setCurrentSS(Game.getInstance().getUniverse().get(0));
-        Game.getInstance().setCurrentPlanet(Game.getInstance().getCurrentSS().getPlanetList().get(0));
+        Game.getInstance().setCurrentSS(Game.getUniverse().get(0));
+        Game.getInstance().setCurrentPlanet(
+                Game.getInstance().getCurrentSS().getPlanetList().get(0));
 
         Intent intent = new Intent(PlayerConfirmation.this, UniverseMap.class);
         startActivity(intent);
     }
-    public static void largeLog(String tag, String content) {
+    private static void largeLog(String tag, String content) {
         if (content.length() > 4000) {
             Log.d(tag, content.substring(0, 4000));
             largeLog(tag, content.substring(4000));

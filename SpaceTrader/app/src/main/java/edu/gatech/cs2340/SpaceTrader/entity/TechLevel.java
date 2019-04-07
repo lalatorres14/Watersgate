@@ -12,8 +12,8 @@ public enum TechLevel {
     POSTIND (6, "Post-Industrial"),
     HITECH (7, "Hi-Tech");
 
-    private String formattedName;
-    private int techLevelInt;
+    private final String formattedName;
+    private final int techLevelInt;
 
     TechLevel(int i, String f){
         techLevelInt = i;

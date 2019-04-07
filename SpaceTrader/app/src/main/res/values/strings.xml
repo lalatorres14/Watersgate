@@ -9,7 +9,8 @@
     <string name="skill3">Trader: </string>
     <string name="skill4">Engineer: </string>
     <string name="remaining">Points Remaining: </string>
-    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">
+        android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="player_name_blank">Player Name: blank</string>
     <string name="creditsText_blank">Credits: 1001</string>
     <string name="shipText_blank">Spaceship: None</string>

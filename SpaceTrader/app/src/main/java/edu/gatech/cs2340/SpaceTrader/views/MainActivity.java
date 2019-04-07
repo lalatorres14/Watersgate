@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    public void onStartPressed(){
+    private void onStartPressed(){
         Intent intent = new Intent(MainActivity.this, CreatePlayer.class);
         startActivity(intent);
     }

@@ -16,7 +16,7 @@ public enum Resource {
     ARTISTIC ("Artistic"),
     WARLIKE ("Warlike");
 
-    private String formattedName;
+    private final String formattedName;
 
     Resource(String f){
         formattedName = f;

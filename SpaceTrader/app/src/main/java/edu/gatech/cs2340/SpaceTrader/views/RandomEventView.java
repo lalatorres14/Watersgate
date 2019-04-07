@@ -33,7 +33,8 @@ public class RandomEventView extends AppCompatActivity {
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RandomEventView.this, Game.getInstance().getNextScreen());
+                Intent intent = new Intent(RandomEventView.this,
+                        Game.getInstance().getNextScreen());
                 startActivity(intent);
             }
         });

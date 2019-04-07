@@ -7,8 +7,8 @@ public enum Difficulty {
     HARD (1.25, 1000),
     IMPOSSIBLE (2, 500);
 
-    private double priceModifier;
-    private int starterCredits;
+    private final double priceModifier;
+    private final int starterCredits;
 
     /**
      *
@@ -26,5 +26,6 @@ public enum Difficulty {
 
     public int getStarterCredits(){return starterCredits;}
 
-    @Override public String toString(){return name().substring(0,1) + name().substring(1).toLowerCase();}
+    @Override public String toString(){return name().substring(0,1)
+            + name().substring(1).toLowerCase();}
 }

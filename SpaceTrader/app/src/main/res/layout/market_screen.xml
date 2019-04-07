@@ -77,7 +77,7 @@
         android:height="48dp"
         android:gravity="center"
         android:text="0"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/sellMode"
         app:layout_constraintEnd_toStartOf="@+id/sellMode"
         app:layout_constraintHorizontal_bias="0.0"

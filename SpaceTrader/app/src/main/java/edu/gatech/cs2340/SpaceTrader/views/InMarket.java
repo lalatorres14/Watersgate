@@ -25,94 +25,90 @@ import static edu.gatech.cs2340.SpaceTrader.entity.GoodType.*;
 
 public class InMarket extends AppCompatActivity {
     //Game-based variables (as opposed to UI-based)
-    Planet current;
-    private static Player player = Game.getInstance().getPlayer();
+    private Planet current;
+    private static final Player player = Game.getInstance().getPlayer();
     //all the buttons for the market
-    protected Button buyMode;
-    protected Button sellMode;
-    protected Button completeTransaction;
+    private Button buyMode;
+    private Button sellMode;
     //TableRows for data stuff
-    protected TableRow material1Row1;
-    protected TableRow material1Row2;
-    protected TableRow spaceRow1;
-    protected TableRow material2Row1;
-    protected TableRow material2Row2;
-    protected TableRow spaceRow2;
-    protected TableRow material3Row1;
-    protected TableRow material3Row2;
-    protected TableRow spaceRow3;
-    protected TableRow material4Row1;
-    protected TableRow material4Row2;
-    protected TableRow spaceRow4;
-    protected TableRow material5Row1;
-    protected TableRow material5Row2;
-    protected TableRow spaceRow5;
-    protected TableRow material6Row1;
-    protected TableRow material6Row2;
-    protected TableRow spaceRow6;
-    protected TableRow material7Row1;
-    protected TableRow material7Row2;
-    protected TableRow spaceRow7;
-    protected TableRow material8Row1;
-    protected TableRow material8Row2;
-    protected TableRow spaceRow8;
-    protected TableRow material9Row1;
-    protected TableRow material9Row2;
-    protected TableRow spaceRow9;
-    protected TableRow material10Row1;
-    protected TableRow material10Row2;
+    private TableRow material1Row1;
+    private TableRow material1Row2;
+    private TableRow spaceRow1;
+    private TableRow material2Row1;
+    private TableRow material2Row2;
+    private TableRow spaceRow2;
+    private TableRow material3Row1;
+    private TableRow material3Row2;
+    private TableRow spaceRow3;
+    private TableRow material4Row1;
+    private TableRow material4Row2;
+    private TableRow spaceRow4;
+    private TableRow material5Row1;
+    private TableRow material5Row2;
+    private TableRow spaceRow5;
+    private TableRow material6Row1;
+    private TableRow material6Row2;
+    private TableRow spaceRow6;
+    private TableRow material7Row1;
+    private TableRow material7Row2;
+    private TableRow spaceRow7;
+    private TableRow material8Row1;
+    private TableRow material8Row2;
+    private TableRow spaceRow8;
+    private TableRow material9Row1;
+    private TableRow material9Row2;
+    private TableRow spaceRow9;
+    private TableRow material10Row1;
+    private TableRow material10Row2;
     //unit prices
-    protected int material1UnitPrice;
-    protected int material2UnitPrice;
-    protected int material3UnitPrice;
-    protected int material4UnitPrice;
-    protected int material5UnitPrice;
-    protected int material6UnitPrice;
-    protected int material7UnitPrice;
-    protected int material8UnitPrice;
-    protected int material9UnitPrice;
-    protected int material10UnitPrice;
+    private int material1UnitPrice;
+    private int material2UnitPrice;
+    private int material3UnitPrice;
+    private int material4UnitPrice;
+    private int material5UnitPrice;
+    private int material6UnitPrice;
+    private int material7UnitPrice;
+    private int material8UnitPrice;
+    private int material9UnitPrice;
+    private int material10UnitPrice;
     //all the different totalPrice holders
-    protected TextView total1View;
-    protected TextView total2View;
-    protected TextView total3View;
-    protected TextView total4View;
-    protected TextView total5View;
-    protected TextView total6View;
-    protected TextView total7View;
-    protected TextView total8View;
-    protected TextView total9View;
-    protected TextView total10View;
+    private TextView total1View;
+    private TextView total2View;
+    private TextView total3View;
+    private TextView total4View;
+    private TextView total5View;
+    private TextView total6View;
+    private TextView total7View;
+    private TextView total8View;
+    private TextView total9View;
+    private TextView total10View;
     //all the different inputs
-    protected EditText quantity1Input;
-    protected EditText quantity2Input;
-    protected EditText quantity3Input;
-    protected EditText quantity4Input;
-    protected EditText quantity5Input;
-    protected EditText quantity6Input;
-    protected EditText quantity7Input;
-    protected EditText quantity8Input;
-    protected EditText quantity9Input;
-    protected EditText quantity10Input;
+    private EditText quantity1Input;
+    private EditText quantity2Input;
+    private EditText quantity3Input;
+    private EditText quantity4Input;
+    private EditText quantity5Input;
+    private EditText quantity6Input;
+    private EditText quantity7Input;
+    private EditText quantity8Input;
+    private EditText quantity9Input;
+    private EditText quantity10Input;
     //input values
-    int numWater;
-    int numFur;
-    int numFood;
-    int numOre;
-    int numGames;
-    int numFirearms;
-    int numMedicine;
-    int numMachines;
-    int numNarcotics;
-    int numRobots;
-    //other
-    protected TextView unitPriceView;
-    protected TextView holdQuantityView;
-    protected TextView holdSpaceView;
-    protected TextView playerCredits;
-    protected Good good;
-    protected Market market;
-    private int buying; //0 = neither, 1 = buy, -1 = sell. It's an int rather than a boolean so that there can be a "null" state, where you are neither in buy or sell mode.
+    private int numWater;
+    private int numFur;
+    private int numFood;
+    private int numOre;
+    private int numGames;
+    private int numFirearms;
+    private int numMedicine;
+    private int numMachines;
+    private int numNarcotics;
+    private int numRobots;
+    private TextView holdSpaceView;
+    private TextView playerCredits;
+    private Market market;
+    private int buying; //0 = neither, 1 = buy, -1 = sell. It's an int rather than a boolean so
+    // that there can be a "null" state, where you are neither in buy or sell mode.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,7 +118,7 @@ public class InMarket extends AppCompatActivity {
         //linking variables to actual buttons
         buyMode = findViewById(R.id.buyMode);
         sellMode = findViewById(R.id.sellMode);
-        completeTransaction = findViewById(R.id.completeTransaction);
+        Button completeTransaction = findViewById(R.id.completeTransaction);
 
         //storing planet and player info
         current = Game.getInstance().getCurrentPlanet();
@@ -147,8 +143,9 @@ public class InMarket extends AppCompatActivity {
         //material*Row1 children (materialName, "Total:", totalAmount, unitAmount)
         //material*Row2 children ("In Hold:", holdTotal, "Quantity:", quantity)
         material1Row1 = findViewById(R.id.material1Row1);
-        unitPriceView = findViewById(R.id.item1Unit);
-        good = new Good(WATER);
+        //other
+        TextView unitPriceView = findViewById(R.id.item1Unit);
+        Good good = new Good(WATER);
         material1UnitPrice = good.calculatePrice(current);
         unitPriceView.setText(String.valueOf(material1UnitPrice));
         material1Row2 = findViewById(R.id.material1Row2);
@@ -270,7 +267,8 @@ public class InMarket extends AppCompatActivity {
                 if (TextUtils.isEmpty(quantity1Input.getText())) {
                     quantity1Input.setText("0");
                 }
-                total1View.setText(String.valueOf(Integer.parseInt(quantity1Input.getText().toString()) * material1UnitPrice));
+                total1View.setText(String.valueOf(Integer.parseInt(
+                        quantity1Input.getText().toString()) * material1UnitPrice));
             }
         });
         quantity2Input.addTextChangedListener(new TextWatcher() {
@@ -287,7 +285,8 @@ public class InMarket extends AppCompatActivity {
                 if (TextUtils.isEmpty(quantity2Input.getText())) {
                     quantity2Input.setText("0");
                 }
-                total2View.setText(String.valueOf(Integer.parseInt(quantity2Input.getText().toString()) * material2UnitPrice));
+                total2View.setText(String.valueOf(Integer.parseInt(
+                        quantity2Input.getText().toString()) * material2UnitPrice));
             }
         });
         quantity3Input.addTextChangedListener(new TextWatcher() {
@@ -304,7 +303,8 @@ public class InMarket extends AppCompatActivity {
                 if (TextUtils.isEmpty(quantity3Input.getText())) {
                     quantity3Input.setText("0");
                 }
-                total3View.setText(String.valueOf(Integer.parseInt(quantity3Input.getText().toString()) * material3UnitPrice));
+                total3View.setText(String.valueOf(Integer.parseInt(
+                        quantity3Input.getText().toString()) * material3UnitPrice));
             }
         });
         quantity4Input.addTextChangedListener(new TextWatcher() {
@@ -321,7 +321,8 @@ public class InMarket extends AppCompatActivity {
                 if (TextUtils.isEmpty(quantity4Input.getText())) {
                     quantity4Input.setText("0");
                 }
-                total4View.setText(String.valueOf(Integer.parseInt(quantity4Input.getText().toString()) * material4UnitPrice));
+                total4View.setText(String.valueOf(Integer.parseInt(
+                        quantity4Input.getText().toString()) * material4UnitPrice));
             }
         });
         quantity5Input.addTextChangedListener(new TextWatcher() {
@@ -338,7 +339,8 @@ public class InMarket extends AppCompatActivity {
                 if (TextUtils.isEmpty(quantity5Input.getText())) {
                     quantity5Input.setText("0");
                 }
-                total5View.setText(String.valueOf(Integer.parseInt(quantity5Input.getText().toString()) * material5UnitPrice));
+                total5View.setText(String.valueOf(Integer.parseInt(
+                        quantity5Input.getText().toString()) * material5UnitPrice));
             }
         });
         quantity6Input.addTextChangedListener(new TextWatcher() {
@@ -355,7 +357,8 @@ public class InMarket extends AppCompatActivity {
                 if (TextUtils.isEmpty(quantity6Input.getText())) {
                     quantity6Input.setText("0");
                 }
-                total6View.setText(String.valueOf(Integer.parseInt(quantity6Input.getText().toString()) * material6UnitPrice));
+                total6View.setText(String.valueOf(Integer.parseInt(
+                        quantity6Input.getText().toString()) * material6UnitPrice));
             }
         });
         quantity7Input.addTextChangedListener(new TextWatcher() {
@@ -372,7 +375,8 @@ public class InMarket extends AppCompatActivity {
                 if (TextUtils.isEmpty(quantity7Input.getText())) {
                     quantity7Input.setText("0");
                 }
-                total7View.setText(String.valueOf(Integer.parseInt(quantity7Input.getText().toString()) * material7UnitPrice));
+                total7View.setText(String.valueOf(Integer.parseInt(
+                        quantity7Input.getText().toString()) * material7UnitPrice));
             }
         });
         quantity8Input.addTextChangedListener(new TextWatcher() {
@@ -389,7 +393,8 @@ public class InMarket extends AppCompatActivity {
                 if (TextUtils.isEmpty(quantity8Input.getText())) {
                     quantity8Input.setText("0");
                 }
-                total8View.setText(String.valueOf(Integer.parseInt(quantity8Input.getText().toString()) * material8UnitPrice));
+                total8View.setText(String.valueOf(Integer.parseInt(
+                        quantity8Input.getText().toString()) * material8UnitPrice));
             }
         });
         quantity9Input.addTextChangedListener(new TextWatcher() {
@@ -406,7 +411,8 @@ public class InMarket extends AppCompatActivity {
                 if (TextUtils.isEmpty(quantity9Input.getText())) {
                     quantity9Input.setText("0");
                 }
-                total9View.setText(String.valueOf(Integer.parseInt(quantity9Input.getText().toString()) * material9UnitPrice));
+                total9View.setText(String.valueOf(Integer.parseInt(
+                        quantity9Input.getText().toString()) * material9UnitPrice));
             }
         });
         quantity10Input.addTextChangedListener(new TextWatcher() {
@@ -423,7 +429,8 @@ public class InMarket extends AppCompatActivity {
                 if (TextUtils.isEmpty(quantity10Input.getText())) {
                     quantity10Input.setText("0");
                 }
-                total10View.setText(String.valueOf(Integer.parseInt(quantity10Input.getText().toString()) * material10UnitPrice));
+                total10View.setText(String.valueOf(Integer.parseInt(
+                        quantity10Input.getText().toString()) * material10UnitPrice));
             }
         });
     }
@@ -583,24 +590,34 @@ public class InMarket extends AppCompatActivity {
                     (material3UnitPrice * numFood) + (material4UnitPrice * numOre) +
                     (material5UnitPrice * numGames) + (material6UnitPrice * numFirearms) +
                     (material7UnitPrice * numMedicine) + (material8UnitPrice * numMachines) +
-                    (material9UnitPrice * numNarcotics) + (material10UnitPrice * numRobots)) > player.getCredits()) {
-                Toast toast = Toast.makeText(InMarket.this, "Cannot Afford", Toast.LENGTH_SHORT);
+                    (material9UnitPrice * numNarcotics) + (material10UnitPrice * numRobots)) >
+                    player.getCredits()) {
+                Toast toast = Toast.makeText(InMarket.this, "Cannot Afford",
+                        Toast.LENGTH_SHORT);
                 toast.show();
             //Checks if player has space
             } else if ((numWater + numFur + numFood + numOre + numGames + numFirearms +
-                    numMedicine + numMachines + numNarcotics + numRobots) > player.getShip().getSpace()) {
-                Toast toast = Toast.makeText(InMarket.this, "Not enough Space", Toast.LENGTH_SHORT);
+                    numMedicine + numMachines + numNarcotics + numRobots) >
+                    player.getShip().getSpace()) {
+                Toast toast = Toast.makeText(InMarket.this,
+                        "Not enough Space", Toast.LENGTH_SHORT);
                 toast.show();
             //Buys Items, reprints amount in hold, and reprints player's money
             } else {
-                market.buyItem(WATER, numWater, material1UnitPrice); market.buyItem(FURS, numFur, material2UnitPrice);
-                market.buyItem(FOOD, numFood, material3UnitPrice); market.buyItem(ORE, numOre, material4UnitPrice);
-                market.buyItem(GAMES, numGames, material5UnitPrice); market.buyItem(FIREARMS, numFirearms, material6UnitPrice);
-                market.buyItem(MEDICINE, numMedicine, material7UnitPrice); market.buyItem(MACHINES, numMachines, material8UnitPrice);
-                market.buyItem(NARCOTICS, numNarcotics, material9UnitPrice); market.buyItem(ROBOTS, numRobots, material10UnitPrice);
+                market.buyItem(WATER, numWater, material1UnitPrice); market.buyItem(
+                        FURS, numFur, material2UnitPrice);
+                market.buyItem(FOOD, numFood, material3UnitPrice); market.buyItem(
+                        ORE, numOre, material4UnitPrice);
+                market.buyItem(GAMES, numGames, material5UnitPrice); market.buyItem(
+                        FIREARMS, numFirearms, material6UnitPrice);
+                market.buyItem(MEDICINE, numMedicine, material7UnitPrice); market.buyItem(
+                        MACHINES, numMachines, material8UnitPrice);
+                market.buyItem(NARCOTICS, numNarcotics, material9UnitPrice); market.buyItem(
+                        ROBOTS, numRobots, material10UnitPrice);
                 playerCredits.setText(String.valueOf(player.getCredits()));
                 holdSpaceView.setText(String.valueOf(player.getShip().getSpace()));
-                Toast toast = Toast.makeText(InMarket.this, "Transaction Complete", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(InMarket.this, "Transaction Complete",
+                        Toast.LENGTH_SHORT);
                 toast.show();
                 resetInputs();
                 updateHoldQuantity();
@@ -609,51 +626,68 @@ public class InMarket extends AppCompatActivity {
         } else if (buying == -1) {
             //Checks each quantity individually to give detailed feedback to user
             if (player.getShip().getGoodQuantity(WATER) < numWater) {
-                Toast toast = Toast.makeText(InMarket.this, "Not enough water", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(InMarket.this, "Not enough water",
+                        Toast.LENGTH_SHORT);
                 toast.show();
             } else if (player.getShip().getGoodQuantity(FURS) < numFur) {
-                Toast toast = Toast.makeText(InMarket.this, "Not enough furs", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(InMarket.this, "Not enough furs",
+                        Toast.LENGTH_SHORT);
                 toast.show();
             } else if (player.getShip().getGoodQuantity(FOOD) < numFood) {
-                Toast toast = Toast.makeText(InMarket.this, "Not enough food", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(InMarket.this, "Not enough food",
+                        Toast.LENGTH_SHORT);
                 toast.show();
             } else if (player.getShip().getGoodQuantity(ORE) < numOre) {
-                Toast toast = Toast.makeText(InMarket.this, "Not enough ore", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(InMarket.this, "Not enough ore",
+                        Toast.LENGTH_SHORT);
                 toast.show();
             } else if (player.getShip().getGoodQuantity(GAMES) < numGames) {
-                Toast toast = Toast.makeText(InMarket.this, "Not enough games", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(InMarket.this, "Not enough games",
+                        Toast.LENGTH_SHORT);
                 toast.show();
             } else if (player.getShip().getGoodQuantity(FIREARMS) < numFirearms) {
-                Toast toast = Toast.makeText(InMarket.this, "Not enough firearms", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(InMarket.this, "Not enough firearms",
+                        Toast.LENGTH_SHORT);
                 toast.show();
             } else if (player.getShip().getGoodQuantity(MEDICINE) < numMedicine) {
-                Toast toast = Toast.makeText(InMarket.this, "Not enough medicine", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(InMarket.this, "Not enough medicine",
+                        Toast.LENGTH_SHORT);
                 toast.show();
             } else if (player.getShip().getGoodQuantity(MACHINES) < numMachines) {
-                Toast toast = Toast.makeText(InMarket.this, "Not enough machines", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(InMarket.this, "Not enough machines",
+                        Toast.LENGTH_SHORT);
                 toast.show();
             } else if (player.getShip().getGoodQuantity(NARCOTICS) < numNarcotics) {
-                Toast toast = Toast.makeText(InMarket.this, "Not enough narcotics", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(InMarket.this, "Not enough narcotics",
+                        Toast.LENGTH_SHORT);
                 toast.show();
             } else if (player.getShip().getGoodQuantity(ROBOTS) < numRobots) {
-                Toast toast = Toast.makeText(InMarket.this, "Not enough robots", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(InMarket.this, "Not enough robots",
+                        Toast.LENGTH_SHORT);
                 toast.show();
             } else {
-                market.sellItem(WATER, numWater, material1UnitPrice); market.sellItem(FURS, numFur, material2UnitPrice);
-                market.sellItem(FOOD, numFood, material3UnitPrice); market.sellItem(ORE, numOre, material4UnitPrice);
-                market.sellItem(GAMES, numGames, material5UnitPrice); market.sellItem(FIREARMS, numFirearms, material6UnitPrice);
-                market.sellItem(MEDICINE, numMedicine, material7UnitPrice); market.sellItem(MACHINES, numMachines, material8UnitPrice);
-                market.sellItem(NARCOTICS, numNarcotics, material9UnitPrice); market.sellItem(ROBOTS, numRobots, material10UnitPrice);
+                market.sellItem(WATER, numWater, material1UnitPrice); market.sellItem(
+                        FURS, numFur, material2UnitPrice);
+                market.sellItem(FOOD, numFood, material3UnitPrice); market.sellItem(
+                        ORE, numOre, material4UnitPrice);
+                market.sellItem(GAMES, numGames, material5UnitPrice); market.sellItem(
+                        FIREARMS, numFirearms, material6UnitPrice);
+                market.sellItem(MEDICINE, numMedicine, material7UnitPrice); market.sellItem(
+                        MACHINES, numMachines, material8UnitPrice);
+                market.sellItem(NARCOTICS, numNarcotics, material9UnitPrice); market.sellItem(
+                        ROBOTS, numRobots, material10UnitPrice);
                 playerCredits.setText(String.valueOf(player.getCredits()));
                 holdSpaceView.setText(String.valueOf(player.getShip().getSpace()));
-                Toast toast = Toast.makeText(InMarket.this, "Transaction Complete", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(InMarket.this, "Transaction Complete",
+                        Toast.LENGTH_SHORT);
                 toast.show();
                 resetInputs();
                 updateHoldQuantity();
             }
         //This can't happen, but if it does...
         } else {
-            Toast toast = Toast.makeText(InMarket.this, "What? How?", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(InMarket.this, "What? How?",
+                    Toast.LENGTH_SHORT);
             toast.show();
         }
     }
@@ -662,7 +696,7 @@ public class InMarket extends AppCompatActivity {
      * helper method that sets all of the market to gone before each mode change and at the end
      * of onCreate()
      */
-    public void setInvisible(){
+    private void setInvisible(){
         material1Row1.setVisibility(View.GONE);
         material1Row2.setVisibility(View.GONE);
         spaceRow1.setVisibility(View.GONE);
@@ -697,7 +731,7 @@ public class InMarket extends AppCompatActivity {
     /**
      * resets all player inputs to 0, used in same places as setInvisible()
      */
-    public void resetInputs(){
+    private void resetInputs(){
         quantity1Input.setText("0");
         quantity2Input.setText("0");
         quantity3Input.setText("0");
@@ -713,8 +747,8 @@ public class InMarket extends AppCompatActivity {
     /**
      * updates the amount of each item in the player's ship in the display of the market
      */
-    public void updateHoldQuantity(){
-        holdQuantityView = findViewById(R.id.holdQuantity1);
+    private void updateHoldQuantity(){
+        TextView holdQuantityView = findViewById(R.id.holdQuantity1);
         holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(WATER)));
         holdQuantityView = findViewById(R.id.holdQuantity2);
         holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(FURS)));

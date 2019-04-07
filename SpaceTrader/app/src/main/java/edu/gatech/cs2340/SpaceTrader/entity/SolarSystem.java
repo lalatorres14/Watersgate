@@ -7,21 +7,20 @@ import java.util.HashMap;
 public class SolarSystem {
 
     /** The list of planets populating this Solar system*/
-    private ArrayList<Planet> planetList = new ArrayList<Planet>();
-    Random rand = new Random();
-    HashMap<Integer, Integer> coordinates = new HashMap<>();
-    HashMap<Integer, Integer> planetCoordinates;
-    String[] names = {"Alpha", "Beta", "Gamma", "Delta", "Zeta", "Theta", "Iota", "Nu", "Omicron", "Omega"};
-    static int nameNumber;
+    private ArrayList<Planet> planetList = new ArrayList<>();
+    private final Random rand = new Random();
+    private final HashMap<Integer, Integer> coordinates = new HashMap<>();
+    private final HashMap<Integer, Integer> planetCoordinates;
+    private static int nameNumber;
     /**The coordinates for the location of this solar system*/
-    int coordinateX = rand.nextInt(20);
-    int coordinateY = rand.nextInt(20);
+    final int coordinateX = rand.nextInt(20);
+    final int coordinateY = rand.nextInt(20);
     //private int coordinates;
 
     /** Total number of planets in the SolarSystem*/
     private int planetTotal;
 
-    private String name;
+    private final String name;
 
     /**
      * Constructor to create a SolarSystem
@@ -35,6 +34,8 @@ public class SolarSystem {
         }
         planetCoordinates = planetList.get(0).getCoordinates();
         coordinates.put(coordinateX,coordinateY);
+        String[] names = {"Alpha", "Beta", "Gamma", "Delta", "Zeta", "Theta", "Iota",
+                "Nu", "Omicron", "Omega"};
         name = names[nameNumber];
         nameNumber = (nameNumber + 1) % 10;
     }
@@ -70,7 +71,8 @@ public class SolarSystem {
         for (Planet planet : planetList) {
             planetsToString += "\n" + planet.toString();
         }
-        return String.format("Coordinates: (%d,%d)\nNumber of Planets: %d\nPlanets: " + planetsToString, coordinateX,coordinateY, planetTotal);
+        return String.format("Coordinates: (%d,%d)\nNumber of Planets: %d\nPlanets: " +
+                planetsToString, coordinateX,coordinateY, planetTotal);
     }
     public String getName() { return name; }
 }

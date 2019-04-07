@@ -18,7 +18,8 @@ public class Market {
         return "Successfully purchased!";
     }
     public String sellItem(GoodType good, int quantity, int unitPrice){
-        //There were problems with selling something with 0 quantity, so I tested this and it worked by just not processing them
+        //There were problems with selling something with 0 quantity, so I tested this and it
+        // worked by just not processing them
         if (quantity != 0) {
             player.getShip().sellGood(good, quantity);
             player.setCredits(player.getCredits() + (quantity * unitPrice));

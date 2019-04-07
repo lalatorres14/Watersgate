@@ -10,11 +10,11 @@ import java.util.List;
 public final class Game {
 
 
-    Player player;
-    static List<SolarSystem> universe;
-    Planet currentPlanet;
-    static SolarSystem currentSS;
-    static HashMap<Integer, Integer> solarCoordinates;
+    private Player player;
+    private static List<SolarSystem> universe;
+    private Planet currentPlanet;
+    private static SolarSystem currentSS;
+    private static HashMap<Integer, Integer> solarCoordinates;
     private Class nextScreen;
 
     /*

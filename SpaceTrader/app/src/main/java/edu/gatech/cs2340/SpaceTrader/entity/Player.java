@@ -13,7 +13,8 @@ public class Player implements Serializable {
     /** holds difficulty choices. If we decide to have difficulties actually correspond to
      * to something meaningful, we should make this a class instead.
      */
-    public static List<String> legalDifficulty = Arrays.asList("Beginner", "Easy", "Normal", "Hard", "Impossible");
+    public static final List<String> legalDifficulty = Arrays.asList(
+            "Beginner", "Easy", "Normal", "Hard", "Impossible");
 
     /** a globally unique number for this object */
     private int id;
@@ -74,9 +75,11 @@ public class Player implements Serializable {
     }
     public int planetDistance(Planet destination) {
         Planet current = Game.getInstance().getCurrentPlanet();
-        return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX, 2) + Math.pow(current.coordinateY - destination.coordinateY, 2))));
+        return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX,
+                2) + Math.pow(current.coordinateY - destination.coordinateY, 2))));
     }
-    public boolean canPlanetTravel(Planet destination) { return (planetDistance(destination) <= ship.getFuel()); }
+    public boolean canPlanetTravel(Planet destination) { return (planetDistance(destination) <=
+            ship.getFuel()); }
 
     public void systemTravel(SolarSystem destination) {
         if (canSystemTravel(destination)) {
@@ -88,12 +91,15 @@ public class Player implements Serializable {
     }
     public int systemDistance(SolarSystem destination) {
         SolarSystem current = Game.getInstance().getCurrentSS();
-        return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX, 2) + Math.pow(current.coordinateY - destination.coordinateY, 2))));
+        return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX,
+                2) + Math.pow(current.coordinateY - destination.coordinateY, 2))));
     }
-    public boolean canSystemTravel(SolarSystem destination) { return (systemDistance(destination) <= ship.getFuel()); }
+    public boolean canSystemTravel(SolarSystem destination) { return (systemDistance(destination)
+            <= ship.getFuel()); }
 
     public void refuel() {
-        setCredits(getCredits() - getDifficulty().adjustPrice(getShip().getMaxFuel() - getShip().getFuel()));
+        setCredits(getCredits() - getDifficulty().adjustPrice(
+                getShip().getMaxFuel() - getShip().getFuel()));
         getShip().setFuel(getShip().getMaxFuel());
     }
 
@@ -161,6 +167,7 @@ public class Player implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("Pilot: %s, Difficulty: %s, id: %d, Skill Points: %d", name, diff, id, skillPoints);
+        return String.format("Pilot: %s, Difficulty: %s, id: %d, Skill Points: %d",
+                name, diff, id, skillPoints);
     }
 }

@@ -5,7 +5,7 @@ package edu.gatech.cs2340.SpaceTrader.entity;
  *
  */
 public class Good {
-    private GoodType type;
+    private final GoodType type;
 
     public Good(GoodType g){
         type = g;

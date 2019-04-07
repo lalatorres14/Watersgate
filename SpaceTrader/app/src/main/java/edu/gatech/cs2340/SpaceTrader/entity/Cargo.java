@@ -1,8 +1,8 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 import java.util.EnumMap;
 public class Cargo {
-    private int maxCapacity;
-    private  EnumMap<GoodType, Integer> cargo;
+    private final int maxCapacity;
+    private final EnumMap<GoodType, Integer> cargo;
     /**
      * Class constructor
      *
@@ -10,7 +10,7 @@ public class Cargo {
      */
     public Cargo(int cargoSize){
         maxCapacity = cargoSize;
-        cargo = new EnumMap<GoodType, Integer>(GoodType.class);
+        cargo = new EnumMap<>(GoodType.class);
     }
 
     /**

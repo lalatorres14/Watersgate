@@ -16,10 +16,10 @@ public enum ShipType {
     ;
 
 
-    private int cargoSize;
-    private int price;
+    private final int cargoSize;
+    private final int price;
     private int tankSize;
-    private int maxTankSize;
+    private final int maxTankSize;
     /**
      *
      * @param cSize - cargo size of the ship

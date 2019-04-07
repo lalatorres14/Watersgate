@@ -15,19 +15,21 @@ public enum GoodType {
     ROBOTS (6,4,7,5000,-150,100,"","")
     ;
 
-    private int mtlp;
-    private int mtlu;
-    private int ttp;
-    private int basePrice;
-    private int ipl;
-    private int var;
-    private String cr;
-    private String er;
-    private Random rand = new Random();
+    private final int mtlp;
+    private final int mtlu;
+    private final int ttp;
+    private final int basePrice;
+    private final int ipl;
+    private final int var;
+    private final String cr;
+    private final String er;
+    private final Random rand = new Random();
     /**
      *
-     * @param mtlp - Minimum Tech Level to Produce this resource (You can't buy on planets below this level)
-     * @param mtlu - Minimum Tech Level to Use this resource (You can't sell on planets below this level)
+     * @param mtlp - Minimum Tech Level to Produce this resource (You can't buy on planets below
+     *             this level)
+     * @param mtlu - Minimum Tech Level to Use this resource (You can't sell on planets below
+     *            this level)
      * @param ttp - Tech Level which produces the most of this item
      * @param basePrice - base price
      * @param ipl - Price increase per tech level

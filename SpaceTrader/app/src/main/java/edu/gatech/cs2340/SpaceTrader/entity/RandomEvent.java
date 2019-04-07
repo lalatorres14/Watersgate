@@ -2,14 +2,15 @@ package edu.gatech.cs2340.SpaceTrader.entity;
 
 public class RandomEvent {
 
-    private static Player player = Game.getInstance().getPlayer();
+    private static final Player player = Game.getInstance().getPlayer();
 
     public static String doRandomEvent(RandomEventType type){
         String message = "";
         switch (type) {
             case POLICE:
                 //for testing, obviously breaks it
-                // Game.getInstance().getPlayer().getShip().getCargo().addGood(GoodType.NARCOTICS, 1);
+                // Game.getInstance().getPlayer().getShip().getCargo().addGood(GoodType.NARCOTICS,
+                // 1);
 
                 //check for narcotics
                 if(player.getShip().getCargo().getQuantityOfGood(GoodType.NARCOTICS) != 0){
@@ -19,17 +20,20 @@ public class RandomEvent {
                     if (Game.getInstance().getPlayer().getCredits() < fine) {
                         fine = Game.getInstance().getPlayer().getCredits();
                     } 
-                    Game.getInstance().getPlayer().setCredits(Game.getInstance().getPlayer().getCredits() - fine);
+                    Game.getInstance().getPlayer().setCredits(
+                            Game.getInstance().getPlayer().getCredits() - fine);
 
                     //lose narcotics stash
-                    Game.getInstance().getPlayer().getShip().getCargo().removeGood(GoodType.NARCOTICS,
-                            Game.getInstance().getPlayer().getShip().getCargo().getQuantityOfGood(GoodType.NARCOTICS));
+                    Game.getInstance().getPlayer().getShip().getCargo().removeGood(
+                            GoodType.NARCOTICS, Game.getInstance().getPlayer().getShip().getCargo()
+                                    .getQuantityOfGood(GoodType.NARCOTICS));
                     //update message
-                    message = String.format("You were stopped by police! They found your stash of narcotics: " +
-                            "the drugs were confiscated and you were fined %d credits.",fine);
+                    message = String.format("You were stopped by police! They found your stash" +
+                            " of narcotics: " + "the drugs were confiscated and you were " +
+                            "fined %d credits.",fine);
                 } else { //update message
-                    message = "You were stopped by police! Fortunately, you didn't have any narcotics " +
-                            "on board, so you weren't fined.";
+                    message = "You were stopped by police! Fortunately, you didn't have any " +
+                            "narcotics on board, so you weren't fined.";
                 }
 
 

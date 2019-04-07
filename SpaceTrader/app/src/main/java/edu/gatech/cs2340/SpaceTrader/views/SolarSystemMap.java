@@ -23,8 +23,8 @@ import edu.gatech.cs2340.SpaceTrader.entity.Planet;
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
 
 public class SolarSystemMap extends AppCompatActivity {
-    private static Player player = Game.getInstance().getPlayer();
-    int planetIndex;
+    private static final Player player = Game.getInstance().getPlayer();
+    private int planetIndex;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.solarsystem_map);
@@ -67,7 +67,8 @@ public class SolarSystemMap extends AppCompatActivity {
         DataPoint[] data = new DataPoint[Game.getInstance().getCurrentSS().getPlanetList().size()];
 
         final TextView solarSystemTextView = findViewById(R.id.solarSystemText);
-        solarSystemTextView.setText(String.format("Solar System %s", Game.getInstance().getCurrentSS().getName()));
+        solarSystemTextView.setText(String.format("Solar System %s",
+                Game.getInstance().getCurrentSS().getName()));
 
         Button button = findViewById(R.id.toPlanet);
         button.setOnClickListener(new View.OnClickListener() {
@@ -98,9 +99,10 @@ public class SolarSystemMap extends AppCompatActivity {
     }
 
     //travel button
-    public void onStartPressed(){
+    private void onStartPressed(){
         //travel here
-        if (player.canPlanetTravel(Game.getInstance().getCurrentSS().getPlanetList().get(planetIndex))) {
+        if (player.canPlanetTravel(Game.getInstance().getCurrentSS().getPlanetList()
+                .get(planetIndex))) {
 
             Random random = new Random();
             //this 3 is arbitrary, we should decide how often to get random events
@@ -116,7 +118,8 @@ public class SolarSystemMap extends AppCompatActivity {
 
             player.planetTravel(Game.getInstance().getCurrentSS().getPlanetList().get(planetIndex));
         } else {
-            Toast toast = Toast.makeText(SolarSystemMap.this, "Not enough fuel", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(SolarSystemMap.this, "Not enough fuel",
+                    Toast.LENGTH_SHORT);
             toast.show();
         }
     }
