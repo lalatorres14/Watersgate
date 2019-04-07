@@ -75,7 +75,7 @@ public class RandomEvent {
                 //Meet a narcotics dealer offering a sweet price, or tyring to scam you.
                 boolean scam = rand.nextBoolean();
                 Market dealer = new Market();
-                money = player.getCredits() * 1 / 10;
+                money = player.getCredits() / 10;
                 message += "You meet a shady figure who offers you some narcotics. ";
                 if (scam) {
                     if (player.getTraderSkill() >= 12) {
