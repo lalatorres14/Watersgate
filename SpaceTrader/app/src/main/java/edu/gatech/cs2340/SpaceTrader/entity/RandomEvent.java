@@ -53,6 +53,22 @@ public class RandomEvent {
                 player.getShip().setFuel(player.getShip().getFuel() - fuelLost);
                 message += "losing " + String.valueOf(fuelLost) + " fuel";
                 break;
+            case PIRATES:
+                //Fight pirates, either win and take their money, fend off, or lose and lose money
+                int money = player.getCredits() * 2 / 10;
+                message += "You were boarded by pirates! ";
+                if (player.getFighterSkill() >= 12) {
+                    player.setCredits(player.getCredits() + money);
+                    message += "You managed to defeat them all, gaining "
+                            + String.valueOf(money) + " credits!";
+                } else if (player.getFighterSkill() >= 6) {
+                    message += "You managed to fend them off, and they fled. " +
+                            "That was a close one!";
+                } else {
+                    player.setCredits(player.getCredits() - money);
+                    message += "They managed to defeat you, and stole "
+                            + String.valueOf(money) + " credits!";
+                }
         }
         return message;
     }
