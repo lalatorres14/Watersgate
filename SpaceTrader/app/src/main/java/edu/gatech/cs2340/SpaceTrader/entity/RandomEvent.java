@@ -100,7 +100,7 @@ public class RandomEvent {
                         dealer.buyItem(GoodType.NARCOTICS, 1, money);
                     } else {
                         message += "Oh how you wish you had space for these premium goods!" +
-                                " Unfortunately, your ship's cargo is full";
+                                " Unfortunately, your ship's cargo is full.";
                     }
                 }
                 break;
