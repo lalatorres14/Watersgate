@@ -3,7 +3,10 @@ package edu.gatech.cs2340.SpaceTrader.entity;
 import java.util.Random;
 
 public enum RandomEventType {
-    POLICE
+    POLICE,
+    LEAK,
+    PIRATES,
+    DEALER
     ;
 
     public static RandomEventType getRandomEventType() {
