@@ -10,7 +10,7 @@ import java.util.List;
 public final class Game {
 
 
-    private Player player;
+    private Player player = new Player("Bob", Difficulty.BEGINNER);;
     private static List<SolarSystem> universe;
     private Planet currentPlanet;
     private static SolarSystem currentSS;

@@ -1,6 +1,8 @@
 package edu.gatech.cs2340.SpaceTrader.views;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 
@@ -17,19 +20,23 @@ import java.util.Random;
 
 import edu.gatech.cs2340.SpaceTrader.R;
 import edu.gatech.cs2340.SpaceTrader.entity.Game;
+import edu.gatech.cs2340.SpaceTrader.entity.GoodType;
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
 
 public class UniverseMap extends AppCompatActivity {
     private static final Player player = Game.getInstance().getPlayer();
     private CharSequence checkedText;
     private int solarIndex;
+    SharedPreferences pref ;
+    SharedPreferences.Editor editor ;
+    Gson gson = new Gson();
     //private SolarSystem destination = Game.getUniverse().get(0);
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
         setContentView(R.layout.universe_map);
-
+        pref = getSharedPreferences("spaceTrader", Context.MODE_PRIVATE);
         final TextView locationText = findViewById(R.id.locationText);
         locationText.setText("Current Location: " + Game.getInstance().getCurrentSS().getName() +
                 ", " + Game.getInstance().getCurrentPlanet().getName());
@@ -116,5 +123,43 @@ public class UniverseMap extends AppCompatActivity {
             Toast toast = Toast.makeText(UniverseMap.this, "Not enough fuel", Toast.LENGTH_SHORT);
             toast.show();
         }
+        Toast toast = Toast.makeText(UniverseMap.this, "Saved Progress", Toast.LENGTH_SHORT);
+        toast.show();
+        editor = pref.edit();
+        //String json_1 = gson.toJson(Game.getInstance().getPlayer());
+        String json_2 = gson.toJson(Game.getInstance().getCurrentSS());
+        String json_3 = gson.toJson(Game.getInstance().getCurrentPlanet());
+        //System.out.println(json);
+        //System.out.println("Savy  in UniverseMap, " + json_1);
+        //editor.putString("Current_Game_Player", json_1);
+        editor.putString("Player_name", Game.getInstance().getPlayer().getName());
+        editor.putString("Difficulty", Game.getInstance().getPlayer().getDifficulty().toString());
+        editor.putInt("Credits", Game.getInstance().getPlayer().getCredits());
+        editor.putString("Ship_Name", Game.getInstance().getPlayer().getShip().toString());
+        editor.putInt("Pilot_Skill", Game.getInstance().getPlayer().getPilotSkill());
+        editor.putInt("Fighter_Skill", Game.getInstance().getPlayer().getFighterSkill());
+        editor.putInt("Trader_Skill", Game.getInstance().getPlayer().getTraderSkill());
+        editor.putInt("Engineer_Skill", Game.getInstance().getPlayer().getEngineerSkill());
+        editor.putString("Current_Game_CurrentSS", json_2);
+        editor.putString("Current_Game_CurrentPlanet", json_3);
+        editor.putInt("Fuel", Game.getInstance().getPlayer().getShip().getFuel());
+        editor.putInt("WATER", Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.WATER));
+        editor.putInt("FURS",  Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.FURS));
+        editor.putInt("FOOD", Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.FOOD));
+        editor.putInt("ORE", Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.ORE));
+        editor.putInt("GAMES",  Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.GAMES));
+        editor.putInt("FIREARMS", Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.FIREARMS));
+        editor.putInt("MEDICINE", Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.MEDICINE));
+        editor.putInt("MACHINES", Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.MACHINES));
+        editor.putInt("NARCOTICS", Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.NARCOTICS));
+        editor.putInt("ROBOTS", Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.ROBOTS));
+        for (int i = 0; i < Game.getUniverse().size(); i++) {
+            String json_i = gson.toJson(Game.getUniverse().get(i));
+            editor.putString("universe_elem" + i, json_i);
+        }
+        editor.putInt("Fuel", Game.getInstance().getPlayer().getShip().getFuel());
+        editor.commit();
+        //System.out.println(pref.getInt("Fuel", 0));
+        //System.out.println("Savy  saved file in UniverseMap, ");
     }
 }
