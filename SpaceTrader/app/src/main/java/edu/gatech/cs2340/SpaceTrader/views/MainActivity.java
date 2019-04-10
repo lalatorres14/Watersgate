@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     //SharedPreferences pref = getApplicationContext().getSharedPreferences("data", 0);
     private SharedPreferences pref ;
     //SharedPreferences.Editor editor ;
-    Boolean firstTime = false;
     private final Gson gson = new Gson();
     //Game game ;
     @Override
@@ -50,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
     private void onStartPressed(){
         List<SolarSystem> tmplist = new ArrayList<>();
         pref = getSharedPreferences("spaceTrader", Context.MODE_PRIVATE);
-        if (pref.getBoolean("firstTime", true)) {
+        if (pref.getBoolean("first", true)) {
             System.out.println("Savy, inside getShared preferences if");
             SharedPreferences.Editor edit = pref.edit();
-            edit.putBoolean("firstTime", false);
+            edit.putBoolean("first", false);
             edit.apply();
             Intent intent = new Intent(MainActivity.this, CreatePlayer.class);
             startActivity(intent);
