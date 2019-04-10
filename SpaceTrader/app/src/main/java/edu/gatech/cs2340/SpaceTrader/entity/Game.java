@@ -47,7 +47,9 @@ public final class Game {
     public Planet getCurrentPlanet() {return currentPlanet; }
 
     public SolarSystem getCurrentSS() {return currentSS; }
-    public static Map<Integer, Integer> getSolarCoordinates(){return Collections.unmodifiableMap(solarCoordinates);}
+    public static Map<Integer, Integer> getSolarCoordinates() {
+        return Collections.unmodifiableMap(solarCoordinates);
+    }
     public Player getPlayer(){return player; }
     public static List<SolarSystem> getUniverse(){ return Collections.unmodifiableList(universe); }
     public void setNextScreen(Class c){nextScreen = c;}
