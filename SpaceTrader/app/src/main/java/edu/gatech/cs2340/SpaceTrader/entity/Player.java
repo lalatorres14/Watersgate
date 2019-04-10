@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
+
 /**
  * This class represents a single Player in the database. It is an information holder.
  */

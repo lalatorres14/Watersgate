@@ -1,5 +1,9 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 import java.util.EnumMap;
+
+/**
+ * Class regarding the cargo holdings and size for the player's ship
+ */
 public class Cargo {
     private final int maxCapacity;
     private final EnumMap<GoodType, Integer> cargo;
@@ -57,21 +61,21 @@ public class Cargo {
      *
      * @param good The item to be removed
      * @param quantity The number of items
-     * @return whether or not the item was successfully removed
      */
-    public boolean removeGood(GoodType good, int quantity) {
+    public void removeGood(GoodType good, int quantity) {
         if(cargo.keySet().contains(good)) {
             if(cargo.get(good) == 1) {
                 cargo.remove(good);
             } else {
                 cargo.put(good, cargo.get(good) - quantity);
             }
-            return true;
-        } else {
-            return false;
         }
     }
 
+    /**
+     * tells user the maximum capacity of their ship
+     * @return the max capacity
+     */
     public int getMaxCapacity() {
         return maxCapacity;
     }

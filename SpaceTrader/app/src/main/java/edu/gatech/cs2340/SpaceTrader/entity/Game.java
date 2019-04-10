@@ -1,8 +1,10 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A singleton class to keep track of the player and universe
@@ -10,7 +12,7 @@ import java.util.List;
 public final class Game {
 
 
-    private Player player = new Player("Bob", Difficulty.BEGINNER);;
+    private Player player = new Player("Bob", Difficulty.BEGINNER);
     private static List<SolarSystem> universe;
     private Planet currentPlanet;
     private static SolarSystem currentSS;
@@ -45,9 +47,9 @@ public final class Game {
     public Planet getCurrentPlanet() {return currentPlanet; }
 
     public SolarSystem getCurrentSS() {return currentSS; }
-    public static HashMap<Integer, Integer> getSolarCoordinates(){return solarCoordinates;}
+    public static Map<Integer, Integer> getSolarCoordinates(){return Collections.unmodifiableMap(solarCoordinates);}
     public Player getPlayer(){return player; }
-    public static List<SolarSystem> getUniverse(){ return universe; }
+    public static List<SolarSystem> getUniverse(){ return Collections.unmodifiableList(universe); }
     public void setNextScreen(Class c){nextScreen = c;}
     public Class getNextScreen() {return nextScreen;}
 

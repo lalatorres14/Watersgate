@@ -27,10 +27,10 @@ public class UniverseMap extends AppCompatActivity {
     private static final Player player = Game.getInstance().getPlayer();
     private CharSequence checkedText;
     private int solarIndex;
-    SharedPreferences pref ;
-    SharedPreferences.Editor editor ;
-    Gson gson = new Gson();
+    private SharedPreferences pref ;
+    private final Gson gson = new Gson();
     //private SolarSystem destination = Game.getUniverse().get(0);
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -44,12 +44,12 @@ public class UniverseMap extends AppCompatActivity {
         final TextView fuelText = findViewById(R.id.fuelText);
         fuelText.setText("Current Fuel: " + Game.getInstance().getPlayer().getShip().getFuel());
 
-        GraphView uniGraph = (GraphView) findViewById(R.id.universe_graph);
+        GraphView uniGraph = findViewById(R.id.universe_graph);
         DataPoint[] data = new DataPoint[9];
         int j = 0;
         //HashMap<Integer, Integer> solarCoordinates = Game.getSolarCoordinates();
-        RadioGroup radioGroup = (RadioGroup)findViewById(R.id.group);
-        RadioButton checkedRadioButton = (RadioButton)radioGroup.findViewById(
+        RadioGroup radioGroup = findViewById(R.id.group);
+        RadioButton checkedRadioButton = radioGroup.findViewById(
                 radioGroup.getCheckedRadioButtonId());
         for (int i = 0; i < radioGroup.getChildCount(); i++) {
             String name = Game.getUniverse().get(i).getName();
@@ -72,9 +72,10 @@ public class UniverseMap extends AppCompatActivity {
         //check to see which solar system was selected and sets that as the destination
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
+            @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // This will get the radiobutton that has changed in its check state
-                RadioButton checkedRadioButton = (RadioButton) group.findViewById(checkedId);
+                RadioButton checkedRadioButton = group.findViewById(checkedId);
                 boolean isChecked = checkedRadioButton.isChecked();
                 if (isChecked) {
 
@@ -125,7 +126,7 @@ public class UniverseMap extends AppCompatActivity {
         }
         Toast toast = Toast.makeText(UniverseMap.this, "Saved Progress", Toast.LENGTH_SHORT);
         toast.show();
-        editor = pref.edit();
+        SharedPreferences.Editor editor = pref.edit();
         //String json_1 = gson.toJson(Game.getInstance().getPlayer());
         String json_2 = gson.toJson(Game.getInstance().getCurrentSS());
         String json_3 = gson.toJson(Game.getInstance().getCurrentPlanet());
@@ -143,22 +144,32 @@ public class UniverseMap extends AppCompatActivity {
         editor.putString("Current_Game_CurrentSS", json_2);
         editor.putString("Current_Game_CurrentPlanet", json_3);
         editor.putInt("Fuel", Game.getInstance().getPlayer().getShip().getFuel());
-        editor.putInt("WATER", Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.WATER));
-        editor.putInt("FURS",  Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.FURS));
-        editor.putInt("FOOD", Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.FOOD));
-        editor.putInt("ORE", Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.ORE));
-        editor.putInt("GAMES",  Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.GAMES));
-        editor.putInt("FIREARMS", Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.FIREARMS));
-        editor.putInt("MEDICINE", Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.MEDICINE));
-        editor.putInt("MACHINES", Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.MACHINES));
-        editor.putInt("NARCOTICS", Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.NARCOTICS));
-        editor.putInt("ROBOTS", Game.getInstance().getPlayer().getShip().getGoodQuantity(GoodType.ROBOTS));
+        editor.putInt("WATER", Game.getInstance().getPlayer().getShip().getGoodQuantity(
+                GoodType.WATER));
+        editor.putInt("FURS",  Game.getInstance().getPlayer().getShip().getGoodQuantity(
+                GoodType.FURS));
+        editor.putInt("FOOD", Game.getInstance().getPlayer().getShip().getGoodQuantity(
+                GoodType.FOOD));
+        editor.putInt("ORE", Game.getInstance().getPlayer().getShip().getGoodQuantity(
+                GoodType.ORE));
+        editor.putInt("GAMES",  Game.getInstance().getPlayer().getShip().getGoodQuantity(
+                GoodType.GAMES));
+        editor.putInt("FIREARMS", Game.getInstance().getPlayer().getShip().getGoodQuantity(
+                GoodType.FIREARMS));
+        editor.putInt("MEDICINE", Game.getInstance().getPlayer().getShip().getGoodQuantity(
+                GoodType.MEDICINE));
+        editor.putInt("MACHINES", Game.getInstance().getPlayer().getShip().getGoodQuantity(
+                GoodType.MACHINES));
+        editor.putInt("NARCOTICS", Game.getInstance().getPlayer().getShip().getGoodQuantity(
+                GoodType.NARCOTICS));
+        editor.putInt("ROBOTS", Game.getInstance().getPlayer().getShip().getGoodQuantity(
+                GoodType.ROBOTS));
         for (int i = 0; i < Game.getUniverse().size(); i++) {
             String json_i = gson.toJson(Game.getUniverse().get(i));
             editor.putString("universe_elem" + i, json_i);
         }
         editor.putInt("Fuel", Game.getInstance().getPlayer().getShip().getFuel());
-        editor.commit();
+        editor.apply();
         //System.out.println(pref.getInt("Fuel", 0));
         //System.out.println("Savy  saved file in UniverseMap, ");
     }

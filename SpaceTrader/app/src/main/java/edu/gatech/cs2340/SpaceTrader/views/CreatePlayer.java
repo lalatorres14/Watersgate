@@ -144,6 +144,10 @@ public class CreatePlayer extends AppCompatActivity {
         onBackPressed();
     }
 
+    /**
+     * increments the pilot skill
+     * @param view up button
+     */
     public void onPilotUpPressed(View view) {
         if (player.getSkillPoints() > 0) {
             player.setPilotSkill(player.getPilotSkill() + 1);
@@ -159,6 +163,10 @@ public class CreatePlayer extends AppCompatActivity {
         }
     }
 
+    /**
+     * decrements the pilot skill
+     * @param view down button
+     */
     public void onPilotDownPressed(View view) {
         if (player.getPilotSkill() > 0) {
             player.setPilotSkill(player.getPilotSkill() - 1);
@@ -174,6 +182,10 @@ public class CreatePlayer extends AppCompatActivity {
         }
     }
 
+    /**
+     * increments the fighter skill
+     * @param view up button
+     */
     public void onFighterUpPressed(View view) {
         if (player.getSkillPoints() > 0) {
             player.setFighterSkill(player.getFighterSkill() + 1);
@@ -189,6 +201,10 @@ public class CreatePlayer extends AppCompatActivity {
         }
     }
 
+    /**
+     * decrements the fighter skill
+     * @param view down button
+     */
     public void onFighterDownPressed(View view) {
         if (player.getFighterSkill() > 0) {
             player.setFighterSkill(player.getFighterSkill() - 1);
@@ -204,6 +220,10 @@ public class CreatePlayer extends AppCompatActivity {
         }
     }
 
+    /**
+     * increments the trader skill
+     * @param view up button
+     */
     public void onTraderUpPressed(View view) {
         if (player.getSkillPoints() > 0) {
             player.setTraderSkill(player.getTraderSkill() + 1);
@@ -219,6 +239,10 @@ public class CreatePlayer extends AppCompatActivity {
         }
     }
 
+    /**
+     * decrements the trader skill
+     * @param view down button
+     */
     public void onTraderDownPressed(View view) {
         if (player.getTraderSkill() > 0) {
             player.setTraderSkill(player.getTraderSkill() - 1);
@@ -234,6 +258,10 @@ public class CreatePlayer extends AppCompatActivity {
         }
     }
 
+    /**
+     * increments the engineer skill
+     * @param view up button
+     */
     public void onEngineerUpPressed(View view) {
         if (player.getSkillPoints() > 0) {
             player.setEngineerSkill(player.getEngineerSkill() + 1);
@@ -249,6 +277,10 @@ public class CreatePlayer extends AppCompatActivity {
         }
     }
 
+    /**
+     * decrements the engineer skill
+     * @param view down button
+     */
     public void onEngineerDownPressed(View view) {
         if (player.getEngineerSkill() > 0) {
             player.setEngineerSkill(player.getEngineerSkill() - 1);

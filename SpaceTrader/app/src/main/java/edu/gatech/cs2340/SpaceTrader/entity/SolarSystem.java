@@ -3,6 +3,7 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
 /** This class represents a single SolarSystem*/
 public class SolarSystem {
 
@@ -67,9 +68,9 @@ public class SolarSystem {
 
     @Override
     public String toString() {
-        String planetsToString = "";
+        StringBuilder planetsToString = new StringBuilder();
         for (Planet planet : planetList) {
-            planetsToString += "\n" + planet.toString();
+            planetsToString.append("\n").append(planet.toString());
         }
         return String.format("Coordinates: (%d,%d)\nNumber of Planets: %d\nPlanets: " +
                 planetsToString, coordinateX,coordinateY, planetTotal);

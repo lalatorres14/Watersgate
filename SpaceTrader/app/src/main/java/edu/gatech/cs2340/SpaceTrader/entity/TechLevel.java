@@ -2,6 +2,7 @@ package edu.gatech.cs2340.SpaceTrader.entity;
 
 import java.util.Random;
 
+
 public enum TechLevel {
     PREAG (0,"Pre-Agriculture"),
     AGRICULTURE (1, "Agriculture"),

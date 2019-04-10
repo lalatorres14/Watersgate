@@ -25,6 +25,7 @@ import edu.gatech.cs2340.SpaceTrader.entity.Player;
 public class SolarSystemMap extends AppCompatActivity {
     private static final Player player = Game.getInstance().getPlayer();
     private int planetIndex;
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.solarsystem_map);
@@ -81,6 +82,7 @@ public class SolarSystemMap extends AppCompatActivity {
         //checks to see what planet was selected and sets it as the destination
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
+            @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // This will get the radiobutton that has changed in its check state
                 RadioButton checkedRadioButton = group.findViewById(checkedId);
