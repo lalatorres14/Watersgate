@@ -3,6 +3,7 @@ package edu.gatech.cs2340.SpaceTrader.views;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -63,8 +64,11 @@ public class MainActivity extends AppCompatActivity {
             String json_3 = pref.getString("Current_Game_CurrentPlanet", null);
             //System.out.println("Savy , " + json_1);
             Game.getInstance().getPlayer().setName(pref.getString("Player_name", null));
-            Game.getInstance().getPlayer().setDifficulty(Difficulty.valueOf(Objects.requireNonNull
-                    (pref.getString("Difficulty", null)).toUpperCase()));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                Game.getInstance().getPlayer().setDifficulty(Difficulty.valueOf(
+                        Objects.requireNonNull
+                        (pref.getString("Difficulty", null)).toUpperCase()));
+            }
             Game.getInstance().getPlayer().setCredits(pref.getInt("Credits",0));
             Game.getInstance().getPlayer().setShip(ShipType.valueOf(Objects.requireNonNull(pref.
                     getString("Ship_Name", null)).toUpperCase()));
