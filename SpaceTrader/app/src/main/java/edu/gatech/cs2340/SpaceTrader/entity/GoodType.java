@@ -3,7 +3,7 @@ package edu.gatech.cs2340.SpaceTrader.entity;
 import java.util.Random;
 
 public enum GoodType {
-    WATER (0,0,2,30,3,4,"Lots of Water","DESERT"),
+    WATER (0,0,2,30,3,4,"Lots of Water","Desert"),
     FURS (0,0,0,250,10,10,"Rich Fauna","LIFELESS"),
     FOOD (1,0,1,100,5,5,"Rich Soil","POORSOIL"),
     ORE (2,2,3,350,20,10,"Mineral Rich","MINERALPOOR"),
@@ -56,10 +56,8 @@ public enum GoodType {
         int price = basePrice + (ipl * (techLevel - mtlp)) + variance;
 
         if(condition.toString().equals(cr)) { price = price / 2; }
-        if(condition.toString().equals(er)) { price = price * 2; }
-        if(price == 0) {
-            price = 1;
-        }
+        else if(condition.toString().equals(er)) { price = price * 2; }
+
         Game.getInstance().getPlayer().getDifficulty().adjustPrice(price);
         //Trader skill points adjustment
         price += ((Game.getInstance().getPlayer().getTraderSkill() / 100) * price);
@@ -72,7 +70,7 @@ public enum GoodType {
     public int getTtp(){return ttp; }
     public int getBasePrice(){return basePrice; }
     public int getIpl(){return ipl; }
-    public int getVar(){return var; } //shouldn't need this one probably lol
+    public int getVar(){return var; }
     public String getCr() {return cr;}
     public String getEr() {return er; }
 }

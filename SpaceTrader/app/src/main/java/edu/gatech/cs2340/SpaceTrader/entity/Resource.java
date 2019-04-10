@@ -14,7 +14,8 @@ public enum Resource {
     WEIRDMUSHROOMS ("Weird Mushrooms"),
     LOTSOFHERBS ("Lots of Herbs"),
     ARTISTIC ("Artistic"),
-    WARLIKE ("Warlike");
+    WARLIKE ("Warlike"),
+    DESERT ("Desert");
 
     private final String formattedName;
 

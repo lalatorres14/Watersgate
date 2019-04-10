@@ -123,7 +123,8 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:scaleType="fitXY"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:contentDescription="TODO" />
 
 
     <TextView
@@ -163,7 +164,8 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:scaleType="fitXY"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:contentDescription="TODO" />
 
     <ImageButton
         android:id="@+id/fighter_button_down"
@@ -175,7 +177,8 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:scaleType="fitXY"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/trader_header"
@@ -209,7 +212,8 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:scaleType="fitXY"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:contentDescription="TODO" />
 
     <ImageButton
         android:id="@+id/trader_button_down"
@@ -221,7 +225,8 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:scaleType="fitXY"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/engineer_header"
@@ -260,7 +265,8 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:scaleType="fitXY"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:contentDescription="TODO" />
 
     <ImageButton
         android:id="@+id/engineer_button_down"
@@ -272,7 +278,8 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:scaleType="fitXY"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/remaining_header"
