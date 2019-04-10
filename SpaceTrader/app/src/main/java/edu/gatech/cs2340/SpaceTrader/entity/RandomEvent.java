@@ -54,13 +54,13 @@ public class RandomEvent {
                     message += "and you were able to fix it, but not before ";
                 }
                 //0 = no fuel lost, 1 = 25% lost, 2 = 50%, 3 = 75%
-                int fuelLost = damage * player.getShip().getFuel() / 4;
+                int fuelLost = (damage * player.getShip().getFuel()) / 4;
                 player.getShip().setFuel(player.getShip().getFuel() - fuelLost);
                 message += "losing " + String.valueOf(fuelLost) + " fuel.";
                 break;
             case PIRATES:
                 //Fight pirates, either win and take their money, fend off, or lose and lose money
-                money = player.getCredits() * 2 / 10;
+                money = (player.getCredits() * 2) / 10;
                 message += "You were boarded by pirates! ";
                 if (player.getFighterSkill() >= 12) {
                     player.setCredits(player.getCredits() + money);

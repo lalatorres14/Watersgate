@@ -3,7 +3,6 @@ import java.util.Random;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import androidx.annotation.RecentlyNonNull;
 
 /** This class represents a single SolarSystem*/
 public class SolarSystem {
@@ -67,7 +66,6 @@ public class SolarSystem {
         this.planetTotal = planetTotal;
     }
 
-    @RecentlyNonNull
     @Override
     public String toString() {
         StringBuilder planetsToString = new StringBuilder();

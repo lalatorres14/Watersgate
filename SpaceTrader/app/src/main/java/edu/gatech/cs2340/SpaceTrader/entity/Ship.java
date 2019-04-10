@@ -1,6 +1,5 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 
-import androidx.annotation.RecentlyNonNull;
 
 /**
  * The Ship class
@@ -49,7 +48,6 @@ public class Ship {
         cargo.removeGood(good, quantity);
     }
 
-    @RecentlyNonNull
     @Override public String toString(){return ship.toString(); }
     public int getFuel(){
         return ship.getTankSize();

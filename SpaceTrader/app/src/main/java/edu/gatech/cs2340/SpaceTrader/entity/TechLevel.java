@@ -2,7 +2,6 @@ package edu.gatech.cs2340.SpaceTrader.entity;
 
 import java.util.Random;
 
-import androidx.annotation.RecentlyNonNull;
 
 public enum TechLevel {
     PREAG (0,"Pre-Agriculture"),
@@ -27,7 +26,6 @@ public enum TechLevel {
         return values()[random.nextInt(values().length)];
     }
 
-    @RecentlyNonNull
     @Override public String toString() {return formattedName;}
     public int getTechLevelInt() {return techLevelInt;}
 }

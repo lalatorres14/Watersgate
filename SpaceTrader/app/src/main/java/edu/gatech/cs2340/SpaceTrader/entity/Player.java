@@ -6,7 +6,6 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
-import androidx.annotation.RecentlyNonNull;
 
 /**
  * This class represents a single Player in the database. It is an information holder.
@@ -167,7 +166,6 @@ public class Player implements Serializable {
         this.id = id;
     }
 
-    @RecentlyNonNull
     @Override
     public String toString() {
         return String.format("Pilot: %s, Difficulty: %s, id: %d, Skill Points: %d",
