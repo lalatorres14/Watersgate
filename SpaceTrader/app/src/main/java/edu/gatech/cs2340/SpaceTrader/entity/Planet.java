@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
+import androidx.annotation.RecentlyNonNull;
+
 /** This class represents a single PlanetScreen*/
 public class Planet {
     private String name;
@@ -124,10 +126,11 @@ public class Planet {
     public int getCoordinateX() { return coordinateX; }
     public int getCoordinateY() { return coordinateY; }
 
+    @RecentlyNonNull
     @Override
     public String toString() {
-        return String.format("Name: " + getName() + "\nTech Level: " + getTechLevel() +
-                "\nResources: " + getResources());
+        return "Name: " + getName() + "\nTech Level: " + getTechLevel() +
+                "\nResources: " + getResources();
     }
 
 }

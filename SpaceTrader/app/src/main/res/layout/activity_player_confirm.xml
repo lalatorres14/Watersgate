@@ -31,7 +31,6 @@
         android:text="@string/player_name_blank"
         android:textColor="@color/design_default_color_primary"
         android:textSize="20sp"
-        app:chainUseRtl="false"
         app:layout_constraintBottom_toTopOf="@+id/difficultyText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

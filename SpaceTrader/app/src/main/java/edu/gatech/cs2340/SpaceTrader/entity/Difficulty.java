@@ -1,5 +1,8 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 
+/**
+ * Difficulty enum that has values that will impact the game
+ */
 public enum Difficulty {
     BEGINNER (0.5, 2000),
     EASY (1, 2000),

@@ -14,7 +14,7 @@
         android:layout_marginBottom="8dp"
         android:text="Default"
         android:textAlignment="center"
-        android:textSize="24dp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -62,7 +62,7 @@
         android:height="48dp"
         android:gravity="center"
         android:text="Free Space:"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@id/buyMode"
         app:layout_constraintEnd_toStartOf="@id/holdSpace"
         app:layout_constraintBottom_toBottomOf="@+id/buyMode"
@@ -130,7 +130,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Water"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item1TotalHeader"
@@ -139,7 +139,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Total: "
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item1TotalAmount"
@@ -148,7 +148,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0$"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item1Unit"
@@ -157,7 +157,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="$ Per:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -174,7 +174,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="In hold:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/holdQuantity1"
@@ -183,7 +183,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/quantity1Header"
@@ -192,7 +192,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Quantity:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/quantity1"
@@ -204,7 +204,7 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -217,7 +217,7 @@
                     android:id="@+id/blank1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="48dp" />
+                    android:textSize="48sp" />
             </TableRow>
 
             <android.support.constraint.Group
@@ -240,7 +240,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Furs"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item2TotalHeader"
@@ -249,7 +249,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Total: "
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item2TotalAmount"
@@ -258,7 +258,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0$"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item2Unit"
@@ -267,7 +267,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="$ Per:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -284,7 +284,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="In hold:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/holdQuantity2"
@@ -293,7 +293,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/quantity2Header"
@@ -302,7 +302,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Quantity:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/quantity2"
@@ -314,7 +314,7 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -327,7 +327,7 @@
                     android:id="@+id/blank2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="48dp" />
+                    android:textSize="48sp" />
             </TableRow>
 
             <android.support.constraint.Group
@@ -350,7 +350,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Food"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item3TotalHeader"
@@ -359,7 +359,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Total: "
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item3TotalAmount"
@@ -368,7 +368,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0$"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item3Unit"
@@ -377,7 +377,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="$ Per:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -394,7 +394,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="In hold:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/holdQuantity3"
@@ -403,7 +403,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/quantity3Header"
@@ -412,7 +412,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Quantity:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/quantity3"
@@ -424,7 +424,7 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -437,7 +437,7 @@
                     android:id="@+id/blank3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="48dp" />
+                    android:textSize="48sp" />
 
             </TableRow>
 
@@ -461,7 +461,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Ore"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item4TotalHeader"
@@ -470,7 +470,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Total: "
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item4TotalAmount"
@@ -479,7 +479,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0$"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item4Unit"
@@ -488,7 +488,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="$ Per:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -505,7 +505,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="In hold:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/holdQuantity4"
@@ -514,7 +514,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/quantity4Header"
@@ -523,7 +523,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Quantity:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/quantity4"
@@ -535,7 +535,7 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -548,7 +548,7 @@
                     android:id="@+id/blank4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="48dp" />
+                    android:textSize="48sp" />
             </TableRow>
 
             <android.support.constraint.Group
@@ -571,7 +571,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Games"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item5TotalHeader"
@@ -580,7 +580,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Total: "
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item5TotalAmount"
@@ -589,7 +589,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0$"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item5Unit"
@@ -598,7 +598,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="$ Per:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -615,7 +615,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="In hold:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/holdQuantity5"
@@ -624,7 +624,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/quantity5Header"
@@ -633,7 +633,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Quantity:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/quantity5"
@@ -645,7 +645,7 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -658,7 +658,7 @@
                     android:id="@+id/blank5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="48dp" />
+                    android:textSize="48sp" />
             </TableRow>
 
             <android.support.constraint.Group
@@ -681,7 +681,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Firearms"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item6TotalHeader"
@@ -690,7 +690,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Total: "
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item6TotalAmount"
@@ -699,7 +699,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0$"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item6Unit"
@@ -708,7 +708,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="$ Per:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -725,7 +725,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="In hold:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/holdQuantity6"
@@ -734,7 +734,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/quantity6Header"
@@ -743,7 +743,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Quantity:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/quantity6"
@@ -755,7 +755,7 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -768,7 +768,7 @@
                     android:id="@+id/blank6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="48dp" />
+                    android:textSize="48sp" />
             </TableRow>
 
             <android.support.constraint.Group
@@ -791,7 +791,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Medicine"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item7TotalHeader"
@@ -800,7 +800,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Total: "
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item7TotalAmount"
@@ -809,7 +809,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0$"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item7Unit"
@@ -818,7 +818,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="$ Per:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -835,7 +835,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="In hold:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/holdQuantity7"
@@ -844,7 +844,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/quantity7Header"
@@ -853,7 +853,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Quantity:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/quantity7"
@@ -865,7 +865,7 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -878,7 +878,7 @@
                     android:id="@+id/blank7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="48dp" />
+                    android:textSize="48sp" />
             </TableRow>
 
             <android.support.constraint.Group
@@ -901,7 +901,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Machine"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item8TotalHeader"
@@ -910,7 +910,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Total: "
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item8TotalAmount"
@@ -919,7 +919,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0$"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item8Unit"
@@ -928,7 +928,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="$ Per:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -945,7 +945,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="In hold:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/holdQuantity8"
@@ -954,7 +954,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/quantity8Header"
@@ -963,7 +963,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Quantity:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/quantity8"
@@ -975,7 +975,7 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -988,7 +988,7 @@
                     android:id="@+id/blank8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="48dp" />
+                    android:textSize="48sp" />
             </TableRow>
 
             <android.support.constraint.Group
@@ -1011,7 +1011,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Narcotics"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item9TotalHeader"
@@ -1020,7 +1020,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Total: "
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item9TotalAmount"
@@ -1029,7 +1029,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0$"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item9Unit"
@@ -1038,7 +1038,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="$ Per:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -1055,7 +1055,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="In hold:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/holdQuantity9"
@@ -1064,7 +1064,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/quantity9Header"
@@ -1073,7 +1073,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Quantity:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/quantity9"
@@ -1085,7 +1085,7 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -1098,7 +1098,7 @@
                     android:id="@+id/blank9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="48dp" />
+                    android:textSize="48sp" />
             </TableRow>
 
             <android.support.constraint.Group
@@ -1121,7 +1121,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Robots"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item10TotalHeader"
@@ -1130,7 +1130,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Total: "
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item10TotalAmount"
@@ -1139,7 +1139,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0$"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/item10Unit"
@@ -1148,7 +1148,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="$ Per:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -1165,7 +1165,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="In hold:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/holdQuantity10"
@@ -1174,7 +1174,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/quantity10Header"
@@ -1183,7 +1183,7 @@
                     android:height="48dp"
                     android:gravity="center"
                     android:text="Quantity:"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/quantity10"
@@ -1195,7 +1195,7 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
             </TableRow>
 
@@ -1227,7 +1227,7 @@
         android:layout_marginLeft="8dp"
         android:height="48dp"
         android:gravity="center"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/currentMoney"
         app:layout_constraintTop_toTopOf="@id/completeTransaction"
@@ -1240,7 +1240,7 @@
         android:text="1000"
         android:height="48dp"
         android:gravity="center"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@id/currentMoneyHeader"
         app:layout_constraintEnd_toStartOf="@id/completeTransaction"
         app:layout_constraintTop_toTopOf="@id/completeTransaction"

@@ -2,6 +2,8 @@ package edu.gatech.cs2340.SpaceTrader.entity;
 
 import java.util.Random;
 
+import androidx.annotation.RecentlyNonNull;
+
 public enum Resource {
     NOSPECIALRESOURCES ("No Special Resources"),
     MINERALRICH ("Mineral Rich"),
@@ -22,6 +24,7 @@ public enum Resource {
         formattedName = f;
     }
 
+    @RecentlyNonNull
     @Override public String toString(){
         return formattedName;
     }

@@ -99,8 +99,8 @@ public class RandomEvent {
                     //only purchase if space
                     if (player.getShip().hasSpace()) {
                         if (money > 1000) { money = 1000; } //Reign in price in late game
-                        message += "Only " + String.valueOf(money) + " credits? With such a great " +
-                                "deal, how could you refuse!";
+                        message += "Only " + String.valueOf(money) + " credits? With such a " +
+                                "great deal, how could you refuse!";
                         dealer.buyItem(GoodType.NARCOTICS, 1, money);
                     } else {
                         message += "Oh how you wish you had space for these premium goods!" +

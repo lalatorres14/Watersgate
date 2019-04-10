@@ -42,7 +42,7 @@ public class PlanetScreen extends AppCompatActivity {
         final TextView nameTextView = findViewById(R.id.planetText);
         nameTextView.setText(current.getName());
 
-        ImageView imageView = (ImageView)findViewById(R.id.imageView);
+        ImageView imageView = findViewById(R.id.imageView);
         String planetId = "p" + Integer.toString(current.getPlanetId());
         Resources res = getResources();
         int resourceId = res.getIdentifier(
