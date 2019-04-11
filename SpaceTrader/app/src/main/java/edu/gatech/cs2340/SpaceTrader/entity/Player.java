@@ -17,6 +17,8 @@ public class Player implements Serializable {
     public static final List<String> legalDifficulty = Arrays.asList(
             "Beginner", "Easy", "Normal", "Hard", "Impossible");
 
+    private static final Game game = Game.getInstance();
+
     /** a globally unique number for this object */
     private int id;
 
@@ -70,12 +72,12 @@ public class Player implements Serializable {
     public void planetTravel(Planet destination) {
         if (canPlanetTravel(destination)) {
             ship.setFuel(ship.getFuel() - planetDistance(destination));
-            Game.getInstance().setCurrentPlanet(destination);
+            game.setCurrentPlanet(destination);
             Log.i("Travel", "Successfully traveled to " + destination.getName());
         }
     }
     public int planetDistance(Planet destination) {
-        Planet current = Game.getInstance().getCurrentPlanet();
+        Planet current = game.getCurrentPlanet();
         return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX,
                 2) + Math.pow(current.coordinateY - destination.coordinateY, 2))));
     }
@@ -85,13 +87,13 @@ public class Player implements Serializable {
     public void systemTravel(SolarSystem destination) {
         if (canSystemTravel(destination)) {
             ship.setFuel(ship.getFuel() - systemDistance(destination));
-            Game.getInstance().setCurrentSS(destination);
-            Game.getInstance().setCurrentPlanet(destination.getPlanetList().get(0));
+            game.setCurrentSS(destination);
+            game.setCurrentPlanet(destination.getPlanetList().get(0));
             Log.i("Travel", "Successfully traveled to " + destination.getName());
         }
     }
     public int systemDistance(SolarSystem destination) {
-        SolarSystem current = Game.getInstance().getCurrentSS();
+        SolarSystem current = game.getCurrentSS();
         return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX,
                 2) + Math.pow(current.coordinateY - destination.coordinateY, 2))));
     }
@@ -99,9 +101,9 @@ public class Player implements Serializable {
             <= ship.getFuel()); }
 
     public void refuel() {
-        setCredits(getCredits() - getDifficulty().adjustPrice(
-                getShip().getMaxFuel() - getShip().getFuel()));
-        getShip().setFuel(getShip().getMaxFuel());
+        setCredits(getCredits() - game.adjustPrice(
+                game.getMaxFuel() - game.getFuel()));
+        game.setFuel(game.getMaxFuel());
     }
 
     //Getters and setters are required for accessing the fields from the database
@@ -171,4 +173,26 @@ public class Player implements Serializable {
         return String.format("Pilot: %s, Difficulty: %s, id: %d, Skill Points: %d",
                 name, diff, id, skillPoints);
     }
+
+    public int adjustPrice(int price) {return diff.adjustPrice(price); }
+
+    //Ship Pass-Through Methods
+    public int getFuel(){
+        return ship.getFuel();
+    }
+    public void setFuel(int x) {
+        ship.setFuel(x);
+    }
+    public int getMaxFuel(){
+        return ship.getMaxFuel();
+    }
+
+    public Cargo getCargo() { return ship.getCargo();}
+    public void buyGood(GoodType good, int quantity) {ship.buyGood(good, quantity);}
+    public void sellGood(GoodType good, int quantity) {ship.sellGood(good, quantity);}
+
+    public String getDifficultyName() {return diff.toString();}
+    public String getShipName() {return ship.getName();}
+
+    public boolean hasShipSpace() {return ship.hasSpace(); }
 }

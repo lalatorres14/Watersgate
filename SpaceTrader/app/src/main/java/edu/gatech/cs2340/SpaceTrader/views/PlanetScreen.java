@@ -16,7 +16,7 @@ import edu.gatech.cs2340.SpaceTrader.entity.Planet;
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
 
 public class PlanetScreen extends AppCompatActivity {
-    private static final Player player = Game.getInstance().getPlayer();
+    private static final Game game = Game.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +38,11 @@ public class PlanetScreen extends AppCompatActivity {
                 refuel();
             }
         });
-        Planet current = Game.getInstance().getCurrentPlanet();
         final TextView nameTextView = findViewById(R.id.planetText);
-        nameTextView.setText(current.getName());
+        nameTextView.setText(game.getCurrentPlanetName());
 
         ImageView imageView = findViewById(R.id.imageView);
-        String planetId = "p" + Integer.toString(current.getPlanetId());
+        String planetId = "p" + Integer.toString(game.getCurrentPlanetId());
         Resources res = getResources();
         int resourceId = res.getIdentifier(
                 planetId, "drawable", getPackageName() );
@@ -52,13 +51,13 @@ public class PlanetScreen extends AppCompatActivity {
 
         final TextView solarSystemTextView = findViewById(R.id.solarSystemText);
         solarSystemTextView.setText(String.format("Solar System %s",
-                Game.getInstance().getCurrentSS().getName()));
+                game.getCurrentSSName()));
 
         final TextView rssTextView = findViewById(R.id.rssText);
-        rssTextView.setText(String.format("Resources: %s", current.getResources().toString()));
+        rssTextView.setText(String.format("Resources: %s", game.getCurrentPlanetRssName()));
 
         final TextView techLevelTextView = findViewById(R.id.techLevelText);
-        techLevelTextView.setText(String.format("Tech Level: %s", current.getTechLevel()));
+        techLevelTextView.setText(String.format("Tech Level: %s", game.getTechLevel()));
 
     }
     private void toMarket() {
@@ -66,17 +65,17 @@ public class PlanetScreen extends AppCompatActivity {
         startActivity(intent);
     }
     private void refuel() {
-        if (player.getDifficulty().adjustPrice(player.getShip().getMaxFuel()
-                - player.getShip().getFuel()) > player.getCredits()) {
+        if (game.adjustPrice(game.getMaxFuel()
+                - game.getFuel()) > game.getCredits()) {
             Toast toast = Toast.makeText(PlanetScreen.this, "Cannot afford to refuel",
                     Toast.LENGTH_SHORT);
             toast.show();
         } else {
             Toast toast = Toast.makeText(PlanetScreen.this, "Spent " +
-                    Integer.toString(player.getDifficulty().adjustPrice(
-                            player.getShip().getMaxFuel() - player.getShip().getFuel()))
+                    Integer.toString(game.adjustPrice(
+                            game.getMaxFuel() - game.getFuel()))
                     + "$", Toast.LENGTH_SHORT);
-            player.refuel();
+            game.refuel();
             toast.show();
         }
     }

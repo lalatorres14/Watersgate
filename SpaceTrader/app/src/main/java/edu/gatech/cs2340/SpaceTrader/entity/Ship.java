@@ -61,4 +61,6 @@ public class Ship {
 
     public Cargo getCargo() { return cargo;}
 
+    public String getName() {return toString();}
+
 }

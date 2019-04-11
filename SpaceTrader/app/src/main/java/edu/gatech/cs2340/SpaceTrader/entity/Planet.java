@@ -131,4 +131,6 @@ public class Planet {
                 "\nResources: " + getResources();
     }
 
+    //Pass-Through Methods
+    public String getResourcesName() {return getName();}
 }

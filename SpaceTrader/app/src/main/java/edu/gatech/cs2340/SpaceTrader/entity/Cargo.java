@@ -1,5 +1,6 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 import java.util.EnumMap;
+import java.util.Set;
 
 /**
  * Class regarding the cargo holdings and size for the player's ship
@@ -47,7 +48,8 @@ public class Cargo {
      * @param quantity The number of items
      */
     public void addGood(GoodType good, int quantity) {
-        boolean isNew = !cargo.keySet().contains(good);
+        Set<GoodType> keySet = cargo.keySet();
+        boolean isNew = !keySet.contains(good);
         if(isNew) {
             cargo.put(good, quantity);
         } else {
@@ -63,7 +65,8 @@ public class Cargo {
      * @param quantity The number of items
      */
     public void removeGood(GoodType good, int quantity) {
-        if(cargo.keySet().contains(good)) {
+        Set<GoodType> keySet = cargo.keySet();
+        if(keySet.contains(good)) {
             if(cargo.get(good) == 1) {
                 cargo.remove(good);
             } else {

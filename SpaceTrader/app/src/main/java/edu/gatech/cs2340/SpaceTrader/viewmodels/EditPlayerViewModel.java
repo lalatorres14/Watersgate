@@ -14,10 +14,11 @@ import edu.gatech.cs2340.SpaceTrader.model.PlayerInteractor;
  */
 public class EditPlayerViewModel extends AndroidViewModel {
     private final PlayerInteractor interactor;
+    private final Model model = Model.getInstance();
 
     public EditPlayerViewModel(@NonNull Application application) {
         super(application);
-        interactor = Model.getInstance().getPlayerInteractor();
+        interactor = model.getPlayerInteractor();
     }
 
     public void updatePlayer(Player player) {

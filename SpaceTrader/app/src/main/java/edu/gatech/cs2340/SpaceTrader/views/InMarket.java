@@ -26,7 +26,7 @@ import static edu.gatech.cs2340.SpaceTrader.entity.GoodType.*;
 public class InMarket extends AppCompatActivity {
     //Game-based variables (as opposed to UI-based)
     private Planet current;
-    private static final Player player = Game.getInstance().getPlayer();
+    private static final Game game = Game.getInstance();
     //all the buttons for the market
     private Button buyMode;
     private Button sellMode;
@@ -121,19 +121,19 @@ public class InMarket extends AppCompatActivity {
         Button completeTransaction = findViewById(R.id.completeTransaction);
 
         //storing planet and player info
-        current = Game.getInstance().getCurrentPlanet();
+        current = game.getCurrentPlanet();
         market = current.getMarket();
         buying = 0;
 
         //printing planet name
         final TextView nameTextView = findViewById(R.id.marketHeader);
-        nameTextView.setText(current.getName() + "'s Bazaar");
+        nameTextView.setText(game.getCurrentPlanetName() + "'s Bazaar");
         holdSpaceView = findViewById(R.id.holdSpace);
-        holdSpaceView.setText(String.valueOf(player.getShip().getSpace()));
+        holdSpaceView.setText(String.valueOf(game.getSpace()));
 
         //Printing credits
         playerCredits = findViewById(R.id.currentMoney);
-        playerCredits.setText(String.valueOf(player.getCredits()));
+        playerCredits.setText(String.valueOf(game.getCredits()));
 
         //initializing number of each good
         numWater = 0; numFur = 0; numFood = 0; numOre = 0; numGames = 0;
@@ -591,14 +591,14 @@ public class InMarket extends AppCompatActivity {
                     (material5UnitPrice * numGames) + (material6UnitPrice * numFirearms) +
                     (material7UnitPrice * numMedicine) + (material8UnitPrice * numMachines) +
                     (material9UnitPrice * numNarcotics) + (material10UnitPrice * numRobots)) >
-                    player.getCredits()) {
+                    game.getCredits()) {
                 Toast toast = Toast.makeText(InMarket.this, "Cannot Afford",
                         Toast.LENGTH_SHORT);
                 toast.show();
             //Checks if player has space
             } else if ((numWater + numFur + numFood + numOre + numGames + numFirearms +
                     numMedicine + numMachines + numNarcotics + numRobots) >
-                    player.getShip().getSpace()) {
+                    game.getSpace()) {
                 Toast toast = Toast.makeText(InMarket.this,
                         "Not enough Space", Toast.LENGTH_SHORT);
                 toast.show();
@@ -614,8 +614,8 @@ public class InMarket extends AppCompatActivity {
                         MACHINES, numMachines, material8UnitPrice);
                 market.buyItem(NARCOTICS, numNarcotics, material9UnitPrice); market.buyItem(
                         ROBOTS, numRobots, material10UnitPrice);
-                playerCredits.setText(String.valueOf(player.getCredits()));
-                holdSpaceView.setText(String.valueOf(player.getShip().getSpace()));
+                playerCredits.setText(String.valueOf(game.getCredits()));
+                holdSpaceView.setText(String.valueOf(game.getSpace()));
                 Toast toast = Toast.makeText(InMarket.this, "Transaction Complete",
                         Toast.LENGTH_SHORT);
                 toast.show();
@@ -625,43 +625,43 @@ public class InMarket extends AppCompatActivity {
         //sellMode
         } else if (buying == -1) {
             //Checks each quantity individually to give detailed feedback to user
-            if (player.getShip().getGoodQuantity(WATER) < numWater) {
+            if (game.getQuantityOfGood(WATER) < numWater) {
                 Toast toast = Toast.makeText(InMarket.this, "Not enough water",
                         Toast.LENGTH_SHORT);
                 toast.show();
-            } else if (player.getShip().getGoodQuantity(FURS) < numFur) {
+            } else if (game.getQuantityOfGood(FURS) < numFur) {
                 Toast toast = Toast.makeText(InMarket.this, "Not enough furs",
                         Toast.LENGTH_SHORT);
                 toast.show();
-            } else if (player.getShip().getGoodQuantity(FOOD) < numFood) {
+            } else if (game.getQuantityOfGood(FOOD) < numFood) {
                 Toast toast = Toast.makeText(InMarket.this, "Not enough food",
                         Toast.LENGTH_SHORT);
                 toast.show();
-            } else if (player.getShip().getGoodQuantity(ORE) < numOre) {
+            } else if (game.getQuantityOfGood(ORE) < numOre) {
                 Toast toast = Toast.makeText(InMarket.this, "Not enough ore",
                         Toast.LENGTH_SHORT);
                 toast.show();
-            } else if (player.getShip().getGoodQuantity(GAMES) < numGames) {
+            } else if (game.getQuantityOfGood(GAMES) < numGames) {
                 Toast toast = Toast.makeText(InMarket.this, "Not enough games",
                         Toast.LENGTH_SHORT);
                 toast.show();
-            } else if (player.getShip().getGoodQuantity(FIREARMS) < numFirearms) {
+            } else if (game.getQuantityOfGood(FIREARMS) < numFirearms) {
                 Toast toast = Toast.makeText(InMarket.this, "Not enough firearms",
                         Toast.LENGTH_SHORT);
                 toast.show();
-            } else if (player.getShip().getGoodQuantity(MEDICINE) < numMedicine) {
+            } else if (game.getQuantityOfGood(MEDICINE) < numMedicine) {
                 Toast toast = Toast.makeText(InMarket.this, "Not enough medicine",
                         Toast.LENGTH_SHORT);
                 toast.show();
-            } else if (player.getShip().getGoodQuantity(MACHINES) < numMachines) {
+            } else if (game.getQuantityOfGood(MACHINES) < numMachines) {
                 Toast toast = Toast.makeText(InMarket.this, "Not enough machines",
                         Toast.LENGTH_SHORT);
                 toast.show();
-            } else if (player.getShip().getGoodQuantity(NARCOTICS) < numNarcotics) {
+            } else if (game.getQuantityOfGood(NARCOTICS) < numNarcotics) {
                 Toast toast = Toast.makeText(InMarket.this, "Not enough narcotics",
                         Toast.LENGTH_SHORT);
                 toast.show();
-            } else if (player.getShip().getGoodQuantity(ROBOTS) < numRobots) {
+            } else if (game.getQuantityOfGood(ROBOTS) < numRobots) {
                 Toast toast = Toast.makeText(InMarket.this, "Not enough robots",
                         Toast.LENGTH_SHORT);
                 toast.show();
@@ -676,8 +676,8 @@ public class InMarket extends AppCompatActivity {
                         MACHINES, numMachines, material8UnitPrice);
                 market.sellItem(NARCOTICS, numNarcotics, material9UnitPrice); market.sellItem(
                         ROBOTS, numRobots, material10UnitPrice);
-                playerCredits.setText(String.valueOf(player.getCredits()));
-                holdSpaceView.setText(String.valueOf(player.getShip().getSpace()));
+                playerCredits.setText(String.valueOf(game.getCredits()));
+                holdSpaceView.setText(String.valueOf(game.getSpace()));
                 Toast toast = Toast.makeText(InMarket.this, "Transaction Complete",
                         Toast.LENGTH_SHORT);
                 toast.show();
@@ -749,24 +749,24 @@ public class InMarket extends AppCompatActivity {
      */
     private void updateHoldQuantity(){
         TextView holdQuantityView = findViewById(R.id.holdQuantity1);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(WATER)));
+        holdQuantityView.setText(String.valueOf(game.getQuantityOfGood(WATER)));
         holdQuantityView = findViewById(R.id.holdQuantity2);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(FURS)));
+        holdQuantityView.setText(String.valueOf(game.getQuantityOfGood(FURS)));
         holdQuantityView = findViewById(R.id.holdQuantity3);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(FOOD)));
+        holdQuantityView.setText(String.valueOf(game.getQuantityOfGood(FOOD)));
         holdQuantityView = findViewById(R.id.holdQuantity4);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(ORE)));
+        holdQuantityView.setText(String.valueOf(game.getQuantityOfGood(ORE)));
         holdQuantityView = findViewById(R.id.holdQuantity5);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(GAMES)));
+        holdQuantityView.setText(String.valueOf(game.getQuantityOfGood(GAMES)));
         holdQuantityView = findViewById(R.id.holdQuantity6);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(FIREARMS)));
+        holdQuantityView.setText(String.valueOf(game.getQuantityOfGood(FIREARMS)));
         holdQuantityView = findViewById(R.id.holdQuantity7);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(MEDICINE)));
+        holdQuantityView.setText(String.valueOf(game.getQuantityOfGood(MEDICINE)));
         holdQuantityView = findViewById(R.id.holdQuantity8);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(MACHINES)));
+        holdQuantityView.setText(String.valueOf(game.getQuantityOfGood(MACHINES)));
         holdQuantityView = findViewById(R.id.holdQuantity9);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(NARCOTICS)));
+        holdQuantityView.setText(String.valueOf(game.getQuantityOfGood(NARCOTICS)));
         holdQuantityView = findViewById(R.id.holdQuantity10);
-        holdQuantityView.setText(String.valueOf(player.getShip().getGoodQuantity(ROBOTS)));
+        holdQuantityView.setText(String.valueOf(game.getQuantityOfGood(ROBOTS)));
     }
 }
