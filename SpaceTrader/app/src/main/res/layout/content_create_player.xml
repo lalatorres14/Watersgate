@@ -32,7 +32,8 @@
         android:layout_marginTop="32dp"
         android:layout_below="@id/name_header"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:labelFor="@id/player_name_input"/>
 
     <TextView
         android:text="@string/name_header"
@@ -110,7 +111,8 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:scaleType="fitXY"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:contentDescription="pilotbuttonup" />
 
     <ImageButton
         android:id="@+id/pilot_button_down"
@@ -123,7 +125,7 @@
         android:layout_height="50dp"
         android:scaleType="fitXY"
         android:layout_gravity="center"
-        android:contentDescription="TODO" />
+        android:contentDescription="pilot button down" />
 
 
     <TextView
@@ -164,7 +166,7 @@
         android:layout_height="50dp"
         android:scaleType="fitXY"
         android:layout_gravity="center"
-        android:contentDescription="TODO" />
+        android:contentDescription="fighter button up" />
 
     <ImageButton
         android:id="@+id/fighter_button_down"
@@ -177,7 +179,7 @@
         android:layout_height="50dp"
         android:scaleType="fitXY"
         android:layout_gravity="center"
-        android:contentDescription="TODO" />
+        android:contentDescription="fighter button down" />
 
     <TextView
         android:id="@+id/trader_header"
@@ -212,7 +214,7 @@
         android:layout_height="50dp"
         android:scaleType="fitXY"
         android:layout_gravity="center"
-        android:contentDescription="TODO" />
+        android:contentDescription="trader button up" />
 
     <ImageButton
         android:id="@+id/trader_button_down"
@@ -225,7 +227,7 @@
         android:layout_height="50dp"
         android:scaleType="fitXY"
         android:layout_gravity="center"
-        android:contentDescription="TODO" />
+        android:contentDescription="trader button down" />
 
     <TextView
         android:id="@+id/engineer_header"
@@ -265,7 +267,7 @@
         android:layout_height="50dp"
         android:scaleType="fitXY"
         android:layout_gravity="center"
-        android:contentDescription="TODO" />
+        android:contentDescription="engineer button up" />
 
     <ImageButton
         android:id="@+id/engineer_button_down"
@@ -278,7 +280,7 @@
         android:layout_height="50dp"
         android:scaleType="fitXY"
         android:layout_gravity="center"
-        android:contentDescription="TODO" />
+        android:contentDescription="engineer button down" />
 
     <TextView
         android:id="@+id/remaining_header"

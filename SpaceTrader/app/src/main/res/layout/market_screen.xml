@@ -204,7 +204,8 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:labelFor="@id/quantity1"/>
 
             </TableRow>
 
@@ -314,7 +315,8 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:labelFor="@id/quantity2"/>
 
             </TableRow>
 
@@ -424,7 +426,8 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:labelFor="@id/quantity3"/>
 
             </TableRow>
 
@@ -535,7 +538,8 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:labelFor="@id/quantity4"/>
 
             </TableRow>
 
@@ -645,7 +649,8 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:labelFor="@id/quantity5"/>
 
             </TableRow>
 
@@ -755,7 +760,8 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:labelFor="@id/quantity6"/>
 
             </TableRow>
 
@@ -865,7 +871,8 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:labelFor="@id/quantity7"/>
 
             </TableRow>
 
@@ -975,7 +982,8 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:labelFor="@id/quantity8"/>
 
             </TableRow>
 
@@ -1085,7 +1093,8 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:labelFor="@id/quantity9"/>
 
             </TableRow>
 
@@ -1195,7 +1204,8 @@
                     android:inputType="number"
                     android:imeOptions="actionDone"
                     android:text="0"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:labelFor="@id/quantity10"/>
 
             </TableRow>
 
