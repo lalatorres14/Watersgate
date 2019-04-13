@@ -14,15 +14,16 @@ public class PlayerInteractor extends Interactor {
     public PlayerInteractor(Repository repo) {
         super(repo);
     }
+    Repository repository = getRepository();
 
     public void addPlayer (Player p) {
-        getRepository().addPlayer(p);
+        repository.addPlayer(p);
     }
 
     public void updatePlayer(Player p) {
-        getRepository().updatePlayer(p);
+        repository.updatePlayer(p);
         Log.d("APP", "Interactor: updating player: " + p);
     }
 
-    public Player getPlayer (int i) { return getRepository().getPlayer(i); }
+    public Player getPlayer (int i) { return repository.getPlayer(i); }
 }

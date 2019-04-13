@@ -1,9 +1,13 @@
 package edu.gatech.cs2340.SpaceTrader.views;
 
+import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -37,9 +41,9 @@ public class CreatePlayer extends AppCompatActivity {
     /* ***********************
        Data for Player being edited.
      */
-    static private Player player;
+    private static Player player;
 
-
+    private final Game game = Game.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +54,9 @@ public class CreatePlayer extends AppCompatActivity {
          * Disables actionbar back button
          */
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-            getSupportActionBar().setHomeButtonEnabled(false);
+            ActionBar actionBar = getSupportActionBar();
+            actionBar.setDisplayHomeAsUpEnabled(false);
+            actionBar.setHomeButtonEnabled(false);
         }
 
         nameField = findViewById(R.id.player_name_input);
@@ -82,7 +87,8 @@ public class CreatePlayer extends AppCompatActivity {
 
         nameField.setText(player.getName());
 
-        viewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
+        ViewModelProvider viewModelProvider = ViewModelProviders.of(this);
+        viewModel = viewModelProvider.get(EditPlayerViewModel.class);
     }
 
     /**
@@ -94,8 +100,8 @@ public class CreatePlayer extends AppCompatActivity {
         Log.d("Edit", "Add/Update Student Pressed");
         if(((player.getEngineerSkill() + player.getFighterSkill() + player.getPilotSkill() +
                 player.getTraderSkill()) == 16) && (player.getSkillPoints() == 0)) {
-
-            player.setName(nameField.getText().toString());
+            Editable name = nameField.getText();
+            player.setName(name.toString());
 
             if(difficultySpinner.getSelectedItemPosition() == 0) {
                 player.setDifficulty(Difficulty.BEGINNER);
@@ -120,7 +126,7 @@ public class CreatePlayer extends AppCompatActivity {
 
             //create player
             viewModel.addPlayer(player);
-            Game.getInstance().setPlayer(player);
+            game.setPlayer(player);
 
             Intent intent = new Intent(this, PlayerConfirmation.class);
             startActivity(intent);

@@ -23,6 +23,7 @@ import edu.gatech.cs2340.SpaceTrader.entity.ShipType;
 import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
 
 public class MainActivity extends AppCompatActivity {
+    private final Game game = Game.getInstance();
     //SharedPreferences pref = getApplicationContext().getSharedPreferences("data", 0);
     private SharedPreferences pref ;
     //SharedPreferences.Editor editor ;
@@ -62,47 +63,48 @@ public class MainActivity extends AppCompatActivity {
             String json_2 = pref.getString("Current_Game_CurrentSS", null);
             String json_3 = pref.getString("Current_Game_CurrentPlanet", null);
             //System.out.println("Savy , " + json_1);
-            Game.getInstance().getPlayer().setName(pref.getString("Player_name", null));
+            String playerName = pref.getString("Player_name",null);
+            game.setPlayerName(playerName);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                Game.getInstance().getPlayer().setDifficulty(Difficulty.valueOf(
+                game.setDifficulty(Difficulty.valueOf(
                         Objects.requireNonNull
                         (pref.getString("Difficulty", null)).toUpperCase()));
             }
-            Game.getInstance().getPlayer().setCredits(pref.getInt("Credits",0));
-            Game.getInstance().getPlayer().setShip(ShipType.valueOf(Objects.requireNonNull(pref.
+            game.setCredits(pref.getInt("Credits",0));
+            game.setShip(ShipType.valueOf(Objects.requireNonNull(pref.
                     getString("Ship_Name", null)).toUpperCase()));
-            Game.getInstance().getPlayer().setPilotSkill( pref.getInt("Pilot_Skill",0));
-            Game.getInstance().getPlayer().setFighterSkill(pref.getInt("Fighter_Skill",0));
-            Game.getInstance().getPlayer().setTraderSkill(pref.getInt("Trader_Skill",0));
-            Game.getInstance().getPlayer().setEngineerSkill(pref.getInt("Engineer_Skill",0));
-            Game.getInstance().getPlayer().getShip().setFuel( pref.getInt("Fuel", 0));
-            Game.getInstance().setCurrentSS(gson.fromJson(json_2, SolarSystem.class));
-            Game.getInstance().setCurrentPlanet(gson.fromJson(json_3, Planet.class));
-            Game.getInstance().getPlayer().getShip().setFuel(pref.getInt("Fuel", 0));
-            Game.getInstance().getPlayer().getShip().getCargo().addGood(GoodType.WATER,pref.getInt(
+            game.setPilotSkill( pref.getInt("Pilot_Skill",0));
+            game.setFighterSkill(pref.getInt("Fighter_Skill",0));
+            game.setTraderSkill(pref.getInt("Trader_Skill",0));
+            game.setEngineerSkill(pref.getInt("Engineer_Skill",0));
+            game.setFuel( pref.getInt("Fuel", 0));
+            game.setCurrentSS(gson.fromJson(json_2, SolarSystem.class));
+            game.setCurrentPlanet(gson.fromJson(json_3, Planet.class));
+            game.setFuel(pref.getInt("Fuel", 0));
+            game.addGood(GoodType.WATER,pref.getInt(
                     "WATER", 0));
-            Game.getInstance().getPlayer().getShip().getCargo().addGood(GoodType.FURS,pref.getInt(
+            game.addGood(GoodType.FURS,pref.getInt(
                     "FURS", 0));
-            Game.getInstance().getPlayer().getShip().getCargo().addGood(GoodType.FOOD,pref.getInt(
+            game.addGood(GoodType.FOOD,pref.getInt(
                     "FOOD", 0));
-            Game.getInstance().getPlayer().getShip().getCargo().addGood(GoodType.ORE,pref.getInt(
+            game.addGood(GoodType.ORE,pref.getInt(
                     "ORE", 0));
-            Game.getInstance().getPlayer().getShip().getCargo().addGood(GoodType.FIREARMS,pref.
+            game.addGood(GoodType.FIREARMS,pref.
                     getInt("FIREARMS", 0));
-            Game.getInstance().getPlayer().getShip().getCargo().addGood(GoodType.MEDICINE,pref.
+            game.addGood(GoodType.MEDICINE,pref.
                     getInt("MEDICINE", 0));
-            Game.getInstance().getPlayer().getShip().getCargo().addGood(GoodType.MACHINES,pref.
+            game.addGood(GoodType.MACHINES,pref.
                     getInt("MACHINES", 0));
-            Game.getInstance().getPlayer().getShip().getCargo().addGood(GoodType.NARCOTICS,pref.
+            game.addGood(GoodType.NARCOTICS,pref.
                     getInt("NARCOTICS", 0));
-            Game.getInstance().getPlayer().getShip().getCargo().addGood(GoodType.ROBOTS,pref.
+            game.addGood(GoodType.ROBOTS,pref.
                     getInt("ROBOTS", 0));
             for (int i = 0; i < 10; i++) {
                 String json_i = pref.getString("universe_elem" + i,null);
                 tmplist.add(gson.fromJson(json_i, SolarSystem.class));
 
             }
-            Game.getInstance().setUniverse(tmplist);
+            game.setUniverse(tmplist);
             Intent intent = new Intent(MainActivity.this, UniverseMap.class);
             startActivity(intent);
         }

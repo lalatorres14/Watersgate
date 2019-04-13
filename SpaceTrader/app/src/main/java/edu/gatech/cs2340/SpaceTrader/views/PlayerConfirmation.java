@@ -16,7 +16,7 @@ import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
 
 
 public class PlayerConfirmation extends AppCompatActivity {
-    private ArrayList<SolarSystem> systemslist;
+    private static final Game game = Game.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,28 +32,28 @@ public class PlayerConfirmation extends AppCompatActivity {
         EditPlayerViewModel viewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
 
         final TextView nameTextView = findViewById(R.id.nameText);
-        nameTextView.setText("Player name: " + viewModel.getPlayer(0).getName());
+        nameTextView.setText("Player name: " + game.getPlayerName());
 
         final TextView diffTextView = findViewById(R.id.difficultyText);
-        diffTextView.setText("Difficulty: " + viewModel.getPlayer(0).getDifficulty().toString());
+        diffTextView.setText("Difficulty: " + game.getDifficultyName());
 
         final TextView creditsTextView = findViewById(R.id.creditsText);
-        creditsTextView.setText("Credits: " + viewModel.getPlayer(0).getCredits());
+        creditsTextView.setText("Credits: " + game.getCredits());
 
         final TextView shipTextView = findViewById(R.id.shipText);
-        shipTextView.setText("Ship name: " + viewModel.getPlayer(0).getShip().toString());
+        shipTextView.setText("Ship name: " + game.getShipName());
 
         final TextView pilotTextView = findViewById(R.id.pilotSkillText);
-        pilotTextView.setText("Pilot Skill: " + viewModel.getPlayer(0).getPilotSkill());
+        pilotTextView.setText("Pilot Skill: " + game.getPilotSkill());
 
         final TextView fighterTextView = findViewById(R.id.fighterSkillText);
-        fighterTextView.setText("Fighter Skill: " + viewModel.getPlayer(0).getFighterSkill());
+        fighterTextView.setText("Fighter Skill: " + game.getFighterSkill());
 
         final TextView traderTextView = findViewById(R.id.traderSkillText);
-        traderTextView.setText("Trader Skill: " + viewModel.getPlayer(0).getTraderSkill());
+        traderTextView.setText("Trader Skill: " + game.getTraderSkill());
 
         final TextView engineerTextView = findViewById(R.id.engineerSkillText);
-        engineerTextView.setText("Engineer Skill: " + viewModel.getPlayer(0).getEngineerSkill());
+        engineerTextView.setText("Engineer Skill: " + game.getEngineerSkill());
         /*
          * Disables actionbar back button
          */
@@ -64,15 +64,11 @@ public class PlayerConfirmation extends AppCompatActivity {
     }
     private void beginGamePressed(){
 
-        Game.getInstance().generateUniverse();
+        game.generateUniverse();
 
         for (int i = 0; i < 10; i++) {
             largeLog("Solar System", Game.getUniverse().get(i).toString());
         }
-
-        Game.getInstance().setCurrentSS(Game.getUniverse().get(0));
-        Game.getInstance().setCurrentPlanet(
-                Game.getInstance().getCurrentSS().getPlanetList().get(0));
 
         Intent intent = new Intent(PlayerConfirmation.this, UniverseMap.class);
         startActivity(intent);

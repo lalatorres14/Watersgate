@@ -24,6 +24,7 @@ public enum GoodType {
     private final String cr;
     private final String er;
     private final Random rand = new Random();
+    private final Game game = Game.getInstance();
     /**
      *
      * @param mtlp - Minimum Tech Level to Produce this resource (You can't buy on planets below
@@ -54,13 +55,13 @@ public enum GoodType {
         //calculate random amount that is +/- var
         int variance = rand.nextInt(var * 2) - var;
         int price = basePrice + (ipl * (techLevel - mtlp)) + variance;
+        String conditionStr = condition.toString();
+        if(conditionStr.equals(cr)) { price = price / 2; }
+        else if(conditionStr.equals(er)) { price = price * 2; }
 
-        if(condition.toString().equals(cr)) { price = price / 2; }
-        else if(condition.toString().equals(er)) { price = price * 2; }
-
-        Game.getInstance().getPlayer().getDifficulty().adjustPrice(price);
+        game.adjustPrice(price);
         //Trader skill points adjustment
-        price += ((Game.getInstance().getPlayer().getTraderSkill() / 100) * price);
+        price += ((game.getTraderSkill() / 100) * price);
         return price;
     }
 

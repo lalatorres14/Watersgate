@@ -23,7 +23,7 @@ import edu.gatech.cs2340.SpaceTrader.entity.Planet;
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
 
 public class SolarSystemMap extends AppCompatActivity {
-    private static final Player player = Game.getInstance().getPlayer();
+    private static final Game game = Game.getInstance();
     private int planetIndex;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +31,11 @@ public class SolarSystemMap extends AppCompatActivity {
         setContentView(R.layout.solarsystem_map);
 
         final TextView locationText = findViewById(R.id.locationText);
-        locationText.setText("Current Location: " + Game.getInstance().getCurrentSS().getName() +
-                ", " + Game.getInstance().getCurrentPlanet().getName());
+        locationText.setText("Current Location: " + game.getCurrentSSName() +
+                ", " + game.getCurrentPlanetName());
 
         final TextView fuelText = findViewById(R.id.fuelText);
-        fuelText.setText("Current Fuel: " + Game.getInstance().getPlayer().getShip().getFuel());
+        fuelText.setText("Current Fuel: " + game.getFuel());
 
         LinearLayout layout = findViewById(R.id.layout);
         RadioGroup radioGroup = new RadioGroup(this);
@@ -45,19 +45,20 @@ public class SolarSystemMap extends AppCompatActivity {
         );
         // adding Radio Group
         layout.addView(radioGroup, p);
-        final ArrayList<Planet> planetList = Game.getInstance().getCurrentSS().getPlanetList();
+        final ArrayList<Planet> planetList = game.getCurrentPlanetList();
 
         //dynamically creates radio buttons for this specific solar system
         for(int i =0; i<planetList.size();i++)
         {
+            Planet thisPlanet = planetList.get(i);
             RadioButton radioButtonView = new RadioButton(this);
-            int distance = Game.getInstance().getPlayer().planetDistance(planetList.get(i));
-            radioButtonView.setText(planetList.get(i).getName() + " - " + distance +" parsecs");
+            int distance = game.planetDistance(planetList.get(i));
+            radioButtonView.setText(thisPlanet.getName() + " - " + distance +" parsecs");
             radioGroup.addView(radioButtonView, p);
             if (i == 0) {
                 radioButtonView.setChecked(true);
             }
-            if(!player.canPlanetTravel(planetList.get(i))) {
+            if(!game.canPlanetTravel(planetList.get(i))) {
                 radioGroup.getChildAt(i).setEnabled(false);
             }
         }
@@ -65,11 +66,11 @@ public class SolarSystemMap extends AppCompatActivity {
 
 
         GraphView SSGraph = findViewById(R.id.solarSystem_graph);
-        DataPoint[] data = new DataPoint[Game.getInstance().getCurrentSS().getPlanetList().size()];
+        DataPoint[] data = new DataPoint[game.getCurrentPlanetList().size()];
 
         final TextView solarSystemTextView = findViewById(R.id.solarSystemText);
         solarSystemTextView.setText(String.format("Solar System %s",
-                Game.getInstance().getCurrentSS().getName()));
+                game.getCurrentSSName()));
 
         Button button = findViewById(R.id.toPlanet);
         button.setOnClickListener(new View.OnClickListener() {
@@ -103,14 +104,14 @@ public class SolarSystemMap extends AppCompatActivity {
     //travel button
     private void onStartPressed(){
         //travel here
-        if (player.canPlanetTravel(Game.getInstance().getCurrentSS().getPlanetList()
+        if (game.canPlanetTravel(game.getCurrentPlanetList()
                 .get(planetIndex))) {
 
             Random random = new Random();
             //this 3 is arbitrary, we should decide how often to get random events
             if(random.nextInt(3) == 0){
                 //go to random event screen and tell game to go to planet screen next
-                Game.getInstance().setNextScreen(PlanetScreen.class);
+                game.setNextScreen(PlanetScreen.class);
                 Intent intent = new Intent(SolarSystemMap.this, RandomEventView.class);
                 startActivity(intent);
             } else { //travel normally
@@ -118,7 +119,7 @@ public class SolarSystemMap extends AppCompatActivity {
                 startActivity(intent);
             }
 
-            player.planetTravel(Game.getInstance().getCurrentSS().getPlanetList().get(planetIndex));
+            game.planetTravel(game.getCurrentPlanetList().get(planetIndex));
         } else {
             Toast toast = Toast.makeText(SolarSystemMap.this, "Not enough fuel",
                     Toast.LENGTH_SHORT);
