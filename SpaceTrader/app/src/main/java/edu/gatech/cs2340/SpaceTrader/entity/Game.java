@@ -48,7 +48,6 @@ public final class Game {
      */
     public void setUniverse(List<SolarSystem> u){
         universe = Collections.unmodifiableList(u);
-
     }
     /**
      * sets the current planet of the game

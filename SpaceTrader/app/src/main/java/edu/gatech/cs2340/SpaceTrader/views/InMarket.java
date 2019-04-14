@@ -29,9 +29,6 @@ public class InMarket extends AppCompatActivity {
     private Market market;
     private MarketItem[] items;
     private int buying; //0 = neither, 1 = buy, -1 = sell.
-    ScrollView scrollView;
-    TableLayout marketTable;
-    TableRow.LayoutParams params;
     //all the buttons for the market
     private Button buyMode;
     private Button sellMode;
@@ -53,16 +50,17 @@ public class InMarket extends AppCompatActivity {
         buying = 0;
 
         //Initializing marketTable with MarketItems
-        marketTable = findViewById(R.id.marketTable);
+        TableLayout marketTable = findViewById(R.id.marketTable);
         marketTable.setGravity(Gravity.CENTER_HORIZONTAL);
-        params = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
+        TableRow.LayoutParams params =
+                new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
 
         for (int i = 0; i < GoodType.values().length; i++) {
             items[i] = new MarketItem(i, current, marketTable, params, this);
         }
 
         //linking variables to actual views
-        scrollView = findViewById(R.id.scrollView);
+        ScrollView scrollView = findViewById(R.id.scrollView);
         buyMode = findViewById(R.id.buyMode);
         sellMode = findViewById(R.id.sellMode);
 

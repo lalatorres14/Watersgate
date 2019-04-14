@@ -16,19 +16,13 @@ public class MarketItem {
     private static final Game game = Game.getInstance();
 
     public TableRow row1;
-    public TextView itemName;
-    public TextView totalHeader;
-    public TextView totalView;
+    private TextView totalView;
     public EditText input;
 
     public TableRow row2;
-    public TextView holdHeader;
     public TextView hold;
-    public TextView unitHeader;
-    public TextView unit;
 
     public TableRow row3;
-    public TextView blank;
 
     public int amount;
     public Good type;
@@ -44,10 +38,10 @@ public class MarketItem {
         row1 = new TableRow(context);
         row1.setLayoutParams(params);
         row1.setGravity(Gravity.CENTER_HORIZONTAL);
-        itemName = new TextView(context);
+        TextView itemName = new TextView(context);
         itemName.setGravity(Gravity.CENTER);
         itemName.setText(GoodType.values()[typeIndex].toString());
-        totalHeader = new TextView(context);
+        TextView totalHeader = new TextView(context);
         totalHeader.setGravity(Gravity.CENTER);
         totalHeader.setText("Total: ");
         totalView = new TextView(context);
@@ -74,23 +68,23 @@ public class MarketItem {
         row2 = new TableRow(context);
         row2.setLayoutParams(params);
         row2.setGravity(Gravity.CENTER_HORIZONTAL);
-        holdHeader = new TextView(context);
+        TextView holdHeader = new TextView(context);
         holdHeader.setGravity(Gravity.CENTER);
         holdHeader.setText("In hold: ");
         hold = new TextView(context);
         hold.setGravity(Gravity.CENTER);
         hold.setText(String.valueOf(game.getQuantityOfGood(type.getGoodType())));
-        unitHeader = new TextView(context);
+        TextView unitHeader = new TextView(context);
         unitHeader.setGravity(Gravity.CENTER);
         unitHeader.setText("$ Per: ");
-        unit = new TextView(context);
+        TextView unit = new TextView(context);
         unit.setGravity(Gravity.CENTER);
         unit.setText(String.valueOf(unitPrice));
 
         row3 = new TableRow(context);
         row3.setLayoutParams(params);
         row3.setGravity(Gravity.CENTER_HORIZONTAL);
-        blank = new TextView(context);
+        TextView blank = new TextView(context);
         blank.setGravity(Gravity.CENTER);
         blank.setText("- - - - - - - - - - - - - - - - - - - -");
 
