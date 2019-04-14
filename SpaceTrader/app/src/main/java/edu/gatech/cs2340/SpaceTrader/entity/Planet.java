@@ -1,7 +1,9 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 
@@ -18,7 +20,9 @@ public class Planet {
     private TechLevel tLevel;
     private Resource res;
     private Market market;
-
+    /**
+     * Constructor to create a planet
+     */
     public Planet(){
         Random rand = new Random();
         ArrayList<String> planetNames = new ArrayList<String>() {
@@ -95,42 +99,98 @@ public class Planet {
         setMarket(new Market());
         coordinates.put(coordinateX,coordinateY);
     }
-
+    /**
+     * set the name of the planet
+     * @param name of the planet
+     */
     private void setName(String name){
         this.name = name;
     }
+    /**
+     * sets the tech level on the planet
+     * @param techLevel the tech level of the planet
+     */
     public void setTechLevel(TechLevel techLevel){
         this.tLevel = techLevel;
     }
-
+    /**
+     * sets the resources on the planet
+     * @param resources the resources on the planet
+     */
     public void setResources(Resource resources){ this.res = resources; }
+    /**
+     * sets the market on the planet
+     * @param market the market of the planet
+     */
     private void setMarket(Market market){
         this.market = market;
     }
-    public HashMap<Integer, Integer> getCoordinates() {return coordinates;}
+    /**
+     *
+     * @return the coordinates of the planet
+     */
+    public Map<Integer, Integer> getCoordinates() {return Collections.unmodifiableMap(coordinates);}
+    /**
+     *
+     * @return a string that contains the name of the planet
+     */
     public String getName(){
         return name;
     }
+    /**
+     *
+     * @return the tech level of the planet
+     */
     public TechLevel getTechLevel(){
         return tLevel;
     }
+    /**
+     *
+     * @return the tech level of the planet
+     */
     public int getTechLevelInt() {return tLevel.getTechLevelInt(); }
+    /**
+     *
+     * @return the resources of the planet
+     */
     public Resource getResources(){
         return res;
     }
+    /**
+     *
+     * @return the market of the planet
+     */
     public Market getMarket() {
         return market;
     }
+    /**
+     *
+     * @return the planet id of the planet
+     */
     public int getPlanetId() { return planetId;}
+    /**
+     *
+     * @return the x coordinate
+     */
     public int getCoordinateX() { return coordinateX; }
+    /**
+     *
+     * @return the y coordinate
+     */
     public int getCoordinateY() { return coordinateY; }
-
+    /**
+     *
+     * @return a string that contains the attributes of the planet
+     */
     @Override
     public String toString() {
         return "Name: " + getName() + "\nTech Level: " + getTechLevel() +
                 "\nResources: " + getResources();
     }
-
+    /**
+     *
+     * @return a string that contains the name of the planet
+     */
     //Pass-Through Methods
     public String getResourcesName() {return getName();}
 }

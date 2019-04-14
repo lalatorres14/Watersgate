@@ -25,7 +25,6 @@ class Repository {
         return result;
     }
 
-    /***********************************************************/
 
     /** all the players known in the application */
     private final List<Player> allPlayers;

@@ -205,7 +205,8 @@
                     android:imeOptions="actionDone"
                     android:text="0"
                     android:textSize="20sp"
-                    android:labelFor="@id/quantity1"/>
+                    android:labelFor="@id/quantity1"
+                    android:autofillHints="" />
 
             </TableRow>
 
@@ -316,7 +317,8 @@
                     android:imeOptions="actionDone"
                     android:text="0"
                     android:textSize="20sp"
-                    android:labelFor="@id/quantity2"/>
+                    android:labelFor="@id/quantity2"
+                    android:autofillHints="" />
 
             </TableRow>
 
@@ -427,7 +429,8 @@
                     android:imeOptions="actionDone"
                     android:text="0"
                     android:textSize="20sp"
-                    android:labelFor="@id/quantity3"/>
+                    android:labelFor="@id/quantity3"
+                    android:autofillHints="" />
 
             </TableRow>
 
@@ -539,7 +542,8 @@
                     android:imeOptions="actionDone"
                     android:text="0"
                     android:textSize="20sp"
-                    android:labelFor="@id/quantity4"/>
+                    android:labelFor="@id/quantity4"
+                    android:autofillHints="" />
 
             </TableRow>
 
@@ -650,7 +654,8 @@
                     android:imeOptions="actionDone"
                     android:text="0"
                     android:textSize="20sp"
-                    android:labelFor="@id/quantity5"/>
+                    android:labelFor="@id/quantity5"
+                    android:autofillHints="" />
 
             </TableRow>
 
@@ -761,7 +766,8 @@
                     android:imeOptions="actionDone"
                     android:text="0"
                     android:textSize="20sp"
-                    android:labelFor="@id/quantity6"/>
+                    android:labelFor="@id/quantity6"
+                    android:autofillHints="" />
 
             </TableRow>
 
@@ -872,7 +878,8 @@
                     android:imeOptions="actionDone"
                     android:text="0"
                     android:textSize="20sp"
-                    android:labelFor="@id/quantity7"/>
+                    android:labelFor="@id/quantity7"
+                    android:autofillHints="" />
 
             </TableRow>
 
@@ -983,7 +990,8 @@
                     android:imeOptions="actionDone"
                     android:text="0"
                     android:textSize="20sp"
-                    android:labelFor="@id/quantity8"/>
+                    android:labelFor="@id/quantity8"
+                    android:autofillHints="" />
 
             </TableRow>
 
@@ -1094,7 +1102,8 @@
                     android:imeOptions="actionDone"
                     android:text="0"
                     android:textSize="20sp"
-                    android:labelFor="@id/quantity9"/>
+                    android:labelFor="@id/quantity9"
+                    android:autofillHints="" />
 
             </TableRow>
 
@@ -1205,7 +1214,8 @@
                     android:imeOptions="actionDone"
                     android:text="0"
                     android:textSize="20sp"
-                    android:labelFor="@id/quantity10"/>
+                    android:labelFor="@id/quantity10"
+                    android:autofillHints="" />
 
             </TableRow>
 

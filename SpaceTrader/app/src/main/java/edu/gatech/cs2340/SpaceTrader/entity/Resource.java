@@ -2,7 +2,10 @@ package edu.gatech.cs2340.SpaceTrader.entity;
 
 import java.util.Random;
 
-
+/**
+ * The Resource class
+ *
+ */
 public enum Resource {
     NOSPECIALRESOURCES ("No Special Resources"),
     MINERALRICH ("Mineral Rich"),
@@ -27,7 +30,11 @@ public enum Resource {
     @Override public String toString(){
         return formattedName;
     }
-
+    /**
+     *
+     * @return returns a random resource
+     *
+     */
     public static Resource getRandomResource() {
         Random random = new Random();
         return values()[random.nextInt(values().length)];

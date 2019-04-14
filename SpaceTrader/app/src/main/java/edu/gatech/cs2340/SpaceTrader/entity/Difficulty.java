@@ -22,11 +22,19 @@ public enum Difficulty {
         this.priceModifier = priceModifier;
         this.starterCredits = starterCredits;
     }
-
+    /**
+     * adjusts the price of the product
+     * @param basePrice - the initial price of a product without additional costs
+     * @return the computed adjusted price
+     */
     public int adjustPrice(int basePrice){
         return (int) (basePrice * priceModifier);
     }
-
+    /**
+     *
+     * gets the player's starting credits
+     * @return the initial credits the player starts the game with.
+     */
     public int getStarterCredits(){return starterCredits;}
 
     @Override public String toString(){

@@ -22,7 +22,9 @@ import edu.gatech.cs2340.SpaceTrader.R;
 import edu.gatech.cs2340.SpaceTrader.entity.Game;
 import edu.gatech.cs2340.SpaceTrader.entity.GoodType;
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
-
+/**
+ * This class acts as the code behind for allowing the player to travel between solar systems
+ */
 public class UniverseMap extends AppCompatActivity {
     private static final Game game = Game.getInstance();
     private CharSequence checkedText;
