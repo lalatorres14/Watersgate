@@ -66,7 +66,7 @@ public enum GoodType {
         if(conditionStr.equals(cr)) { price = price / 2; }
         else if(conditionStr.equals(er)) { price = price * 2; }
 
-        //TODO: These make cyclic dependencies
+        //to do: These make cyclic dependencies
         //Game.getInstance()adjustPrice(price);
         //Trader skill points adjustment
         //price += ((Game.getInstance().getTraderSkill() / 100) * price);
