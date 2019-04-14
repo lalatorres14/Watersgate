@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4967b91e-9af6-44b4-8230-a98ddde29037" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../androidTest/java/edu/gatech/cs2340/SpaceTrader/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../androidTest/java/edu/gatech/cs2340/SpaceTrader/ExampleInstrumentedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/Difficulty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/Good.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/Good.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/GoodType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/GoodType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/Market.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/Market.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/Planet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/Planet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/RandomEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/RandomEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/RandomEventType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/RandomEventType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/Resource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/Ship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/ShipType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/ShipType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/SolarSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/SolarSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/TechLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/entity/TechLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/model/PlayerInteractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/model/PlayerInteractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/model/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/model/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/viewmodels/EditPlayerViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/viewmodels/EditPlayerViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/views/InMarket.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/views/InMarket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/views/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/views/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/views/PlanetScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/views/PlanetScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/views/PlayerConfirmation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/views/PlayerConfirmation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/views/RandomEventView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/views/RandomEventView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/views/SolarSystemMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/views/SolarSystemMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/views/UniverseMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/edu/gatech/cs2340/SpaceTrader/views/UniverseMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/dec_arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/dec_arrow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/inc_arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/inc_arrow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p0.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p10.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p12.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p13.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p14.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p15.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p16.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p17.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p18.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p19.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p20.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p21.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p22.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p23.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p24.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p25.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p26.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p27.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p27.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p28.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p28.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p29.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p29.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p30.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p30.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p31.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p31.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p32.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p33.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p33.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p34.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p34.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p35.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p35.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p36.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p36.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p37.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p37.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p38.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p38.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p39.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p39.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p40.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p40.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p41.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p41.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p42.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p42.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p43.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p43.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p44.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p44.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p45.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p45.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p46.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p46.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p47.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p47.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p48.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p49.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p49.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/p9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/p9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawable/space.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/space.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/content_create_player.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/content_create_player.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/market_screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/market_screen.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../test/java/edu/gatech/cs2340/SpaceTrader/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../test/java/edu/gatech/cs2340/SpaceTrader/ExampleUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../test/java/edu/gatech/cs2340/SpaceTrader/GoodTypeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../test/java/edu/gatech/cs2340/SpaceTrader/GoodTypeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../local.properties" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1726193485">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../../.." />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="508" />
+    <option name="width" value="1401" />
+    <option name="height" value="981" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="drawable-nodpi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drawable-nodpi" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Savyasachi\Documents\GaTech\Spring2019\cs2340\m10\Watersgate\SpaceTrader\app\src\main\res\drawable-nodpi" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4967b91e-9af6-44b4-8230-a98ddde29037" name="Default Changelist" comment="" />
+      <created>1555251115579</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555251115579</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="339" y="0" width="934" height="654" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.46567506" />
+      <window_info id="Structure" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Captures" order="0" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="Run" />
+      <window_info anchor="bottom" id="Debug" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Flutter Inspector" />
+      <window_info anchor="right" id="Flutter Outline" />
+      <window_info anchor="right" id="Palette&#9;" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+</project>

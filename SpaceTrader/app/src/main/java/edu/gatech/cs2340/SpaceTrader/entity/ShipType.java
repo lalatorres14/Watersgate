@@ -1,6 +1,8 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 
-
+/**
+ * ShipType enum class
+ */
 public enum ShipType {
     FLEA (8,1000,20,20),
     GNAT (15,9000,14,14),
@@ -34,11 +36,30 @@ public enum ShipType {
         this.tankSize = t;
         this.maxTankSize = m;
     }
-
+    /**
+     * gets the size of the cargo
+     * @return cargo size
+     */
     public int getcargoSize(){return cargoSize; }
+    /**
+     * gets the price of the item
+     * @return price
+     */
     public int getprice(){return price; }
+    /**
+     * gets the the fuel capacity
+     * @return tank size
+     */
     public int getTankSize(){return tankSize; }
+    /**
+     * changes the amount of fuel left
+     * @param size the amount of fuel added or removed from tank
+     */
     public void setTankSize(int size){tankSize = size;}
+    /**
+     * gets the maximum fuel capacity of the ship
+     * @return max tank size
+     */
     public int getMaxTankSize(){return maxTankSize; }
 }
 
