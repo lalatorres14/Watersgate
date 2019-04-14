@@ -102,6 +102,10 @@ public class Player implements Serializable {
      * @return the engineering skills of the player
      */
     public int getEngineerSkill() { return  engineerSkill; }
+
+    /**
+     * @return the ship object
+     */
     public Ship getShip() {return ship; }
     /**
      * @return the credits of the player
