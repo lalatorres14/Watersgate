@@ -16,7 +16,12 @@ import edu.gatech.cs2340.SpaceTrader.entity.GoodType;
 import edu.gatech.cs2340.SpaceTrader.entity.Market;
 import edu.gatech.cs2340.SpaceTrader.entity.MarketItem;
 import edu.gatech.cs2340.SpaceTrader.entity.Planet;
-
+import edu.gatech.cs2340.SpaceTrader.entity.Player;
+import static edu.gatech.cs2340.SpaceTrader.entity.GoodType.*;
+/**
+ * This class acts as the code behind for allowing the player buy or sell goods
+ * on the market
+ */
 public class InMarket extends AppCompatActivity {
     //Game-based variables (as opposed to UI-based)
     private Planet current;

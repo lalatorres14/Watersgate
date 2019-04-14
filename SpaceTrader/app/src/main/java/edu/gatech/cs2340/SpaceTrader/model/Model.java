@@ -26,6 +26,10 @@ public final class Model {
      */
     private static final Model instance = new Model();
 
+    /**
+     * gets the current Model instance
+     * @return the instance
+     */
     public static Model getInstance() { return instance; }
 
     /**
@@ -46,7 +50,10 @@ public final class Model {
         interactorMap.put("Player", new PlayerInteractor(myRepository));
     }
 
-
+    /**
+     * gets player interactors to be used by the application
+     * @return player interactors
+     */
     public PlayerInteractor getPlayerInteractor() {
         return (PlayerInteractor) interactorMap.get("Player");
     }

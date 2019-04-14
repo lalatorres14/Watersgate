@@ -1,11 +1,18 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 
 import java.util.Random;
-
+/**
+ * The RandomEvent class
+ *
+ */
 public class RandomEvent {
 
     private static final Game game = Game.getInstance();
-
+    /**
+     * @param type type of random event that shows up
+     * @return returns a random event
+     *
+     */
     public static String doRandomEvent(RandomEventType type){
         String message = "";
         int money;

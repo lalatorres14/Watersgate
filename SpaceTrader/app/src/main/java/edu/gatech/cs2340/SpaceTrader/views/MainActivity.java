@@ -21,7 +21,9 @@ import edu.gatech.cs2340.SpaceTrader.entity.GoodType;
 import edu.gatech.cs2340.SpaceTrader.entity.Planet;
 import edu.gatech.cs2340.SpaceTrader.entity.ShipType;
 import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
-
+/**
+ * This class acts as the code behind instantiating the game
+ */
 public class MainActivity extends AppCompatActivity {
     private final Game game = Game.getInstance();
     //SharedPreferences pref = getApplicationContext().getSharedPreferences("data", 0);
