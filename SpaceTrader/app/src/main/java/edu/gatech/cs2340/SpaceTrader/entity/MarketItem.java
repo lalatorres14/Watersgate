@@ -2,9 +2,11 @@ package edu.gatech.cs2340.SpaceTrader.entity;
 
 import android.content.Context;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.Gravity;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -53,6 +55,8 @@ public class MarketItem {
         totalView.setText("0$");
         input = new EditText(context);
         input.setGravity(Gravity.CENTER);
+        input.setInputType(InputType.TYPE_CLASS_NUMBER);
+        input.setImeOptions(EditorInfo.IME_ACTION_DONE);
         input.addTextChangedListener(new TextWatcher() {
             //first two Overrides not needed
             @Override
