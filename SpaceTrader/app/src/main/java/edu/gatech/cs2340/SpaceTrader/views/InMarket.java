@@ -112,50 +112,64 @@ public class InMarket extends AppCompatActivity {
      * @param view the button
      */
     public void onCompleteTransactionPressed(View view){
-        int totalPrice = 0;
         if (buying == 0) {
             shortToast("Buying or Selling?");
         } else if (buying == 1) {
-            int totalAmount = 0;
-            for (MarketItem marketItem: items) {
-                totalPrice += marketItem.amount * marketItem.unitPrice;
-                totalAmount += marketItem.amount;
-                if (totalAmount > game.getSpace()) {
-                    shortToast("Not Enough Space");
-                    return;
-                }
-            }
-            if (totalPrice > game.getCredits()) {
-                shortToast("Not enough credits");
-            } else {
-                for (MarketItem marketItem: items) {
-                    market.buyItem(marketItem.type.getGoodType(),
-                            marketItem.amount, marketItem.unitPrice);
-                }
-                playerCredits.setText(String.valueOf(game.getCredits()));
-
-                shortToast("Transaction Complete");
-                resetInputs();
-                updateHoldQuantity();
-            }
+            buyItems();
         } else if (buying == -1) {
-            for (MarketItem marketItem: items) {
-                if (game.getQuantityOfGood(marketItem.type.getGoodType()) < marketItem.amount) {
-                    shortToast("Not enough " + marketItem.type.getGoodType().toString());
-                    return;
-                }
-            }
-            for (MarketItem marketItem: items) {
-                market.sellItem(marketItem.type.getGoodType(), marketItem.amount,
-                        marketItem.unitPrice);
-            }
-            playerCredits.setText(String.valueOf(game.getCredits()));
-            shortToast("Transaction Complete");
-            resetInputs();
-            updateHoldQuantity();
+            sellItems();
         } else {
             shortToast("What? How?");
         }
+    }
+
+    /**
+     * A helper method for complete transaction which handles the buying of items
+     */
+    private void buyItems() {
+        int totalPrice = 0;
+        int totalAmount = 0;
+        for (MarketItem marketItem: items) {
+            totalPrice += marketItem.amount * marketItem.unitPrice;
+            totalAmount += marketItem.amount;
+            if (totalAmount > game.getSpace()) {
+                shortToast("Not Enough Space");
+                return;
+            }
+        }
+        if (totalPrice > game.getCredits()) {
+            shortToast("Not enough credits");
+        } else {
+            for (MarketItem marketItem: items) {
+                market.buyItem(marketItem.type.getGoodType(),
+                        marketItem.amount, marketItem.unitPrice);
+            }
+            playerCredits.setText(String.valueOf(game.getCredits()));
+
+            shortToast("Transaction Complete");
+            resetInputs();
+            updateHoldQuantity();
+        }
+    }
+
+    /**
+     * A helper method for complete transaction which handles the selling of items
+     */
+    private void sellItems(){
+        for (MarketItem marketItem: items) {
+            if (game.getQuantityOfGood(marketItem.type.getGoodType()) < marketItem.amount) {
+                shortToast("Not enough " + marketItem.type.getGoodType().toString());
+                return;
+            }
+        }
+        for (MarketItem marketItem: items) {
+            market.sellItem(marketItem.type.getGoodType(), marketItem.amount,
+                    marketItem.unitPrice);
+        }
+        playerCredits.setText(String.valueOf(game.getCredits()));
+        shortToast("Transaction Complete");
+        resetInputs();
+        updateHoldQuantity();
     }
 
     /**

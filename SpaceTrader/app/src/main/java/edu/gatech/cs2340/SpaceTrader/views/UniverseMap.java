@@ -80,7 +80,6 @@ public class UniverseMap extends AppCompatActivity {
                 RadioButton checkedRadioButton = group.findViewById(checkedId);
                 boolean isChecked = checkedRadioButton.isChecked();
                 if (isChecked) {
-
                     if (checkedRadioButton.getId() == R.id.solar1){
                         solarIndex = 0;
                     } else if (checkedRadioButton.getId() == R.id.solar2){
