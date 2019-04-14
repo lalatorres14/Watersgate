@@ -60,4 +60,5 @@ public final class Game {
         }
         solarCoordinates = universe.get(0).getCoordinates();
     }
+
 }
