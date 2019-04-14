@@ -11,26 +11,26 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 public class MarketItem {
+    private static final Game game = Game.getInstance();
 
-    TableRow row1;
-    TextView itemName;
-    TextView totalHeader;
-    TextView totalView;
-    EditText input;
+    public TableRow row1;
+    public TextView itemName;
+    public TextView totalHeader;
+    public TextView totalView;
+    public EditText input;
 
-    TableRow row2;
-    TextView holdHeader;
-    TextView hold;
-    TextView unitHeader;
-    TextView unit;
+    public TableRow row2;
+    public TextView holdHeader;
+    public TextView hold;
+    public TextView unitHeader;
+    public TextView unit;
 
-    TableRow row3;
-    TextView blank;
+    public TableRow row3;
+    public TextView blank;
 
-    int amount;
-    Good type;
-    int unitPrice;
-
+    public int amount;
+    public Good type;
+    public int unitPrice;
 
     public MarketItem(int typeIndex, Planet current, TableLayout marketTable,
                       TableRow.LayoutParams params, Context context) {
@@ -59,7 +59,6 @@ public class MarketItem {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {}
-
             @Override
             public void afterTextChanged(Editable s) {
                 if (TextUtils.isEmpty(input.getText())) { input.setText("0"); }
@@ -76,7 +75,7 @@ public class MarketItem {
         holdHeader.setText("In hold: ");
         hold = new TextView(context);
         hold.setGravity(Gravity.CENTER);
-        hold.setText("0");
+        hold.setText(String.valueOf(game.getQuantityOfGood(type.getGoodType())));
         unitHeader = new TextView(context);
         unitHeader.setGravity(Gravity.CENTER);
         unitHeader.setText("$ Per: ");
