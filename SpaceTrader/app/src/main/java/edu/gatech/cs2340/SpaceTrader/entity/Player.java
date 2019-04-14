@@ -72,12 +72,12 @@ public class Player implements Serializable {
     public void planetTravel(Planet destination) {
         if (canPlanetTravel(destination)) {
             ship.setFuel(ship.getFuel() - planetDistance(destination));
-            game.setCurrentPlanet(destination);
+            Game.getInstance().setCurrentPlanet(destination);
             Log.i("Travel", "Successfully traveled to " + destination.getName());
         }
     }
     public int planetDistance(Planet destination) {
-        Planet current = game.getCurrentPlanet();
+        Planet current = Game.getInstance().getCurrentPlanet();
         return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX,
                 2) + Math.pow(current.coordinateY - destination.coordinateY, 2))));
     }
@@ -87,13 +87,13 @@ public class Player implements Serializable {
     public void systemTravel(SolarSystem destination) {
         if (canSystemTravel(destination)) {
             ship.setFuel(ship.getFuel() - systemDistance(destination));
-            game.setCurrentSS(destination);
-            game.setCurrentPlanet(destination.getPlanetList().get(0));
+            Game.getInstance().setCurrentSS(destination);
+            Game.getInstance().setCurrentPlanet(destination.getPlanetList().get(0));
             Log.i("Travel", "Successfully traveled to " + destination.getName());
         }
     }
     public int systemDistance(SolarSystem destination) {
-        SolarSystem current = game.getCurrentSS();
+        SolarSystem current = Game.getInstance().getCurrentSS();
         return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX,
                 2) + Math.pow(current.coordinateY - destination.coordinateY, 2))));
     }

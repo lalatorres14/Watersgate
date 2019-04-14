@@ -130,6 +130,7 @@ public class InMarket extends AppCompatActivity {
                             marketItem.amount, marketItem.unitPrice);
                 }
                 playerCredits.setText(String.valueOf(game.getCredits()));
+
                 shortToast("Transaction Complete");
                 resetInputs();
                 updateHoldQuantity();

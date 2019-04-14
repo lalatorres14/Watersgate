@@ -59,9 +59,9 @@ public enum GoodType {
         if(conditionStr.equals(cr)) { price = price / 2; }
         else if(conditionStr.equals(er)) { price = price * 2; }
 
-        game.adjustPrice(price);
+        Game.getInstance().adjustPrice(price);
         //Trader skill points adjustment
-        price += ((game.getTraderSkill() / 100) * price);
+        price += ((Game.getInstance().getTraderSkill() / 100) * price);
         return price;
     }
 
