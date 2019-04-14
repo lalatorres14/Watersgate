@@ -19,7 +19,7 @@ public enum TechLevel {
     private final int techLevelInt;
     /**
      * Constructor for TechLevel
-     * @param i the techlevel number
+     * @param i the techLevel number
      * @param f the techLevel name
      */
     TechLevel(int i, String f){

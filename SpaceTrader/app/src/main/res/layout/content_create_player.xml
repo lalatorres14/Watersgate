@@ -113,7 +113,7 @@
         android:layout_height="50dp"
         android:scaleType="fitXY"
         android:layout_gravity="center"
-        android:contentDescription="pilotbuttonup" />
+        android:contentDescription="pilot button up" />
 
     <ImageButton
         android:id="@+id/pilot_button_down"
