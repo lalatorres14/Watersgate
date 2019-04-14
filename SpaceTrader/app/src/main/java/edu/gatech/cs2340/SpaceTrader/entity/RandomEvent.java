@@ -7,6 +7,7 @@ import java.util.Random;
 public class RandomEvent {
 
     private static final Game game = Game.getInstance();
+
     Random rand = new Random();
     /**
      * @param type type of random event that shows up

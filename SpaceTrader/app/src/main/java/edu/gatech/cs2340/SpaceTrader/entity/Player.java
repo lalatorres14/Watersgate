@@ -63,83 +63,6 @@ public class Player implements Serializable {
         ship = new Ship(ShipType.GNAT);
         credits = 1000;
     }
-<<<<<<< HEAD
-=======
-
-    /**
-     * helper method for traveling to another planet
-     *
-     * @param destination   planet to travel to
-     */
-    //Travel methods, helper methods, and refuel method
-    public void planetTravel(Planet destination) {
-        if (canPlanetTravel(destination)) {
-            ship.setFuel(ship.getFuel() - planetDistance(destination));
-            Game.getInstance().setCurrentPlanet(destination);
-            Log.i("Travel", "Successfully traveled to " + destination.getName());
-        }
-    }
-    /**
-     * gets the distance of the planet to travel to
-     *
-     * @param destination  planet to travel to
-     * @return distance of the planet
-     */
-    public int planetDistance(Planet destination) {
-        Planet current = Game.getInstance().getCurrentPlanet();
-        return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX,
-                2) + Math.pow(current.coordinateY - destination.coordinateY, 2))));
-    }
-    /**
-     * determines whether it is possible to travel to another planet or not
-     *
-     * @param destination   planet to travel to
-     * @return true if player can travel to planet, else return false
-     */
-    public boolean canPlanetTravel(Planet destination) { return (planetDistance(destination) <=
-            ship.getFuel()); }
-    /**
-     * helper method for traveling to another solar system
-     *
-     * @param destination   solar system to travel to
-     */
-    public void systemTravel(SolarSystem destination) {
-        if (canSystemTravel(destination)) {
-            ship.setFuel(ship.getFuel() - systemDistance(destination));
-            Game.getInstance().setCurrentSS(destination);
-            Game.getInstance().setCurrentPlanet(destination.getPlanetList().get(0));
-            Log.i("Travel", "Successfully traveled to " + destination.getName());
-        }
-    }
-    /**
-     * gets the distance of the solar system to travel to
-     *
-     * @param destination  solar system to travel to
-     * @return distance of the solar system
-     */
-    public int systemDistance(SolarSystem destination) {
-        SolarSystem current = Game.getInstance().getCurrentSS();
-        return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX,
-                2) + Math.pow(current.coordinateY - destination.coordinateY, 2))));
-    }
-    /**
-     * determines whether it is possible to travel to another solar system or not
-     *
-     * @param destination   solar system to travel to
-     * @return true if player can travel to solar system, else return false
-     */
-    public boolean canSystemTravel(SolarSystem destination) { return (systemDistance(destination)
-            <= ship.getFuel()); }
-    /**
-     * refuels the ship
-     */
-    public void refuel() {
-        setCredits(getCredits() - game.adjustPrice(
-                game.getMaxFuel() - game.getFuel()));
-        game.setFuel(game.getMaxFuel());
-    }
-
->>>>>>> b06402962b98988e705b0f9ec39600590eedb823
     //Getters and setters are required for accessing the fields from the database
     /**
      * @return the id of the player
@@ -179,31 +102,6 @@ public class Player implements Serializable {
      * @return the engineering skills of the player
      */
     public int getEngineerSkill() { return  engineerSkill; }
-<<<<<<< HEAD
-
-=======
-    /**
-     * @param distance the distance traveled from one location to another
-     */
-    public void fuelExpenditure(int distance) {
-        ship.setFuel(ship.getFuel() - distance);
-    }
-    /**
-     * @param cost the cost to refuel the ship
-     * @return a string saying whether the ship was fueled or not
-     */
-    public String refuel(int cost){
-        if (getCredits() < cost) {
-            return "cannot purchase fuel";
-        }
-        int fuelToAdd = ship.getMaxFuel() - ship.getFuel();
-        ship.setFuel(ship.getFuel() + fuelToAdd);
-        return "Successfully refuelled ship";
-    }
-    /**
-     * @return the ship of the player
-     */
->>>>>>> b06402962b98988e705b0f9ec39600590eedb823
     public Ship getShip() {return ship; }
     /**
      * @return the credits of the player
