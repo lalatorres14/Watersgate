@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class RandomEvent {
 
-    private static final Game game = Game.getInstance();
+    private static Game game = Game.getInstance();
 
     public static String doRandomEvent(RandomEventType type){
         String message = "";
@@ -101,7 +101,9 @@ public class RandomEvent {
                         if (money > 1000) { money = 1000; } //Reign in price in late game
                         message += "Only " + String.valueOf(money) + " credits? With such a " +
                                 "great deal, how could you refuse!";
-                        dealer.buyItem(GoodType.NARCOTICS, 1, money);
+                        //dealer.buyItem(GoodType.NARCOTICS, 1, money);
+                        game.buyGood(GoodType.NARCOTICS, 1);
+                        game.setCredits(game.getCredits() - (money));
                     } else {
                         message += "Oh how you wish you had space for these premium goods!" +
                                 " Unfortunately, your ship's cargo is full.";

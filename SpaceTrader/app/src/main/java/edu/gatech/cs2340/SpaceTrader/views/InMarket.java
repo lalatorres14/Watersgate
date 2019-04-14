@@ -26,7 +26,7 @@ import static edu.gatech.cs2340.SpaceTrader.entity.GoodType.*;
 public class InMarket extends AppCompatActivity {
     //Game-based variables (as opposed to UI-based)
     private Planet current;
-    private static final Game game = Game.getInstance();
+    private static Game game = Game.getInstance();
     //all the buttons for the market
     private Button buyMode;
     private Button sellMode;
@@ -604,15 +604,15 @@ public class InMarket extends AppCompatActivity {
                 toast.show();
             //Buys Items, reprints amount in hold, and reprints player's money
             } else {
-                market.buyItem(WATER, numWater, material1UnitPrice); market.buyItem(
+                buyItem(WATER, numWater, material1UnitPrice); buyItem(
                         FURS, numFur, material2UnitPrice);
-                market.buyItem(FOOD, numFood, material3UnitPrice); market.buyItem(
+                buyItem(FOOD, numFood, material3UnitPrice); buyItem(
                         ORE, numOre, material4UnitPrice);
-                market.buyItem(GAMES, numGames, material5UnitPrice); market.buyItem(
+                buyItem(GAMES, numGames, material5UnitPrice); buyItem(
                         FIREARMS, numFirearms, material6UnitPrice);
-                market.buyItem(MEDICINE, numMedicine, material7UnitPrice); market.buyItem(
+                buyItem(MEDICINE, numMedicine, material7UnitPrice); buyItem(
                         MACHINES, numMachines, material8UnitPrice);
-                market.buyItem(NARCOTICS, numNarcotics, material9UnitPrice); market.buyItem(
+                buyItem(NARCOTICS, numNarcotics, material9UnitPrice); buyItem(
                         ROBOTS, numRobots, material10UnitPrice);
                 playerCredits.setText(String.valueOf(game.getCredits()));
                 holdSpaceView.setText(String.valueOf(game.getSpace()));
@@ -666,15 +666,15 @@ public class InMarket extends AppCompatActivity {
                         Toast.LENGTH_SHORT);
                 toast.show();
             } else {
-                market.sellItem(WATER, numWater, material1UnitPrice); market.sellItem(
+                sellItem(WATER, numWater, material1UnitPrice); sellItem(
                         FURS, numFur, material2UnitPrice);
-                market.sellItem(FOOD, numFood, material3UnitPrice); market.sellItem(
+                sellItem(FOOD, numFood, material3UnitPrice); sellItem(
                         ORE, numOre, material4UnitPrice);
-                market.sellItem(GAMES, numGames, material5UnitPrice); market.sellItem(
+                sellItem(GAMES, numGames, material5UnitPrice); sellItem(
                         FIREARMS, numFirearms, material6UnitPrice);
-                market.sellItem(MEDICINE, numMedicine, material7UnitPrice); market.sellItem(
+                sellItem(MEDICINE, numMedicine, material7UnitPrice); sellItem(
                         MACHINES, numMachines, material8UnitPrice);
-                market.sellItem(NARCOTICS, numNarcotics, material9UnitPrice); market.sellItem(
+                sellItem(NARCOTICS, numNarcotics, material9UnitPrice); sellItem(
                         ROBOTS, numRobots, material10UnitPrice);
                 playerCredits.setText(String.valueOf(game.getCredits()));
                 holdSpaceView.setText(String.valueOf(game.getSpace()));
@@ -768,5 +768,20 @@ public class InMarket extends AppCompatActivity {
         holdQuantityView.setText(String.valueOf(game.getQuantityOfGood(NARCOTICS)));
         holdQuantityView = findViewById(R.id.holdQuantity10);
         holdQuantityView.setText(String.valueOf(game.getQuantityOfGood(ROBOTS)));
+    }
+
+    private void buyItem(GoodType type, int quantity, int unitPrice){
+        game.buyGood(type, quantity);
+        game.setCredits(game.getCredits() - (quantity * unitPrice));
+
+    }
+
+    private void sellItem(GoodType good, int quantity, int unitPrice){
+        //There were problems with selling something with 0 quantity, so I tested this and it
+        // worked by just not processing them
+        if (quantity != 0) {
+            game.sellGood(good, quantity);
+            game.setCredits(game.getCredits() + (quantity * unitPrice));
+        }
     }
 }

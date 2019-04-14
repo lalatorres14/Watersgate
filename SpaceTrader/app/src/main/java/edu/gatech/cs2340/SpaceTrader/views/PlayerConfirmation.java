@@ -16,7 +16,7 @@ import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
 
 
 public class PlayerConfirmation extends AppCompatActivity {
-    private static final Game game = Game.getInstance();
+    private static Game game = Game.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

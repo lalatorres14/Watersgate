@@ -23,7 +23,7 @@ import edu.gatech.cs2340.SpaceTrader.entity.Planet;
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
 
 public class SolarSystemMap extends AppCompatActivity {
-    private static final Game game = Game.getInstance();
+    private static Game game = Game.getInstance();
     private int planetIndex;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

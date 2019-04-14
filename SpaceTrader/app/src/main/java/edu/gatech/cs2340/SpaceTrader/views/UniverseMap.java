@@ -24,7 +24,7 @@ import edu.gatech.cs2340.SpaceTrader.entity.GoodType;
 import edu.gatech.cs2340.SpaceTrader.entity.Player;
 
 public class UniverseMap extends AppCompatActivity {
-    private static final Game game = Game.getInstance();
+    private static Game game = Game.getInstance();
     private CharSequence checkedText;
     private int solarIndex;
     private SharedPreferences pref ;

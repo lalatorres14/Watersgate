@@ -5,7 +5,7 @@ import java.util.Set;
 /**
  * Class regarding the cargo holdings and size for the player's ship
  */
-public class Cargo {
+public class Cargo{
     private final int maxCapacity;
     private final EnumMap<GoodType, Integer> cargo;
     /**

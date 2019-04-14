@@ -1,7 +1,5 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 
-import android.util.Log;
-
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
@@ -16,8 +14,6 @@ public class Player implements Serializable {
      */
     public static final List<String> legalDifficulty = Arrays.asList(
             "Beginner", "Easy", "Normal", "Hard", "Impossible");
-
-    private static final Game game = Game.getInstance();
 
     /** a globally unique number for this object */
     private int id;
@@ -53,11 +49,11 @@ public class Player implements Serializable {
     /**
      * Constructor required for making the new object
      *
-     * @param nam     name of the player
+     * @param name     name of the player
      * @param diff    difficulty of game
      */
-    public Player(String nam, Difficulty diff) {
-        name = nam;
+    public Player(String name, Difficulty diff) {
+        this.name = name;
         this.diff = diff;
         skillPoints = 16;
         pilotSkill = 0;
@@ -67,45 +63,6 @@ public class Player implements Serializable {
         ship = new Ship(ShipType.GNAT);
         credits = 1000;
     }
-
-    //Travel methods, helper methods, and refuel method
-    public void planetTravel(Planet destination) {
-        if (canPlanetTravel(destination)) {
-            ship.setFuel(ship.getFuel() - planetDistance(destination));
-            game.setCurrentPlanet(destination);
-            Log.i("Travel", "Successfully traveled to " + destination.getName());
-        }
-    }
-    public int planetDistance(Planet destination) {
-        Planet current = game.getCurrentPlanet();
-        return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX,
-                2) + Math.pow(current.coordinateY - destination.coordinateY, 2))));
-    }
-    public boolean canPlanetTravel(Planet destination) { return (planetDistance(destination) <=
-            ship.getFuel()); }
-
-    public void systemTravel(SolarSystem destination) {
-        if (canSystemTravel(destination)) {
-            ship.setFuel(ship.getFuel() - systemDistance(destination));
-            game.setCurrentSS(destination);
-            game.setCurrentPlanet(destination.getPlanetList().get(0));
-            Log.i("Travel", "Successfully traveled to " + destination.getName());
-        }
-    }
-    public int systemDistance(SolarSystem destination) {
-        SolarSystem current = game.getCurrentSS();
-        return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX,
-                2) + Math.pow(current.coordinateY - destination.coordinateY, 2))));
-    }
-    public boolean canSystemTravel(SolarSystem destination) { return (systemDistance(destination)
-            <= ship.getFuel()); }
-
-    public void refuel() {
-        setCredits(getCredits() - game.adjustPrice(
-                game.getMaxFuel() - game.getFuel()));
-        game.setFuel(game.getMaxFuel());
-    }
-
     //Getters and setters are required for accessing the fields from the database
 
     public int getId() {
@@ -130,17 +87,6 @@ public class Player implements Serializable {
 
     public int getEngineerSkill() { return  engineerSkill; }
 
-    public void fuelExpenditure(int distance) {
-        ship.setFuel(ship.getFuel() - distance);
-    }
-    public String refuel(int cost){
-        if (getCredits() < cost) {
-            return "cannot purchase fuel";
-        }
-        int fuelToAdd = ship.getMaxFuel() - ship.getFuel();
-        ship.setFuel(ship.getFuel() + fuelToAdd);
-        return "Successfully refuelled ship";
-    }
     public Ship getShip() {return ship; }
 
     public int getCredits() {return credits; }

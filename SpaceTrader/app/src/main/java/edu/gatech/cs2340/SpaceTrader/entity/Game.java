@@ -1,5 +1,7 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -49,11 +51,11 @@ public final class Game {
     public Planet getCurrentPlanet() {return currentPlanet; }
 
     public SolarSystem getCurrentSS() {return currentSS; }
-    public static Map<Integer, Integer> getSolarCoordinates() {
-        return Collections.unmodifiableMap(solarCoordinates);
-    }
+
     public Player getPlayer(){return player; }
-    public static List<SolarSystem> getUniverse(){ return Collections.unmodifiableList(universe); }
+    public static List<SolarSystem> getUniverse(){
+        return Collections.unmodifiableList(universe);
+    }
     public void setNextScreen(Class c){nextScreen = c;}
     public Class getNextScreen() {return nextScreen;}
 
@@ -88,7 +90,7 @@ public final class Game {
 
     public void setDifficulty(Difficulty diff) {player.setDifficulty(diff);}
     public Difficulty getDifficulty() {return player.getDifficulty();}
-    public String getDifficultyName() {return player.getDifficultyName();}
+   public String getDifficultyName() {return player.getDifficultyName();}
 
     public void setCredits(int credits) {player.setCredits(credits); }
     public int getCredits() {return player.getCredits(); }
@@ -96,17 +98,50 @@ public final class Game {
     public void setPlayerName(String name) {player.setName(name); }
     public String getPlayerName() {return player.getName(); }
 
-    public void buyGood(GoodType good, int quantity) {player.buyGood(good, quantity);}
-    public void sellGood(GoodType good, int quantity) {player.sellGood(good, quantity);}
-    public void refuel() {player.refuel(); }
+    public void buyGood(GoodType good, int quantity) {ship.buyGood(good, quantity);}
+    public void sellGood(GoodType good, int quantity) {ship.sellGood(good, quantity);}
+//    public void refuel() {player.refuel(); }
+    public void refuel() {
+        setCredits(getCredits() - adjustPrice(
+                getMaxFuel() - getFuel()));
+        setFuel(getMaxFuel());
+    }
 
-    public int planetDistance(Planet destination) {return player.planetDistance(destination); }
-    public boolean canPlanetTravel(Planet dest) {return player.canPlanetTravel(dest);}
-    public void planetTravel(Planet destination) {player.planetTravel(destination);}
+    //public int planetDistance(Planet destination) {return player.planetDistance(destination); }
+    public int planetDistance(Planet destination) {
+        Planet current = getCurrentPlanet();
+        return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX,
+                2) + Math.pow(current.coordinateY - destination.coordinateY, 2))));
+    }
+    //public boolean canPlanetTravel(Planet dest) {return player.canPlanetTravel(dest);}
+    public boolean canPlanetTravel(Planet destination) { return (planetDistance(destination) <=
+            ship.getFuel()); }
 
-    public int systemDistance(SolarSystem dest) {return player.systemDistance(dest); }
-    public boolean canSystemTravel(SolarSystem dest) {return player.canSystemTravel(dest); }
-    public void systemTravel(SolarSystem dest) {player.systemTravel(dest);}
+    //public void planetTravel(Planet destination) {player.planetTravel(destination);}
+    public void planetTravel(Planet destination) {
+        if (canPlanetTravel(destination)) {
+            ship.setFuel(ship.getFuel() - planetDistance(destination));
+            setCurrentPlanet(destination);
+            Log.i("Travel", "Successfully traveled to " + destination.getName());
+        }
+    }
+//    public int systemDistance(SolarSystem dest) {return player.systemDistance(dest); }
+    public int systemDistance(SolarSystem dest) {
+        return ((int) Math.ceil(Math.sqrt(Math.pow(currentSS.coordinateX - dest.coordinateX,
+                2) + Math.pow(currentSS.coordinateY - dest.coordinateY, 2))));
+    }
+//    public boolean canSystemTravel(SolarSystem dest) {return player.canSystemTravel(dest); }
+    public boolean canSystemTravel(SolarSystem destination) { return (systemDistance(destination)
+            <= ship.getFuel()); }
+//    public void systemTravel(SolarSystem dest) {player.systemTravel(dest);}
+    public void systemTravel(SolarSystem destination) {
+        if (canSystemTravel(destination)) {
+            ship.setFuel(ship.getFuel() - systemDistance(destination));
+            setCurrentSS(destination);
+            setCurrentPlanet(destination.getPlanetList().get(0));
+            Log.i("Travel", "Successfully traveled to " + destination.getName());
+        }
+    }
 
 
 
@@ -139,7 +174,7 @@ public final class Game {
 
     //Planet Pass-Through Methods
     public String getCurrentPlanetName() {return currentPlanet.getName(); }
-    public Resource getCurrentPlanetResources() {return currentPlanet.getResources(); }
+    // getCurrentPlanetResources() {return currentPlanet.getResources(); }
     public String getCurrentPlanetRssName() {return currentPlanet.getResourcesName(); }
     public TechLevel getTechLevel() {return currentPlanet.getTechLevel();}
     public int getCurrentPlanetId() {return currentPlanet.getPlanetId(); }

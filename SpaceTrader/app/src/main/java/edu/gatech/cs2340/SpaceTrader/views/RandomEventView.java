@@ -13,7 +13,7 @@ import edu.gatech.cs2340.SpaceTrader.entity.RandomEvent;
 import edu.gatech.cs2340.SpaceTrader.entity.RandomEventType;
 
 public class RandomEventView extends AppCompatActivity {
-    private static final Game game = Game.getInstance();
+    private static Game game = Game.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

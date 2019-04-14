@@ -8,9 +8,11 @@ package edu.gatech.cs2340.SpaceTrader.entity;
 public class Ship {
     private final ShipType ship;
     private final Cargo cargo;
+
     public Ship(ShipType s) {
         this.ship = s;
-        this.cargo = new Cargo(s.getcargoSize());
+        this.cargo = new Cargo(s.getcargoSize()) {
+        };
     }
 
     public int getSpace(){
