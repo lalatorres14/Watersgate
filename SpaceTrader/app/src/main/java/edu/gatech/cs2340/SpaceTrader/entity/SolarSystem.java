@@ -82,7 +82,8 @@ public class SolarSystem {
      *
      * @return the coordinates of the Solar System
      */
-    //public Map<Integer, Integer> getCoordinates() {return Collections.unmodifiableMap(coordinates);}
+    //public Map<Integer, Integer> getCoordinates()
+    // {return Collections.unmodifiableMap(coordinates);}
     public HashMap<Integer, Integer> getCoordinates() {return coordinates;}
     /**
      *

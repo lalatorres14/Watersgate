@@ -1,5 +1,7 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 
+import android.util.SparseArray;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -88,7 +90,8 @@ public class Planet {
                 add("Yavin-4");
             }
         };
-        HashMap<Integer, String> pNames = new HashMap<>();
+        //HashMap<Integer, String> pNames = new HashMap<>();
+        SparseArray<String> pNames = new SparseArray<>();
         for(int i = 0; i < planetNames.size(); i++) {
             pNames.put(i, planetNames.get(i));
         }
@@ -129,7 +132,8 @@ public class Planet {
      *
      * @return the coordinates of the planet
      */
-    //public Map<Integer, Integer> getCoordinates() {return Collections.unmodifiableMap(coordinates);}
+    //public Map<Integer, Integer> getCoordinates()
+    // {return Collections.unmodifiableMap(coordinates);}
     public HashMap<Integer, Integer> getCoordinates() {return coordinates;}
     /**
      *
