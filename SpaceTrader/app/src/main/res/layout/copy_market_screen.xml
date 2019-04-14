@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/marketHeader"
+        android:layout_width="308dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Default"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.019" />
+
+    <Button
+        android:id="@+id/buyMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Buy Mode"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toStartOf="@+id/holdSpaceHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marketHeader"
+        app:layout_constraintVertical_bias="0.317"
+        android:onClick="onBuyModePressed"
+        android:background="@drawable/button_bg"
+        />
+
+    <Button
+        android:id="@+id/sellMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Sell Mode"
+        app:layout_constraintBottom_toBottomOf="@+id/buyMode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/holdSpace"
+        app:layout_constraintTop_toTopOf="@+id/buyMode"
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="onSellModePressed"
+        android:background="@drawable/button_bg"/>
+
+    <TextView
+        android:id="@+id/holdSpaceHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:height="48dp"
+        android:gravity="center"
+        android:text="Free Space:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/buyMode"
+        app:layout_constraintEnd_toStartOf="@id/holdSpace"
+        app:layout_constraintBottom_toBottomOf="@+id/buyMode"
+        app:layout_constraintTop_toTopOf="@+id/buyMode"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="121dp" />
+
+    <TextView
+        android:id="@+id/holdSpace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:height="48dp"
+        android:gravity="center"
+        android:text="0"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/sellMode"
+        app:layout_constraintEnd_toStartOf="@+id/sellMode"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/holdSpaceHeader"
+        app:layout_constraintTop_toTopOf="@+id/sellMode"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="395dp"
+        android:layout_height="405dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:isScrollContainer="false"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sellMode"
+        app:layout_constraintVertical_bias="0.175">
+
+        <TableLayout
+            android:id="@+id/marketTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:measureWithLargestChild="true">
+
+            <TableRow
+                android:id="@+id/material1Row1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/item1Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:height="48dp"
+                    android:gravity="center"
+                    android:text="Water"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/item1TotalHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:height="48dp"
+                    android:gravity="center"
+                    android:text="Total: "
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/item1TotalAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:height="48dp"
+                    android:gravity="center"
+                    android:text="0$"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/item1Unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:height="48dp"
+                    android:gravity="center"
+                    android:text="$ Per:"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/material1Row2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/holdQuantity1Header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:height="48dp"
+                    android:gravity="center"
+                    android:text="In hold:"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/holdQuantity1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:height="48dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/quantity1Header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:height="48dp"
+                    android:gravity="center"
+                    android:text="Quantity:"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/quantity1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:height="48dp"
+                    android:ems="4"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:imeOptions="actionDone"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:labelFor="@id/quantity1"/>
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/spaceRow1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/blank1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="48sp" />
+            </TableRow>
+
+        </TableLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/completeTransaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Complete Transaction"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.883"
+        app:layout_constraintStart_toEndOf="@id/currentMoney"
+        app:layout_constraintTop_toBottomOf="@id/scrollView2"
+        app:layout_constraintVertical_bias="0.545"
+        android:onClick="onCompleteTransactionPressed"/>
+
+    <TextView
+        android:id="@+id/currentMoneyHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Currency:"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:height="48dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/currentMoney"
+        app:layout_constraintTop_toTopOf="@id/completeTransaction"
+        app:layout_constraintBottom_toBottomOf="@id/completeTransaction"/>
+
+    <TextView
+        android:id="@+id/currentMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1000"
+        android:height="48dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/currentMoneyHeader"
+        app:layout_constraintEnd_toStartOf="@id/completeTransaction"
+        app:layout_constraintTop_toTopOf="@id/completeTransaction"
+        app:layout_constraintBottom_toBottomOf="@id/completeTransaction"/>
+
+</android.support.constraint.ConstraintLayout>
