@@ -124,7 +124,6 @@ public class RandomEvent {
         String message = oldMessage;
         //Meet a narcotics dealer offering a sweet price, or tyring to scam you.
         boolean scam = rand.nextBoolean();
-        Market dealer = new Market();
         int money = game.getCredits() / 10;
         message += "You meet a shady figure who offers you some narcotics. ";
         if (scam) {
@@ -140,6 +139,7 @@ public class RandomEvent {
                 message += "You eagerly purchase, amazed at the opportunity. " +
                         "Unfortunately, the scam left you " +String.valueOf(money) +
                         " credits poorer.";
+                game.setCredits(game.getCredits() - money);
             }
         } else {
             //only purchase if space
