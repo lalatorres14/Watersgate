@@ -15,7 +15,7 @@ import edu.gatech.cs2340.SpaceTrader.entity.RandomEventType;
  * This class acts as the code behind for allowing the player to interact with random events
  */
 public class RandomEventView extends AppCompatActivity {
-    private static final Game game = Game.getInstance();
+    private static Game game = Game.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

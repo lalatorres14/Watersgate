@@ -1,5 +1,7 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -195,60 +197,94 @@ public final class Game {
      * @param good The good being queried
      * @param quantity the number of goods being bought
      */
-    public void buyGood(GoodType good, int quantity) {player.buyGood(good, quantity);}
+    public void buyGood(GoodType good, int quantity) {ship.buyGood(good, quantity);}
     /**
      * updates the cargo after item is sold
      *
      * @param good The good being queried
      * @param quantity the number of goods being bought
      */
-    public void sellGood(GoodType good, int quantity) {player.sellGood(good, quantity);}
+    public void sellGood(GoodType good, int quantity) {ship.sellGood(good, quantity);}
+
+//    public void refuel() {player.refuel(); }
     /**
      * refuels the ship
      */
-    public void refuel() {player.refuel(); }
+    public void refuel() {
+        setCredits(getCredits() - adjustPrice(
+                getMaxFuel() - getFuel()));
+        setFuel(getMaxFuel());
+    }
+
+    //public int planetDistance(Planet destination) {return player.planetDistance(destination); }
     /**
      * gets the distance of the planet to travel to
      *
      * @param destination  planet to travel to
      * @return distance of the planet
      */
-    public int planetDistance(Planet destination) {return player.planetDistance(destination); }
+    public int planetDistance(Planet destination) {
+        Planet current = getCurrentPlanet();
+        return ( (int) Math.ceil(Math.sqrt(Math.pow(current.coordinateX - destination.coordinateX,
+                2) + Math.pow(current.coordinateY - destination.coordinateY, 2))));
+    }
+    //public boolean canPlanetTravel(Planet dest) {return player.canPlanetTravel(dest);}
     /**
      * determines whether it is possible to travel to another planet or not
      *
-     * @param dest   planet to travel to
+     * @param destination   planet to travel to
      * @return true if player can travel to planet, else return false
      */
-    public boolean canPlanetTravel(Planet dest) {return player.canPlanetTravel(dest);}
+    public boolean canPlanetTravel(Planet destination) { return (planetDistance(destination) <=
+            ship.getFuel()); }
+
+    //public void planetTravel(Planet destination) {player.planetTravel(destination);}
     /**
      * helper method for traveling to another planet
      *
      * @param destination   planet to travel to
      */
-    public void planetTravel(Planet destination) {player.planetTravel(destination);}
+    public void planetTravel(Planet destination) {
+        if (canPlanetTravel(destination)) {
+            ship.setFuel(ship.getFuel() - planetDistance(destination));
+            setCurrentPlanet(destination);
+            Log.i("Travel", "Successfully traveled to " + destination.getName());
+        }
+    }
+//    public int systemDistance(SolarSystem dest) {return player.systemDistance(dest); }
     /**
      * gets the distance of the solar system to travel to
      *
      * @param dest  solar system to travel to
      * @return distance of the solar system
      */
-    public int systemDistance(SolarSystem dest) {return player.systemDistance(dest); }
+    public int systemDistance(SolarSystem dest) {
+        return ((int) Math.ceil(Math.sqrt(Math.pow(currentSS.coordinateX - dest.coordinateX,
+                2) + Math.pow(currentSS.coordinateY - dest.coordinateY, 2))));
+    }
+//    public boolean canSystemTravel(SolarSystem dest) {return player.canSystemTravel(dest); }
     /**
      * determines whether it is possible to travel to another solar system or not
      *
-     * @param dest   solar system to travel to
+     * @param destination   solar system to travel to
      * @return true if player can travel to solar system, else return false
      */
-    public boolean canSystemTravel(SolarSystem dest) {return player.canSystemTravel(dest); }
+    public boolean canSystemTravel(SolarSystem destination) { return (systemDistance(destination)
+            <= ship.getFuel()); }
+//    public void systemTravel(SolarSystem dest) {player.systemTravel(dest);}
     /**
      * helper method for traveling to another solar system
      *
-     * @param dest   solar system to travel to
+     * @param destination   solar system to travel to
      */
-    public void systemTravel(SolarSystem dest) {player.systemTravel(dest);}
-
-
+    public void systemTravel(SolarSystem destination) {
+        if (canSystemTravel(destination)) {
+            ship.setFuel(ship.getFuel() - systemDistance(destination));
+            setCurrentSS(destination);
+            setCurrentPlanet(destination.getPlanetList().get(0));
+            Log.i("Travel", "Successfully traveled to " + destination.getName());
+        }
+    }
 
     //Ship pass-through methods
     /**

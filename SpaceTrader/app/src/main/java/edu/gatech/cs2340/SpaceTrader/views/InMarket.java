@@ -141,7 +141,7 @@ public class InMarket extends AppCompatActivity {
             shortToast("Not enough credits");
         } else {
             for (MarketItem marketItem: items) {
-                market.buyItem(marketItem.type.getGoodType(),
+                buyItem(marketItem.type.getGoodType(),
                         marketItem.amount, marketItem.unitPrice);
             }
             playerCredits.setText(String.valueOf(game.getCredits()));
@@ -163,7 +163,7 @@ public class InMarket extends AppCompatActivity {
             }
         }
         for (MarketItem marketItem: items) {
-            market.sellItem(marketItem.type.getGoodType(), marketItem.amount,
+            sellItem(marketItem.type.getGoodType(), marketItem.amount,
                     marketItem.unitPrice);
         }
         playerCredits.setText(String.valueOf(game.getCredits()));
@@ -228,5 +228,20 @@ public class InMarket extends AppCompatActivity {
     private void shortToast(String message){
         Toast toast = Toast.makeText(InMarket.this, message, Toast.LENGTH_SHORT);
         toast.show();
+    }
+
+    private void buyItem(GoodType type, int quantity, int unitPrice){
+        game.buyGood(type, quantity);
+        game.setCredits(game.getCredits() - (quantity * unitPrice));
+
+    }
+
+    private void sellItem(GoodType good, int quantity, int unitPrice){
+        //There were problems with selling something with 0 quantity, so I tested this and it
+        // worked by just not processing them
+        if (quantity != 0) {
+            game.sellGood(good, quantity);
+            game.setCredits(game.getCredits() + (quantity * unitPrice));
+        }
     }
 }

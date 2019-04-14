@@ -7,6 +7,7 @@ import java.util.Random;
 public class RandomEvent {
 
     private static final Game game = Game.getInstance();
+
     Random rand = new Random();
     /**
      * @param type type of random event that shows up
@@ -123,7 +124,6 @@ public class RandomEvent {
         String message = oldMessage;
         //Meet a narcotics dealer offering a sweet price, or tyring to scam you.
         boolean scam = rand.nextBoolean();
-        Market dealer = new Market();
         int money = game.getCredits() / 10;
         message += "You meet a shady figure who offers you some narcotics. ";
         if (scam) {
@@ -139,6 +139,7 @@ public class RandomEvent {
                 message += "You eagerly purchase, amazed at the opportunity. " +
                         "Unfortunately, the scam left you " +String.valueOf(money) +
                         " credits poorer.";
+                game.setCredits(game.getCredits() - money);
             }
         } else {
             //only purchase if space
@@ -146,7 +147,8 @@ public class RandomEvent {
                 if (money > 1000) { money = 1000; } //Reign in price in late game
                 message += "Only " + String.valueOf(money) + " credits? With such a " +
                         "great deal, how could you refuse!";
-                dealer.buyItem(GoodType.NARCOTICS, 1, money);
+                game.buyGood(GoodType.NARCOTICS, 1);
+                game.setCredits(game.getCredits() - (money));
             } else {
                 message += "Oh how you wish you had space for these premium goods!" +
                         " Unfortunately, your ship's cargo is full.";

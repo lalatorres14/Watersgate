@@ -25,7 +25,7 @@ import edu.gatech.cs2340.SpaceTrader.entity.Player;
  * This class acts as the code behind for allowing the player to travel between planets
  */
 public class SolarSystemMap extends AppCompatActivity {
-    private static final Game game = Game.getInstance();
+    private static Game game = Game.getInstance();
     private int planetIndex;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

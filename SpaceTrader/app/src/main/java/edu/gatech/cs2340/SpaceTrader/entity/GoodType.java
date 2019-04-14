@@ -26,7 +26,7 @@ public enum GoodType {
     private final String cr;
     private final String er;
     private final Random rand = new Random();
-    private final Game game = Game.getInstance();
+    //Game game = Game.getInstance();
     /**
      *
      * @param mtlp - Minimum Tech Level to Produce this resource (You can't buy on planets below
@@ -66,9 +66,10 @@ public enum GoodType {
         if(conditionStr.equals(cr)) { price = price / 2; }
         else if(conditionStr.equals(er)) { price = price * 2; }
 
-        Game.getInstance().adjustPrice(price);
+        //to do: These make cyclic dependencies
+        //Game.getInstance()adjustPrice(price);
         //Trader skill points adjustment
-        price += ((Game.getInstance().getTraderSkill() / 100) * price);
+        //price += ((Game.getInstance().getTraderSkill() / 100) * price);
         return price;
     }
 

@@ -19,7 +19,7 @@ import edu.gatech.cs2340.SpaceTrader.entity.Player;
  * or refuel their ship.
  */
 public class PlanetScreen extends AppCompatActivity {
-    private static final Game game = Game.getInstance();
+    private static Game game = Game.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

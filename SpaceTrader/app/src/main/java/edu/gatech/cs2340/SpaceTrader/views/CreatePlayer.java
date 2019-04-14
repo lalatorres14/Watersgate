@@ -43,7 +43,7 @@ public class CreatePlayer extends AppCompatActivity {
      */
     private static Player player;
 
-    private final Game game = Game.getInstance();
+    private Game game = Game.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

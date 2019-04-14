@@ -19,18 +19,20 @@ import edu.gatech.cs2340.SpaceTrader.entity.Difficulty;
 import edu.gatech.cs2340.SpaceTrader.entity.Game;
 import edu.gatech.cs2340.SpaceTrader.entity.GoodType;
 import edu.gatech.cs2340.SpaceTrader.entity.Planet;
+import edu.gatech.cs2340.SpaceTrader.entity.Player;
 import edu.gatech.cs2340.SpaceTrader.entity.ShipType;
 import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
 /**
  * This class acts as the code behind instantiating the game
  */
 public class MainActivity extends AppCompatActivity {
-    private final Game game = Game.getInstance();
+    private Game game = Game.getInstance();
     //SharedPreferences pref = getApplicationContext().getSharedPreferences("data", 0);
     private SharedPreferences pref ;
     //SharedPreferences.Editor editor ;
     private final Gson gson = new Gson();
     //Game game ;
+    Player player;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         System.out.println("Savy, inside onCreate");
@@ -66,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
             String json_3 = pref.getString("Current_Game_CurrentPlanet", null);
             //System.out.println("Savy , " + json_1);
             String playerName = pref.getString("Player_name",null);
+            player = new Player("Bob", Difficulty.NORMAL);
+            game.setPlayer(player);
             game.setPlayerName(playerName);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                 game.setDifficulty(Difficulty.valueOf(
