@@ -129,7 +129,8 @@ public class Planet {
      *
      * @return the coordinates of the planet
      */
-    public Map<Integer, Integer> getCoordinates() {return Collections.unmodifiableMap(coordinates);}
+    //public Map<Integer, Integer> getCoordinates() {return Collections.unmodifiableMap(coordinates);}
+    public HashMap<Integer, Integer> getCoordinates() {return coordinates;}
     /**
      *
      * @return a string that contains the name of the planet

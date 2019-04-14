@@ -36,7 +36,8 @@ public class SolarSystem {
         for(int i = 0; i < planetTotal; i++) {
             planetList.add(new Planet());
         }
-        planetCoordinates = (HashMap<Integer, Integer>) planetList.get(0).getCoordinates();
+        //planetCoordinates = (HashMap<Integer, Integer>) planetList.get(0).getCoordinates();
+        planetCoordinates = planetList.get(0).getCoordinates();
         coordinates.put(coordinateX,coordinateY);
         String[] names = {"Alpha", "Beta", "Gamma", "Delta", "Zeta", "Theta", "Iota",
                 "Nu", "Omicron", "Omega"};
@@ -52,9 +53,8 @@ public class SolarSystem {
      *
      * @return the planets in solar system
      */
-    public List<Planet> getPlanetList() {
-        return Collections.unmodifiableList(planetList);
-    }
+    //public List<Planet> getPlanetList() {return Collections.unmodifiableList(planetList);}
+    public ArrayList<Planet> getPlanetList() {return planetList;}
     /**
      *
      * @return the x coordinate
@@ -74,25 +74,24 @@ public class SolarSystem {
      * sets the planets in the solar system
      * @param planetList the planets in the solar system
      */
-    public void setPlanetList(ArrayList<Planet> planetList) {
-        this.planetList = (ArrayList<Planet>) Collections.unmodifiableList(planetList);
-    }
-    /*public void setCoordinates(int coordinates) {
-        this.coordinates = coordinates;
-    }*/
+    //public void setPlanetList(ArrayList<Planet> planetList) {
+        //this.planetList = (ArrayList<Planet>) Collections.unmodifiableList(planetList);
+    //}
+    public void setPlanetList(ArrayList<Planet> planetList) {this.planetList = planetList;}
     /**
      *
      * @return the coordinates of the Solar System
      */
-    public Map<Integer, Integer> getCoordinates() {return Collections.unmodifiableMap(coordinates);}
+    //public Map<Integer, Integer> getCoordinates() {return Collections.unmodifiableMap(coordinates);}
+    public HashMap<Integer, Integer> getCoordinates() {return coordinates;}
     /**
      *
      * @return the planet coordinates
      */
-    public Map<Integer, Integer> getPlanetCoordinates() {
-
-        return Collections.unmodifiableMap(planetCoordinates);
-    }
+    public HashMap<Integer, Integer> getPlanetCoordinates() {return planetCoordinates;}
+    //public Map<Integer, Integer> getPlanetCoordinates() {
+        //return Collections.unmodifiableMap(planetCoordinates);
+    //}
 
     /**
      * sets the amount of planets in the solar system
