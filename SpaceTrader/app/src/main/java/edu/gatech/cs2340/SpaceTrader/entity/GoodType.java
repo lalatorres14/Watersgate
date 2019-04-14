@@ -1,7 +1,9 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
 
 import java.util.Random;
-
+/**
+ * GoodType enum that has values that will impact the game
+ */
 public enum GoodType {
     WATER (0,0,2,30,3,4,"Lots of Water","Desert"),
     FURS (0,0,0,250,10,10,"Rich Fauna","LIFELESS"),
@@ -50,7 +52,12 @@ public enum GoodType {
         this.cr = cr;
         this.er = er;
     }
-
+    /**
+     * calculates the price of a good
+     * @param techLevel the tech level on the planet
+     * @param condition the resources available
+     * @return the calculated price
+     */
     public int calculatePrice(int techLevel, Resource condition){
         //calculate random amount that is +/- var
         int variance = rand.nextInt(var * 2) - var;
@@ -66,13 +73,44 @@ public enum GoodType {
         return price;
     }
 
-
+    /**
+     * @return Minimum Tech Level to Produce this resource
+     *
+     */
     public int getMtlp(){return mtlp; }
+    /**
+     * @return Minimum Tech Level to Use this resource
+     *
+     */
     public int getMtlu(){return mtlu; }
+    /**
+     * @return Tech Level which produces the most of this item
+     *
+     */
     public int getTtp(){return ttp; }
+    /**
+     * @return base price
+     *
+     */
     public int getBasePrice(){return basePrice; }
+    /**
+     * @return Price increase per tech level
+     *
+     */
     public int getIpl(){return ipl; }
+    /**
+     * @return variance
+     *
+     */
     public int getVar(){return var; }
+    /**
+     * @return When this condition is present, the price of this resource is unusually low
+     *
+     */
     public String getCr() {return cr;}
+    /**
+     * @return When this condition is present, the resource is expensive
+     *
+     */
     public String getEr() {return er; }
 }

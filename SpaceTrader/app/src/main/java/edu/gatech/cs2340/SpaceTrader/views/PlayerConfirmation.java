@@ -14,7 +14,10 @@ import edu.gatech.cs2340.SpaceTrader.entity.Game;
 import edu.gatech.cs2340.SpaceTrader.viewmodels.EditPlayerViewModel;
 import edu.gatech.cs2340.SpaceTrader.entity.SolarSystem;
 
-
+/**
+ * This class acts as the code behind for displaying player stats after
+ * creating a player profile.
+ */
 public class PlayerConfirmation extends AppCompatActivity {
     private static Game game = Game.getInstance();
     @Override

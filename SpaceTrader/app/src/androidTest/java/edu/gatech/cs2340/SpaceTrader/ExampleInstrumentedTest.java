@@ -14,11 +14,17 @@ import static org.junit.Assert.*;
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
+@SuppressWarnings("JavaDoc")
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
+    @SuppressWarnings("JavaDoc")
     @Test
 
+/*
 
+  Context of the app under test.
+
+ */
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();

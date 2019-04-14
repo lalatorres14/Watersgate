@@ -12,12 +12,18 @@ import static org.junit.Assert.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
+/**
+ * Unit tests for GoodType
+ *
+ */
 public class GoodTypeTest {
 
 private GoodType testGoodType;
 private int testTechLevel;
-
+    /**
+     * Setup for unit test
+     *
+     */
     @Before
     public void setUp() {
         Game.getInstance().generateUniverse();
@@ -27,7 +33,10 @@ private int testTechLevel;
         testTechLevel = 1;
 
     }
-
+    /**
+     * unit test 1
+     *
+     */
     @Test
     public void calculatePriceCheapResourceTest() {
         //if(condition.toString().equals(cr)) { price = price / 2; } -> true
@@ -47,7 +56,10 @@ private int testTechLevel;
                 Math.abs(testGoodType.calculatePrice(testTechLevel,
                         Resource.LOTSOFWATER) - price));
     }
-
+    /**
+     * unit test 2
+     *
+     */
     @Test
     public void calculatePriceNotCheapOrExpResourceTest() {
         //if(condition.toString().equals(cr)) { price = price / 2; } -> false
@@ -65,7 +77,10 @@ private int testTechLevel;
                 Math.abs(testGoodType.calculatePrice(testTechLevel,
                         Resource.NOSPECIALRESOURCES) - price));
     }
-
+    /**
+     * unit test 3
+     *
+     */
     @Test
     public void calculatePriceExpResourceTest() {
         //if(condition.toString().equals(er)) { price = price * 2; } -> true
