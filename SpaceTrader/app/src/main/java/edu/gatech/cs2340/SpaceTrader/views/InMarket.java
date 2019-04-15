@@ -121,8 +121,8 @@ public class InMarket extends AppCompatActivity {
         int totalPrice = 0;
         int totalAmount = 0;
         for (MarketItem marketItem: items) {
-            totalPrice += marketItem.amount * marketItem.unitPrice;
-            totalAmount += marketItem.amount;
+            totalPrice += marketItem.getAmount() * marketItem.getUnitPrice();
+            totalAmount += marketItem.getAmount();
             if (totalAmount > game.getSpace()) {
                 shortToast("Not Enough Space");
                 return;
@@ -132,8 +132,8 @@ public class InMarket extends AppCompatActivity {
             shortToast("Not enough credits");
         } else {
             for (MarketItem marketItem: items) {
-                buyItem(marketItem.type.getGoodType(),
-                        marketItem.amount, marketItem.unitPrice);
+                buyItem(marketItem.getGoodType(),
+                        marketItem.getAmount(), marketItem.getUnitPrice());
             }
             playerCredits.setText(String.valueOf(game.getCredits()));
 
@@ -148,14 +148,14 @@ public class InMarket extends AppCompatActivity {
      */
     private void sellItems(){
         for (MarketItem marketItem: items) {
-            if (game.getQuantityOfGood(marketItem.type.getGoodType()) < marketItem.amount) {
-                shortToast("Not enough " + marketItem.type.getGoodTypeString());
+            if (game.getQuantityOfGood(marketItem.getGoodType()) < marketItem.getAmount()) {
+                shortToast("Not enough " + marketItem.getGoodTypeString());
                 return;
             }
         }
         for (MarketItem marketItem: items) {
-            sellItem(marketItem.type.getGoodType(), marketItem.amount,
-                    marketItem.unitPrice);
+            sellItem(marketItem.getGoodType(), marketItem.getAmount(),
+                    marketItem.getUnitPrice());
         }
         playerCredits.setText(String.valueOf(game.getCredits()));
         shortToast("Transaction Complete");
@@ -168,24 +168,24 @@ public class InMarket extends AppCompatActivity {
      */
     private void setVisibility(){
         for (MarketItem marketItem: items) {
-            marketItem.row1.setVisibility(View.GONE);
-            marketItem.row2.setVisibility(View.GONE);
-            marketItem.row3.setVisibility(View.GONE);
+            marketItem.getRow1().setVisibility(View.GONE);
+            marketItem.getRow2().setVisibility(View.GONE);
+            marketItem.getRow3().setVisibility(View.GONE);
         }
         if (buying == 1) {
             for (MarketItem marketItem: items) {
-                if (marketItem.type.canBuy(current.getTechLevelInt())) {
-                    marketItem.row1.setVisibility(View.VISIBLE);
-                    marketItem.row2.setVisibility(View.VISIBLE);
-                    marketItem.row3.setVisibility(View.VISIBLE);
+                if (marketItem.canBuy(current.getTechLevelInt())) {
+                    marketItem.getRow1().setVisibility(View.VISIBLE);
+                    marketItem.getRow2().setVisibility(View.VISIBLE);
+                    marketItem.getRow3().setVisibility(View.VISIBLE);
                 }
             }
         } else if (buying == -1) {
             for (MarketItem marketItem: items) {
-                if (marketItem.type.canSell(current.getTechLevelInt())) {
-                    marketItem.row1.setVisibility(View.VISIBLE);
-                    marketItem.row2.setVisibility(View.VISIBLE);
-                    marketItem.row3.setVisibility(View.VISIBLE);
+                if (marketItem.canSell(current.getTechLevelInt())) {
+                    marketItem.getRow1().setVisibility(View.VISIBLE);
+                    marketItem.getRow2().setVisibility(View.VISIBLE);
+                    marketItem.getRow3().setVisibility(View.VISIBLE);
                 }
             }
         }
@@ -196,8 +196,8 @@ public class InMarket extends AppCompatActivity {
      */
     private void resetInputs(){
         for (MarketItem marketItem: items) {
-            marketItem.input.setText("0");
-            marketItem.amount = 0;
+            marketItem.getInput().setText("0");
+            marketItem.setAmount(0);
         }
     }
 
@@ -206,8 +206,8 @@ public class InMarket extends AppCompatActivity {
      */
     private void updateHoldQuantity(){
         for (MarketItem marketItem: items) {
-            marketItem.hold.setText(String.valueOf(game.getQuantityOfGood(
-                    marketItem.type.getGoodType())));
+            marketItem.getHold().setText(String.valueOf(game.getQuantityOfGood(
+                    marketItem.getGoodType())));
         }
         holdSpaceView.setText(String.valueOf(game.getSpace()));
     }

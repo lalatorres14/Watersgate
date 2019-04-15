@@ -18,24 +18,26 @@ import android.widget.TextView;
 public class MarketItem {
     private static final Game game = Game.getInstance();
 
-    public TableRow row1;
+
+
+    private TableRow row1;
     private TextView itemName;
     private TextView totalHeader;
     private TextView totalView;
-    public EditText input;
+    private EditText input;
 
-    public TableRow row2;
+    private TableRow row2;
     private TextView holdHeader;
-    public TextView hold;
+    private TextView hold;
     private TextView unitHeader;
     private TextView unit;
 
-    public TableRow row3;
+    private TableRow row3;
     private TextView blank;
 
-    public int amount;
-    public final Good type;
-    public final int unitPrice;
+    private int amount;
+    private final Good type;
+    private final int unitPrice;
 
     /**
      * Making an item in the market
@@ -143,5 +145,71 @@ public class MarketItem {
         blank = new TextView(context);
         blank.setGravity(Gravity.CENTER);
         blank.setText("- - - - - - - - - - - - - - - - - - - -");
+    }
+
+    public int getAmount(){return amount;}
+
+    public void setAmount(int i){amount = i;}
+
+    public TableRow getRow1() { return row1; }
+
+    public void setRow1(TableRow row1) { this.row1 = row1; }
+
+    public TextView getItemName() { return itemName; }
+
+    public void setItemName(TextView itemName) { this.itemName = itemName; }
+
+    public TextView getTotalHeader() { return totalHeader; }
+
+    public void setTotalHeader(TextView totalHeader) { this.totalHeader = totalHeader; }
+
+    public TextView getTotalView() { return totalView; }
+
+    public void setTotalView(TextView totalView) { this.totalView = totalView; }
+
+    public EditText getInput() { return input; }
+
+    public void setInput(EditText input) { this.input = input; }
+
+    public TableRow getRow2() { return row2; }
+
+    public void setRow2(TableRow row2) { this.row2 = row2; }
+
+    public TextView getHoldHeader() { return holdHeader; }
+
+    public void setHoldHeader(TextView holdHeader) { this.holdHeader = holdHeader; }
+
+    public TextView getHold() { return hold; }
+
+    public void setHold(TextView hold) { this.hold = hold; }
+
+    public TextView getUnitHeader() { return unitHeader; }
+
+    public void setUnitHeader(TextView unitHeader) { this.unitHeader = unitHeader; }
+
+    public TextView getUnit() { return unit; }
+
+    public void setUnit(TextView unit) { this.unit = unit; }
+
+    public TableRow getRow3() { return row3; }
+
+    public void setRow3(TableRow row3) { this.row3 = row3; }
+
+    public TextView getBlank() { return blank; }
+
+    public void setBlank(TextView blank) { this.blank = blank; }
+
+    public GoodType getGoodType() { return type.getGoodType(); }
+
+    public Good getGood() {return type;}
+
+    public String getGoodTypeString() {return type.getGoodTypeString(); }
+
+    public int getUnitPrice() { return unitPrice; }
+
+    public boolean canSell(int techLevel){ return type.canSell(techLevel); }
+
+    public boolean canBuy(int techLevel){
+        return type.canBuy(techLevel);
     }
 }
