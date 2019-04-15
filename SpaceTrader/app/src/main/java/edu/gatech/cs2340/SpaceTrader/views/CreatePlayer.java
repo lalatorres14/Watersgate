@@ -36,6 +36,7 @@ public class CreatePlayer extends AppCompatActivity {
     private TextView idField;
     private EditText nameField;
     private Spinner difficultySpinner;
+    private final int pointMax = 16;
 
     /* ***********************
        Data for Player being edited.
@@ -97,7 +98,7 @@ public class CreatePlayer extends AppCompatActivity {
     public void onAddPressed(View view) {
         Log.d("Edit", "Add/Update Student Pressed");
         if(((player.getEngineerSkill() + player.getFighterSkill() + player.getPilotSkill() +
-                player.getTraderSkill()) == 16) && (player.getSkillPoints() == 0)) {
+                player.getTraderSkill()) == pointMax) && (player.getSkillPoints() == 0)) {
             Editable name = nameField.getText();
             player.setName(name.toString());
 

@@ -216,7 +216,7 @@ public class InMarket extends AppCompatActivity {
      * Displays a short message to the user
      * @param message the message to be displayed
      */
-    private void shortToast(String message){
+    private void shortToast(CharSequence message){
         Toast toast = Toast.makeText(InMarket.this, message, Toast.LENGTH_SHORT);
         toast.show();
     }

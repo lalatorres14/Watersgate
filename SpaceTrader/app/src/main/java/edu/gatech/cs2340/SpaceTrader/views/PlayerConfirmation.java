@@ -17,6 +17,7 @@ import edu.gatech.cs2340.SpaceTrader.entity.Game;
  */
 public class PlayerConfirmation extends AppCompatActivity {
     private static Game game = Game.getInstance();
+    private static final int maxLength = 4000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,9 +73,9 @@ public class PlayerConfirmation extends AppCompatActivity {
         startActivity(intent);
     }
     private static void largeLog(String tag, String content) {
-        if (content.length() > 4000) {
-            Log.d(tag, content.substring(0, 4000));
-            largeLog(tag, content.substring(4000));
+        if (content.length() > maxLength) {
+            Log.d(tag, content.substring(0, maxLength));
+            largeLog(tag, content.substring(maxLength));
         } else {
             Log.d(tag, content);
         }

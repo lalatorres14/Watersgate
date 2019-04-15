@@ -96,7 +96,7 @@ private int testTechLevel;
         price += ((Game.getInstance().getPlayer().getTraderSkill() / 100) * price);
 
         //see if manually doubled price is within variance
-        assertTrue(Math.abs(testGoodType.getVar()) >=
+        assertEquals(true,Math.abs(testGoodType.getVar()) >=
                 Math.abs(testGoodType.calculatePrice(testTechLevel,
                         Resource.DESERT) - price));
     }
