@@ -61,15 +61,17 @@ public enum GoodType {
     public int calculatePrice(int techLevel, Resource condition){
         //calculate random amount that is +/- var
         int variance = rand.nextInt(var * 2) - var;
+        //increase price based on techLevel
         int price = basePrice + (ipl * (techLevel - mtlp)) + variance;
-        String conditionStr = condition.toString();
-        if(conditionStr.equals(cr)) { price = price / 2; }
-        else if(conditionStr.equals(er)) { price = price * 2; }
 
-        //to do: These make cyclic dependencies
-        //Game.getInstance()adjustPrice(price);
-        //Trader skill points adjustment
-        //price += ((Game.getInstance().getTraderSkill() / 100) * price);
+        //check if price should be doubled or halved
+        String conditionStr = condition.toString();
+        if(conditionStr.equals(cr)) {
+            price = price / 2;
+        } else if(conditionStr.equals(er)) {
+            price = price * 2;
+        }
+
         return price;
     }
 

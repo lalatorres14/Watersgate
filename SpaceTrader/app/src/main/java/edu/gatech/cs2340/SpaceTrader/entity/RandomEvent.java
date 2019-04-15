@@ -10,6 +10,9 @@ public class RandomEvent {
 
     private RandomEventType type;
 
+    private final int fineNumber = 200;
+    private final int ptMax = 12;
+
     /**
      * constructor for a random event
      * @param type the type of event
@@ -50,7 +53,7 @@ public class RandomEvent {
         String message = oldMessage;
         if(game.getQuantityOfGood(GoodType.NARCOTICS) != 0){
             //pay a fine
-            int fine = game.adjustPrice(200);
+            int fine = game.adjustPrice(fineNumber);
             //making sure the fine doesn't make the player's funds negative
             if (game.getCredits() < fine) {
                 fine = game.getCredits();
@@ -109,11 +112,11 @@ public class RandomEvent {
         //Fight pirates, either win and take their money, fend off, or lose and lose money
         int money = (game.getCredits() * 2) / 10;
         message += "You were boarded by pirates! ";
-        if (game.getFighterSkill() >= 12) {
+        if (game.getFighterSkill() >= ptMax) {
             game.setCredits(game.getCredits() + money);
             message += "You managed to defeat them all, gaining "
                     + String.valueOf(money) + " credits!";
-        } else if (game.getFighterSkill() >= 6) {
+        } else if (game.getFighterSkill() >= ptMax / 2) {
             message += "You managed to fend them off, and they fled. " +
                     "That was a close one!";
         } else {
@@ -136,12 +139,12 @@ public class RandomEvent {
         int money = game.getCredits() / 10;
         message += "You meet a shady figure who offers you some narcotics. ";
         if (scam) {
-            if (game.getTraderSkill() >= 12) {
+            if (game.getTraderSkill() >= ptMax) {
                 message += "You notice the scam. However, he doesn't notice your hand " +
                         "in his pocket, leaving you " + String.valueOf(money) +
                         " credits richer.";
                 game.setCredits(game.getCredits() + money);
-            } else if(game.getTraderSkill() >= 6) {
+            } else if(game.getTraderSkill() >= ptMax / 2) {
                 message += "His merchandise isn't the most appealing, so you send him" +
                         "out without buying anything.";
             } else {
