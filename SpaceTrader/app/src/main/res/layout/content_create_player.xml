@@ -107,7 +107,6 @@
         android:layout_toRightOf="@+id/pilot_header"
         android:autofillHints=""
         android:ems="2"
-        android:inputType="number"
         android:labelFor="@id/pilot_points" />
 
 
@@ -161,7 +160,6 @@
         android:layout_toRightOf="@+id/fighter_header"
         android:autofillHints=""
         android:ems="2"
-        android:inputType="number"
         android:labelFor="@id/fighter_points" />
 
 
@@ -271,7 +269,6 @@
         android:layout_toRightOf="@+id/engineer_header"
         android:autofillHints=""
         android:ems="2"
-        android:inputType="number"
         android:labelFor="@id/engineer_points" />
 
 
@@ -327,7 +324,6 @@
         android:layout_toRightOf="@+id/remaining_header"
         android:autofillHints=""
         android:ems="2"
-        android:inputType="number"
         android:labelFor="@id/remaining" />
 
 
