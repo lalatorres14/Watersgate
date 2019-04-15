@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:height="48dp"
         android:gravity="center"
-        android:text="@string/freespace"
+        android:text="@string/freeSpace"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@id/buyMode"
         app:layout_constraintEnd_toStartOf="@id/holdSpace"

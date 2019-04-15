@@ -36,7 +36,7 @@
     <string name= "default_word">Default</string>
     <string name= "buyMode">Buy Mode</string>
     <string name= "sellMode">Sell Mode</string>
-    <string name= "freespace">Free Space:</string>
+    <string name= "freeSpace">Free Space:</string>
     <string name= "zero">0</string>
     <string name= "CompleteTrans">Complete Transaction</string>
     <string name= "money">Total Currency:</string>
