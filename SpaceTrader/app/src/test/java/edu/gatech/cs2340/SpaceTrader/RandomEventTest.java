@@ -33,7 +33,7 @@ public class RandomEventTest {
 
         player = new Player("Tester", Difficulty.NORMAL);
         Game.getInstance().setPlayer(player);
-        randomEvent = new RandomEvent();
+        randomEvent = new RandomEvent(RandomEventType.POLICE);
     }
     /**
      * unit test 1, testing the police random event to make sure it follows the proper path
@@ -41,7 +41,7 @@ public class RandomEventTest {
      */
     @Test
     public void testPoliceNoNarcoticsString() {
-        assertEquals(randomEvent.doRandomEvent(RandomEventType.POLICE), "You were " +
+        assertEquals(randomEvent.doRandomEvent(), "You were " +
                 "stopped by police! Fortunately, you didn't have any narcotics on board, " +
                 "so you weren't fined.");
 
@@ -53,7 +53,7 @@ public class RandomEventTest {
     @Test
     public void testPoliceNoNarcoticsMoney() {
         int creditsBefore = player.getCredits();
-        randomEvent.doRandomEvent(RandomEventType.POLICE);
+        randomEvent.doRandomEvent();
         assertEquals(creditsBefore, player.getCredits());
     }
     /**
@@ -63,7 +63,7 @@ public class RandomEventTest {
     @Test
     public void testPoliceWithNarcoticsString() {
         player.buyGood(GoodType.NARCOTICS, 1);
-        assertNotEquals(randomEvent.doRandomEvent(RandomEventType.POLICE), "You were " +
+        assertNotEquals(randomEvent.doRandomEvent(), "You were " +
                 "stopped by police! Fortunately, you didn't have any narcotics on board, " +
                 "so you weren't fined");
     }
@@ -75,7 +75,8 @@ public class RandomEventTest {
     public void testPoliceWithNarcoticsMoney() {
         player.buyGood(GoodType.NARCOTICS, 1);
         int creditsBefore = player.getCredits();
-        randomEvent.doRandomEvent(RandomEventType.POLICE);
+        randomEvent.setType(RandomEventType.POLICE);
+        randomEvent.doRandomEvent();
         assertTrue(creditsBefore >= player.getCredits());
     }
     /**
@@ -85,7 +86,7 @@ public class RandomEventTest {
     @Test
     public void testPoliceWithNarcoticsAmount() {
         player.buyGood(GoodType.NARCOTICS, 1);
-        randomEvent.doRandomEvent(RandomEventType.POLICE);
+        randomEvent.doRandomEvent();
         assertEquals(game.getQuantityOfGood(GoodType.NARCOTICS), 0);
     }
 }
