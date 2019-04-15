@@ -3,7 +3,6 @@ package edu.gatech.cs2340.SpaceTrader.views;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        System.out.println("Savy, inside onCreate");
+        //System.out.println("Savy, inside onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         pref = getSharedPreferences("spaceTrader", Context.MODE_PRIVATE);
@@ -54,14 +53,14 @@ public class MainActivity extends AppCompatActivity {
         List<SolarSystem> tmplist = new ArrayList<>();
         pref = getSharedPreferences("spaceTrader", Context.MODE_PRIVATE);
         if (!pref.getBoolean("first", true)) {
-            System.out.println("Savy, inside getShared preferences if");
+            //System.out.println("Savy, inside getShared preferences if");
             SharedPreferences.Editor edit = pref.edit();
             edit.putBoolean("first", false);
             edit.apply();
             Intent intent = new Intent(MainActivity.this, CreatePlayer.class);
             startActivity(intent);
         } else {
-            System.out.println("Savy, inside getShared preferences else");
+            //System.out.println("Savy, inside getShared preferences else");
             //String json_1 = pref.getString("Current_Game_Player", null);
             String json_2 = pref.getString("Current_Game_CurrentSS", null);
             String json_3 = pref.getString("Current_Game_CurrentPlanet", null);
