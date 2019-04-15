@@ -13,11 +13,9 @@ import android.widget.Toast;
 import edu.gatech.cs2340.SpaceTrader.R;
 import edu.gatech.cs2340.SpaceTrader.entity.Game;
 import edu.gatech.cs2340.SpaceTrader.entity.GoodType;
-import edu.gatech.cs2340.SpaceTrader.entity.Market;
 import edu.gatech.cs2340.SpaceTrader.entity.MarketItem;
 import edu.gatech.cs2340.SpaceTrader.entity.Planet;
-import edu.gatech.cs2340.SpaceTrader.entity.Player;
-import static edu.gatech.cs2340.SpaceTrader.entity.GoodType.*;
+
 /**
  * This class acts as the code behind for allowing the player buy or sell goods
  * on the market
@@ -26,7 +24,6 @@ public class InMarket extends AppCompatActivity {
     //Game-based variables (as opposed to UI-based)
     private Planet current;
     private Game game;
-    private Market market;
     private MarketItem[] items;
     private int buying; //0 = neither, 1 = buy, -1 = sell.
     //all the buttons for the market
@@ -45,7 +42,6 @@ public class InMarket extends AppCompatActivity {
 
         //storing planet and player info
         current = game.getCurrentPlanet();
-        market = current.getMarket();
         items = new MarketItem[GoodType.values().length];
         buying = 0;
 
@@ -60,12 +56,8 @@ public class InMarket extends AppCompatActivity {
         }
 
         //linking variables to actual views
-        ScrollView scrollView = findViewById(R.id.scrollView);
         buyMode = findViewById(R.id.buyMode);
         sellMode = findViewById(R.id.sellMode);
-
-        //Putting the table in the scrollview
-        //scrollView.addView(marketTable);
 
         //printing planet name
         final TextView nameTextView = findViewById(R.id.marketHeader);

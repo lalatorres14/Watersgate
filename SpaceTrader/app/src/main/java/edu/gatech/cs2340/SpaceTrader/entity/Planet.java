@@ -21,7 +21,6 @@ public class Planet {
     ArrayList<String> resources = new ArrayList<>();
     private TechLevel tLevel;
     private Resource res;
-    private Market market;
     /**
      * Constructor to create a planet
      */
@@ -99,7 +98,6 @@ public class Planet {
         setName(pNames.get(planetId));
         res = Resource.getRandomResource();
         tLevel = TechLevel.getRandomTechLevel();
-        setMarket(new Market());
         coordinates.put(coordinateX,coordinateY);
     }
     /**
@@ -121,13 +119,6 @@ public class Planet {
      * @param resources the resources on the planet
      */
     public void setResources(Resource resources){ this.res = resources; }
-    /**
-     * sets the market on the planet
-     * @param market the market of the planet
-     */
-    private void setMarket(Market market){
-        this.market = market;
-    }
     /**
      *
      * @return the coordinates of the planet
@@ -160,13 +151,6 @@ public class Planet {
      */
     public Resource getResources(){
         return res;
-    }
-    /**
-     *
-     * @return the market of the planet
-     */
-    public Market getMarket() {
-        return market;
     }
     /**
      *
