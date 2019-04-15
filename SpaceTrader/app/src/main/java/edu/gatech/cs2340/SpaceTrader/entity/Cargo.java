@@ -37,7 +37,9 @@ public class Cargo{
      */
     public int getQuantityOfGood(GoodType good) {
         if(cargo.containsKey(good)) {
-            return cargo.get(good);
+            if (cargo.get(good) != null) {
+                return cargo.get(good);
+            }
         }
         return 0;
     }
@@ -52,7 +54,7 @@ public class Cargo{
         boolean isNew = !keySet.contains(good);
         if(isNew) {
             cargo.put(good, quantity);
-        } else {
+        } else if (cargo.get(good) != null){
             cargo.put(good, cargo.get(good) + quantity);
         }
     }
@@ -69,7 +71,7 @@ public class Cargo{
         if(keySet.contains(good)) {
             if(cargo.get(good) == 1) {
                 cargo.remove(good);
-            } else {
+            } else if (cargo.get(good) != null){
                 cargo.put(good, cargo.get(good) - quantity);
             }
         }

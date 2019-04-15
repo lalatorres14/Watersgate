@@ -27,6 +27,7 @@ public enum Resource {
         formattedName = f;
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override public String toString(){
         return formattedName;
     }

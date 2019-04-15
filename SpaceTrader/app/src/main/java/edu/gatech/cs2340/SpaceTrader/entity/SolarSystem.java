@@ -1,7 +1,4 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -108,6 +105,7 @@ public class SolarSystem {
      *
      * @return a string that contains the attributes of the planets in the solar system
      */
+    @SuppressWarnings("NullableProblems")
     @Override
     public String toString() {
         StringBuilder planetsToString = new StringBuilder();

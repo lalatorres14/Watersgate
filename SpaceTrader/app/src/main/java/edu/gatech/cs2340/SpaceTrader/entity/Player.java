@@ -3,11 +3,13 @@ package edu.gatech.cs2340.SpaceTrader.entity;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 
 /**
  * This class represents a single Player in the database. It is an information holder.
  */
+@SuppressWarnings("ALL")
 public class Player implements Serializable {
     /** holds difficulty choices. If we decide to have difficulties actually correspond to
      * to something meaningful, we should make this a class instead.
@@ -167,9 +169,10 @@ public class Player implements Serializable {
     /**
      * @return a string containing the attributes of the player
      */
+    @SuppressWarnings("NullableProblems")
     @Override
     public String toString() {
-        return String.format("Pilot: %s, Difficulty: %s, id: %d, Skill Points: %d",
+        return String.format(Locale.ENGLISH,"Pilot: %s, Difficulty: %s, id: %d, Skill Points: %d",
                 name, diff, id, skillPoints);
     }
     /**

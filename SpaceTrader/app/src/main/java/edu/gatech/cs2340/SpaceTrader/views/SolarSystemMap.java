@@ -11,16 +11,13 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.series.DataPoint;
-
 import java.util.ArrayList;
 import java.util.Random;
 
 import edu.gatech.cs2340.SpaceTrader.R;
 import edu.gatech.cs2340.SpaceTrader.entity.Game;
 import edu.gatech.cs2340.SpaceTrader.entity.Planet;
-import edu.gatech.cs2340.SpaceTrader.entity.Player;
+
 /**
  * This class acts as the code behind for allowing the player to travel between planets
  */
@@ -42,7 +39,7 @@ public class SolarSystemMap extends AppCompatActivity {
         LinearLayout layout = findViewById(R.id.layout);
         RadioGroup radioGroup = new RadioGroup(this);
         LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.FILL_PARENT,
+                LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
         // adding Radio Group

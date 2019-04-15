@@ -116,7 +116,7 @@ public final class Game {
             universe.add(new SolarSystem());
         }
         currentSS = universe.get(0);
-        solarCoordinates = (HashMap<Integer, Integer>) currentSS.getCoordinates();
+        solarCoordinates = currentSS.getCoordinates();
         currentPlanet = currentSS.getFirstPlanet();
     }
 
@@ -373,7 +373,7 @@ public final class Game {
      * @return the planets in solar system
      */
     public ArrayList<Planet> getCurrentPlanetList() {
-        return (ArrayList<Planet>) currentSS.getPlanetList();
+        return currentSS.getPlanetList();
     }
 
     /**

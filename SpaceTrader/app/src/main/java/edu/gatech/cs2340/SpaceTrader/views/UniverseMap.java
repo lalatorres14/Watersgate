@@ -13,15 +13,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.series.DataPoint;
 
 import java.util.Random;
 
 import edu.gatech.cs2340.SpaceTrader.R;
 import edu.gatech.cs2340.SpaceTrader.entity.Game;
 import edu.gatech.cs2340.SpaceTrader.entity.GoodType;
-import edu.gatech.cs2340.SpaceTrader.entity.Player;
+
 /**
  * This class acts as the code behind for allowing the player to travel between solar systems
  */

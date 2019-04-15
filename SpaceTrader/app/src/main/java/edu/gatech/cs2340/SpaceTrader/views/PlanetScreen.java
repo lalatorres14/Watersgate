@@ -12,8 +12,7 @@ import android.widget.Toast;
 
 import edu.gatech.cs2340.SpaceTrader.R;
 import edu.gatech.cs2340.SpaceTrader.entity.Game;
-import edu.gatech.cs2340.SpaceTrader.entity.Planet;
-import edu.gatech.cs2340.SpaceTrader.entity.Player;
+
 /**
  * This class acts as the code behind for allowing the player to go to the market on the planet
  * or refuel their ship.

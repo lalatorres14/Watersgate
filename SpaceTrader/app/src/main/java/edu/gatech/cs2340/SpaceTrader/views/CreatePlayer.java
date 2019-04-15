@@ -4,7 +4,6 @@ import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -70,7 +69,7 @@ public class CreatePlayer extends AppCompatActivity {
         difficultySpinner.setAdapter(adapter);
 
         player = new Player("Bob", Difficulty.NORMAL);
-        button.setText("Add");
+        button.setText("@string/add");
         setTitle("Creating Player");
 
         //Initializing display values for skills

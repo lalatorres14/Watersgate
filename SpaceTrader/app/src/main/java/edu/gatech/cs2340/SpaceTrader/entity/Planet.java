@@ -3,13 +3,12 @@ package edu.gatech.cs2340.SpaceTrader.entity;
 import android.util.SparseArray;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 
 /** This class represents a single PlanetScreen*/
+@SuppressWarnings("NullableProblems")
 public class Planet {
     private String name;
     private final Random rand = new Random();
@@ -169,6 +168,7 @@ public class Planet {
      *
      * @return a string that contains the attributes of the planet
      */
+    @SuppressWarnings("NullableProblems")
     @Override
     public String toString() {
         return "Name: " + getName() + "\nTech Level: " + getTechLevel() +

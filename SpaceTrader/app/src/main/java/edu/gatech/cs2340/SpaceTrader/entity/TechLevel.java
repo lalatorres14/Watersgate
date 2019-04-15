@@ -37,6 +37,7 @@ public enum TechLevel {
     /**
      * @return techLevel name
      */
+    @SuppressWarnings("NullableProblems")
     @Override public String toString() {return formattedName;}
     /**
      * @return techLevel number

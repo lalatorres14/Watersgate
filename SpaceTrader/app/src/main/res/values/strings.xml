@@ -18,5 +18,42 @@
     <string name="traderSkillText_blank">Trader Skill: 17</string>
     <string name="engineerSkillText_blank">Engineer Skill: 17</string>
     <string name="difficultyText_blank">Difficulty: Unset</string>
+    <string name="game_name">Space Trader</string>
+    <string name= "start_game">Ready Player One</string>
+    <string name= "team_name">Watersgate</string>
+    <string name= "profile">Profile</string>
+    <string name= "go_to_game">Go To Game</string>
+    <string name= "add">Add</string>
+    <string name= "Cancel">Cancel</string>
+    <string name= "pilot_button_up">pilot button up</string>
+    <string name= "fighter_up">fighter button up</string>
+    <string name= "trader_up">trader button up</string>
+    <string name= "engineer_up">engineer button up</string>
+    <string name= "pilot_down">pilot button down</string>
+    <string name= "fighter_down">fighter button down</string>
+    <string name= "trader_down">trader button down</string>
+    <string name= "engineer_down">engineer button down</string>
+    <string name= "default_word">Default</string>
+    <string name= "buyMode">Buy Mode</string>
+    <string name= "sellMode">Sell Mode</string>
+    <string name= "freespace">Free Space:</string>
+    <string name= "zero">0</string>
+    <string name= "CompleteTrans">Complete Transaction</string>
+    <string name= "money">Total Currency:</string>
+    <string name= "RandEventText">Random Event Text</string>
+    <string name= "RandomEventTitle">Random Event Title</string>
+    <string name= "cont">Continue</string>
+    <string name= "planetName">Planet Name</string>
+    <string name= "SSName">Solar System Name</string>
+    <string name= "resourcesDef">Resources: Default</string>
+    <string name= "techDef">Tech Level: Default</string>
+    <string name= "toMarket">To Market</string>
+    <string name= "refuel">Refuel</string>
+    <string name= "planetImage">image of planet</string>
+    <string name= "currentLocation">Current Location: None, None</string>
+    <string name= "currentFuel">Current Available Fuel: XXXX</string>
+    <string name= "travel">Travel</string>
+    <string name= "uniMap">Universe Map</string>
+
 
 </resources>

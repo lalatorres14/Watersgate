@@ -70,6 +70,7 @@ public class Ship {
      *
      * @return the name of the ship
      */
+    @SuppressWarnings("NullableProblems")
     @Override public String toString(){return ship.toString(); }
     /**
      * gets the amount of fuel available in the ship
