@@ -391,7 +391,6 @@ public final class Game {
     public int getCurrentPlanetListSize() {
         return currentSS.getCurrentSSSize();
     }
-
     /**
      * @return size of universe
      */
