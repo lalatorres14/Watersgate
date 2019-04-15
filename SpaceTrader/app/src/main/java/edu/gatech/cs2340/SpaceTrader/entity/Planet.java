@@ -3,7 +3,9 @@ package edu.gatech.cs2340.SpaceTrader.entity;
 import android.util.SparseArray;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 
@@ -120,9 +122,9 @@ public class Planet {
      *
      * @return the coordinates of the planet
      */
-    //public Map<Integer, Integer> getCoordinates()
-    // {return Collections.unmodifiableMap(coordinates);}
-    public HashMap<Integer, Integer> getCoordinates() {return coordinates;}
+    public Map<Integer, Integer> getCoordinates()
+     {return Collections.unmodifiableMap(coordinates);}
+    //public HashMap<Integer, Integer> getCoordinates() {return coordinates;}
     /**
      *
      * @return a string that contains the name of the planet

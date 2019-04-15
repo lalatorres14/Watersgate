@@ -4,7 +4,6 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -18,7 +17,7 @@ public final class Game {
     private static List<SolarSystem> universe;
     private Planet currentPlanet;
     private static SolarSystem currentSS;
-    private static HashMap<Integer, Integer> solarCoordinates;
+    private static Map<Integer, Integer> solarCoordinates;
     private Class nextScreen;
     private final Cargo cargo = getCargo();
     private final Ship ship = getShip();
@@ -372,7 +371,7 @@ public final class Game {
      *
      * @return the planets in solar system
      */
-    public ArrayList<Planet> getCurrentPlanetList() {
+    public List<Planet> getCurrentPlanetList() {
         return currentSS.getPlanetList();
     }
 

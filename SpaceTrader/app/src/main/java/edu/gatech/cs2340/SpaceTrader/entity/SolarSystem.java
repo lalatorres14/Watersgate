@@ -1,4 +1,7 @@
 package edu.gatech.cs2340.SpaceTrader.entity;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,10 +11,10 @@ import java.util.HashMap;
 public class SolarSystem {
 
     /** The list of planets populating this Solar system*/
-    private ArrayList<Planet> planetList = new ArrayList<>();
+    private List<Planet> planetList = new ArrayList<>();
     private final Random rand = new Random();
-    private final HashMap<Integer, Integer> coordinates = new HashMap<>();
-    private final HashMap<Integer, Integer> planetCoordinates;
+    private final Map<Integer, Integer> coordinates = new HashMap<>();
+    private final Map<Integer, Integer> planetCoordinates;
     private static int nameNumber;
     /**The coordinates for the location of this solar system*/
     final int coordinateX = rand.nextInt(20);
@@ -51,8 +54,8 @@ public class SolarSystem {
      *
      * @return the planets in solar system
      */
-    //public List<Planet> getPlanetList() {return Collections.unmodifiableList(planetList);}
-    public ArrayList<Planet> getPlanetList() {return planetList;}
+    public List<Planet> getPlanetList() {return Collections.unmodifiableList(planetList);}
+    //public ArrayList<Planet> getPlanetList() {return planetList;}
     /**
      *
      * @return the x coordinate
@@ -72,25 +75,25 @@ public class SolarSystem {
      * sets the planets in the solar system
      * @param planetList the planets in the solar system
      */
-    //public void setPlanetList(ArrayList<Planet> planetList) {
-        //this.planetList = (ArrayList<Planet>) Collections.unmodifiableList(planetList);
-    //}
-    public void setPlanetList(ArrayList<Planet> planetList) {this.planetList = planetList;}
+    public void setPlanetList(ArrayList<Planet> planetList) {
+        this.planetList = Collections.unmodifiableList(planetList);
+    }
+    //public void setPlanetList(ArrayList<Planet> planetList) {this.planetList = planetList;}
     /**
      *
      * @return the coordinates of the Solar System
      */
-    //public Map<Integer, Integer> getCoordinates()
-    // {return Collections.unmodifiableMap(coordinates);}
-    public HashMap<Integer, Integer> getCoordinates() {return coordinates;}
+    public Map<Integer, Integer> getCoordinates()
+     {return Collections.unmodifiableMap(coordinates);}
+    //public HashMap<Integer, Integer> getCoordinates() {return coordinates;}
     /**
      *
      * @return the planet coordinates
      */
-    public HashMap<Integer, Integer> getPlanetCoordinates() {return planetCoordinates;}
-    //public Map<Integer, Integer> getPlanetCoordinates() {
-        //return Collections.unmodifiableMap(planetCoordinates);
-    //}
+    //public HashMap<Integer, Integer> getPlanetCoordinates() {return planetCoordinates;}
+    public Map<Integer, Integer> getPlanetCoordinates() {
+        return Collections.unmodifiableMap(planetCoordinates);
+    }
 
     /**
      * sets the amount of planets in the solar system

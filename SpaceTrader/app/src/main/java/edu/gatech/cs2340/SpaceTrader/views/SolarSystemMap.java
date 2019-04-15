@@ -11,7 +11,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import edu.gatech.cs2340.SpaceTrader.R;
@@ -44,7 +44,7 @@ public class SolarSystemMap extends AppCompatActivity {
         );
         // adding Radio Group
         layout.addView(radioGroup, p);
-        final ArrayList<Planet> planetList = game.getCurrentPlanetList();
+        final List<Planet> planetList = game.getCurrentPlanetList();
 
         //dynamically creates radio buttons for this specific solar system
         for(int i =0; i<planetList.size();i++)

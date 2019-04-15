@@ -19,6 +19,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public class GenerateUniverseTest {
     @Before
+
     public void setUp() {
         Game.getInstance().generateUniverse();
 
