@@ -8,12 +8,21 @@ public class RandomEvent {
 
     private static final Game game = Game.getInstance();
 
+    private RandomEventType type;
+
+    /**
+     * constructor for a random event
+     * @param type the type of event
+     */
+    public RandomEvent(RandomEventType type){
+        this.type = type;
+    }
+
     private final Random rand = new Random();
     /**
-     * @param type type of random event that shows up
      * @return returns a random event
      */
-    public String doRandomEvent(RandomEventType type){
+    public String doRandomEvent(){
         String message = "";
         switch (type) {
             case POLICE:

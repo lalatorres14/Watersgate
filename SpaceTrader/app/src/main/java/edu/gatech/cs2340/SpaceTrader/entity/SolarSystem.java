@@ -22,7 +22,6 @@ public class SolarSystem {
     private int planetTotal;
 
     private final String name;
-    private final Planet firstPlanet;
 
     /**
      * Constructor to create a SolarSystem
@@ -35,7 +34,7 @@ public class SolarSystem {
             planetList.add(new Planet());
         }
         //planetCoordinates = (HashMap<Integer, Integer>) planetList.get(0).getCoordinates();
-        firstPlanet = planetList.get(0);
+        Planet firstPlanet = planetList.get(0);
         planetCoordinates = firstPlanet.getCoordinates();
         coordinates.put(coordinateX,coordinateY);
         String[] names = {"Alpha", "Beta", "Gamma", "Delta", "Zeta", "Theta", "Iota",

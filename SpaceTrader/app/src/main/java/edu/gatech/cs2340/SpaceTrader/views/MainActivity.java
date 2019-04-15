@@ -31,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences pref ;
     //SharedPreferences.Editor editor ;
     private final Gson gson = new Gson();
-    //Game game ;
-    private Player player;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         System.out.println("Savy, inside onCreate");
@@ -68,14 +67,13 @@ public class MainActivity extends AppCompatActivity {
             String json_3 = pref.getString("Current_Game_CurrentPlanet", null);
             //System.out.println("Savy , " + json_1);
             String playerName = pref.getString("Player_name",null);
-            player = new Player("Bob", Difficulty.NORMAL);
+            //Game game ;
+            Player player = new Player("Bob", Difficulty.NORMAL);
             game.setPlayer(player);
             game.setPlayerName(playerName);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                game.setDifficulty(Difficulty.valueOf(
-                        Objects.requireNonNull
-                        (pref.getString("Difficulty", null)).toUpperCase()));
-            }
+            game.setDifficulty(Difficulty.valueOf(
+                    Objects.requireNonNull
+                    (pref.getString("Difficulty", null)).toUpperCase()));
             game.setCredits(pref.getInt("Credits",0));
             game.setShip(ShipType.valueOf(Objects.requireNonNull(pref.
                     getString("Ship_Name", null)).toUpperCase()));

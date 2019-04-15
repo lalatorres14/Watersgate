@@ -23,8 +23,8 @@ public class RandomEventView extends AppCompatActivity {
         setContentView(R.layout.random_event_screen);
 
         RandomEventType randomEventGenerated = RandomEventType.getRandomEventType();
-        RandomEvent randomEvent = new RandomEvent();
-        String message = randomEvent.doRandomEvent(randomEventGenerated);
+        RandomEvent randomEvent = new RandomEvent(randomEventGenerated);
+        String message = randomEvent.doRandomEvent();
 
         final TextView titleText = findViewById(R.id.randomEventTitle);
         titleText.setText(randomEventGenerated.toString());

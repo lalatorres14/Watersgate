@@ -80,7 +80,8 @@
         android:layout_marginLeft="250dp"
         android:layout_marginBottom="27dp"
         android:onClick="onCancelPressed"
-        android:text="@string/Cancel" />
+        android:text="@string/Cancel"
+        android:labelFor="@id/cancel_button"/>
 
     <TextView
         android:id="@+id/pilot_header"
@@ -106,7 +107,8 @@
         android:layout_toRightOf="@+id/pilot_header"
         android:autofillHints=""
         android:ems="2"
-        android:inputType="number" />
+        android:inputType="number"
+        android:labelFor="@id/pilot_points"/>
 
 
     <ImageButton
@@ -157,7 +159,8 @@
         android:layout_toRightOf="@+id/fighter_header"
         android:autofillHints=""
         android:ems="2"
-        android:inputType="number" />
+        android:inputType="number"
+        android:labelFor="@id/fighter_points"/>
 
 
     <ImageButton
@@ -213,7 +216,8 @@
         android:layout_toRightOf="@+id/trader_header"
         android:autofillHints=""
         android:ems="2"
-        android:inputType="number" />
+        android:inputType="number"
+        android:labelFor="@id/trader_points"/>
 
 
     <ImageButton
@@ -263,7 +267,8 @@
         android:layout_toRightOf="@+id/engineer_header"
         android:autofillHints=""
         android:ems="2"
-        android:inputType="number" />
+        android:inputType="number"
+        android:labelFor="@id/engineer_points"/>
 
 
     <ImageButton
@@ -318,7 +323,8 @@
         android:layout_toRightOf="@+id/remaining_header"
         android:autofillHints=""
         android:ems="2"
-        android:inputType="number" />
+        android:inputType="number"
+        android:labelFor="@id/remaining"/>
 
 
 </RelativeLayout>
