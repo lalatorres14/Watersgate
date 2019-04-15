@@ -14,7 +14,7 @@ import java.util.Random;
 public class Planet {
     private String name;
     private final Random rand = new Random();
-    private final HashMap<Integer, Integer> coordinates = new HashMap<>();
+    private final Map<Integer, Integer> coordinates = new HashMap<>();
     final int coordinateX = rand.nextInt(20);
     final int coordinateY = rand.nextInt(20);
     private final int planetId;

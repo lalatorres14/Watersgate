@@ -75,7 +75,7 @@ public class SolarSystem {
      * sets the planets in the solar system
      * @param planetList the planets in the solar system
      */
-    public void setPlanetList(ArrayList<Planet> planetList) {
+    public void setPlanetList(List<Planet> planetList) {
         this.planetList = Collections.unmodifiableList(planetList);
     }
     //public void setPlanetList(ArrayList<Planet> planetList) {this.planetList = planetList;}
