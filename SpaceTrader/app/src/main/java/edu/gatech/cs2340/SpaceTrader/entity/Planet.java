@@ -12,13 +12,11 @@ import java.util.Random;
 /** This class represents a single PlanetScreen*/
 public class Planet {
     private String name;
-    ArrayList<String> techLevel = new ArrayList<>();
     private final Random rand = new Random();
     private final HashMap<Integer, Integer> coordinates = new HashMap<>();
     final int coordinateX = rand.nextInt(20);
     final int coordinateY = rand.nextInt(20);
     private final int planetId;
-    ArrayList<String> resources = new ArrayList<>();
     private TechLevel tLevel;
     private Resource res;
     /**

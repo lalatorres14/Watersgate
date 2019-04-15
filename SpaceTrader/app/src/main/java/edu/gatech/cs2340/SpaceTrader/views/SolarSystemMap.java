@@ -66,9 +66,8 @@ public class SolarSystemMap extends AppCompatActivity {
         }
 
 
-
-        GraphView SSGraph = findViewById(R.id.solarSystem_graph);
-        DataPoint[] data = new DataPoint[game.getCurrentPlanetListSize()];
+        //GraphView SSGraph = findViewById(R.id.solarSystem_graph);
+        //DataPoint[] data = new DataPoint[game.getCurrentPlanetList().size()];
 
         final TextView solarSystemTextView = findViewById(R.id.solarSystemText);
         solarSystemTextView.setText(String.format("Solar System %s",

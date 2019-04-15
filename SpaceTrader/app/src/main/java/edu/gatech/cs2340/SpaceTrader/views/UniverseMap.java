@@ -27,7 +27,7 @@ import edu.gatech.cs2340.SpaceTrader.entity.Player;
  */
 public class UniverseMap extends AppCompatActivity {
     private static Game game = Game.getInstance();
-    private CharSequence checkedText;
+    //private CharSequence checkedText;
     private int solarIndex;
     private SharedPreferences pref ;
     private final Gson gson = new Gson();
@@ -46,13 +46,13 @@ public class UniverseMap extends AppCompatActivity {
         final TextView fuelText = findViewById(R.id.fuelText);
         fuelText.setText("Current Fuel: " + game.getFuel());
 
-        GraphView uniGraph = findViewById(R.id.universe_graph);
-        DataPoint[] data = new DataPoint[9];
-        int j = 0;
+        //GraphView uniGraph = findViewById(R.id.universe_graph);
+        //DataPoint[] data = new DataPoint[9];
+        //int j = 0;
         //HashMap<Integer, Integer> solarCoordinates = Game.getSolarCoordinates();
         RadioGroup radioGroup = findViewById(R.id.group);
-        RadioButton checkedRadioButton = radioGroup.findViewById(
-                radioGroup.getCheckedRadioButtonId());
+        //RadioButton checkedRadioButton = radioGroup.findViewById(
+        //        radioGroup.getCheckedRadioButtonId());
         for (int i = 0; i < radioGroup.getChildCount(); i++) {
             String name = Game.getSolarSystemName(i);
             int distance = game.systemDistance(Game.getSolarSystemAtIndex(i));

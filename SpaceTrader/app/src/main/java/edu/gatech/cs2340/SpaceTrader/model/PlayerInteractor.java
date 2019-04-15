@@ -17,7 +17,7 @@ public class PlayerInteractor extends Interactor {
     public PlayerInteractor(Repository repo) {
         super(repo);
     }
-    private Repository repository = getRepository();
+    private final Repository repository = getRepository();
     /**
      * creates an instance of a player
      * @param p the current instance of player
