@@ -25,6 +25,7 @@ public class SolarSystem {
     private int planetTotal;
 
     private final String name;
+    private final Planet firstPlanet;
 
     /**
      * Constructor to create a SolarSystem
@@ -37,7 +38,8 @@ public class SolarSystem {
             planetList.add(new Planet());
         }
         //planetCoordinates = (HashMap<Integer, Integer>) planetList.get(0).getCoordinates();
-        planetCoordinates = planetList.get(0).getCoordinates();
+        firstPlanet = planetList.get(0);
+        planetCoordinates = firstPlanet.getCoordinates();
         coordinates.put(coordinateX,coordinateY);
         String[] names = {"Alpha", "Beta", "Gamma", "Delta", "Zeta", "Theta", "Iota",
                 "Nu", "Omicron", "Omega"};
@@ -110,7 +112,8 @@ public class SolarSystem {
     public String toString() {
         StringBuilder planetsToString = new StringBuilder();
         for (Planet planet : planetList) {
-            planetsToString.append("\n").append(planet.toString());
+            planetsToString.append("\n");
+            planetsToString.append(planet.toString());
         }
         return String.format("Coordinates: (%d,%d)\nNumber of Planets: %d\nPlanets: " +
                 planetsToString, coordinateX,coordinateY, planetTotal);
@@ -120,4 +123,23 @@ public class SolarSystem {
      * @return name of the Solar System
      */
     public String getName() { return name; }
+
+    /**
+     *
+     * @return the first planet in the solar system
+     */
+    public Planet getFirstPlanet() {return planetList.get(0);}
+
+    /**
+     *
+     * @param i index of planet in solar system
+     * @return ith planet in solar system
+     */
+    public Planet getPlanet(int i) {return planetList.get(i);}
+
+    /**
+     *
+     * @return size of current solar system
+     */
+    public int getCurrentSSSize(){return planetList.size(); }
 }

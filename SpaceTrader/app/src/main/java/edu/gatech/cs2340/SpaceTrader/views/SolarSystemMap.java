@@ -68,7 +68,7 @@ public class SolarSystemMap extends AppCompatActivity {
 
 
         GraphView SSGraph = findViewById(R.id.solarSystem_graph);
-        DataPoint[] data = new DataPoint[game.getCurrentPlanetList().size()];
+        DataPoint[] data = new DataPoint[game.getCurrentPlanetListSize()];
 
         final TextView solarSystemTextView = findViewById(R.id.solarSystemText);
         solarSystemTextView.setText(String.format("Solar System %s",
@@ -106,8 +106,7 @@ public class SolarSystemMap extends AppCompatActivity {
     //travel button
     private void onStartPressed(){
         //travel here
-        if (game.canPlanetTravel(game.getCurrentPlanetList()
-                .get(planetIndex))) {
+        if (game.canPlanetTravel(game.getCurrentPlanetAtIndex(planetIndex))) {
 
             Random random = new Random();
             //this 3 is arbitrary, we should decide how often to get random events
@@ -121,7 +120,7 @@ public class SolarSystemMap extends AppCompatActivity {
                 startActivity(intent);
             }
 
-            game.planetTravel(game.getCurrentPlanetList().get(planetIndex));
+            game.planetTravel(game.getCurrentPlanetAtIndex(planetIndex));
         } else {
             Toast toast = Toast.makeText(SolarSystemMap.this, "Not enough fuel",
                     Toast.LENGTH_SHORT);

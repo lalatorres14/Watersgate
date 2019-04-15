@@ -83,6 +83,21 @@ public final class Game {
      * @return the player of the game
      */
     public static List<SolarSystem> getUniverse(){ return Collections.unmodifiableList(universe); }
+
+    /**
+     *
+     * @param i index of solar system in universe
+     * @return the log of a solar system
+     */
+    public static String getUniverseLog(int i) {return universe.get(i).toString(); }
+
+    /**
+     *
+     * @param i index of a solar system in the universe
+     * @return that solar system's name
+     */
+    public static String getSolarSystemName(int i) {return universe.get(i).getName(); }
+
     /**
      * sets the next screen of the game
      * @param  c the next screen of the game
@@ -102,7 +117,7 @@ public final class Game {
         }
         currentSS = universe.get(0);
         solarCoordinates = (HashMap<Integer, Integer>) currentSS.getCoordinates();
-        currentPlanet = currentSS.getPlanetList().get(0);
+        currentPlanet = currentSS.getFirstPlanet();
     }
 
 
@@ -251,7 +266,6 @@ public final class Game {
             Log.i("Travel", "Successfully traveled to " + destination.getName());
         }
     }
-//    public int systemDistance(SolarSystem dest) {return player.systemDistance(dest); }
     /**
      * gets the distance of the solar system to travel to
      *
@@ -262,7 +276,6 @@ public final class Game {
         return ((int) Math.ceil(Math.sqrt(Math.pow(currentSS.coordinateX - dest.coordinateX,
                 2) + Math.pow(currentSS.coordinateY - dest.coordinateY, 2))));
     }
-//    public boolean canSystemTravel(SolarSystem dest) {return player.canSystemTravel(dest); }
     /**
      * determines whether it is possible to travel to another solar system or not
      *
@@ -271,7 +284,6 @@ public final class Game {
      */
     public boolean canSystemTravel(SolarSystem destination) { return (systemDistance(destination)
             <= ship.getFuel()); }
-//    public void systemTravel(SolarSystem dest) {player.systemTravel(dest);}
     /**
      * helper method for traveling to another solar system
      *
@@ -281,7 +293,7 @@ public final class Game {
         if (canSystemTravel(destination)) {
             ship.setFuel(ship.getFuel() - systemDistance(destination));
             setCurrentSS(destination);
-            setCurrentPlanet(destination.getPlanetList().get(0));
+            setCurrentPlanet(destination.getFirstPlanet());
             Log.i("Travel", "Successfully traveled to " + destination.getName());
         }
     }
@@ -364,12 +376,39 @@ public final class Game {
         return (ArrayList<Planet>) currentSS.getPlanetList();
     }
 
+    /**
+     *
+     * @param i index of a solar system in universe
+     * @return that solar system
+     */
+    public static SolarSystem getSolarSystemAtIndex(int i) {
+        return universe.get(i);
+    }
+    /**
+     *
+     * @return size of planet list
+     */
+    public int getCurrentPlanetListSize() {
+        return currentSS.getCurrentSSSize();
+    }
+
+    /**
+     * @return size of universe
+     */
+    public static int getUniverseSize() {return universe.size();}
     //Planet Pass-Through Methods
     /**
      *
      * @return a string that contains the name of the planet
      */
     public String getCurrentPlanetName() {return currentPlanet.getName(); }
+
+    /**
+     *
+     * @param i index of planet in current solar system
+     * @return planet at index i in current solar system
+     */
+    public Planet getCurrentPlanetAtIndex(int i) {return currentSS.getPlanet(i);}
     /**
      *
      * @return the resources of the planet

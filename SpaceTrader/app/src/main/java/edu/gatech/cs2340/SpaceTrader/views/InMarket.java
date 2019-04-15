@@ -150,7 +150,7 @@ public class InMarket extends AppCompatActivity {
     private void sellItems(){
         for (MarketItem marketItem: items) {
             if (game.getQuantityOfGood(marketItem.type.getGoodType()) < marketItem.amount) {
-                shortToast("Not enough " + marketItem.type.getGoodType().toString());
+                shortToast("Not enough " + marketItem.type.getGoodTypeString());
                 return;
             }
         }

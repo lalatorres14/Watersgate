@@ -54,11 +54,11 @@ public class UniverseMap extends AppCompatActivity {
         RadioButton checkedRadioButton = radioGroup.findViewById(
                 radioGroup.getCheckedRadioButtonId());
         for (int i = 0; i < radioGroup.getChildCount(); i++) {
-            String name = Game.getUniverse().get(i).getName();
-            int distance = game.systemDistance(Game.getUniverse().get(i));
+            String name = Game.getSolarSystemName(i);
+            int distance = game.systemDistance(Game.getSolarSystemAtIndex(i));
             ((RadioButton) radioGroup.getChildAt(i)).setText(name + " - " + distance + " parsecs");
             //makes this button grayed out and unclickable if too far away
-            if(!game.canSystemTravel(Game.getUniverse().get(i))) {
+            if(!game.canSystemTravel(Game.getSolarSystemAtIndex(i))) {
                 radioGroup.getChildAt(i).setEnabled(false);
             }
         }
@@ -108,7 +108,7 @@ public class UniverseMap extends AppCompatActivity {
     //Travel button
     private void onStartPressed(){
         //travel here
-        if (game.canSystemTravel(Game.getUniverse().get(solarIndex))) {
+        if (game.canSystemTravel(Game.getSolarSystemAtIndex(solarIndex))) {
             Random random = new Random();
             if(random.nextInt(3) == 0){
                 //go to random event screen and tell game to go to solar system screen next
@@ -120,7 +120,7 @@ public class UniverseMap extends AppCompatActivity {
                 startActivity(intent);
             }
 
-            game.systemTravel(Game.getUniverse().get(solarIndex));
+            game.systemTravel(Game.getSolarSystemAtIndex(solarIndex));
         } else {
             Toast toast = Toast.makeText(UniverseMap.this, "Not enough fuel", Toast.LENGTH_SHORT);
             toast.show();
@@ -165,8 +165,8 @@ public class UniverseMap extends AppCompatActivity {
                 GoodType.NARCOTICS));
         editor.putInt("ROBOTS", game.getQuantityOfGood(
                 GoodType.ROBOTS));
-        for (int i = 0; i < Game.getUniverse().size(); i++) {
-            String json_i = gson.toJson(Game.getUniverse().get(i));
+        for (int i = 0; i < Game.getUniverseSize(); i++) {
+            String json_i = gson.toJson(Game.getSolarSystemAtIndex(i));
             editor.putString("universe_elem" + i, json_i);
         }
         editor.putInt("Fuel", game.getFuel());

@@ -32,8 +32,6 @@ public class PlayerConfirmation extends AppCompatActivity {
             }
         });
 
-        EditPlayerViewModel viewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
-
         final TextView nameTextView = findViewById(R.id.nameText);
         nameTextView.setText("Player name: " + game.getPlayerName());
 
@@ -70,7 +68,7 @@ public class PlayerConfirmation extends AppCompatActivity {
         game.generateUniverse();
 
         for (int i = 0; i < 10; i++) {
-            largeLog("Solar System", Game.getUniverse().get(i).toString());
+            largeLog("Solar System", Game.getUniverseLog(i));
         }
 
         Intent intent = new Intent(PlayerConfirmation.this, UniverseMap.class);

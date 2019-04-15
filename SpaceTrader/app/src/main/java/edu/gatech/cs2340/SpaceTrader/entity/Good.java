@@ -20,11 +20,17 @@ public class Good {
      *
      */
     public GoodType getGoodType() { return type; }
+
+    /**
+     * @return the good type as a formatted string
+     */
+    public String getGoodTypeString() {return type.toString();}
     /**
      * calculates the price of a good
      * @param p current planet the player is on
      * @return the calculated price
      */
+
     public int calculatePrice(Planet p){
         return type.calculatePrice(p.getTechLevelInt(), p.getResources());
     }
