@@ -8,7 +8,7 @@ public class RandomEvent {
 
     private static final Game game = Game.getInstance();
 
-    Random rand = new Random();
+    private final Random rand = new Random();
     /**
      * @param type type of random event that shows up
      * @return returns a random event

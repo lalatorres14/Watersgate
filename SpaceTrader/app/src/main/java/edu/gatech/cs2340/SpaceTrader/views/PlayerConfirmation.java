@@ -32,8 +32,6 @@ public class PlayerConfirmation extends AppCompatActivity {
             }
         });
 
-        EditPlayerViewModel viewModel = ViewModelProviders.of(this).get(EditPlayerViewModel.class);
-
         final TextView nameTextView = findViewById(R.id.nameText);
         nameTextView.setText("Player name: " + game.getPlayerName());
 

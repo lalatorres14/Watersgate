@@ -34,8 +34,8 @@ public class MarketItem {
     private TextView blank;
 
     public int amount;
-    public Good type;
-    public int unitPrice;
+    public final Good type;
+    public final int unitPrice;
 
     /**
      * Making an item in the market

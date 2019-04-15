@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     //SharedPreferences.Editor editor ;
     private final Gson gson = new Gson();
     //Game game ;
-    Player player;
+    private Player player;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         System.out.println("Savy, inside onCreate");

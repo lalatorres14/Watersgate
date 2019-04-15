@@ -183,7 +183,7 @@ public class InMarket extends AppCompatActivity {
             }
         } else if (buying == -1) {
             for (MarketItem marketItem: items) {
-                if (marketItem.type.canBuy(current.getTechLevelInt())) {
+                if (marketItem.type.canSell(current.getTechLevelInt())) {
                     marketItem.row1.setVisibility(View.VISIBLE);
                     marketItem.row2.setVisibility(View.VISIBLE);
                     marketItem.row3.setVisibility(View.VISIBLE);
