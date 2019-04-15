@@ -18,8 +18,6 @@ public class RandomEvent {
         this.type = type;
     }
 
-    public RandomEvent(){};
-
     private final Random rand = new Random();
     /**
      * @return returns a random event
@@ -168,5 +166,9 @@ public class RandomEvent {
         return message;
     }
 
+    /**
+     *
+     * @param type type of good to be set
+     */
     public void setType(RandomEventType type){this.type = type;}
 }

@@ -62,7 +62,6 @@ public class GenerateUniverseTest {
             for (int j = 0; j < ss.getPlanetTotal(); j++){
                 assertNotNull(ss.getPlanetList().get(j).getName());
                 actualNames.add(ss.getPlanetList().get(j).getName());
-                assertNotNull(ss.getPlanetList().get(j).getMarket());
                 assertNotNull(ss.getPlanetList().get(j).getResources());
                 assertNotNull(ss.getPlanetList().get(j).getTechLevel());
             }

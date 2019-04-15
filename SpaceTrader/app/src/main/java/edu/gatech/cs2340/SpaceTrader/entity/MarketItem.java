@@ -147,68 +147,80 @@ public class MarketItem {
         blank.setText("- - - - - - - - - - - - - - - - - - - -");
     }
 
+    /**
+     *
+     * @return amount of good
+     *
+     */
     public int getAmount(){return amount;}
 
+    /**
+     *
+     * @param i amount of good
+     */
     public void setAmount(int i){amount = i;}
 
+    /**
+     *
+     * @return row1
+     */
     public TableRow getRow1() { return row1; }
 
-    public void setRow1(TableRow row1) { this.row1 = row1; }
-
-    public TextView getItemName() { return itemName; }
-
-    public void setItemName(TextView itemName) { this.itemName = itemName; }
-
-    public TextView getTotalHeader() { return totalHeader; }
-
-    public void setTotalHeader(TextView totalHeader) { this.totalHeader = totalHeader; }
-
-    public TextView getTotalView() { return totalView; }
-
-    public void setTotalView(TextView totalView) { this.totalView = totalView; }
+    /**
+     *
+     * @return input
+     */
 
     public EditText getInput() { return input; }
 
-    public void setInput(EditText input) { this.input = input; }
-
+    /**
+     *
+     * @return row2
+     */
     public TableRow getRow2() { return row2; }
 
-    public void setRow2(TableRow row2) { this.row2 = row2; }
-
-    public TextView getHoldHeader() { return holdHeader; }
-
-    public void setHoldHeader(TextView holdHeader) { this.holdHeader = holdHeader; }
-
+    /**
+     *
+     * @return hold
+     */
     public TextView getHold() { return hold; }
 
-    public void setHold(TextView hold) { this.hold = hold; }
-
-    public TextView getUnitHeader() { return unitHeader; }
-
-    public void setUnitHeader(TextView unitHeader) { this.unitHeader = unitHeader; }
-
-    public TextView getUnit() { return unit; }
-
-    public void setUnit(TextView unit) { this.unit = unit; }
-
+    /**
+     *
+     * @return row3
+     */
     public TableRow getRow3() { return row3; }
 
-    public void setRow3(TableRow row3) { this.row3 = row3; }
-
-    public TextView getBlank() { return blank; }
-
-    public void setBlank(TextView blank) { this.blank = blank; }
-
+    /**
+     *
+     * @return type of this good
+     */
     public GoodType getGoodType() { return type.getGoodType(); }
 
-    public Good getGood() {return type;}
-
+    /**
+     *
+     * @return good type as a string
+     */
     public String getGoodTypeString() {return type.getGoodTypeString(); }
 
+    /**
+     *
+     * @return unit price of this item
+     */
     public int getUnitPrice() { return unitPrice; }
 
+    /**
+     *
+     * @param techLevel to check against
+     * @return if good can be sold
+     */
     public boolean canSell(int techLevel){ return type.canSell(techLevel); }
 
+    /**
+     *
+     * @param techLevel to check against
+     * @return if good can be bought
+     */
     public boolean canBuy(int techLevel){
         return type.canBuy(techLevel);
     }
