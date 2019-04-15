@@ -69,7 +69,6 @@ public class CreatePlayer extends AppCompatActivity {
         difficultySpinner.setAdapter(adapter);
 
         player = new Player("Bob", Difficulty.NORMAL);
-        button.setText("@string/add");
         setTitle("Creating Player");
 
         //Initializing display values for skills
