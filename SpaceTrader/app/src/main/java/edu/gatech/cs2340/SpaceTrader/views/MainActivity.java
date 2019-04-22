@@ -3,6 +3,7 @@ package edu.gatech.cs2340.SpaceTrader.views;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.music);
+        mediaPlayer.start();
     }
     private void onStartPressed(){
         List<SolarSystem> tmplist = new ArrayList<>();
