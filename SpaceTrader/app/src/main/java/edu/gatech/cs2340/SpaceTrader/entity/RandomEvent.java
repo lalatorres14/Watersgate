@@ -116,7 +116,7 @@ public class RandomEvent {
             game.setCredits(game.getCredits() + money);
             message += "You managed to defeat them all, gaining "
                     + String.valueOf(money) + " credits!";
-        } else if (game.getFighterSkill() >= ptMax / 2) {
+        } else if (game.getFighterSkill() >= (ptMax / 2)) {
             message += "You managed to fend them off, and they fled. " +
                     "That was a close one!";
         } else {
@@ -144,7 +144,7 @@ public class RandomEvent {
                         "in his pocket, leaving you " + String.valueOf(money) +
                         " credits richer.";
                 game.setCredits(game.getCredits() + money);
-            } else if(game.getTraderSkill() >= ptMax / 2) {
+            } else if(game.getTraderSkill() >= (ptMax / 2)) {
                 message += "His merchandise isn't the most appealing, so you send him" +
                         "out without buying anything.";
             } else {
