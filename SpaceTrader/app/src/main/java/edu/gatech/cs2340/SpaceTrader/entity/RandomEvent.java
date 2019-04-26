@@ -138,8 +138,6 @@ public class RandomEvent {
 
     private String Crew_Mutiny_Event(String oldMessage) {
         String message = oldMessage;
-        //Fight pirates, either win and take their money, fend off, or lose and lose money
-        //int money = (game.getCredits() * 2) / 10;
         message += "Your crew has started a riot!";
         if (game.getFighterSkill() >= ptMax) {
             game.setCredits(game.getCredits() + money);
@@ -157,12 +155,10 @@ public class RandomEvent {
 
     private String DiscoveryEvent(String oldMessage) {
         String message = oldMessage;
-        //int money = (game.getCredits() * 2) / 10;
         message += "You Discovered an abandoned Ship! ";
         if (game.hasShipSpace()) {
             message += "Found some rare firearms! They will make a fine edition to your collection!";
             game.buyGood(GoodType.FIREARMS, 1);
-            //game.setCredits(game.getCredits() - (money));
         } else {
             message += "Oh how you wish you had space for these premium goods!" +
                     " Unfortunately, your ship's cargo is full.";
@@ -178,7 +174,7 @@ public class RandomEvent {
         //only purchase if space
         if (game.hasShipSpace() && (game.getCredits() > money)) {
             message += " You were successfull in buying medicine! Your crew has a full recovery!" ;
-            game.buyGood(GoodType.NARCOTICS, 1);
+            game.buyGood(GoodType.MEDICINE, 1);
             game.setCredits(game.getCredits() - (money));
         } else {
             message += "Unfortunately, you were unable to acquire the medicine and your crew has perished";
