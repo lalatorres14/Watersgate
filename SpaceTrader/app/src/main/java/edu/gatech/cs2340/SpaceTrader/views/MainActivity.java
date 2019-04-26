@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        
         MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.music);
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
