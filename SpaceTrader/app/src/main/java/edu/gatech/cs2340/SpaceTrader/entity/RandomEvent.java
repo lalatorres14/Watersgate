@@ -190,40 +190,43 @@ public class RandomEvent {
      * @return the completed message
      */
     private String DealerEvent(String oldMessage) {
-        String message = oldMessage;
-        //Meet a narcotics dealer offering a sweet price, or tyring to scam you.
-        boolean scam = rand.nextBoolean();
-        int money = game.getCredits() / 10;
-        message += "You meet a shady figure who offers you some narcotics. ";
-        if (scam) {
-            if (game.getTraderSkill() >= ptMax) {
-                message += "You notice the scam. However, he doesn't notice your hand " +
+        if (game.getHelpedMerchant()) {
+            String message = oldMessage;
+            //Meet a narcotics dealer offering a sweet price, or tyring to scam you.
+            boolean scam = rand.nextBoolean();
+            int money = game.getCredits() / 10;
+            message += "You meet a shady figure who offers you some narcotics. ";
+            if (scam) {
+                if (game.getTraderSkill() >= ptMax) {
+                    message += "You notice the scam. However, he doesn't notice your hand " +
                         "in his pocket, leaving you " + String.valueOf(money) +
                         " credits richer.";
-                game.setCredits(game.getCredits() + money);
-            } else if(game.getTraderSkill() >= (ptMax / 2)) {
-                message += "His merchandise isn't the most appealing, so you send him" +
+                    game.setCredits(game.getCredits() + money);
+                } else if(game.getTraderSkill() >= (ptMax / 2)) {
+                    message += "His merchandise isn't the most appealing, so you send him" +
                         "out without buying anything.";
-            } else {
-                message += "You eagerly purchase, amazed at the opportunity. " +
+                } else {
+                    message += "You eagerly purchase, amazed at the opportunity. " +
                         "Unfortunately, the scam left you " +String.valueOf(money) +
                         " credits poorer.";
-                game.setCredits(game.getCredits() - money);
-            }
-        } else {
-            //only purchase if space
-            if (game.hasShipSpace()) {
-                if (money > 1000) { money = 1000; } //Reign in price in late game
-                message += "Only " + String.valueOf(money) + " credits? With such a " +
-                        "great deal, how could you refuse!";
-                game.buyGood(GoodType.NARCOTICS, 1);
-                game.setCredits(game.getCredits() - (money));
+                    game.setCredits(game.getCredits() - money);
+                }
             } else {
-                message += "Oh how you wish you had space for these premium goods!" +
+                //only purchase if space
+                if (game.hasShipSpace()) {
+                    if (money > 1000) { money = 1000; } //Reign in price in late game
+                    message += "Only " + String.valueOf(money) + " credits? With such a " +
+                            "great deal, how could you refuse!";
+                    game.buyGood(GoodType.NARCOTICS, 1);
+                    game.setCredits(game.getCredits() - (money));
+                } else {
+                    message += "Oh how you wish you had space for these premium goods!" +
                         " Unfortunately, your ship's cargo is full.";
+                }
             }
+            return message;
         }
-        return message;
+        return "You come across a derelict marketplace. Nothing here seems usable";
     }
 
     /**
