@@ -138,6 +138,7 @@ public class RandomEvent {
 
     private String Crew_Mutiny_Event(String oldMessage) {
         String message = oldMessage;
+        int money = (game.getCredits() * 2) / 10;
         message += "Your crew has started a riot!";
         if (game.getFighterSkill() >= ptMax) {
             game.setCredits(game.getCredits() + money);
