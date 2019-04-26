@@ -109,8 +109,16 @@ public class SolarSystemMap extends AppCompatActivity {
             if(random.nextInt(3) == 0){
                 //go to random event screen and tell game to go to planet screen next
                 game.setNextScreen(PlanetScreen.class);
-                Intent intent = new Intent(SolarSystemMap.this, RandomEventView.class);
-                startActivity(intent);
+                //minigame random event (will always happen first)
+                if (!game.getHelpedMerchant()) {
+                    Intent intent = new Intent(SolarSystemMap.this,
+                            ThreeChoiceMinigame.class);
+                    startActivity(intent);
+                //Other random events
+                } else {
+                    Intent intent = new Intent(SolarSystemMap.this, RandomEventView.class);
+                    startActivity(intent);
+                }
             } else { //travel normally
                 Intent intent = new Intent(SolarSystemMap.this, PlanetScreen.class);
                 startActivity(intent);

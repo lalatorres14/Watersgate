@@ -21,6 +21,7 @@ public final class Game {
     private Class nextScreen;
     private final Cargo cargo = getCargo();
     private final Ship ship = getShip();
+    private boolean helpedMerchant = false;
 
     /*
     a list of things we might also want to keep track of here:
@@ -61,6 +62,11 @@ public final class Game {
      */
     public void setCurrentSS(SolarSystem s) {currentSS = s; }
     /**
+     * sets whether you've helped the merchant or not
+     * @param bool whether you've helped the merchant or not
+     */
+    public void setHelpedMerchant(boolean bool) { helpedMerchant = bool; }
+    /**
      * @return the current planet
      */
     public Planet getCurrentPlanet() {return currentPlanet; }
@@ -68,6 +74,10 @@ public final class Game {
      * @return the current solar system
      */
     public SolarSystem getCurrentSS() {return currentSS; }
+    /**
+     * @return whether you've helped the merchant or not
+     */
+    public boolean getHelpedMerchant() { return helpedMerchant; }
     /**
      * @return the coordinates of the solar system
      */
