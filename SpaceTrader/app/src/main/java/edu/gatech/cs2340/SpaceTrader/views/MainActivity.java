@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import com.google.gson.Gson;
-import android.media.MediaPlayer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,9 +47,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.music);
-        mediaPlayer.setLooping(true);
-        mediaPlayer.start();
+
     }
     private void onStartPressed(){
         List<SolarSystem> tmplist = new ArrayList<>();
