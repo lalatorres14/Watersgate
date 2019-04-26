@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        BackgroundSound mBackgroundSound = new BackgroundSound();
+        mBackgroundSound.execute();
 
     }
     private void onStartPressed(){
@@ -110,6 +112,20 @@ public class MainActivity extends AppCompatActivity {
             game.setUniverse(tmplist);
             Intent intent = new Intent(MainActivity.this, UniverseMap.class);
             startActivity(intent);
+        }
+
+    }
+
+    public class BackgroundSound extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            MediaPlayer player = MediaPlayer.create(MainActivity.this, R.raw.music);
+            player.setLooping(true); // Set looping
+            player.setVolume(1.0f, 1.0f);
+            player.start();
+
+            return null;
         }
 
     }
