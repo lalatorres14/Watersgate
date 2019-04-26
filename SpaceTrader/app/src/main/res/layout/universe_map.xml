@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/space2"
+    android:background="@drawable/space"
     tools:context="edu.gatech.cs2340.SpaceTrader.views.UniverseMap">
 
 
