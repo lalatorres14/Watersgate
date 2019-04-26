@@ -54,6 +54,7 @@
     <string name= "currentFuel">Current Available Fuel: XXXX</string>
     <string name= "travel">Travel</string>
     <string name= "uniMap">Universe Map</string>
+    <string name= "create_player_header">Create Player</string>
 
 
 </resources>

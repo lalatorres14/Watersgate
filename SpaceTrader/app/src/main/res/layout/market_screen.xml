@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/space2"
     android:layout_height="match_parent">
 
     <TextView
@@ -12,6 +13,8 @@
         android:layout_height="51dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
+        android:fontFamily="@font/audiowide"
+        android:textColor="#D6D8E2"
         android:text="@string/default_word"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -24,55 +27,61 @@
 
     <Button
         android:id="@+id/buyMode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="109dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/button_bg"
+        android:fontFamily="@font/audiowide"
+        android:onClick="onBuyModePressed"
         android:text="@string/buyMode"
+        android:textColor="#673AB7"
         app:layout_constraintBottom_toTopOf="@+id/scrollView1"
         app:layout_constraintEnd_toStartOf="@+id/holdSpaceHeader"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/marketHeader"
-        app:layout_constraintVertical_bias="0.317"
-        android:onClick="onBuyModePressed"
-        android:background="@drawable/button_bg"
-        />
+        app:layout_constraintVertical_bias="0.317" />
 
     <Button
         android:id="@+id/sellMode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="111dp"
+        android:layout_height="44dp"
         android:layout_marginEnd="8dp"
+        android:background="@drawable/button_bg"
+        android:fontFamily="@font/audiowide"
+        android:onClick="onSellModePressed"
         android:text="@string/sellMode"
+        android:textColor="#673AB7"
         app:layout_constraintBottom_toBottomOf="@+id/buyMode"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/holdSpace"
         app:layout_constraintTop_toTopOf="@+id/buyMode"
-        app:layout_constraintVertical_bias="0.0"
-        android:onClick="onSellModePressed"
-        android:background="@drawable/button_bg"/>
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/holdSpaceHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="104dp"
+        android:layout_height="43dp"
         android:height="48dp"
+        android:fontFamily="@font/dosis_medium"
+        android:textColor="@color/design_default_color_primary"
         android:gravity="center"
         android:text="@string/freeSpace"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@id/buyMode"
-        app:layout_constraintEnd_toStartOf="@id/holdSpace"
         app:layout_constraintBottom_toBottomOf="@+id/buyMode"
+        app:layout_constraintEnd_toStartOf="@id/holdSpace"
+        app:layout_constraintStart_toEndOf="@id/buyMode"
         app:layout_constraintTop_toTopOf="@+id/buyMode"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="121dp" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/holdSpace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="53dp"
+        android:layout_height="43dp"
         android:height="48dp"
+        android:textColor="#D6D8E2"
+        android:fontFamily="@font/dosis_medium"
         android:gravity="center"
         android:text="@string/zero"
         android:textSize="20sp"
@@ -118,40 +127,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:fontFamily="@font/audiowide"
+        android:onClick="onCompleteTransactionPressed"
         android:text="@string/CompleteTrans"
+        android:textColor="#673AB7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.883"
         app:layout_constraintStart_toEndOf="@id/currentMoney"
-        app:layout_constraintTop_toBottomOf="@id/scrollView2"
-        app:layout_constraintVertical_bias="0.545"
-        android:onClick="onCompleteTransactionPressed"/>
+        app:layout_constraintTop_toBottomOf="@id/scrollView1"
+        app:layout_constraintVertical_bias="0.545" />
 
     <TextView
         android:id="@+id/currentMoneyHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/money"
         android:layout_marginStart="8dp"
         android:height="48dp"
+        android:fontFamily="@font/dosis_medium"
+        android:textColor="#D6D8E2"
         android:gravity="center"
+        android:text="@string/money"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/completeTransaction"
         app:layout_constraintEnd_toStartOf="@id/currentMoney"
-        app:layout_constraintTop_toTopOf="@id/completeTransaction"
-        app:layout_constraintBottom_toBottomOf="@id/completeTransaction"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/completeTransaction" />
 
     <TextView
         android:id="@+id/currentMoney"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/zero"
+        android:textColor="#D6D8E2"
         android:height="48dp"
+        android:fontFamily="@font/dosis_medium"
         android:gravity="center"
+        android:text="@string/zero"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@id/currentMoneyHeader"
+        app:layout_constraintBottom_toBottomOf="@id/completeTransaction"
         app:layout_constraintEnd_toStartOf="@id/completeTransaction"
-        app:layout_constraintTop_toTopOf="@id/completeTransaction"
-        app:layout_constraintBottom_toBottomOf="@id/completeTransaction"/>
+        app:layout_constraintStart_toEndOf="@id/currentMoneyHeader"
+        app:layout_constraintTop_toTopOf="@id/completeTransaction" />
 
 </android.support.constraint.ConstraintLayout>
