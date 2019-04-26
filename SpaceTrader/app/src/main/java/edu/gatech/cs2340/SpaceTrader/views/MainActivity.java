@@ -3,6 +3,8 @@ package edu.gatech.cs2340.SpaceTrader.views;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -46,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 onStartPressed();
             }
         });
-
+        BackgroundSound mBackgroundSound = new BackgroundSound();
+        mBackgroundSound.execute();
 
     }
     private void onStartPressed(){
@@ -110,6 +113,19 @@ public class MainActivity extends AppCompatActivity {
             game.setUniverse(tmplist);
             Intent intent = new Intent(MainActivity.this, UniverseMap.class);
             startActivity(intent);
+        }
+
+    }
+    public class BackgroundSound extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            MediaPlayer player = MediaPlayer.create(MainActivity.this, R.raw.music);
+            player.setLooping(true); // Set looping
+            player.setVolume(1.0f, 1.0f);
+            player.start();
+
+            return null;
         }
 
     }
