@@ -5,98 +5,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/space"
     tools:context="edu.gatech.cs2340.SpaceTrader.views.UniverseMap">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="395dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="68dp"
-        android:isScrollContainer="false"
-        android:padding="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/toSSMap"
+
+    <RadioGroup
+        android:id="@+id/group"
+        android:layout_width="336dp"
+        android:layout_height="277dp"
+        android:checkedButton="@+id/solar1"
+        android:fontFamily="@font/dosis_medium"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/universe_graph"
-        app:layout_constraintVertical_bias="0.175">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7">
 
-        <RadioGroup
-            android:id="@+id/group"
-            android:layout_width="match_parent"
+        <RadioButton
+            android:id="@+id/solar1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checkedButton="@+id/solar1"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.8">
+            android:fontFamily="@font/dosis_medium"
+            android:textColor="@color/design_default_color_primary" />
 
-            <RadioButton
-                android:id="@+id/solar1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/solar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dosis_medium"
+            android:textColor="@color/design_default_color_primary" />
 
-            <RadioButton
-                android:id="@+id/solar2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/solar3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dosis_medium"
+            android:textColor="@color/design_default_color_primary" />
 
-            <RadioButton
-                android:id="@+id/solar3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/solar4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dosis_medium"
+            android:textColor="@color/design_default_color_primary" />
 
-            <RadioButton
-                android:id="@+id/solar4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/solar5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dosis_medium"
+            android:textColor="@color/design_default_color_primary" />
 
-            <RadioButton
-                android:id="@+id/solar5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/solar6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dosis_medium"
+            android:textColor="@color/design_default_color_primary" />
 
-            <RadioButton
-                android:id="@+id/solar6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/solar7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dosis_medium"
+            android:textColor="@color/design_default_color_primary" />
 
-            <RadioButton
-                android:id="@+id/solar7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/solar8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dosis_medium"
+            android:textColor="@color/design_default_color_primary" />
 
-            <RadioButton
-                android:id="@+id/solar8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/solar9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dosis_medium"
+            android:textColor="@color/design_default_color_primary" />
 
-            <RadioButton
-                android:id="@+id/solar9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <RadioButton
-                android:id="@+id/solar10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </RadioGroup>
-    </ScrollView>
+        <RadioButton
+            android:id="@+id/solar10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dosis_medium"
+            android:textColor="@color/design_default_color_primary" />
+    </RadioGroup>
 
     <TextView
         android:id="@+id/universeMap"
         android:layout_width="291dp"
         android:layout_height="42dp"
+        android:fontFamily="@font/audiowide"
         android:gravity="center"
         android:text="@string/uniMap"
         android:textColor="@color/design_default_color_primary"
@@ -115,6 +119,7 @@
         android:id="@+id/locationText"
         android:layout_width="389dp"
         android:layout_height="32dp"
+        android:fontFamily="@font/dosis_medium"
         android:gravity="center"
         android:text="@string/currentLocation"
         android:textColor="@color/design_default_color_primary"
@@ -132,31 +137,17 @@
         android:id="@+id/fuelText"
         android:layout_width="389dp"
         android:layout_height="32dp"
+        android:fontFamily="@font/dosis_medium"
         android:gravity="center"
         android:text="@string/currentFuel"
         android:textColor="@color/design_default_color_primary"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/universe_graph"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/locationText"
-        app:layout_constraintVertical_bias="0.105" />
-
-    <com.jjoe64.graphview.GraphView
-        android:id="@+id/universe_graph"
-        android:layout_width="match_parent"
-        android:layout_height="200dip"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fuelText"
-        app:layout_constraintVertical_bias="0.212" />
+        app:layout_constraintTop_toBottomOf="@+id/locationText" />
 
     <Button
         android:id="@+id/toSSMap"
@@ -164,7 +155,9 @@
         android:layout_height="55dp"
         android:layout_marginEnd="144dp"
         android:layout_marginBottom="24dp"
+        android:fontFamily="@font/audiowide"
         android:text="@string/travel"
+        android:textColor="#673AB7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

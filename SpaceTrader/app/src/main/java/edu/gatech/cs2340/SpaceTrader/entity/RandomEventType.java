@@ -7,6 +7,9 @@ import java.util.Random;
  */
 public enum RandomEventType {
     POLICE,
+    CREWMUTINY,
+    DISCOVERY,
+    ILLNESS,
     LEAK,
     PIRATES,
     DEALER

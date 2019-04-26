@@ -107,4 +107,6 @@ public class Ship {
      */
     public String getName() {return toString();}
 
+    public void emptyShip(){cargo.clearCargo();}
+
 }

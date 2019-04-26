@@ -34,6 +34,15 @@ public class RandomEvent {
             case LEAK:
                 message += FuelEvent(message);
                 break;
+            case DISCOVERY:
+                message += DiscoveryEvent(message);
+                break;
+            case CREWMUTINY:
+                message += Crew_Mutiny_Event(message);
+                break;
+            case ILLNESS:
+                message += IllnessEvent(message);
+                break;
             case PIRATES:
                 message += PirateEvent(message);
                 break;
@@ -126,6 +135,53 @@ public class RandomEvent {
         }
         return message;
     }
+
+    private String Crew_Mutiny_Event(String oldMessage) {
+        String message = oldMessage;
+        message += "Your crew has started a riot!";
+        if (game.getFighterSkill() >= ptMax) {
+            game.setCredits(game.getCredits() + money);
+            message += "You managed to defeat them all and subdue them!";
+        } else if (game.getFighterSkill() >= (ptMax / 2)) {
+            message += "You managed to fend them off, however they fled. " +
+                    "That was a close one!";
+        } else {
+            //game.setCredits(game.getCredits() - money);
+            game.getShip().emptyShip();
+            message += "They managed to defeat you, and stole all your goods!";
+        }
+        return message;
+    }
+
+    private String DiscoveryEvent(String oldMessage) {
+        String message = oldMessage;
+        message += "You Discovered an abandoned Ship! ";
+        if (game.hasShipSpace()) {
+            message += "Found some rare firearms! They will make a fine edition to your collection!";
+            game.buyGood(GoodType.FIREARMS, 1);
+        } else {
+            message += "Oh how you wish you had space for these premium goods!" +
+                    " Unfortunately, your ship's cargo is full.";
+        }
+
+        return message;
+    }
+
+    private String IllnessEvent(String oldMessage) {
+        String message = oldMessage;
+        int money = game.getCredits() / 10;
+        message += "Your crew has fallen very ill, so you make a stop to buy medicine. ";
+        //only purchase if space
+        if (game.hasShipSpace() && (game.getCredits() > money)) {
+            message += " You were successfull in buying medicine! Your crew has made a full recovery!" ;
+            game.buyGood(GoodType.MEDICINE, 1);
+            game.setCredits(game.getCredits() - (money));
+        } else {
+            message += "Unfortunately, you were unable to acquire the medicine and your crew has perished";
+        }
+        return message;
+    }
+
 
     /**
      * The Narcotics Dealer event
