@@ -85,6 +85,8 @@ public class Cargo{
         return maxCapacity;
     }
 
+    public void clearCargo() { cargo.clear();}
+
 
 }
 
