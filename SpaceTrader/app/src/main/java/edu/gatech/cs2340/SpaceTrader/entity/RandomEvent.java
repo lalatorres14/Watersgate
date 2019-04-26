@@ -173,7 +173,7 @@ public class RandomEvent {
         message += "Your crew has fallen very ill, so you make a stop to buy medicine. ";
         //only purchase if space
         if (game.hasShipSpace() && (game.getCredits() > money)) {
-            message += " You were successfull in buying medicine! Your crew has a full recovery!" ;
+            message += " You were successfull in buying medicine! Your crew has made a full recovery!" ;
             game.buyGood(GoodType.MEDICINE, 1);
             game.setCredits(game.getCredits() - (money));
         } else {
