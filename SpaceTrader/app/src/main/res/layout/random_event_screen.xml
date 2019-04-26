@@ -5,12 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/space"
     tools:context="edu.gatech.cs2340.SpaceTrader.views.RandomEventView">
 
     <TextView
         android:id="@+id/randomEventText"
         android:layout_width="327dp"
         android:layout_height="544dp"
+        android:fontFamily="@font/dosis_medium"
         android:gravity="center"
         android:text="@string/RandEventText"
         android:textColor="@color/design_default_color_primary"
@@ -27,6 +29,7 @@
         android:id="@+id/randomEventTitle"
         android:layout_width="231dp"
         android:layout_height="85dp"
+        android:fontFamily="@font/audiowide"
         android:gravity="center"
         android:text="@string/RandomEventTitle"
         android:textColor="@color/design_default_color_primary"
@@ -45,7 +48,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:fontFamily="@font/audiowide"
         android:text="@string/cont"
+        android:textColor="#673AB7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

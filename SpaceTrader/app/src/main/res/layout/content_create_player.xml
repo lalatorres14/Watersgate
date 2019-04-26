@@ -5,6 +5,7 @@
     android:id="@+id/content_edit_student"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/space"
     android:padding="20dp"
 
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -12,49 +13,77 @@
     tools:showIn="@layout/activity_create_player">
 
     <TextView
-        android:text="@string/difficulty_header"
+        android:id="@+id/create_player_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:textColor="#D6D8E2"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="73dp"
+        android:layout_marginLeft="73dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/audiowide"
+        android:text="@string/create_player_header"
+        android:textSize="30sp" />
+
+    <TextView
         android:id="@+id/difficulty_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/player_name_input"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="38dp"
+        android:fontFamily="@font/audiowide"
+        android:textColor="#D6D8E2"
+        android:text="@string/difficulty_header"
+        android:textSize="18sp"
         tools:ignore="RtlHardcoded" />
 
 
     <EditText
+        android:id="@+id/player_name_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="@string/player_name_default"
-        android:ems="10"
-        android:id="@+id/player_name_input"
-        android:layout_marginTop="32dp"
         android:layout_below="@id/name_header"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:labelFor="@id/player_name_input"
+        android:textColor="#D6D8E2"
+        android:layout_marginTop="12dp"
         android:autofillHints=""
+        android:ems="10"
+        android:fontFamily="@font/dosis_medium"
+        android:inputType="textPersonName"
+        android:labelFor="@id/player_name_input"
+        android:text="@string/player_name_default"
         tools:ignore="RtlHardcoded" />
 
     <TextView
-        android:text="@string/name_header"
+        android:id="@+id/name_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/name_header"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="75dp"
+        android:fontFamily="@font/audiowide"
+        android:textColor="#D6D8E2"
+        android:text="@string/name_header"
+        android:textSize="18sp" />
 
     <Spinner
+        android:id="@+id/difficulty_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/difficulty_header"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="32dp"
-        android:id="@+id/difficulty_spinner" />
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/dosis_medium"
+        android:textColor="@color/design_default_color_primary"
+        android:visibility="visible"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/add_button"
@@ -66,22 +95,26 @@
         android:layout_marginStart="250dp"
         android:layout_marginRight="250dp"
         android:layout_marginBottom="30dp"
+        android:fontFamily="@font/audiowide"
         android:onClick="onAddPressed"
-        android:text="@string/add" />
+        android:text="@string/add"
+        android:textColor="#673AB7" />
 
     <Button
         android:id="@+id/cancel_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="250dp"
         android:layout_marginLeft="250dp"
+        android:layout_marginEnd="250dp"
         android:layout_marginBottom="27dp"
+        android:fontFamily="@font/audiowide"
+        android:labelFor="@id/cancel_button"
         android:onClick="onCancelPressed"
         android:text="@string/Cancel"
-        android:labelFor="@id/cancel_button"/>
+        android:textColor="#673AB7" />
 
     <TextView
         android:id="@+id/pilot_header"
@@ -90,10 +123,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="34dp"
+        android:layout_marginStart="24dp"
         android:layout_marginLeft="34dp"
         android:layout_marginTop="344dp"
-        android:text="@string/skill1" />
+        android:fontFamily="@font/dosis_medium"
+        android:text="@string/skill1"
+        android:textColor="#D6D8E2"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/pilot_points"
@@ -107,7 +143,10 @@
         android:layout_toRightOf="@+id/pilot_header"
         android:autofillHints=""
         android:ems="2"
-        android:labelFor="@id/pilot_points" />
+        android:fontFamily="@font/dosis_medium"
+        android:labelFor="@id/pilot_points"
+        android:textColor="#D6D8E2"
+        android:textSize="18sp" />
 
 
     <ImageButton
@@ -119,6 +158,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:scaleType="fitXY"
+        android:textColor="#D6D8E2"
         android:layout_gravity="center"
         android:contentDescription="@string/pilot_button_up" />
 
@@ -131,6 +171,7 @@
         android:src="@drawable/dec_arrow"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:textColor="#D6D8E2"
         android:scaleType="fitXY"
         android:layout_gravity="center"
         android:contentDescription="@string/pilot_down" />
@@ -146,7 +187,10 @@
         android:layout_marginTop="344dp"
         android:layout_toEndOf="@+id/pilot_points"
         android:layout_toRightOf="@+id/pilot_points"
-        android:text="@string/skill2" />
+        android:fontFamily="@font/dosis_medium"
+        android:text="@string/skill2"
+        android:textColor="#D6D8E2"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/fighter_points"
@@ -160,7 +204,10 @@
         android:layout_toRightOf="@+id/fighter_header"
         android:autofillHints=""
         android:ems="2"
-        android:labelFor="@id/fighter_points" />
+        android:fontFamily="@font/dosis_medium"
+        android:labelFor="@id/fighter_points"
+        android:textColor="#D6D8E2"
+        android:textSize="18sp" />
 
 
     <ImageButton
@@ -174,6 +221,7 @@
         android:layout_marginStart="169dp"
         android:layout_marginLeft="169dp"
         android:layout_marginTop="0dp"
+        android:textColor="#D6D8E2"
         android:background="@android:color/background_light"
         android:contentDescription="@string/fighter_up"
         android:onClick="onFighterUpPressed"
@@ -203,7 +251,10 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="442dp"
+        android:fontFamily="@font/dosis_medium"
         android:text="@string/skill3"
+        android:textColor="#D6D8E2"
+        android:textSize="18sp"
         tools:ignore="RtlHardcoded" />
 
     <TextView
@@ -217,7 +268,10 @@
         android:layout_toEndOf="@+id/trader_header"
         android:layout_toRightOf="@+id/trader_header"
         android:autofillHints=""
-        android:ems="2" />
+        android:ems="2"
+        android:fontFamily="@font/dosis_medium"
+        android:textColor="#D6D8E2"
+        android:textSize="18sp" />
 
 
     <ImageButton
@@ -255,7 +309,10 @@
         android:layout_marginTop="442dp"
         android:layout_toEndOf="@+id/trader_points"
         android:layout_toRightOf="@+id/trader_points"
-        android:text="@string/skill4" />
+        android:fontFamily="@font/dosis_medium"
+        android:text="@string/skill4"
+        android:textColor="#D6D8E2"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/engineer_points"
@@ -269,7 +326,10 @@
         android:layout_toRightOf="@+id/engineer_header"
         android:autofillHints=""
         android:ems="2"
-        android:labelFor="@id/engineer_points" />
+        android:fontFamily="@font/dosis_medium"
+        android:labelFor="@id/engineer_points"
+        android:textColor="#D6D8E2"
+        android:textSize="18sp" />
 
 
     <ImageButton
@@ -309,22 +369,28 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="118dp"
-        android:layout_marginLeft="118dp"
-        android:layout_marginTop="298dp"
-        android:text="@string/remaining" />
+        android:layout_marginStart="98dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="296dp"
+        android:textColor="#D6D8E2"
+        android:fontFamily="@font/audiowide"
+        android:text="@string/remaining"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/remaining"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/remaining_header"
-        android:layout_marginLeft="-1dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="-1dp"
         android:layout_toRightOf="@+id/remaining_header"
         android:autofillHints=""
         android:ems="2"
-        android:labelFor="@id/remaining" />
+        android:fontFamily="@font/audiowide"
+        android:labelFor="@id/remaining"
+        android:textColor="#D6D8E2"
+        android:textSize="18sp" />
 
 
 </RelativeLayout>
